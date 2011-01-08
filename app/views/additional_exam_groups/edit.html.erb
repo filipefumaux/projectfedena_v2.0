@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Additional Exams</h1>
-  <h3>Edit Additional  Exam group</h3>
+  <h1><%= t('exam.additionalExams') %></h1>
+  <h3><%= t('exam.editAdditionalExams') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -18,7 +18,7 @@
          <%= 'Courses'%> &raquo;
         <%=  @course.full_name%> &raquo;
         <%= "Batch #{@batch.name}" %> &raquo;
-        <%= link_to 'Additional Exams', batch_additional_exam_groups_path(@batch) %> &raquo;
+        <%= link_to t('exam.additionalExams'), batch_additional_exam_groups_path(@batch) %> &raquo;
        Edit Additional Exam
         </div>
 

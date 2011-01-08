@@ -14,7 +14,7 @@
   <div class="box">
   <% form_for :xml_settings do |f| %>
     <div class="label-field-pair">
-      <label for="student_grade">Ledger name corresponding to salary</label>
+      <label for="student_grade"><%= "Ledger name corresponding to salary" %></label>
       <div class="text-input-bg"> <%= text_field :xml_settings, :salary, :value => @xml[:salary] %>
     </div>
       </div>
@@ -29,7 +29,7 @@
       </div>
     </div>
   
-  <%= submit_tag "► Save Changes",:class=>'submit_button' %>
+  <%= submit_tag t('saveChanges'),:class=>'submit_button' %>
 <% end %>
 </div>
 </div>
