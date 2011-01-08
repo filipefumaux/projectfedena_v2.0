@@ -20,7 +20,7 @@
 
 <div id="leave-info">
   <ul id="item-list">
-       <li class="listodd"><div class="item-name">Name:</div>
+       <li class="listodd"><div class="item-name"><%= t('name') %>:</div>
         <%= Employee.find(@applied_leave.employee_id).first_name %></li>
        <li class="listeven"><div class="item-name">Manager Name:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>

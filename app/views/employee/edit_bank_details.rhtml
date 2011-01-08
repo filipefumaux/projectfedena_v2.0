@@ -18,7 +18,7 @@
       <%= error_messages_for 'bank_details' %>
       <div id="form-content">
         <div class="label-field-pair">
-          <label for="category_name">Name</label>
+          <label for="category_name"><%= t('name') %></label>
           <div class="text-input-bg"> <%= c.text_field :name %> </div>
         </div>
 
@@ -34,7 +34,7 @@
         </div>
 
         <div id="submit-button">
-          <%=submit_tag("► Create") %>
+          <%=submit_tag("► " + t('create')) %>
         </div>
       </div>
 

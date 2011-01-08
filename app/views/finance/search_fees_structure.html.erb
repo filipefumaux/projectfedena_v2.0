@@ -1,7 +1,7 @@
 
 
   <% if @students_result.nil? or @students_result.empty? %>
-  <div id="no_result">No users found</div>
+  <div id="no_result"><%= t('noUserFound') %></div>
 <% else %>
   <% @students_result.each_with_index do |r,i| %>
     <%= '<div class="students-on-one-line">' if i%4 == 0 %>

@@ -1,6 +1,6 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Exams</h1>
+  <h1><%= t('exams') %></h1>
   <h3>New Exam</h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -14,9 +14,9 @@
   <% end %>
 
 <div class="bread_crumb">
-        <%= link_to 'Courses', courses_path %> &raquo;
+        <%= link_to t('courses'), courses_path %> &raquo;
         <%= link_to @course.full_name, @course %> &raquo;
-        <%= link_to "Batch #{@batch.name}", [@course, @batch] %> &raquo;
+        <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
         <%= link_to "Exams", batch_exam_groups_path(@batch) %> &raquo;
        New Exam
         </div>
@@ -30,7 +30,7 @@
       <%= error_messages_for :exam_group %>
       <% form_remote_for :exam_option, :url => {:controller=>'exam',:action => 'update_exam_form',:batch=>@batch} do |form| %>
         <div class="label-field-pair">
-          <label for="exam_name">Name</label>
+          <label for="exam_name"><%= t('name') %></label>
           <% if params[:ename].nil?  %>
           <% @ename = "" %>
           <% else %>
@@ -42,7 +42,7 @@
           <label for="exam_type">Exam Type</label>
           <div class="text-input-bg"><%= select :exam_option,:exam_type,['Marks','Grades','MarksAndGrades'] %></div>
         </div>
-        <%= submit_tag "", :value => "► Save", :class => "submit_button" %>
+        <%= submit_tag "", :value => "► " + t('save'), :class => "submit_button" %>
         <%  #  form.submit("Save") %>
       <%end%>
     </div>

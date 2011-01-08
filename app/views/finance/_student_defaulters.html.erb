@@ -15,6 +15,6 @@
       <% i+=1 %>
     <%end%>
   <%end%>
-<%= link_to " ► PDF Report",
+<%= link_to " ► " + t('pdfReport'),
         {:controller => "finance", :action => "fee_defaulters_pdf", :batch_id => @batch.id, :date => @date.id},:target => '_blank', :class=> 'user_button' %>
 </div>

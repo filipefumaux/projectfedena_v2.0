@@ -17,9 +17,9 @@
     <p class="flash-msg"> <%= flash[:notice] %> </p>
   <% end %>
      <div class="bread_crumb">
-        <%= link_to 'Courses', courses_path %> &raquo;
+        <%= link_to t('courses'), courses_path %> &raquo;
         <%= link_to @course.full_name, @course %> &raquo;
-        <%= link_to "Batch #{@batch.name}", [@course, @batch] %> &raquo;
+        <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
         <%= link_to 'Electives ', batch_elective_groups_path(@batch) %> &raquo;
         <%= @elective_group.name %>
         </div>
@@ -35,13 +35,13 @@
           <li id="subject-<%= subject.id %>" class="list<%= cycle('even','odd')%>" >
             <div class="category-name"><%= subject.name %></div>
             <div class="category-code"><%= subject.code %></div>
-            <div class="category-edit"><%= link_to_remote('Edit',
+            <div class="category-edit"><%= link_to_remote(t('edit'),
                   :url => { :controller=>"subjects",:action => 'edit', :id =>subject,:id2=>@elective_group},
                   :method => 'get' ) %> </div>
-            <div class="category-delete"><%= link_to_remote('Delete',
+            <div class="category-delete"><%= link_to_remote(t('delete'),
                   :url => subject_path(subject),
                   :method => 'delete',
-                  :confirm => 'Are you sure?',
+                  :confirm => t('areYouSure'),
                   :update => "subject-#{subject.id}") %> </div>
             <div class="category-assign"><%= link_to "Assign Students", :controller=>"student", :action=>"electives",:id=>@batch,:id2=>subject.id%>
             </div>

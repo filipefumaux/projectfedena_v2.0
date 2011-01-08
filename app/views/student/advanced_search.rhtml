@@ -14,7 +14,7 @@
   <div id="search-form">
     <% form_for @search do |f| %>
       <div class="label-field-pair">
-        <label for="name">Name</label>
+        <label for="name"><%= t('name') %></label>
         <div class="text-input-bg">
           <%= f.text_field :first_name_or_middle_name_or_last_name_like %>
         </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_category">Category</label>
+        <label for="student_category"><%= t('category') %></label>
         <div class="text-input-bg">
           <%= f.collection_select :student_category_id_equals,StudentCategory.all,:id,:name,{:prompt=>'Select Category'}%>
         </div>
@@ -67,7 +67,7 @@
       <div class="label-field-pair">
         <label for="student_blood_group">Blood group</label>
         <div class="text-input-bg">
-          <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>"Select"}%>
+          <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>t('select')}%>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
           Country
         </label>
         <div class="text-input-bg">
-          <%= f.collection_select :nationality_id_equals, Country.all,:id,:name,{:prompt=>"Select"}%>
+          <%= f.collection_select :nationality_id_equals, Country.all,:id,:name,{:prompt=>t('select')}%>
         </div>
       </div>
 
@@ -96,7 +96,7 @@
             :id => "loader",
             :style =>"display: none;" ) %>
           <div id="doa_year">
-            <%= select :advv_search,:doa_year,[],{:prompt=>"Select"} %>
+            <%= select :advv_search,:doa_year,[],{:prompt=>t('select')} %>
           </div>
           <div id="doa_year_hidden"></div>
         </div>
@@ -118,7 +118,7 @@
             :id => "loader",
             :style =>"display: none;" ) %>
           <div id="dob_year">
-            <%= select :advv_search,:dob_year,[],{:prompt=>"Select"} %>
+            <%= select :advv_search,:dob_year,[],{:prompt=>t('select')} %>
           </div>
           <div id="dob_year_hidden"></div>
         </div>
@@ -193,7 +193,7 @@
       <div class="searched_for">
         
         <% unless params[:search][:first_name_or_middle_name_or_last_name_like].empty? %>
-          <span>Name:</span> <%= params[:search][:first_name_or_middle_name_or_last_name_like] %>
+          <span><%= t('name') %>:</span> <%= params[:search][:first_name_or_middle_name_or_last_name_like] %>
         <% end %>
         <% unless  params[:search][:admission_no_equals].empty? %>
           <span>Admission no:</span><%= params[:search][:admission_no_equals] %>

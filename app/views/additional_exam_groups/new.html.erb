@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
   <h1><%= t('exam.additionalExams') %></h1>
-  <h3>New Exam</h3>
+  <h3><%= t('exam.new') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -14,9 +14,9 @@
   <% end %>
 
   <div class="bread_crumb">
-    <%= 'Courses' %> &raquo;
+    <%= t('courses') %> &raquo;
     <%= @course.full_name %> &raquo;
-    <%="Batch #{@batch.name}" %> &raquo;
+    <%=t('batch') + " #{@batch.name}" %> &raquo;
     <%= link_to "Additional Exams", batch_additional_exam_groups_path(@batch) %> &raquo;
     New Additional Exam
   </div>
@@ -30,7 +30,7 @@
       <%= error_messages_for :exam_group %>
       <% form_remote_for :exam_option, :url => {:controller=>'additional_exam',:action => 'update_exam_form',:batch=>@batch} do |form| %>
         <div class="label-field-pair">
-          <label for="exam_name">Name</label>
+          <label for="exam_name"><%= t('name') %></label>
           <% if params[:ename].nil?  %>
             <% @ename = "" %>
           <% else %>
@@ -55,7 +55,7 @@ Select: <%= link_to_function 'All', "$$('input.right').each(function(checkbox) {
             </li>  </div>
         <% end %>
       </div>
-        <%= submit_tag "", :value => "► Save", :class => "submit_button" %>
+        <%= submit_tag "", :value => "► " + t('save'), :class => "submit_button" %>
         <%  #  form.submit("Save") %>
       <%end%>
     </div>

@@ -1,6 +1,6 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Exams</h1>
+  <h1><%= t('exams') %></h1>
   <h3>Acadamic report</h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -14,7 +14,7 @@
 
   <table id="listing" wisth="100%">
     <tr class="tr-head">
-      <td>Subject</td>
+      <td><%= t('subject') %></td>
       <% @exam_groups.each do |exam_group| %>
         <td><%= exam_group.name %></td>
       <% end %>

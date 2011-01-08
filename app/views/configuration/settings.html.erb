@@ -1,8 +1,8 @@
 <%=  @file_size %>
 <div id="content-header">
   <img src="/images/show_settings.png" />
-  <h1>Configuration</h1>
-  <h3>General Settings</h3>
+  <h1><%= t('configuration') %></h1>
+  <h3><%= t('generalSettings') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -17,25 +17,25 @@
   <% form_for(:configuration,:html=> {:multipart=>true}) do |c| %>
     <div class="box">
       <div class="label-field-pair">
-        <label for="configuration_currency_type">School/College Name</label>
+        <label for="configuration_currency_type"><%= t('schoolName') %></label>
         <div class="text-input-bg">
           <%= text_field :configuration, :institution_name, :value => @config[:institution_name] %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="configuration_currency_type">School/College Address</label>
+        <label for="configuration_currency_type"><%= t('schoolAddress') %></label>
         <div class="text-input-bg">
           <%= text_field :configuration, :institution_address, :value => @config[:institution_address] %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="configuration_currency_type">School/College Phone</label>
+        <label for="configuration_currency_type"><%= t('schoolPhone') %></label>
         <div class="text-input-bg">
           <%= text_field :configuration, :institution_phone_no, :value => @config[:institution_phone_no] %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="configuration_student_attendance_type">Student Attendance Type</label>
+        <label for="configuration_student_attendance_type"><%= t('studentAttendanceType') %></label>
         <div class="text-input-bg">
           <%= select :configuration, :student_attendance_type, Configuration::STUDENT_ATTENDANCE_TYPE_OPTIONS,
             :selected => @config[:student_attendance_type] %>
@@ -43,13 +43,13 @@
       </div>
 
       <div class="label-field-pair">
-        <label for="configuration_currency_type">Currency Type</label>
+        <label for="configuration_currency_type"><%= t('currencyType') %></label>
         <div class="text-input-bg">
           <%= text_field :configuration, :currency_type, :value => @config[:currency_type] %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="configuration_currency_type">Upload Logo</label>
+        <label for="configuration_currency_type"><%= t('uploadLogo') %></label>
         <div class="text-input-bg">
           <%= file_field 'upload', 'datafile' %>
         </div>
@@ -57,20 +57,20 @@
       <div class="extender"></div>
       <br/>
       <% if @config[:admission_number_auto_increment] == '1' %>
-        <%= check_box :configuration, :admission_number_auto_increment, :checked => true %> Enable Auto increment Student admission no.
+        <%= check_box :configuration, :admission_number_auto_increment, :checked => true %> <%= t('enableAutoincrementStudent') %>
       <% else %>
-        <%= check_box :configuration, :admission_number_auto_increment, :checked => false %> Enable Auto increment Student admission no.
+        <%= check_box :configuration, :admission_number_auto_increment, :checked => false %> <%= t('enableAutoincrementStudent') %>
       <% end %>
       <br/>
       <% if Configuration.available_modules.include?('HR') %>
         <% if @config[:employee_number_auto_increment] == '1' %>
-          <%= check_box :configuration, :employee_number_auto_increment, :checked => true %> Enable Auto increment Employee no.
+          <%= check_box :configuration, :employee_number_auto_increment, :checked => true %> <%= t('enableAutoIncrementEmployee') %>
         <% else %>
-          <%= check_box :configuration, :employee_number_auto_increment, :checked => false %> Enable Auto increment Employee no.
+          <%= check_box :configuration, :employee_number_auto_increment, :checked => false %> <%= t('enableAutoIncrementEmployee') %>
         <% end %>
       <% end %>
       <div id="submit-button">
-        <%= submit_tag "► Update" %>
+        <%= submit_tag "► " + t('update') %>
       </div>
 
     <% end %>

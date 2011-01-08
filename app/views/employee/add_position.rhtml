@@ -18,13 +18,13 @@
     <%= error_messages_for 'position' %>
  <div id="form-content">
     <div class="label-field-pair">
-      <label for="position_name">Name</label>
+      <label for="position_name"><%= t('name') %></label>
       <div class="text-input-bg"> <%= c.text_field :name %> </div>
     </div>
 
    <div class="label-field-pair">
       <label for="category_name">Employee category</label>
-      <div class="text-input-bg"><%= select :position, :employee_category_id, @categories.map {|s| [s.name, s.id]}, :prompt => "Select" %></div>
+      <div class="text-input-bg"><%= select :position, :employee_category_id, @categories.map {|s| [s.name, s.id]}, :prompt => t('select') %></div>
     </div>
 
     <div class="label-checkbox-pair">
@@ -39,7 +39,7 @@
     </div>
 
     <div id="submit-button">
-      <%=  submit_tag("► Create") %>
+      <%=  submit_tag("► " + t('create')) %>
     </div>
     </div>
 

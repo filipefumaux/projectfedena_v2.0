@@ -12,9 +12,9 @@
     <div id="results-table">
       <div class="results-th">
         <div class="results-table-subject">Subjects</div>
-        <div class="results-table-marks">Marks</div>
+        <div class="results-table-marks"><%= t('marks') %></div>
         <div class="results-table-maxmarks">Max</div>
-        <div class="results-table-grade">Grade</div>
+        <div class="results-table-grade"><%= t('grade') %></div>
         <div class="results-table-percentage">(in %)</div>
       </div>
 
@@ -47,7 +47,7 @@
           <div class="results-table-percentage"><%= percentage %></div>
         </div>
     </div>
-    <% if @results.empty? %> <p><%= "No results found." %></p> <% end %>
+    <% if @results.empty? %> <p><%= t('noResults') %></p> <% end %>
 
     <script type="text/javascript" src="/javascripts/swfobject.js"></script>
     <%= @graph %>

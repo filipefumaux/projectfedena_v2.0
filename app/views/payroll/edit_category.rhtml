@@ -33,7 +33,7 @@
       <div class="label-field-pair">
         <label for="percentage_of">Percentage of</label>
         <div class="text-input-bg">
-          <%= select :category, :payroll_category_id, @categories.map {|cat| [cat.name, cat.id]}, :prompt =>"Select" %>
+          <%= select :category, :payroll_category_id, @categories.map {|cat| [cat.name, cat.id]}, :prompt =>t('select') %>
         </div>
       </div>
       <div class="label-radio-pair">
@@ -55,7 +55,7 @@
 
 
       <div id="submit-button">
-        <%=submit_tag("► Update") %>
+        <%=submit_tag("► " + t('update')) %>
       </div>
 
 

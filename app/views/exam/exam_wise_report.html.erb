@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Exams</h1>
-  <h3>Exam wise Reports</h3>
+  <h1><%= t('exams') %></h1>
+  <h3><%= t('examWiseReports') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -27,7 +27,7 @@
 </div>
 
   <div  class="text-input-bg" id="exam-group-select">
-    <%= select :exam_report, :exam_group_id, @exam_groups.map{|exam| [exam.name,exam.id]},:prompt=>'Select exam group' %>
+    <%= select :exam_report, :exam_group_id, @exam_groups.map{|exam| [exam.name,exam.id]},:prompt=>t('exam.selectGroup') %>
   </div>
 <%= image_tag("loader.gif",
       :align => "absmiddle",
@@ -35,7 +35,7 @@
       :id => "loader",
       :style =>"display: none;" ) %>
 
-    <%= submit_tag "", :value => "► View", :class => "submit_button" %>
+    <%= submit_tag "", :value => "► " + t('view'), :class => "submit_button" %>
   <% # x.submit 'View' %>
 
 <% end %>

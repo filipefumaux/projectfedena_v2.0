@@ -1,9 +1,9 @@
 <div id="exam_result">
   <div class="result-info"><%= @exm.subject.course.grade %>-<%= @exm.subject.course.section %>&nbsp;&nbsp;&nbsp;<%=@exm.subject.name%></div>
   <div class="res_tr-head">
-    <div class="res_td_name"><b>Name</b></div>
-    <div class="res_td"> <b>Marks</b> </div>
-    <div class="res_td"> <b>Grade</b></div>
+    <div class="res_td_name"><b><%= t('name') %></b></div>
+    <div class="res_td"> <b><%= t('marks') %></b> </div>
+    <div class="res_td"> <b><%= t('grade') %></b></div>
   </div>
 
 

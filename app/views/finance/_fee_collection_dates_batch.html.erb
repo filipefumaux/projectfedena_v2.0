@@ -2,7 +2,7 @@
 <div id="fee-collections-list">
 <table id="listing">
   <tr class="tr-head">
-    <td>Name</td>
+    <td><%= t('name') %></td>
     <td>Start Date</td>
     <td>End date</td>
     <td>Due date</td>
@@ -16,9 +16,9 @@
       <td class="col-3"><%= f.end_date %></td>
       <td class="col-3"><%= f.due_date %></td>
       <td class="col-1">
-        <div class="edit"><%= link_to_remote 'Edit', :url => {:action => 'fee_collection_edit', :id => f.id} %></div>
+        <div class="edit"><%= link_to_remote t('edit'), :url => {:action => 'fee_collection_edit', :id => f.id} %></div>
         <% unless f.check_fee_category == false %>
-          <div class="delete"><%= link_to_remote 'Delete', :url => {:action => 'fee_collection_delete', :id => f.id },:confirm=>'Are you sure?' %></div>
+          <div class="delete"><%= link_to_remote t('delete'), :url => {:action => 'fee_collection_delete', :id => f.id },:confirm=>t('areYouSure') %></div>
         <% end %>
       </td>
    </tr>

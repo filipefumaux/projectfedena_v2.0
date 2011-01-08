@@ -22,7 +22,7 @@
     </div>
  <% unless @config.config_value == 'Daily' %>
     <div class="label-field-pair">
-      <label for="student">Subject</label>
+      <label for="student"><%= t('subject') %></label>
       <div class="text-input-bg">
             <%= f.select :subject_id,
               @subjects.map {|b| [b.name, b.id] },

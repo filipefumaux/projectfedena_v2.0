@@ -1,6 +1,6 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Exams</h1>
+  <h1><%= t('exams') %></h1>
   <h3>Generated Report</h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -31,17 +31,17 @@
 
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
-        <td>Subject</td>
+        <td><%= t('subject') %></td>
         <% if @exam_group.exam_type == 'Marks' %>
-          <td>Marks</td>
-          <td>Max Marks</td>
+          <td><%= t('marks') %></td>
+          <td><%= t('maxMarks') %></td>
           <td>%</td>
         <% elsif @exam_group.exam_type == 'Grades' %>
-          <td>Grades</td>
+          <td><%= t('grade') %>s</td>
         <% else %>
-          <td>Marks</td>
-          <td>Max Marks</td>
-          <td>Grades</td>
+          <td><%= t('marks') %></td>
+          <td><%= t('maxMarks') %></td>
+          <td><%= t('grade') %>s</td>
           <td>%</td>
         <% end %>
       </tr>
@@ -80,7 +80,7 @@
     </table>
 
     <% if @exam_group.exam_type == 'Marks' or @exam_group.exam_type == 'MarksAndGrades' %>
-      <h5>Class Average Marks : <%="%.2f" %@exam_group.batch_average_marks('marks') unless total_max_marks == 0%> | Class Average % : <%="%.2f" %(@exam_group.batch_average_marks('marks')*100/total_max_marks) unless total_max_marks == 0 %></h5>
+      <h5>><%= t('classAvgMarks') %>s< <%="%.2f" %@exam_group.batch_average_marks('marks') unless total_max_marks == 0%> | Class Average % : <%="%.2f" %(@exam_group.batch_average_marks('marks')*100/total_max_marks) unless total_max_marks == 0 %></h5>
       <script type="text/javascript" src="/javascripts/swfobject.js"></script>
       <%= @graph %>
     <% end %>

@@ -17,19 +17,19 @@
         <div class="category-name"><%= subject.name %></div>
         <div class="opt">
           <div class="category-code"><%= subject.code %></div>
-          <div class="category-edit"><%= link_to_remote('Edit',
+          <div class="category-edit"><%= link_to_remote(t('edit'),
               :url => { :controller=>"subjects",:action => 'edit', :id =>subject,:id2=>@elective_group},
               :method => 'get' ) %> </div>
           <div class="category-delete">
    <% @subject_exams= Exam.find_by_subject_id(subject.id) %>
               <% if @subject_exams.nil? %>
-            <%= link_to_remote('Delete',
+            <%= link_to_remote(t('delete'),
               :url => subject_path(subject),
               :method => 'delete',
-              :confirm => 'Are you sure?',
+              :confirm => t('areYouSure'),
               :update => "subject-#{subject.id}") %>
             <% else %>
-            <s>Delete</s>
+            <s><%= t('delete') %></s>
             <% end %>
             </div>
             <% unless subject.elective_group_id.nil? %>
@@ -61,19 +61,19 @@
           <div class="category-name"><%= subject.name %></div>
           <div class="opt">
             <div class="category-code"><%= subject.code %></div>
-            <div class="category-edit"><%= link_to_remote('Edit',
+            <div class="category-edit"><%= link_to_remote(t('edit'),
                 :url => { :controller=>"subjects",:action => 'edit', :id =>subject,:id2=>@elective_group},
                 :method => 'get' ) %> </div>
             <div class="category-delete">
               <% @subject_exams= Exam.find_by_subject_id(subject.id) %>
               <% if @subject_exams.nil? %>
-              <%= link_to_remote('Delete',
+              <%= link_to_remote(t('delete'),
                 :url => subject_path(subject),
                 :method => 'delete',
-                :confirm => 'Are you sure?',
+                :confirm => t('areYouSure'),
                 :update => "subject-#{subject.id}") %>
               <% else %>
-              <s>Delete</s>
+              <s><%= t('delete') %></s>
               <% end %>
               <% unless subject.elective_group_id.nil? %></div>
               <div class="category-assign"><%= link_to "Assign Students", :controller=>"student", :action=>"electives",:id=>@batch,:id2=>subject.id%>

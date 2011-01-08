@@ -11,7 +11,7 @@
   <div id="search-form">
     <% form_for @search do |f| %>
       <div class="label-field-pair">
-        <label for="name">Name</label>
+        <label for="name"><%= t('name') %></label>
         <div class="text-input-bg">
           <%= f.text_field :first_name_or_middle_name_or_last_name_like %>
         </div>
@@ -36,49 +36,49 @@
       <div class="label-field-pair">
         <label for="student_admission_no">Blood group</label>
         <div class="text-input-bg">
-          <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>"Select"}%>
+          <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>t('select')}%>
         </div>
       </div>
 
       <div class="label-field-pair">
         <label for="student_admission_no">Marital status</label>
         <div class="text-input-bg">
-          <%= select :search, :marital_status_like, ["Single", "Married", "Divorced"],{:prompt=>"Select"}%>
+          <%= select :search, :marital_status_like, ["Single", "Married", "Divorced"],{:prompt=>t('select')}%>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Country</label>
+        <label for="student_admission_no"><%= t('country') %></label>
         <div class="text-input-bg">
-          <%= f.collection_select :nationality_id_equals, Country.all,:id,:name,{:prompt=>"Select"}%>
+          <%= f.collection_select :nationality_id_equals, Country.all,:id,:name,{:prompt=>t('select')}%>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Category</label>
+        <label for="student_admission_no"><%= t('category') %></label>
         <div class="text-input-bg">
-          <%= f.collection_select :employee_category_id_equals, EmployeeCategory.all, :id, :name, {:prompt=>"Select"} %>
+          <%= f.collection_select :employee_category_id_equals, EmployeeCategory.all, :id, :name, {:prompt=>t('select')} %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Department</label>
+        <label for="student_admission_no"><%= t('department') %></label>
         <div class="text-input-bg">
-          <%= f.collection_select :employee_department_id_equals, EmployeeDepartment.all, :id, :name, {:prompt=>"Select"} %>
+          <%= f.collection_select :employee_department_id_equals, EmployeeDepartment.all, :id, :name, {:prompt=>t('select')} %>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Position</label>
+        <label for="student_admission_no"><%= t('employee.position') %></label>
         <div class="text-input-bg">
-          <%= f.collection_select :employee_position_id_equals, EmployeePosition.all, :id, :name, {:prompt=>"Select"}%>
+          <%= f.collection_select :employee_position_id_equals, EmployeePosition.all, :id, :name, {:prompt=>t('select')}%>
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Grade</label>
+        <label for="student_admission_no"><%= t('grade') %></label>
         <div class="text-input-bg">
-          <%= f.collection_select :employee_grade_id_equals, EmployeeGrade.all, :id, :name,{:prompt=>"Select"} %>
+          <%= f.collection_select :employee_grade_id_equals, EmployeeGrade.all, :id, :name,{:prompt=>t('select')} %>
         </div>
       </div>
 
       <div class="label-field-pair">
-        <label for="student_admission_no">Date of joining
+        <label for="student_admission_no"><%= t('employee.dateJoining') %>
           <%= image_tag("loader.gif",
             :align => "absmiddle",
             :border => 0,
@@ -94,7 +94,7 @@
             )}"}
         %>
           <div id="doj_year">
-            <%= select :adv_search,:doj_year,[],{:prompt=>"Select"} %>
+            <%= select :adv_search,:doj_year,[],{:prompt=>t('select')} %>
           </div>
           <div id="doj_year_hidden"></div>
         </div>
@@ -116,7 +116,7 @@
             )}"}
         %>
           <div id="dob_year">
-            <%= select :adv_search,:dob_year,[],{:prompt=>"Select"} %>
+            <%= select :adv_search,:dob_year,[],{:prompt=>t('select')} %>
           </div>
           <div id="dob_year_hidden"></div>
         </div>
@@ -193,7 +193,7 @@
       <div class="searched_for">
         <% unless params[:search][:first_name_or_middle_name_or_last_name_like].empty? %>
           <% searched_for = params[:search][:first_name_or_middle_name_or_last_name_like] %>
-          <span>Name:</span> <%= params[:search][:first_name_or_middle_name_or_last_name_like] %>
+          <span><%= t('name') %>:</span> <%= params[:search][:first_name_or_middle_name_or_last_name_like] %>
         <% end %>
         <% unless  params[:search][:employee_number_equals].empty? %>
           <span>Employee no:</span> <%= params[:search][:employee_number_equals] %>
@@ -221,7 +221,7 @@
             <span> Gender: </span> female
           <% else %>
             <span> Gender: </span> All
-          <% end %>
+          <% end %>m
           <% end %>
         <% unless  params[:search][:blood_group_like].empty? %>
           <span> Blood group:</span> <%= params[:search][:blood_group_like] %>

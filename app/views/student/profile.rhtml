@@ -79,7 +79,7 @@
       <div class="profile_info_text_top2"> <%= @student.language %> </div>
 
 
-      <div class="profile_info_label_top">Category</div>
+      <div class="profile_info_label_top"><%= t('category') %></div>
       <div class="profile_info_text_top"> <%= @student.student_category.name unless @student.student_category.nil? %> </div>
     </div>
 
@@ -93,15 +93,15 @@
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">City</div>
+      <div class="profile_info_label_top2"><%= t('city') %></div>
       <div class="profile_info_text_top2"> <%= @student.city %> </div>
 
-      <div class="profile_info_label_top">State</div>
+      <div class="profile_info_label_top"><%= t('state') %></div>
       <div class="profile_info_text_top"> <%= @student.state %> </div>
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Country</div>
+      <div class="profile_info_label_top2"><%= t('country') %></div>
       <div class="profile_info_text_top2"> <%= @student.country.name unless @student.country_id.nil? %> </div>
 
       <div class="profile_info_label_top">Phone</div>
@@ -182,7 +182,7 @@
       <%= link_to " ► Edit",
         { :controller => "student", :action => "edit", :id => @student.id },:class => "user_button"%>
 
-      <%= link_to " ► PDF Report",
+      <%= link_to " ► " + t('pdfReport'),
         {:controller => "student", :action => "profile_pdf", :id => @student.id},:target => '_blank', :class=> 'user_button' %>
     </div>
   <% elsif permitted_to? :edit, :student %>
@@ -190,7 +190,7 @@
       <%= link_to " ► Edit",
         { :controller => "student", :action => "edit", :id => @student.id },:class => "user_button"%>
 
-      <%= link_to " ► PDF Report",
+      <%= link_to " ► " + t('pdfReport'),
         {:controller => "student", :action => "profile_pdf", :id => @student.id},:target => '_blank', :class=> 'user_button' %>
     </div>
   <% end %>

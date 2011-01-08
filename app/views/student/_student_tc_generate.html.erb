@@ -1,5 +1,5 @@
-<h4>Student deleted successfully!</h4>
+<h4><%= t('student.deleted') %>!</h4>
 <br/>
 <br/>
-<%= link_to " ► Generate TC",
+<%= link_to " ► " + t('student.generateTC'),
         {:controller => "student", :action => "generate_tc_pdf", :id => @student.admission_no},:target => '_blank', :class=> 'user_button' %>

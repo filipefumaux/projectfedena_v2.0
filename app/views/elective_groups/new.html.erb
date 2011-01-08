@@ -8,7 +8,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to 'New', new_batch_elective_group_path(@batch) %></li>
+    <li><%= link_to t('new'), new_batch_elective_group_path(@batch) %></li>
 
   </ul>
 </div>
@@ -19,9 +19,9 @@
   <% end %>
     
 <div class="bread_crumb">
-        <%= link_to 'Courses', courses_path %> &raquo;
+        <%= link_to t('courses'), courses_path %> &raquo;
         <%= link_to @course.full_name, @course %> &raquo;
-        <%= link_to "Batch #{@batch.name}", [@course, @batch] %> &raquo;
+        <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
         <%= link_to 'Electives', batch_elective_groups_path(@batch) %> &raquo;
         New
         </div>
@@ -36,7 +36,7 @@
         <div class="input-container"><%= f.text_field :name %></div>
       </div>
 
-      <%= submit_tag "", :value => "► Save", :class => "submit_button" %>
+      <%= submit_tag "", :value => "► " + t('save'), :class => "submit_button" %>
 
     <% end %>
 

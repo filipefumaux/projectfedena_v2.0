@@ -8,7 +8,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to 'New', new_batch_elective_group_path(@batch) %></li>
+    <li><%= link_to t('new'), new_batch_elective_group_path(@batch) %></li>
 
   </ul>
 </div>
@@ -21,7 +21,7 @@
   <div class="box">
 
     <div class="bread_crumb">
-        <%= link_to 'Courses', courses_path %> &raquo;
+        <%= link_to t('courses'), courses_path %> &raquo;
         <%= link_to @course.full_name, @course %> &raquo;
         <%= link_to @batch.name, [@course, @batch] %> &raquo;
         Elective Group

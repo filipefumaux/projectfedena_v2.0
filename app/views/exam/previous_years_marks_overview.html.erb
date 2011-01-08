@@ -65,7 +65,7 @@
       </div>
       <table id="listing" width="100%">
         <tr class="tr-head">
-          <td>Subject</td>
+          <td><%= t('subject') %></td>
           <% @exam_groups.each do |exam_group| %>
             <td><%= exam_group.name %></td>
           <% end %>
@@ -143,8 +143,8 @@
           <% @additional_exams = AdditionalExam.find_all_by_additional_exam_group_id(additional_exam_group) %>
           <table id="additional_listing" width="100%">
             <tr class="tr-head">
-              <td>Subject</td>
-              <% unless additional_exam_group.exam_type == "Grades" %>      <td>Marks</td> <% end %>
+              <td><%= t('subject') %></td>
+              <% unless additional_exam_group.exam_type == "Grades" %>      <td><%= t('marks') %></td> <% end %>
               <% unless additional_exam_group.exam_type == "Marks" %> <td> Grades </td><% end %>
             </tr>
             <% @additional_exams.each do |exam| %>

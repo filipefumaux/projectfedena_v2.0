@@ -50,7 +50,7 @@
 <%# form_for :class_timing do |f| %>
 
 <%#*<div class="label-field-pair">%>
-<%#*<label for="period_timing_name">Name</label>%>
+<%#*<label for="period_timing_name"><%= t('name') %></label>%>
 <%#*<div class="text-input-bg"><%= f.text_field :name </div>%>
 <%#*</div>%>
 
@@ -69,7 +69,7 @@
 <%#*</div>%>
 
 <%#*<div class="submit-button">%>
-<%#= submit_tag "", :value => "► Create" %>
+<%#= submit_tag "", :value => "► " + t('create') %>
 <%#*</div>%>
 
 <%# end %>
@@ -80,7 +80,7 @@
 
 <%#*<div id="class-timing-list">%>
 <%#*<div class="class-timing-th">%>
-<%#*<div class="class-timing-td1"><b>Name</b></div>%>
+<%#*<div class="class-timing-td1"><b><%= t('name') %></b></div>%>
 <%#*<div class="class-timing-td2"><b>Start Time</b></div>%>
 <%#*<div class="class-timing-td3"><b>End Time</b></div>%>
 <%#*<div class="class-timing-td4"> </div>%>

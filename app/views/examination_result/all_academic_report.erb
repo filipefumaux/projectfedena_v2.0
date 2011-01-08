@@ -34,7 +34,7 @@
           <% end %>
             <td><div><%= max_total.to_i %></div></td>
         </tr>
-        <tr class="tr-odd"><td class="td-name"><div><b>Marks</b></div></td>
+        <tr class="tr-odd"><td class="td-name"><div><b><%= t('marks') %></b></div></td>
           <% total = 0 %>
           <% exam.each do |t| %>
             <% examres = ExaminationResult.find_by_examination_id_and_student_id(t.id, @student.id) %>

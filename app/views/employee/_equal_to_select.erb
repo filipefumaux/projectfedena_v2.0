@@ -1,4 +1,4 @@
-<%= select :adv_search, :joining_date_year, (1990..2010),{:prompt=>"Select"},
+<%= select :adv_search, :joining_date_year, (1990..2010),{:prompt=>t('select')},
 {:onChange => "#{remote_function(:url => {:action => "doj_equal_to_update"},
         :with => "'year='+value"
         )}"}

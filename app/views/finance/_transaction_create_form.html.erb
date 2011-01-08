@@ -16,10 +16,10 @@
         <div class="text-field-bg"><%= form.text_field :amount %> </div>
       </div>
       <div class="label-field-pair">
-        <label for="category">Category</label>
+        <label for="category"><%= t('category') %></label>
         <div class="text-input-bg"><%= select :transaction, :category_id, @categories.map { |c| [c.name, c.id] },:prompt=>'Select a category' %></div>
       </div>
 
-       <%=  submit_tag "► Save",:class=>'submit_button' %>
+       <%=  submit_tag "► " + t('save'),:class=>'submit_button' %>
   </div>
 <% end %>

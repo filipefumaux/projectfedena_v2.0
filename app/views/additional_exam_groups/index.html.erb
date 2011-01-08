@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
   <h1><%= t('exam.additionalExams') %></h1>
-  <h3><%= "Additional Exam groups" %></h3>
+  <h3><%= t('exam.additionalGoups') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -9,7 +9,7 @@
 <div id="inner-tab-menu">
   <ul>
     <% if permitted_to? :new, :additional_exam_groups %>
-    <li><%= link_to "New", new_batch_additional_exam_group_path(@batch) %></li>
+    <li><%= link_to t('new'), new_batch_additional_exam_group_path(@batch) %></li>
     <% end %>
   </ul>
 </div>
@@ -21,9 +21,9 @@
 
   <div class="box">
     <div class="bread_crumb">
-      <%= 'Courses' %> &raquo;
+      <%= t('courses') %> &raquo;
       <%= @course.full_name %> &raquo;
-      <%="Batch #{@batch.name}"%> &raquo;
+      <%= t('batch') + " #{@batch.name}"%> &raquo;
      Additional Exams
     </div>
 
@@ -40,7 +40,7 @@
             <%= link_to exam_group.name, [@batch, exam_group] %></td>
           <td class="col-2"><small>
               <% unless exam_group.is_published %>
-                <%= link_to_remote("Publish Exam Schedule",:url=>{:controller=>'additional_exam',:action=>'publish',:id=>exam_group.id,:status=>"schedule"},
+                <%= link_to_remote(t('exam.publishSchedule'),:url=>{:controller=>'additional_exam',:action=>'publish',:id=>exam_group.id,:status=>"schedule"},
                   :before => "Element.show('loader')",
                   :success => "Element.hide('loader')")  %>
                   <% else  %>
@@ -50,11 +50,11 @@
                       :before => "Element.show('loader')",
                       :success => "Element.hide('loader')"  %> SMS notification.<br />
                       <% end %>
-                                <%= link_to_remote("Publish Exam Result",:url=>{:controller=>'additional_exam',:action=>'publish',:id=>exam_group.id,:status=>"result"},
+                                <%= link_to_remote(t('exam.publishResult'),:url=>{:controller=>'additional_exam',:action=>'publish',:id=>exam_group.id,:status=>"result"},
                                           :before => "Element.show('loader')",
                                           :success => "Element.hide('loader')")  %>
                                 <% else %>
-                               Result published. <% if @config.include?('SMS') %>
+                               <%= t('resultPublished') %> <% if @config.include?('SMS') %>
                                <%= link_to_remote "Resend  SMS notification",:url=>{:controller=>'additional_exam',:action=>'publish',:id=>exam_group.id,:status=>"result"},
                       :before => "Element.show('loader')",
                       :success => "Element.hide('loader')"  %>

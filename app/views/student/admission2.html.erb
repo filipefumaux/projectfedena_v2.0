@@ -132,21 +132,21 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="parent_detail_city">City</label>
+          <label for="parent_detail_city"><%= t('city') %></label>
           <div class="text-input-bg"><%= f.text_field :city %></div>
         </div>
 
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="parent_detail_state">State</label>
+          <label for="parent_detail_state"><%= t('state') %></label>
           <div class="text-input-bg"><%= f.text_field :state %></div>
         </div>
 
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="parent_detail_country">Country</label>
+          <label for="parent_detail_country"><%= t('country') %></label>
           <div class="text-input-bg"> <%= select :guardian, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => 76 %> </div>
         </div>
 

@@ -1,5 +1,5 @@
 <% if @archived_students.nil? or @archived_students.empty? %>
-  <div id="no_result">No users found</div>
+  <div id="no_result"><%= t('noUserFound') %></div>
 <% else %>
   <% @archived_students.each_with_index do |r, i| %>
     <%= '<div class="students-on-one-line">' if i%4 == 0 %>

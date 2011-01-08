@@ -17,7 +17,7 @@
   <% form_for :student, :url => {:action => 'edit'}, :html => {:multipart => true} do |s| %>
 
     <div id="admission1-form">
-      <div id="necessary-field-notification"> Fields marked with <span class="necessary-field">*</span> must be filled.</div>
+      <div id="necessary-field-notification"> <%= t('warningFieldFill') %>/div>
 
       <div id="autofill_area">
 
@@ -135,7 +135,7 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_category">Category</label>
+          <label for="master_student_category"><%= t('category') %></label>
           <div class="text-input-bg"><%= select :student, :student_category_id, @student_categories.map {|c| [c.name, c.id]}, { :prompt => 'Select category' } %></div>
         </div>
       </div>
@@ -161,14 +161,14 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_city">City</label>
+          <label for="master_student_city"><%= t('city') %></label>
           <div class="text-input-bg"><%= s.text_field :city, :value => @student.city %></div>
         </div>
 
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_state">State</label>
+          <label for="master_student_state"><%= t('state') %></label>
           <div class="text-input-bg"><%= s.text_field :state, :value =>@student.state %></div>
         </div>
 
@@ -182,7 +182,7 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_country">Country</label>
+          <label for="master_student_country"><%= t('country') %></label>
           <div class="text-input-bg"><%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => @student.country.id %></div>
         </div>
 

@@ -43,7 +43,7 @@
       </div>
       <table id="listing" width="100%">
         <tr class="tr-head">
-          <td>Subject</td>
+          <td><%= t('subject') %></td>
           <% @exam_groups.each do |exam_group| %>
             <td><%= exam_group.name %></td>
           <% end %>

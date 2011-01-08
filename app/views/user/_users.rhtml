@@ -1,5 +1,5 @@
 <% if @users.nil? or @users.empty? %>
-  <div id="user_no_result">No users found</div>
+  <div id="user_no_result"><%= t('noUserFound') %></div>
 <% else %>
   <div class="students-table">
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">

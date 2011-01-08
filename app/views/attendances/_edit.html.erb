@@ -21,6 +21,6 @@
     <div id="delete-button"><%= link_to_remote('► Delete',
           :url => attendance_path(@absentee),
           :method =>'delete',
-          :confirm => 'Are you sure?') %></div>
+          :confirm => t('areYouSure')) %></div>
 <div id="form-errors"></div>
 </div>

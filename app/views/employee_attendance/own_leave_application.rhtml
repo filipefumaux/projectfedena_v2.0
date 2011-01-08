@@ -19,7 +19,7 @@
 
        <div id="leave-info">
          <ul id="category-list">
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name">Name:</div>
+       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('name') %>:</div>
       <%= @employee.first_name %></li>
        <li class="list<%= cycle('odd','even') %>"><div class="category-name">Manager Name:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>

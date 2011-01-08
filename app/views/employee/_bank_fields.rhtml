@@ -1,6 +1,6 @@
 <ul id="category-list">
 <% unless @bank_details.empty? %>
-  <li class="heading"> Field name </li>
+  <li class="heading"> <%= t('fieldName') %> </li>
     <%- @bank_details.each do |c| -%>
       <li class="list<%=cycle('odd', 'even')%>">
         <div class="category-name"><%= c.name %></div>

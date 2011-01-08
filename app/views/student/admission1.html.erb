@@ -22,7 +22,7 @@
 
     <div id="admission1_form">
 
-      <div id="necessary-field-notification"> Fields marked with <span class="necessary-field">*</span> must be filled.</div>
+      <div id="necessary-field-notification"> <%= t('warningFieldFill') %>/div>
 
       <div id="autofill-area">
 
@@ -133,7 +133,7 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="student_category">Category</label>
+          <label for="student_category"><%= t('category') %></label>
           <div class="text-input-bg"><%= s.select :student_category_id, StudentCategory.all.map {|c| [c.name, c.id]}, { :prompt => 'Select category' } %></div>
         </div>
 
@@ -162,13 +162,13 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="student_city">City</label>
+          <label for="student_city"><%= t('city') %></label>
           <div class="text-input-bg"><%= s.text_field :city %></div>
         </div>
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="student_state">State</label>
+          <label for="student_state"><%= t('state') %></label>
           <div class="text-input-bg"><%= s.text_field :state %></div>
         </div>
         <hr class="label-underline"></hr>
@@ -180,7 +180,7 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="student_country">Country</label>
+          <label for="student_country"><%= t('country') %></label>
           <div class="text-input-bg"> <%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected=> 76 %> </div>
         </div>
 

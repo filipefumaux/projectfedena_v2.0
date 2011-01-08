@@ -8,13 +8,13 @@
   <div class="extender"></div>
   <div class="res-table">
     <table border="0" align="center" width="100%" >
-      <tr class="tr-head"><td class="td-name"><div><b>Name</b></div></td>
+      <tr class="tr-head"><td class="td-name"><div><b><%= t('name') %></b></div></td>
         <%- @exams.each do |exam| -%>
         <% res = ExaminationResult.find_by_examination_id(exam.id) %>
           <td width="200" class="td-subj"><b><%= res.examination.subject.code %></b></td>
         
         <%end%>
-          <td width="200" class="td-subj"><div><b>Max Marks</b></div></td>
+          <td width="200" class="td-subj"><div><b><%= t('maxMarks') %></b></div></td>
       </tr>
 
       <% @students.each do |s| %>

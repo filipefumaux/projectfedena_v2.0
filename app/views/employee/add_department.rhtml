@@ -23,7 +23,7 @@
     </div>
 
     <div class="label-field-pair">
-      <label for="department_name">Name</label>
+      <label for="department_name"><%= t('name') %></label>
       <div class="text-input-bg"> <%= c.text_field :name %> </div>
     </div>
 
@@ -39,7 +39,7 @@
     </div>
 
     <div id="submit-button">
-      <%=submit_tag("► Create") %>
+      <%=submit_tag("► " + t('create')) %>
     </div>
 </div>
 

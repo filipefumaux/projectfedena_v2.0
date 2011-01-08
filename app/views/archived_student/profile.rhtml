@@ -76,7 +76,7 @@
       <div class="profile_info_text_top2"> <%= @archived_student.language %> </div>
 
 
-      <div class="profile_info_label_top">Category</div>
+      <div class="profile_info_label_top"><%= t('category') %></div>
       <div class="profile_info_text_top"> <%= @archived_student.student_category.name unless @archived_student.student_category.nil? %> </div>
     </div>
 
@@ -90,15 +90,15 @@
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">City</div>
+      <div class="profile_info_label_top2"><%= t('city') %></div>
       <div class="profile_info_text_top2"> <%= @archived_student.city %> </div>
 
-      <div class="profile_info_label_top">State</div>
+      <div class="profile_info_label_top"><%= t('state') %></div>
       <div class="profile_info_text_top"> <%= @archived_student.state %> </div>
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Country</div>
+      <div class="profile_info_label_top2"><%= t('country') %></div>
       <div class="profile_info_text_top2"> <%= @archived_student.country.name unless @archived_student.country_id.nil? %> </div>
 
       <div class="profile_info_label_top">Phone 1</div>

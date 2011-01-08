@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Additional Exams</h1>
-  <h3>Result Entry</h3>
+  <h1><%= t('exam.additionalExams') %></h1>
+  <h3><%= t('resultEntry') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -14,7 +14,7 @@
   <% end %>
     <div class="box">
        <div class="bread_crumb">
-       <%=  'Courses'%> &raquo;
+       <%=  t('courses')%> &raquo;
         <%= @additional_exam_group.batch.course.full_name%> &raquo;
         <%=@additional_exam_group.batch.name %> &raquo;
         <%= link_to 'Additional Exams', batch_additional_exam_groups_path(@batch) %> &raquo;
@@ -27,15 +27,15 @@
 
       <table id="listing" width="100%">
         <tr class="tr-head">
-          <td>Name</td>
+          <td><%= t('name') %></td>
           <% unless @additional_exam_group.exam_type == 'Grades' %>
-            <td>Marks</td>
+            <td><%= t('marks') %></td>
           <% else %>
-            <td>Grades</td>
+            <td><%= t('grade') %>s</td>
           <% end %>
-          <td>Remarks(absent/disqualified etc)</td>
+          <td><%= t('remarks') %></td>
           <% unless @additional_exam_group.exam_type == 'Marks' %>
-            <td>Grade</td>
+            <td><%= t('grade') %></td>
           <% end %>
         </tr>
         <% @students.each do |student| %>
@@ -62,7 +62,7 @@
         <% end %>
 
       </table>
-      <div id="sub-button"><%= submit_tag "", :value => "► Save", :class => "submit_button" %></div>
+      <div id="sub-button"><%= submit_tag "", :value => "► " + t('save'), :class => "submit_button" %></div>
     <% end %>
 
     <div class="extender"></div>
