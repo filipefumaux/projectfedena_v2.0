@@ -14,7 +14,7 @@
      <%= f.hidden_field :students_list,:value=>@students_list %>
     <div class="text-input-bg">
     <%= f.text_field :exam_type, :value=>@type,:disabled=>true %>
-    </div>  <%= link_to "Change Type", new_batch_additional_exam_group_path(@batch,:ename=>@name),:class=>"type_link" %>
+    </div>  <%= link_to t('exam.changeType'), new_batch_additional_exam_group_path(@batch,:ename=>@name),:class=>"type_link" %>
   </div>
 
   <h4>    Enter exam related details here:  </h4>
@@ -37,6 +37,6 @@
     <% end %>
   </table>
 
-  <%= submit_tag "", :value => "► Save Changes", :class => "submit_button2" %>
+  <%= submit_tag "", :value => t('saveChanges'), :class => "submit_button2" %>
 
 <% end %>
