@@ -3,253 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="571ea0dd-1729-4a7b-9a96-4ef39c45afba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exam_groups/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exam_groups/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exam_groups/index.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exam_groups/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exam_groups/new.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exam_groups/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exam_groups/show.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exam_groups/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exams/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exams/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exams/new.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exams/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/additional_exams/show.html.erb" afterPath="$PROJECT_DIR$/app/views/additional_exams/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_address.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_address.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_bank_details.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_bank_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_contact.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_contact.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_general.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_general.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_employee/_personal.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_employee/_personal.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/academic_report.html.erb" afterPath="$PROJECT_DIR$/app/views/archived_student/academic_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/generated_report.html.erb" afterPath="$PROJECT_DIR$/app/views/archived_student/generated_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/generated_report3.html.erb" afterPath="$PROJECT_DIR$/app/views/archived_student/generated_report3.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/generated_report4.html.erb" afterPath="$PROJECT_DIR$/app/views/archived_student/generated_report4.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/previous_years_marks_overview.html.erb" afterPath="$PROJECT_DIR$/app/views/archived_student/previous_years_marks_overview.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/attendances/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/attendances/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/attendances/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/attendances/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/attendances/_register.html.erb" afterPath="$PROJECT_DIR$/app/views/attendances/_register.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batch_transfers/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/batch_transfers/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batch_transfers/_previous_batch_subjects.erb" afterPath="$PROJECT_DIR$/app/views/batch_transfers/_previous_batch_subjects.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batch_transfers/graduation.html.erb" afterPath="$PROJECT_DIR$/app/views/batch_transfers/graduation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batch_transfers/show.html.erb" afterPath="$PROJECT_DIR$/app/views/batch_transfers/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/new.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/show.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/class_timings/_show_batch_timing.erb" afterPath="$PROJECT_DIR$/app/views/class_timings/_show_batch_timing.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/class_timings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/class_timings/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/configuration/settings.html.erb" afterPath="$PROJECT_DIR$/app/views/configuration/settings.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/course/email.rhtml" afterPath="$PROJECT_DIR$/app/views/course/email.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/index.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/manage_batches.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/manage_batches.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/manage_course.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/manage_course.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/new.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/show.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/elective_groups/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/elective_groups/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/elective_groups/index.html.erb" afterPath="$PROJECT_DIR$/app/views/elective_groups/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/elective_groups/new.html.erb" afterPath="$PROJECT_DIR$/app/views/elective_groups/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/elective_groups/show.html.erb" afterPath="$PROJECT_DIR$/app/views/elective_groups/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_additional_fields.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_additional_fields.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_address.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_address.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_bank_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_bank_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_bank_fields.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_bank_fields.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_contact.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_contact.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_employee_list.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_employee_list.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_employee_view_all_list.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_employee_view_all_list.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_equal_to_select.erb" afterPath="$PROJECT_DIR$/app/views/employee/_equal_to_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_equal_to_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/employee/_equal_to_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_general.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_general.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_greater_than_select.erb" afterPath="$PROJECT_DIR$/app/views/employee/_greater_than_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_greater_than_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/employee/_greater_than_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_less_than_select.erb" afterPath="$PROJECT_DIR$/app/views/employee/_less_than_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_less_than_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/employee/_less_than_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_list_payslip_category.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_list_payslip_category.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_payslip_category_form.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_payslip_category_form.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_personal.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_personal.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_positions.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_positions.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_select_department.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_select_department.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_subjects.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/_subjects.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_bank_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_bank_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_category.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_category.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_department.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_department.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_grade.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_grade.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/add_position.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/add_position.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/admission1.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/admission1.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/admission2.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/admission2.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/advanced_search.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/advanced_search.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/change_reporting_manager.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/change_reporting_manager.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/create_monthly_payslip.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/create_monthly_payslip.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/department_payslip.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/department_payslip.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit2.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit2.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_bank_details.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_bank_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_category.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_category.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_contact.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_contact.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_department.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_department.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_grade.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_grade.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_personal.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_personal.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_position.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_position.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_privilege.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/edit_privilege.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_attendance_form.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_attendance_form.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/add_leave_types.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/add_leave_types.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/edit_leave_types.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/edit_leave_types.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leave_app.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leave_app.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendances/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/employee_attendances/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendances/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/employee_attendances/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendances/_register.html.erb" afterPath="$PROJECT_DIR$/app/views/employee_attendances/_register.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/_exam_marks_form.rhtml" afterPath="$PROJECT_DIR$/app/views/exam/_exam_marks_form.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/academic_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/academic_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/consolidated_exam_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/consolidated_exam_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/create_exam.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/create_exam.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/enter_result.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/enter_result.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/exam_wise_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/exam_wise_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/generated_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/generated_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/generated_report2.erb" afterPath="$PROJECT_DIR$/app/views/exam/generated_report2.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/generated_report3.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/generated_report3.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/generated_report4.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/generated_report4.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/grouped_exam_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/grouped_exam_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/grouping.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/grouping.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/index.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/previous_years_marks_overview.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/previous_years_marks_overview.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam/subject_wise_report.html.erb" afterPath="$PROJECT_DIR$/app/views/exam/subject_wise_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam_groups/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/exam_groups/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam_groups/index.html.erb" afterPath="$PROJECT_DIR$/app/views/exam_groups/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam_groups/new.html.erb" afterPath="$PROJECT_DIR$/app/views/exam_groups/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exam_groups/show.html.erb" afterPath="$PROJECT_DIR$/app/views/exam_groups/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/_all_sub_exam_result.html.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/_all_sub_exam_result.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/_exam_result.html.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/_exam_result.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/_one_sub_exam_result.html.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/_one_sub_exam_result.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/_student_result_for_examtype.rhtml" afterPath="$PROJECT_DIR$/app/views/examination_result/_student_result_for_examtype.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/all_academic_report.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/all_academic_report.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exams/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/exams/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exams/new.html.erb" afterPath="$PROJECT_DIR$/app/views/exams/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exams/show.html.erb" afterPath="$PROJECT_DIR$/app/views/exams/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_add_particulars_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_add_particulars_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_additional_fees_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_additional_fees_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_additional_particulars_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_additional_particulars_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_asset_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_asset_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_asset_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_asset_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_category_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_category_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_category_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_category_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_category_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_category_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_create_asset_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_create_asset_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_create_liability_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_create_liability_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_particulars_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_particulars_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fees_particulars_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fees_particulars_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_liability_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_liability_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_liability_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_liability_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_particulars_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_particulars_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_particulars_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_particulars_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_student_defaulters.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_student_defaulters.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_transaction_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_transaction_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_transaction_trigger_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_transaction_trigger_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/additional_fees_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/additional_fees_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/donors.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/donors.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/fees_student_structure_search_logic.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/fees_student_structure_search_logic.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/search_logic.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/search_logic.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/grading_levels/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/grading_levels/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/grading_levels/_grading_levels.html.erb" afterPath="$PROJECT_DIR$/app/views/grading_levels/_grading_levels.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/grading_levels/index.html.erb" afterPath="$PROJECT_DIR$/app/views/grading_levels/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/news/_comment.rhtml" afterPath="$PROJECT_DIR$/app/views/news/_comment.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/news/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/news/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/payroll/add_category.rhtml" afterPath="$PROJECT_DIR$/app/views/payroll/add_category.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/payroll/edit_category.rhtml" afterPath="$PROJECT_DIR$/app/views/payroll/edit_category.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/payroll/edit_payroll_details.rhtml" afterPath="$PROJECT_DIR$/app/views/payroll/edit_payroll_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reminder/_send_reminder.rhtml" afterPath="$PROJECT_DIR$/app/views/reminder/_send_reminder.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reminder/create_reminder.rhtml" afterPath="$PROJECT_DIR$/app/views/reminder/create_reminder.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reminder/view_reminder.rhtml" afterPath="$PROJECT_DIR$/app/views/reminder/view_reminder.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_additional_fields.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_additional_fields.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_all_assign.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_all_assign.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_assign_students.html.erb" afterPath="$PROJECT_DIR$/app/views/student/_assign_students.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_equal_to_select.erb" afterPath="$PROJECT_DIR$/app/views/student/_equal_to_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_equal_to_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/student/_equal_to_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_greater_than_select.erb" afterPath="$PROJECT_DIR$/app/views/student/_greater_than_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_greater_than_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/student/_greater_than_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_less_than_select.erb" afterPath="$PROJECT_DIR$/app/views/student/_less_than_select.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_less_than_select_dob.erb" afterPath="$PROJECT_DIR$/app/views/student/_less_than_select_dob.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_previous_subject.html.erb" afterPath="$PROJECT_DIR$/app/views/student/_previous_subject.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_search_ajax.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_search_ajax.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_student_category_create_form.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_student_category_create_form.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_student_category_edit_form.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_student_category_edit_form.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_student_category_list.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_student_category_list.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_student_result_for_examtype.rhtml" afterPath="$PROJECT_DIR$/app/views/student/_student_result_for_examtype.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/_student_tc_generate.html.erb" afterPath="$PROJECT_DIR$/app/views/student/_student_tc_generate.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/academic_report.rhtml" afterPath="$PROJECT_DIR$/app/views/student/academic_report.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/academic_report_all.rhtml" afterPath="$PROJECT_DIR$/app/views/student/academic_report_all.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/add_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/student/add_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission1.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission1.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission2.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission2.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/advanced_search.rhtml" afterPath="$PROJECT_DIR$/app/views/student/advanced_search.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit_additional_details.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit_additional_details.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit_admission4.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit_admission4.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/electives.html.erb" afterPath="$PROJECT_DIR$/app/views/student/electives.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/email.rhtml" afterPath="$PROJECT_DIR$/app/views/student/email.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/student/profile.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/search_ajax.rhtml" afterPath="$PROJECT_DIR$/app/views/student/search_ajax.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/subject_wise_report.rhtml" afterPath="$PROJECT_DIR$/app/views/student/subject_wise_report.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student_attendance/student.html.erb" afterPath="$PROJECT_DIR$/app/views/student_attendance/student.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subjects/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/subjects/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subjects/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/subjects/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subjects/_subjects.html.erb" afterPath="$PROJECT_DIR$/app/views/subjects/_subjects.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/timetable/_extra_class_form.html.erb" afterPath="$PROJECT_DIR$/app/views/timetable/_extra_class_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/timetable/_extra_class_update.html.erb" afterPath="$PROJECT_DIR$/app/views/timetable/_extra_class_update.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/timetable/_view_timetable.rhtml" afterPath="$PROJECT_DIR$/app/views/timetable/_view_timetable.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/_users.rhtml" afterPath="$PROJECT_DIR$/app/views/user/_users.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/change_password.rhtml" afterPath="$PROJECT_DIR$/app/views/user/change_password.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/create.rhtml" afterPath="$PROJECT_DIR$/app/views/user/create.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/edit.rhtml" afterPath="$PROJECT_DIR$/app/views/user/edit.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/edit_privilege.html.erb" afterPath="$PROJECT_DIR$/app/views/user/edit_privilege.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/login.html.erb" afterPath="$PROJECT_DIR$/app/views/user/login.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/user/profile.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/search_user_ajax.rhtml" afterPath="$PROJECT_DIR$/app/views/user/search_user_ajax.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/user_change_password.rhtml" afterPath="$PROJECT_DIR$/app/views/user/user_change_password.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/weekday/_weekdays.html.erb" afterPath="$PROJECT_DIR$/app/views/weekday/_weekdays.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/_source/classes/fckenterkey.js" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/_source/classes/fckenterkey.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_button.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_button.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_checkbox.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_checkbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_form.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_hiddenfield.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_hiddenfield.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_link.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_link.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_radiobutton.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_radiobutton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_select.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_select.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_textarea.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_textarea.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_textfield.html" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/dialog/fck_textfield.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/js/fckeditorcode_gecko.js" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/js/fckeditorcode_gecko.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/js/fckeditorcode_ie.js" afterPath="$PROJECT_DIR$/public/javascripts/fckeditor/editor/js/fckeditorcode_ie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/_source/classes/fckenterkey.js" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/_source/classes/fckenterkey.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_button.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_button.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_checkbox.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_checkbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_form.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_hiddenfield.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_hiddenfield.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_link.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_link.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_radiobutton.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_radiobutton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_select.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_select.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_textarea.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_textarea.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_textfield.html" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/dialog/fck_textfield.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/js/fckeditorcode_gecko.js" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/js/fckeditorcode_gecko.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/js/fckeditorcode_ie.js" afterPath="$PROJECT_DIR$/vendor/plugins/fckeditor/public/javascripts/fckeditor/editor/js/fckeditorcode_ie.js" />
     </list>
     <ignored path="Fedena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -284,7 +38,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="academic_report_all.rhtml" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="academic_report_all.rhtml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/student/academic_report_all.rhtml">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -297,10 +51,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="en.yml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="165" column="44" selection-start="6159" selection-end="6159" vertical-scroll-proportion="0.94755244">
+                <state line="135" column="18" selection-start="5350" selection-end="5350" vertical-scroll-proportion="0.12195122">
                   <folding />
                 </state>
               </provider>
@@ -500,10 +254,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -790,16 +544,16 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06554878" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2245223" sideWeight="0.9344512" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32961783" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06554878" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -841,112 +595,82 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/user/_users.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="64" selection-end="64" vertical-scroll-proportion="0.038961038">
-          <folding />
-        </state>
+        <state line="1" column="26" selection-start="64" selection-end="64" vertical-scroll-proportion="0.038961038" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/search_ajax.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.038961038">
-          <folding />
-        </state>
+        <state line="1" column="21" selection-start="65" selection-end="65" vertical-scroll-proportion="0.038961038" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/search_logic.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="53" selection-end="53" vertical-scroll-proportion="0.074257426">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="53" selection-end="53" vertical-scroll-proportion="0.074257426" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="83" selection-end="83" vertical-scroll-proportion="0.111386135">
-          <folding />
-        </state>
+        <state line="3" column="21" selection-start="83" selection-end="83" vertical-scroll-proportion="0.111386135" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/fees_student_structure_search_logic.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="53" selection-end="53" vertical-scroll-proportion="0.07092199">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="53" selection-end="53" vertical-scroll-proportion="0.07092199" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_search_ajax.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="102" selection-end="102" vertical-scroll-proportion="0.033936653">
-          <folding />
-        </state>
+        <state line="1" column="40" selection-start="102" selection-end="102" vertical-scroll-proportion="0.033936653" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_previous_subject_added.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_student_category_create_form.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.36263737">
-          <folding />
-        </state>
+        <state line="11" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.36263737" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_student_category_edit_form.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="149" selection-end="149" vertical-scroll-proportion="0.101809956">
-          <folding />
-        </state>
+        <state line="3" column="31" selection-start="149" selection-end="149" vertical-scroll-proportion="0.101809956" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_student_category_list.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="174" selection-start="349" selection-end="349" vertical-scroll-proportion="0.1626898">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="44" selection-start="6159" selection-end="6159" vertical-scroll-proportion="0.94755244">
-          <folding />
-        </state>
+        <state line="5" column="174" selection-start="349" selection-end="349" vertical-scroll-proportion="0.1626898" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/academic_pdf.pdf.prawn">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.9775281">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.9775281" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_student_tc_generate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="119" selection-end="119" vertical-scroll-proportion="0.11472275">
-          <folding />
-        </state>
+        <state line="4" column="24" selection-start="119" selection-end="119" vertical-scroll-proportion="0.11472275" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_student_result_for_examtype.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="41" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.68809074">
-          <folding />
-        </state>
+        <state line="49" column="41" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.68809074" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/_greater_than_dob_select.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/academic_report_all.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="18" selection-start="5350" selection-end="5350" vertical-scroll-proportion="0.12195122">
           <folding />
         </state>
       </provider>
