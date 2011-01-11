@@ -53,16 +53,16 @@
       <%= error_messages_for :leave_apply %>
       <%= l.hidden_field :employee_id, :value=>@employee.id %>
       <div class="label-field-pair">
-        <label for="leave_type">Leave type:</label>
+        <label for="leave_type"><%= t('attendance.leaveType') %>:</label>
         <div class="text-input-bg"><%= select :leave_apply, :employee_leave_types_id, @leave_types.map {|s| [s.name, s.id]},:prompt => t('select') %></div>
       </div>
       <div class="label-field-pair">
-          <label for="create_user" id="create_user_option"> Is half day?</label>
+          <label for="create_user" id="create_user_option"> <%= t('attendance.isHalfDay') %></label>
          <div class="text-input-bg"><%= check_box_tag :is_half_day, :checked => false %></div>
       </div>
 
       <div class="label-field-pair">
-        <label for="start_date">Start date</label>
+        <label for="start_date"><%= t('employee.startDate') %></label>
         <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[start_date]'  %></div>
       </div>
       <div class="label-field-pair">
@@ -70,8 +70,8 @@
         <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[end_date]'  %></div>
       </div>
       <div class="label-field-pair">
-        <label for="reason">Reason:</label>
-        <div class="text-input-bg"><%= l.text_field   :reason %></div>
+        <label for="reason"><%= t('employee.reason') %></label>
+        <div class="text-input-bg"><%= l.text_field   :reason %></div><%= t('employee.startDate') %>
       </div>
       
 

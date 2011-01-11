@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
-  <h1>Batches</h1>
-  <h3>New Electives</h3>
+  <h1><%= t('batch.batches') %></h1>
+  <h3><%= t('batch.newElectives') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -22,7 +22,7 @@
         <%= link_to t('courses'), courses_path %> &raquo;
         <%= link_to @course.full_name, @course %> &raquo;
         <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
-        <%= link_to 'Electives', batch_elective_groups_path(@batch) %> &raquo;
+        <%= link_to t('electives'), batch_elective_groups_path(@batch) %> &raquo;
         New
         </div>
   <div class="box">

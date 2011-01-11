@@ -1,6 +1,6 @@
  <div id="content-header">
   <img src="/images/attendence/attendence.png" alt="" />
-    <h1>Leave Application</h1>
+    <h1><%= t('employee.leaveApp') %></h1>
     <h3>Pending approval</h3>
     <div id="app-back-button">
      <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -25,7 +25,7 @@
        <li class="listeven"><div class="item-name">Manager Name:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>
        <%= Employee.find(reporting_manager).first_name %></li>
-     <li class="listodd"><div class="item-name">Leave type:</div>
+     <li class="listodd"><div class="item-name"><%= t('attendance.leaveType') %>:</div>
         <%= @leave_type.name %></li>
      <li class="listeven"><div class="item-name">Half day:</div>
         <% if @applied_leave.is_half_day == true %>
@@ -38,7 +38,7 @@
         <%= @applied_leave.start_date.strftime("%d %b, %Y") %></li>
        <li class="listeven"><div class="item-name">Leave end date:</div>
         <%= @applied_leave.end_date.strftime("%d %b, %Y") %></li>
-      <li class="listodd"><div class="item-name">Reason:</div>
+      <li class="listodd"><div class="item-name"><%= t('employee.reason') %></div>
         <%= @applied_leave.reason %></li>
        <li class="listeven"><div class="item-name">Status:</div>
         <%= "Approved" if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>

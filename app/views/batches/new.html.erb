@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam" />
   <h1><%= t('courses') %></h1>
-  <h3>New Batch</h3>
+  <h3><%= t('batch.new') %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -18,7 +18,7 @@
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @course.full_name, @course %> &raquo;
-      New batch
+      <%= t('batch.new') %>
     </div>
 
     <% form_for [@course, @batch] do |f| %>

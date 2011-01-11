@@ -588,7 +588,7 @@ class FinanceController < ApplicationController
       )
       body = "<p>Fee submission date for "+@additional_category.name+" has been published <br />
                                Fees submitting date starts on<br />
-                               Start date :"+@collection_date.start_date.to_s+"<br />"+
+                               " + t('employee.startDate') + " :"+@collection_date.start_date.to_s+"<br />"+
         "End date :"+@collection_date.end_date.to_s+"<br /"+
         "Due date :"+@collection_date.due_date.to_s
       subject = "Fees submission date"
@@ -762,7 +762,7 @@ class FinanceController < ApplicationController
         @students = Student.find_all_by_batch_id(b)
         @students.each do |s|
           body = "<p><b>Fee submission date for<i>"+fee_category.name+"</i>has been published</b><br /><br/>
-                                Start date :"+@finance_fee_collection.start_date.to_s+"<br />"+
+                                " + t('employee.startDate') + " :"+@finance_fee_collection.start_date.to_s+"<br />"+
             "End date :"+@finance_fee_collection.end_date.to_s+"<br />"+
             "Dude date :"+@finance_fee_collection.due_date.to_s+"<br /><br /><br />"+
             "check your  <a href='../../finance/student_fees_structure/#{s.id}/#{@finance_fee_collection.id}'>Fee structure</a> <br/><br/><br/>

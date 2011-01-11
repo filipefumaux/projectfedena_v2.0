@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt="" />
-  <h1>Employee</h1>
-  <h3>Remove Employee</h3>
+  <h1><%= t('employee.title') %></h1>
+  <h3><%= t('employee.remove') %></h3>
   <div id="app-back-button">
      <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -10,25 +10,25 @@
 <div id="page-yield">
 
   <div id="student-details">
-    <h4> <%= @employee.first_name %> | Employee no : <%= @employee.employee_number %> | Department : <%= @employee.employee_department.name %> </h4>
+    <h4> <%= @employee.first_name %> | <%= t('employee.number') %> : <%= @employee.employee_number %> | <%= t('department') %> : <%= @employee.employee_department.name %> </h4>
   </div>
 
   <div class="extender"> </div>
   <div class="box">
   <% if @employee.status == true %>
   <div class="link-box">
-    <div class="link-heading"> <%= link_to "Employee leaving Institution", :controller => "employee", :action => "change_to_former", :id => @employee.id %> </div>
-    <div class="link-descr">For employee leaving the Institution, use this option to remove them from the list of active employee and place them in the former employees list.</div>
+    <div class="link-heading"> <%= link_to t('employee.leaveInstitution'), :controller => "employee", :action => "change_to_former", :id => @employee.id %> </div>
+    <div class="link-descr"><%= t('employee.leaveInstitutionDesc') %></div>
   </div>
   <% else %>
     <div class="link-box">
-    <div class="link-heading"> <a>Employee has left the school</a> </div>
-    <div class="link-descr"><b>Reason:</b><%=  %> </div>
+    <div class="link-heading"> <a><%= t('employee.hasLeft') %></a> </div>
+    <div class="link-descr"><b><%= t('employee.reason') %></b><%=  %> </div>
   </div>
     <% end %>
   <div class="link-box">
-    <div class="link-heading"> <%= link_to "Remove employee records", :controller => "employee", :action => "delete", :id => @employee.id %> </div>
-    <div class="link-descr">Completely delete employee's records from the Institution's databases. Use this option only if you created the employee record by accident and want to remove it completely.</div>
+    <div class="link-heading"> <%= link_to t('employee.removeRecord'), :controller => "employee", :action => "delete", :id => @employee.id %> </div>
+    <div class="link-descr"><%= t('employee.removeRecordDesc') %></div>
   </div>
   </div>
     <!--
@@ -52,7 +52,7 @@
 
     <p class="warning">(Warning: All records will be deleted for the student and cannot be recovered.)</p>
     <%= link_to image_tag('/images/buttons/delete.png', :border => 0),
-      { :action => 'destroy', :id => @employee.id }, :confirm => 'Are you completely sure?' %>
+      { :action => 'destroy', :id => @employee.id }, :confirm => t('sureQuestion') %>
   </div>
     -->
 

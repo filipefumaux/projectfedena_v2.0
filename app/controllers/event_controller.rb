@@ -136,7 +136,7 @@ class EventController < ApplicationController
       @users.each do |u|
         Reminder.create(:sender=> current_user.id,:recipient=>u.id,
           :subject=>"New Event : #{event.title}",
-          :body=>" New event description : #{event.description} <br/> Start date : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+          :body=>" New event description : #{event.description} <br/> " + t('employee.startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
       end
       sms_setting = SmsSetting.new()
       if sms_setting.application_sms_active and sms_setting.event_news_sms_active
@@ -188,7 +188,7 @@ class EventController < ApplicationController
             unless student_user.nil?
               Reminder.create(:sender => current_user.id,:recipient=>student_user.id,
                 :subject=>"New Event : #{event.title}",
-                :body=>" New event description : #{event.description} <br/> Start date : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+                :body=>" New event description : #{event.description} <br/> "+ t('employee.startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
             end
           end
         end
@@ -201,7 +201,7 @@ class EventController < ApplicationController
             emp_user = e.user
             Reminder.create(:sender => current_user.id,:recipient=>emp_user.id,
               :subject=>"New Event : #{event.title}",
-              :body=>" New event description : #{event.description} <br/> Start date : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+              :body=>" New event description : #{event.description} <br/> "+t('employee.startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> End date : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
           end
         end
       end

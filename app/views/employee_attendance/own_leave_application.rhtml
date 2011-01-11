@@ -1,6 +1,6 @@
  <div id="content-header">
     <img src="/images/attendence/attendence.png" alt="" />
-    <h1>Leave Application</h1>
+    <h1><%= t('employee.leaveApp') %></h1>
     <h3>Info</h3>
     <div id="app-back-button">
      <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -24,7 +24,7 @@
        <li class="list<%= cycle('odd','even') %>"><div class="category-name">Manager Name:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>
        <%= Employee.find(reporting_manager).first_name %></li>
-      <li class="list<%= cycle('odd','even') %>"><div class="category-name">Leave type:</div>
+      <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('attendance.leaveType') %>:</div>
       <%= @leave_type.name %></li>
       <li class="list<%= cycle('odd','even') %>"><div class="category-name">Half day:</div>
       <% if @applied_leave.is_half_day == true %>
@@ -37,7 +37,7 @@
       <%= @applied_leave.start_date.strftime("%d %b, %Y") %></li>
        <li class="list<%= cycle('odd','even') %>"><div class="category-name">Leave end date:</div>
       <%= @applied_leave.end_date.strftime("%d %b, %Y") %></li>
-         <li class="list<%= cycle('odd','even') %>"><div class="category-name">Reason:</div>
+         <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('employee.reason') %></div>
       <%= @applied_leave.reason %></li>
          <li class="list<%= cycle('odd','even') %>"><div class="category-name">Status:</div>
       <%= "Approved" if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>
@@ -46,7 +46,7 @@
          </li>
          </ul>
     
-    <%= link_to "► Cancel Leave",
+    <%= link_to "► "+ t('employee.cancelLeave'),
           {:action => "cancel_application", :id=>@applied_leave.id}, :class=>'cancel_button' ,:confirm=>"Are you sure" if (@applied_leave.viewed_by_manager == false and @applied_leave.approved == false)%>
     
        </div>

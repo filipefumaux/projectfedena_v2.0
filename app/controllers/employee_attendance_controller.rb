@@ -19,7 +19,7 @@ class EmployeeAttendanceController < ApplicationController
   def edit_leave_types
     @leave_type = EmployeeLeaveType.find(params[:id])
     if request.post? and @leave_type.update_attributes(params[:leave_type])
-      flash[:notice] = "Leave type updated"
+      flash[:notice] = t('attendance.leaveTypeUpdated')
       redirect_to :action => "add_leave_types"
     end
   end
