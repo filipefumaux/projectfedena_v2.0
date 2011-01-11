@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571ea0dd-1729-4a7b-9a96-4ef39c45afba" name="Default" comment="">
+    <list default="true" id="571ea0dd-1729-4a7b-9a96-4ef39c45afba" name="Default" comment="translations&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employee_attendance_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employee_attendance_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/event_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/event_controller.rb" />
@@ -117,7 +117,7 @@
           <file leaf-file-name="student_fees_structure.html.erb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.30612245">
+                <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.25083613">
                   <folding />
                 </state>
               </provider>
@@ -139,7 +139,7 @@
           <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.33125">
+                <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.28342247">
                   <folding />
                 </state>
               </provider>
@@ -601,17 +601,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1286" height="778" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41158536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41158536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.06097561" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24044587" sideWeight="0.5884146" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24044587" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -733,7 +733,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.33125">
+        <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.28342247">
           <folding />
         </state>
       </provider>
@@ -761,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.30612245">
+        <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.25083613">
           <folding />
         </state>
       </provider>
