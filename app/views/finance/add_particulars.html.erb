@@ -19,9 +19,9 @@
   <% else %>
   <div class="name">Course</div><div class="val"><span>:</span>ALL</div>
   <% end %>
-<div class="name">Start Date</div><div class="val"><span>:</span><%= @collection_date.start_date %></div>
-<div class="name">End Date</div><div class="val"><span>:</span><%= @collection_date.end_date%></div>
-<div class="name">Due Date</div><div class="val"><span>:</span><%= @collection_date.due_date%></div>
+<div class="name"><%= t('startDate') %></div><div class="val"><span>:</span><%= @collection_date.start_date %></div>
+<div class="name"><%= t('endDate') %></div><div class="val"><span>:</span><%= @collection_date.end_date%></div>
+<div class="name"><%= t('dueDate') %></div><div class="val"><span>:</span><%= @collection_date.due_date%></div>
 
 <br />
 <br />

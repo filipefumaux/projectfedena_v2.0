@@ -57,7 +57,7 @@
       <%= @archived_student.admission_date.strftime("%d %b, %Y") unless @archived_student.admission_date.nil? %>
     </div>
 
-    <div class="profile_info_label_top2">Date of birth</div>
+    <div class="profile_info_label_top2"><%= t('dateOfBirth') %></div>
     <div class="profile_info_text_top2"><%= @archived_student.date_of_birth.strftime("%d %b, %Y") unless @archived_student.date_of_birth.nil? %></div>
 
     <div class="profile_info_label_top">Blood group</div>

@@ -53,7 +53,7 @@
         <div class="profile_info_label2">Relation</div>
         <div class="profile_info_text2"><%= p.relation %></div>
 
-        <div class="profile_info_label">Date of birth</div>
+        <div class="profile_info_label"><%= t('dateOfBirth') %></div>
         <div class="profile_info_text"> <%= p.dob.strftime('%d %B, %Y') unless p.dob.nil? %> </div>
 
 

@@ -9,7 +9,7 @@ General SMS Settings:<br/>
    <%= sms.check_box :student_admission_enabled, :checked=>@student_admission_sms_enabled.is_enabled %>StudentAdmission<br/>
    <%= sms.check_box :exam_schedule_enabled, :checked=>@exam_schedule_sms_enabled.is_enabled %>ExamSchedule<br/>
    <%= sms.check_box :result_publish_enabled, :checked=>@result_publish_sms_enabled.is_enabled %>ResultPublish<br/>
-   <%= sms.check_box :student_attendance_enabled, :checked=>@student_attendance_sms_enabled.is_enabled %>Attendance<br/>
+   <%= sms.check_box :student_attendance_enabled, :checked=>@student_attendance_sms_enabled.is_enabled %><%= t('attendance.title') %><br/>
    <%= sms.check_box :news_events_enabled, :checked=>@news_events_sms_enabled.is_enabled %>News/Events<br/><br/>
    <%= sms.check_box :sms_parents_enabled, :checked=>@parents_sms_enabled.is_enabled %>Send Sms to Parents<br/>
    <%= sms.check_box :sms_students_enabled, :checked=>@students_sms_enabled.is_enabled %>Send Sms to Students<br/>

@@ -27,10 +27,10 @@ class EmployeeController < ApplicationController
     if employees.empty? and category_position.empty?
       EmployeeCategory.find(params[:id]).destroy
       @categories = EmployeeCategory.find :all
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_category"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]= t('unableToDelete')
       redirect_to :action => "add_category"
     end
   end
@@ -61,10 +61,10 @@ class EmployeeController < ApplicationController
     if employees.empty?
       EmployeePosition.find(params[:id]).destroy
       @positions = EmployeePosition.find :all
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_position"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_position"
     end
   end
@@ -91,10 +91,10 @@ class EmployeeController < ApplicationController
     if employees.empty?
       EmployeeDepartment.find(params[:id]).destroy
       @departments = EmployeeDepartment.find :all
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_department"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_department"
     end
   end
@@ -121,10 +121,10 @@ class EmployeeController < ApplicationController
     if employees.empty?
       EmployeeGrade.find(params[:id]).destroy
       @grades = EmployeeGrade.find :all
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_grade"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_grade"
     end
   end
@@ -150,10 +150,10 @@ class EmployeeController < ApplicationController
     if employees.empty?
       BankField.find(params[:id]).destroy
       @bank_details = BankField.find(:all)
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_bank_details"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]= t('unableToDelete')
       redirect_to :action => "add_bank_details"
     end
   end
@@ -162,7 +162,7 @@ class EmployeeController < ApplicationController
     @additional_details = AdditionalField.find(:all)
     @additional_field = AdditionalField.new(params[:additional_field])
     if request.post? and @additional_field.save
-      flash[:notice] = "Additional field created"
+      flash[:notice] = t('additionalFieldCreated')
       redirect_to :controller => "employee", :action => "add_additional_details"
     end
   end
@@ -179,10 +179,10 @@ class EmployeeController < ApplicationController
     if employees.empty?
       AdditionalField.find(params[:id]).destroy
       @additional_details = AdditionalField.find(:all)
-      flash[:notice]="Successfully deleted!"
+      flash[:notice]= t('successfullyDeleted')
       redirect_to :action => "add_additional_details"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_additional_details"
     end
   end

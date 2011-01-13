@@ -41,10 +41,10 @@ class PayrollController < ApplicationController
     if employees.empty?
     PayrollCategory.find(params[:id]).destroy
     @departments = PayrollCategory.find :all
-    flash[:notice]="Successfully deleted!"
+    flash[:notice]= t('successfullyDeleted')
     redirect_to :action => "add_category"
     else
-      flash[:notice]="Unable to delete!"
+      flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_category"
     end
   end

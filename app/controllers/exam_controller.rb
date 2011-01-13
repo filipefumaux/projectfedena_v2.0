@@ -37,7 +37,7 @@ class ExamController < ApplicationController
   
     else
       render(:update) do |page|
-        page.replace_html 'flash', :text=>'<div class="errorExplanation"><p>Exam name can\'t be blank</p></div>'
+        page.replace_html 'flash', :text=>'<div class="errorExplanation"><p>'+t('exam.nameBlank')+'</p></div>'
       end
     end
   end
@@ -88,11 +88,11 @@ class ExamController < ApplicationController
       else
         @conf = Configuration.available_modules
         if @conf.include?('SMS')
-          @sms_setting_notice = "Exam schedule published, No sms was sent as Sms setting was not activated" if params[:status] == "schedule"
-          @sms_setting_notice = "Exam result published, No sms was sent as Sms setting was not activated" if params[:status] == "result"
+          @sms_setting_notice = t('exam.schedulePublished')+", "+t('exam.smsNotSent') if params[:status] == "schedule"
+          @sms_setting_notice = t('exam.resultPublished')+", "+t('exam.smsNotSent') if params[:status] == "result"
         else
-          @sms_setting_notice = "Exam schedule published" if params[:status] == "schedule"
-          @sms_setting_notice = "Exam result published" if params[:status] == "result"
+          @sms_setting_notice = t('exam.schedulePublished')+"" if params[:status] == "schedule"
+          @sms_setting_notice = t('exam.resultPublished') if params[:status] == "result"
         end
       end
       if params[:status] == "result"
@@ -101,7 +101,7 @@ class ExamController < ApplicationController
           student_user = s.user
           Reminder.create(:sender=> current_user.id,:recipient=>student_user.id,
             :subject=>"Result Published",
-            :body=>"#{@exam_group.name} result has been published  <br/> Please view reports for your result")
+            :body=>"#{@exam_group.name} "+t('resultHasBeenPublished')+"  <br/> "+t('exam.viewResultReport'))
         end
       end
     else
@@ -124,7 +124,7 @@ class ExamController < ApplicationController
       else
         GroupedExam.delete_all(:batch_id=>@batch.id)
       end
-        flash[:notice]="Selected exams grouped successfully."
+        flash[:notice]=t('exam.selectOK')
     end
   end
 
@@ -146,12 +146,12 @@ class ExamController < ApplicationController
   def generated_report
     if params[:student].nil?
       if params[:exam_report].nil? or params[:exam_report][:exam_group_id].empty?
-        flash[:notice] = "Select a batch and exam to continue."
+        flash[:notice] = t('exam.selectBatchToContinue')
         redirect_to :action=>'exam_wise_report' and return
       end
     else
       if params[:exam_group].nil?
-        flash[:notice] = "Invalid parameters."
+        flash[:notice] = t('exam.invalidParameters')
         redirect_to :action=>'exam_wise_report' and return
       end
     end
@@ -271,12 +271,12 @@ class ExamController < ApplicationController
   def generated_report4
     if params[:student].nil?
       if params[:exam_report].nil? or params[:exam_report][:batch_id].empty?
-        flash[:notice] = "Select a batch to continue"
+        flash[:notice] = t('exam.selectBatchContinue')
         redirect_to :action=>'grouped_exam_report' and return
       end
     else
       if params[:type].nil?
-        flash[:notice] = "Invalid parameters."
+        flash[:notice] = t('exam.invalidParameters')
         redirect_to :action=>'grouped_exam_report' and return
       end
     end

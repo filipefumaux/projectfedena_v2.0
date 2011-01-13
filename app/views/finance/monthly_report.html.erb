@@ -11,11 +11,11 @@
   <div class="box">
   <% form_for :report, :url => {:action => 'update_monthly_report'} do |form| %>
     <div class="label-field-pair">
-      <label>Select start date:</label>
+      <label><%= t('selectStartDate') %>:</label>
       <div class="input-container"><%= calendar_date_select_tag 'start_date', Date.today %></div>
     </div>
     <div class="label-field-pair">
-      <label>Select End date: </label>
+      <label><%= t('selectEndDate') %>: </label>
       <div class="input-container"><%= calendar_date_select_tag 'end_date', Date.today %></div>
     </div>
 

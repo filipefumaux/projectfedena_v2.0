@@ -28,12 +28,12 @@
       <hr class="sub-heading"></hr>
 
       <div class="label-field-pair">
-        <label for="parent_detail_name">First name</label>
+        <label for="parent_detail_name"><%= t('firstName') %></label>
         <div class="text-input-bg"><%= s.text_field :first_name, :value => @parent.first_name %></div>
       </div>
 
       <div class="label-field-pair">
-        <label for="parent_detail_name">Second name</label>
+        <label for="parent_detail_name"><%= t('secondName') %></label>
         <div class="text-input-bg"><%= s.text_field :last_name, :value => @parent.first_name %></div>
       </div>
 
@@ -43,7 +43,7 @@
       </div>
 
       <div class="label-field-pair">
-        <label for="parent_detail_dob">Date of birth</label>
+        <label for="parent_detail_dob"><%= t('dateOfBirth') %></label>
         <div class="text-input-bg"><%= calendar_date_select_tag 'parent_detail[dob]', @parent.dob,:year_range => 60.years.ago..20.years.ago %></div>
       </div>
 

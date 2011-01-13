@@ -8,7 +8,7 @@
     <div id="ajax_result">
       <% link_value = r.first_name + " " + r.last_name %>
       <%= link_to link_value, :controller => "finance", :action => "fees_structure_dates", :id => r.id %><br/>
-      <small>Course : <%= r.batch.name %> </small>
+      <small><%= t('course') %> : <%= r.batch.name %> </small>
       <small><br/>Adm No.<%= r.admission_no %></small> <%= @st.to_s %>
     </div>
    <%= '</div>' if i%4 == 3 %>

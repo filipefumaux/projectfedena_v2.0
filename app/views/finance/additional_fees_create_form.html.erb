@@ -21,7 +21,7 @@
     <div class="input-container"><%= form.text_field :description %></div>
    </div>
        <div class="label-field-pair">
-    <div class="label-container"><label>Course : </label></div>
+    <div class="label-container"><label><%= t('course') %> : </label></div>
     <div class="input-container"><%= form.select :batch_id, @batches.map { |c| [c.full_name, c.id] },:prompt => "Select Course"  %></div>
    </div>
        <div class="label-field-pair">
@@ -29,7 +29,7 @@
     <div class="input-container"><%= calendar_date_select_tag 'additional_fees[start_date]', Date.today %></div>
    </div>
        <div class="label-field-pair">
-    <div class="label-container"><label>End date*:</label> </div>
+    <div class="label-container"><label><%= t('endDate') %>*:</label> </div>
     <div class="input-container"><%= calendar_date_select_tag 'additional_fees[end_date]', Date.today %></div>
    </div>
        <div class="label-field-pair">

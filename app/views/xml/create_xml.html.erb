@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="label-field-pair">
-    <label for="student_grade">End date</label>
+    <label for="student_grade"><%= t('endDate') %></label>
     <div class="text-input-bg"><%= calendar_date_select_tag 'xml[end_date]', Date.today,
         :year_range => 1.years.ago..1.years.from_now %>
     </div>

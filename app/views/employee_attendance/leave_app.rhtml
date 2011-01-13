@@ -22,25 +22,25 @@
   <ul id="item-list">
        <li class="listodd"><div class="item-name"><%= t('name') %>:</div>
         <%= Employee.find(@applied_leave.employee_id).first_name %></li>
-       <li class="listeven"><div class="item-name">Manager Name:</div>
+       <li class="listeven"><div class="item-name"><%= t('managerName') %>:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>
        <%= Employee.find(reporting_manager).first_name %></li>
      <li class="listodd"><div class="item-name"><%= t('attendance.leaveType') %>:</div>
         <%= @leave_type.name %></li>
-     <li class="listeven"><div class="item-name">Half day:</div>
+     <li class="listeven"><div class="item-name"><%= t('halfDay') %>:</div>
         <% if @applied_leave.is_half_day == true %>
         <%= "Yes" %>
         <% else %>
         <%= "No" %>
         <% end %>
         </li>
-    <li class="listodd"><div class="item-name">Leave start date:</div>
+    <li class="listodd"><div class="item-name"><%= t('leaveStartDate') %>:</div>
         <%= @applied_leave.start_date.strftime("%d %b, %Y") %></li>
-       <li class="listeven"><div class="item-name">Leave end date:</div>
+       <li class="listeven"><div class="item-name"><%= t('leaveEndDate') %>:</div>
         <%= @applied_leave.end_date.strftime("%d %b, %Y") %></li>
       <li class="listodd"><div class="item-name"><%= t('employee.reason') %></div>
         <%= @applied_leave.reason %></li>
-       <li class="listeven"><div class="item-name">Status:</div>
+       <li class="listeven"><div class="item-name"><%= t('status') %>:</div>
         <%= "Approved" if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>
         <%= "Denied" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == true %>
         <%= "Pending approval" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == false %>

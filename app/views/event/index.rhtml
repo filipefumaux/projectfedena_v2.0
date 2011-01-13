@@ -11,11 +11,11 @@
   <% form_for :events do |f| %>
     <%= error_messages_for 'events' %>
     <div class="label-field-pair">
-      <label for="start-date">Start Date:</label>
+      <label for="start-date"><%= t('startDate') %>:</label>
       <div class="text-input-bg"><%= calendar_date_select_tag :start_date, @date, :time => true  %></div>
     </div>
     <div class="label-field-pair">
-      <label for="end-date">End Date:</label>
+      <label for="end-date"><%= t('endDate') %>:</label>
       <div class="text-input-bg"><%= calendar_date_select_tag :end_date, @date, :time => true  %></div>
     </div>
     <div class="label-field-pair">

@@ -44,7 +44,7 @@
 
     <div id ="student_main_info">
       <h3> <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %>  </h3>
-      <h4> Course : <%= @student.batch.course.full_name %> </h4>
+      <h4> <%= t('course') %> : <%= @student.batch.course.full_name %> </h4>
       <h4> Batch : <%= @student.batch.name %> </h4>
       <h4> Adm no. : <%= @student.admission_no %> </h4>
     </div>
@@ -60,7 +60,7 @@
       <%= @student.admission_date.strftime("%d %b, %Y") unless @student.admission_date.nil? %>
     </div>
 
-    <div class="profile_info_label_top2">Date of birth</div>
+    <div class="profile_info_label_top2"><%= t('dateOfBirth') %></div>
     <div class="profile_info_text_top2"><%= @student.date_of_birth.strftime("%d %b, %Y") unless @student.date_of_birth.nil? %></div>
 
     <div class="profile_info_label_top">Blood group</div>

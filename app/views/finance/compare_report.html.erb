@@ -13,7 +13,7 @@
     <% form_for :report, :url => {:action => 'report_compare'} do |form| %>
       <div class="label-field-pair">
         <label>
-          Select start date:
+          <%= t('selectStartDate') %>:
         </label>
         <div class="text-input-bg">
           <%= calendar_date_select_tag 'start_date', Date.today %>
@@ -21,16 +21,16 @@
       </div>
       <div class="label-field-pair">
         <label>
-          Select end date:
+          <%= t('selectEndDate') %>:
         </label>
         <div class="text-input-bg">
           <%= calendar_date_select_tag 'end_date', Date.today %>
         </div>
       </div>
-    <h4>Compare With </h4>
+    <h4><%= t('compareWith') %> </h4>
       <div class="label-field-pair">
         <label>
-          Select start date:
+          <%= t('selectStartDate') %>:
         </label>
         <div class="text-input-bg">
           <%= calendar_date_select_tag 'start_date2', Date.today %>
@@ -38,7 +38,7 @@
       </div>
       <div class="label-field-pair">
         <label>
-          Select end date:
+          <%= t('selectEndDate') %>:
         </label>
         <div class="text-input-bg">
           <%= calendar_date_select_tag 'end_date2', Date.today %>

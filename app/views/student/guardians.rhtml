@@ -9,9 +9,9 @@
 
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "Student profile", :controller => 'student', :action => 'profile', :id => @student.id %></li>
+    <li><%= link_to t('student.profile'), :controller => 'student', :action => 'profile', :id => @student.id %></li>
     <% if permitted_to? :add_guardian, :student %>
-      <li><%= link_to "Add guardian", :controller => 'student', :action => 'add_guardian', :id => @student.id %></li>
+      <li><%= link_to t('student.addGuardian'), :controller => 'student', :action => 'add_guardian', :id => @student.id %></li>
     <% end %>
   </ul>
 </div>
@@ -61,7 +61,7 @@
         <div class="profile_info_label2">Relation</div>
         <div class="profile_info_text2"><%= p.relation %></div>
 
-        <div class="profile_info_label">Date of birth</div>
+        <div class="profile_info_label"><%= t('dateOfBirth') %></div>
         <div class="profile_info_text"> <%= p.dob.strftime('%d %B, %Y') unless p.dob.nil? %> </div>
 
 

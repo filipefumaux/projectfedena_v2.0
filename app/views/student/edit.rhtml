@@ -73,7 +73,7 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_date_of_birth">Date of birth <span class="necessary-field">*</span></label>
+          <label for="master_student_date_of_birth"><%= t('dateOfBirth') %> <span class="necessary-field">*</span></label>
           <div class="text-input-bg">
             <%= calendar_date_select_tag 'student[date_of_birth]',
               @student.date_of_birth, :year_range => 40.years.ago..0.years.ago %>

@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/admission/admission_page_logo.jpg" />
-  <h1>Admission</h1>
-  <h3>Add guardian details</h3>
+  <h1><%= t('admission') %></h1>
+  <h3><%= t('student.addGuardianDetails') %></h3>
     <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -29,7 +29,7 @@
       <hr class="sub-heading"></hr>
 
     <div class="label-field-pair">
-      <label for="parent_detail_name">First name</label>
+      <label for="parent_detail_name"><%= t('firstName') %></label>
       <div class="text-input-bg"><%= s.text_field :first_name %></div>
     </div>
     <div class="label-field-pair">
@@ -43,7 +43,7 @@
     </div>
 
     <div class="label-field-pair">
-      <label for="parent_detail_dob">Date of birth</label>
+      <label for="parent_detail_dob"><%= t('dateOfBirth') %></label>
     <div class="text-input-bg">
     <%= calendar_date_select_tag 'parent_detail[dob]', nil,:year_range => 60.years.ago..20.years.ago %>
     </div>

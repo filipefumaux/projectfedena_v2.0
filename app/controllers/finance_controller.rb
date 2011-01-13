@@ -586,12 +586,12 @@ class FinanceController < ApplicationController
         :batch_id => params[:additional_fees][:batch_id],
         :fee_category_id => @additional_category.id
       )
-      body = "<p>Fee submission date for "+@additional_category.name+" has been published <br />
+      body = "<p>"+t('finance.feeSubmission')+" "+@additional_category.name+" "+t('finance.feeSubmission')+" <br />
                                Fees submitting date starts on<br />
-                               " + t('employee.startDate') + " :"+@collection_date.start_date.to_s+"<br />"+
-        "End date :"+@collection_date.end_date.to_s+"<br /"+
-        "Due date :"+@collection_date.due_date.to_s
-      subject = "Fees submission date"
+                               " + t('startDate') + " :"+@collection_date.start_date.to_s+"<br />"+
+        +t('endDate')+" :"+@collection_date.end_date.to_s+"<br /"+
+        +t('dueDate')+" :"+@collection_date.due_date.to_s
+      subject = t('finance.feeSubmissionDate')
       @due_date = @collection_date.due_date.strftime("%Y-%b-%d") +  " 00:00:00"
       unless batch.empty?
         @students.each do |s|
@@ -599,7 +599,7 @@ class FinanceController < ApplicationController
           Reminder.create(:sender=>@user.id, :recipient=>s.id, :subject=> subject,
             :body => body, :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
         end
-        Event.create(:title=> "Fees Due", :description =>@additional_category.name, :start_date => @due_date, :end_date => @due_date, :is_due => true)
+        Event.create(:title=> t('finance.feesDue'), :description =>@additional_category.name, :start_date => @due_date, :end_date => @due_date, :is_due => true)
       else
         @batches.each do |b|
           @students = Student.find_all_by_batch_id(b.id)
@@ -609,12 +609,12 @@ class FinanceController < ApplicationController
               :body => body, :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
            end
         end
-        Event.create(:title=> "Fees Due", :description =>@additional_category.name, :start_date => @due_date, :end_date => @due_date, :is_due => true)
+        Event.create(:title=> t('finance.feesDue'), :description =>@additional_category.name, :start_date => @due_date, :end_date => @due_date, :is_due => true)
       end
       flash[:notice] = "Category created, please add Particulars for the category"
       redirect_to(:action => "add_particulars" ,:id => @collection_date.id)
     else
-      flash[:notice] = 'Fields with * cannot be empty'
+      flash[:notice] = t('notice.fields')
       redirect_to :action => "additional_fees_create_form"
     end
   end
@@ -761,10 +761,10 @@ class FinanceController < ApplicationController
       if @finance_fee_collection.save
         @students = Student.find_all_by_batch_id(b)
         @students.each do |s|
-          body = "<p><b>Fee submission date for<i>"+fee_category.name+"</i>has been published</b><br /><br/>
-                                " + t('employee.startDate') + " :"+@finance_fee_collection.start_date.to_s+"<br />"+
-            "End date :"+@finance_fee_collection.end_date.to_s+"<br />"+
-            "Dude date :"+@finance_fee_collection.due_date.to_s+"<br /><br /><br />"+
+          body = "<p><b>"+t('finance.feeSubmission')+"<i>"+fee_category.name+"</i>"+t('finance.feeSubmission')+"</b><br /><br/>
+                                " + t('startDate') + " :"+@finance_fee_collection.start_date.to_s+"<br />"+
+            +t('endDate')+" :"+@finance_fee_collection.end_date.to_s+"<br />"+
+            +t('dueDate')+" :"+@finance_fee_collection.due_date.to_s+"<br /><br /><br />"+
             "check your  <a href='../../finance/student_fees_structure/#{s.id}/#{@finance_fee_collection.id}'>Fee structure</a> <br/><br/><br/>
                                regards,<br/>"+@user.full_name.capitalize
 

@@ -58,11 +58,11 @@ class TimetableController < ApplicationController
         end
           
         if set == 0
-          flash[:notice] = 'Timetable has already been published'
+          flash[:notice] = t('timetable.alreadyPublished')
         elsif set == 1
-          flash[:notice] = 'Timetable updated'
+          flash[:notice] = t('timetable.updated')
         else
-          flash[:notice] = 'Timetable created successfully'
+          flash[:notice] = t('timetable.created')
         end
       end
     
@@ -125,7 +125,7 @@ class TimetableController < ApplicationController
   end
 
   def delete_subject
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     tte = TimetableEntry.update(params[:id], :subject_id => nil)
     @timetable = TimetableEntry.find_all_by_batch_id(tte.batch_id)
@@ -133,7 +133,7 @@ class TimetableController < ApplicationController
   end
 
   def edit
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     @batch = Batch.find(params[:id])
     @timetable = TimetableEntry.find_all_by_batch_id(params[:id])
@@ -170,7 +170,7 @@ class TimetableController < ApplicationController
 
         redirect_to :action => "edit", :id => @batch.id
       else
-        flash[:notice]="Select a batch to continue"
+        flash[:notice]= t('exam.selectBatchContinue')
         redirect_to :action => "select_class"
       end
     end
@@ -181,7 +181,7 @@ class TimetableController < ApplicationController
   end
 
   def tt_entry_update
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     subject = Subject.find(params[:sub_id])
     TimetableEntry.update(params[:tte_id], :subject_id => params[:sub_id])
@@ -190,11 +190,11 @@ class TimetableController < ApplicationController
   end
 
   def tt_entry_noupdate
-    render :update => "error_div_#{params[:tte_id]}", :text => "Cancelled."
+    render :update => "error_div_#{params[:tte_id]}", :text => t('cancelled')
   end
 
   def update_multiple_timetable_entries
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     subject = Subject.find(params[:subject_id])
     tte_ids = params[:tte_ids].split(",").each {|x| x.to_i}
     course = subject.batch
@@ -224,7 +224,7 @@ class TimetableController < ApplicationController
   end
 
   def student_view
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     student = Student.find(params[:id])
     @batch = student.batch
     @timetable = TimetableEntry.find_all_by_batch_id(@batch.id)
@@ -258,7 +258,7 @@ class TimetableController < ApplicationController
     end
 
     @subjects = Subject.find_all_by_batch_id(@batch.id)
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     render :update do |page|
       page.replace_html "timetable_view", :partial => "view_timetable"
     end
@@ -267,7 +267,7 @@ class TimetableController < ApplicationController
   #methods given below are for timetable with HR module connected
 
   def select_class2
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @batches = Batch.active
     if request.post?
       unless params[:timetable_entry][:batch_id].empty?
@@ -288,14 +288,14 @@ class TimetableController < ApplicationController
         end
         redirect_to :action => "edit2", :id => @batch.id
       else
-        flash[:notice]="Select a batch to continue"
+        flash[:notice]= t('exam.selectBatchContinue')
         redirect_to :action => "select_class2"
       end
     end
   end
 
   def edit2
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     @batch = Batch.find(params[:id])
     @timetable = TimetableEntry.find_all_by_batch_id(params[:id])
@@ -311,7 +311,7 @@ class TimetableController < ApplicationController
   end
 
   def update_employees
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     if params[:subject_id] == ""
       render :text => ""
       return
@@ -321,7 +321,7 @@ class TimetableController < ApplicationController
   end
 
   def update_multiple_timetable_entries2
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     employees_subject = EmployeesSubject.find(params[:emp_sub_id])
     tte_ids = params[:tte_ids].split(",").each {|x| x.to_i}
     @batch = employees_subject.subject.batch
@@ -365,7 +365,7 @@ class TimetableController < ApplicationController
   end
 
   def delete_employee2
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     tte=TimetableEntry.update(params[:id], :subject_id => nil, :employee_id => nil)
     @timetable = TimetableEntry.find_all_by_batch_id(tte.batch_id)
@@ -373,7 +373,7 @@ class TimetableController < ApplicationController
   end
 
   def tt_entry_update2
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     @errors = {"messages" => []}
     subject = Subject.find(params[:sub_id])
     tte = TimetableEntry.find(params[:tte_id])
@@ -389,7 +389,7 @@ class TimetableController < ApplicationController
   end
 
   def tt_entry_noupdate2
-    render :update => "error_div_#{params[:tte_id]}", :text => "Cancelled."
+    render :update => "error_div_#{params[:tte_id]}", :text => t('cancelled')
   end
   #PDF Reports
   def timetable_pdf
@@ -404,7 +404,7 @@ class TimetableController < ApplicationController
       @day = Weekday.default
     end
     @subjects = Subject.find_all_by_batch_id(@batch.id)
-    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     respond_to do |format|
       format.pdf { render :layout => false }
     end

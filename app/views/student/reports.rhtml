@@ -33,7 +33,7 @@
     
     <div class="exam-results-reports-col">
 
-      <h4>Detailed reports</h4>
+      <h4><%= t('detailedReports') %></h4>
       <ul>
         <% unless @grouped_exams.empty? %>
         <li><%= link_to 'Final Report(Exams Grouped)',{:controller=>'exam', :action=>'generated_report4',:student=>@student.id,:type=>'grouped'} %></li>
@@ -45,7 +45,7 @@
       </ul>
 
       <% unless @old_batches.empty? %>
-        <h4>Archives</h4>
+        <h4><%= t('archives') %></h4>
         <ul>
           <% @old_batches.each do |b| %>
           <% unless @grouped_exams.empty? %>
@@ -66,15 +66,15 @@
 
   <div id="attendance-reports-dashboard">
 
-    <h3>Attendance</h3>
+    <h3><%= t('attendance.title') %></h3>
 
-    <h4>Detailed Reports</h4>
+    <h4><%= t('detailedReports') %></h4>
 
     <ul>
       <li><%= link_to 'Current year reports', :controller => 'student_attendance', :action => 'student', :id => @student %></li>
     </ul>
       <% unless @old_batches.empty? %>
-    <h4>Archives</h4>
+    <h4>><%= t('archives') %><</h4>
 
   <ul>
  <% @old_batches.each do |b| %>

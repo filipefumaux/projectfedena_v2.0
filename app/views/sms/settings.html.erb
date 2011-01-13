@@ -32,7 +32,7 @@
   </li>  </div>
     <div class="name_list<%=cycle('odd', 'even')%>"><li>
   <label><%= sms.check_box :student_attendance_enabled, :checked=>@student_attendance_sms_enabled.is_enabled %>
-  <div class="att_list_names">Attendance</div> </label>
+  <div class="att_list_names"><%= t('attendance.title') %></div> </label>
   </li>  </div>
       <div class="name_list<%=cycle('odd', 'even')%>"><li>
   <label><%= sms.check_box :news_events_enabled, :checked=>@news_events_sms_enabled.is_enabled %>

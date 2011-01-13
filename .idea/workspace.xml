@@ -3,19 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="571ea0dd-1729-4a7b-9a96-4ef39c45afba" name="Default" comment="translations&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employee_attendance_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employee_attendance_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/additional_exam_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/additional_exam_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employee_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employee_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/event_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/event_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exam_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exam_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/finance_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/finance_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/attendances/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/attendances/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/attendances/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/attendances/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/new.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/batches/show.html.erb" afterPath="$PROJECT_DIR$/app/views/batches/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/elective_groups/new.html.erb" afterPath="$PROJECT_DIR$/app/views/elective_groups/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/payroll_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/payroll_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/student_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/student_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/timetable_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/timetable_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/guardians.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/guardians.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/reports.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/reports.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_leave_list.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_leave_list.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_one_click_approve.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/_one_click_approve.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/remove.html.erb" afterPath="$PROJECT_DIR$/app/views/employee/remove.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" />
@@ -25,14 +27,36 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendances/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/employee_attendances/_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendances/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/employee_attendances/_new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/event/index.rhtml" afterPath="$PROJECT_DIR$/app/views/event/index.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/event/show.rhtml" afterPath="$PROJECT_DIR$/app/views/event/show.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/academic_report_course.html.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/academic_report_course.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/add_particulars.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/add_particulars.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/compare_report.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/compare_report.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/monthly_report.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/monthly_report.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/delete.rhtml" afterPath="$PROJECT_DIR$/app/views/student/delete.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/remove.rhtml" afterPath="$PROJECT_DIR$/app/views/student/remove.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sms/settings.html.erb" afterPath="$PROJECT_DIR$/app/views/sms/settings.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission1.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission1.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission2.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission2.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/guardians.rhtml" afterPath="$PROJECT_DIR$/app/views/student/guardians.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/index.erb" afterPath="$PROJECT_DIR$/app/views/student/index.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/student/profile.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/reports.rhtml" afterPath="$PROJECT_DIR$/app/views/student/reports.rhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/view_all.rhtml" afterPath="$PROJECT_DIR$/app/views/student/view_all.rhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/xml/create_xml.html.erb" afterPath="$PROJECT_DIR$/app/views/xml/create_xml.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
     </list>
@@ -57,76 +81,13 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7955975">
+    <splitter split-orientation="horizontal" split-proportion="0.6811881">
       <split-first>
         <leaf>
-          <file leaf-file-name="_individual_leave_applications.rhtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml">
+          <file leaf-file-name="batch.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/models/batch.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="8" selection-start="211" selection-end="211" vertical-scroll-proportion="-2.875">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_new_leave_applications.rhtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="6" selection-start="162" selection-end="162" vertical-scroll-proportion="-2.5">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="leaves.rhtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="70" selection-start="3028" selection-end="3028" vertical-scroll-proportion="-3.375">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="show.rhtml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/event/show.rhtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="8" selection-start="746" selection-end="746" vertical-scroll-proportion="-3.375">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_fees_structure.html.erb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="18" selection-start="251" selection-end="251" vertical-scroll-proportion="-1.875">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="additional_fees_create_form.html.erb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="40" selection-start="1212" selection-end="1212" vertical-scroll-proportion="-3.375">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="student_fees_structure.html.erb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.25083613">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="finance_controller.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/finance_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="97" column="4" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.0">
+                <state line="33" column="5" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.6878173">
                   <folding />
                 </state>
               </provider>
@@ -139,7 +100,7 @@
           <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.28342247">
+                <state line="130" column="8" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9186992">
                   <folding />
                 </state>
               </provider>
@@ -181,22 +142,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/employee/_leave_list.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" />
         <option value="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" />
         <option value="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" />
         <option value="$PROJECT_DIR$/app/views/event/show.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" />
         <option value="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/xml/create_xml.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/finance_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/event_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/finance/monthly_report.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/finance/compare_report.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/archived_student/reports.rhtml" />
+        <option value="$PROJECT_DIR$/app/views/student/reports.rhtml" />
+        <option value="$PROJECT_DIR$/app/views/sms/settings.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
+        <option value="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" />
       </list>
     </option>
   </component>
@@ -226,9 +187,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="RailsProjectView" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -293,8 +253,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fedena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fedena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,19 +285,19 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="73" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.lastSelected" value="com.intellij.profile.codeInspection.ui.PlatformInspectionsConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="87" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="961" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="964" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="961" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="87" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="106" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -601,21 +580,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1286" height="778" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41158536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33689025" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.06097561" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24044587" sideWeight="0.6707317" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19585988" sideWeight="0.5990854" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -654,114 +633,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="-3.125">
+        <state line="25" column="45" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-3.7916667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="36" selection-start="1531" selection-end="1531" vertical-scroll-proportion="-4.125">
+        <state line="6" column="27" selection-start="169" selection-end="169" vertical-scroll-proportion="-3.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee/_leave_list.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="105" selection-end="105" vertical-scroll-proportion="-3.125">
+        <state line="24" column="45" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-4.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee/leave_management.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="32" selection-start="4081" selection-end="4081" vertical-scroll-proportion="-3.125">
+        <state line="8" column="8" selection-start="213" selection-end="213" vertical-scroll-proportion="-4.0833335">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml">
+    <entry file="file://$PROJECT_DIR$/test/unit/batch_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="159" selection-end="159" vertical-scroll-proportion="-2.5">
+        <state line="16" column="38" selection-start="453" selection-end="453" vertical-scroll-proportion="0.46700507">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/monthly_report.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="211" selection-end="211" vertical-scroll-proportion="-2.875">
+        <state line="19" column="10" selection-start="783" selection-end="783" vertical-scroll-proportion="0.92833877">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/sms_settings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="162" selection-end="162" vertical-scroll-proportion="-2.5">
+        <state line="11" column="133" selection-start="889" selection-end="889" vertical-scroll-proportion="0.33226836">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/sms/settings.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="70" selection-start="3028" selection-end="3028" vertical-scroll-proportion="-3.375">
+        <state line="34" column="58" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.31309903">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/event/show.rhtml">
+    <entry file="file://$PROJECT_DIR$/app/views/student/reports.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="8" selection-start="746" selection-end="746" vertical-scroll-proportion="-3.375">
+        <state line="68" column="8" selection-start="2508" selection-end="2536" vertical-scroll-proportion="0.2172524">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/finance/compare_report.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="18" selection-start="251" selection-end="251" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="1212" selection-end="1212" vertical-scroll-proportion="-3.375">
+        <state line="29" column="8" selection-start="896" selection-end="896" vertical-scroll-proportion="0.29565218">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="16" selection-start="6360" selection-end="6360" vertical-scroll-proportion="0.28342247">
+        <state line="130" column="8" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9186992">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/finance_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/archived_student/reports.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="4" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.0">
+        <state line="48" column="20" selection-start="1762" selection-end="1762" vertical-scroll-proportion="1.8176638">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/finance/compare_date.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="623" selection-end="623" vertical-scroll-proportion="0.5769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="40" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.26486486">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/event_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="101" selection-start="8664" selection-end="8664" vertical-scroll-proportion="0.78066915">
+        <state line="96" column="122" selection-start="3953" selection-end="3953" vertical-scroll-proportion="0.25126904">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/xml/create_xml.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/batch.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="566" selection-end="566" vertical-scroll-proportion="0.4496124">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="579" selection-end="579" vertical-scroll-proportion="0.25083613">
+        <state line="33" column="5" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.6878173">
           <folding />
         </state>
       </provider>

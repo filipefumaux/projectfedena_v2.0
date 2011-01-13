@@ -47,7 +47,7 @@ $jq(document).ready(function() {
      <hr class="label-underline"></hr>
 
       <div class="label-field-pair">
-        <label for="employee_name">First name <span class="necessary-field">*</span> </label>
+        <label for="employee_name"><%= t('firstName') %> <span class="necessary-field">*</span> </label>
         <div class="text-input-bg"><%= a.text_field :first_name, :value => @employee.first_name %></div>
       </div>
 
