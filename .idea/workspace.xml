@@ -3,62 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="571ea0dd-1729-4a7b-9a96-4ef39c45afba" name="Default" comment="translations&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/additional_exam_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/additional_exam_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employee_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employee_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/event_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/event_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exam_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exam_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/finance_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/finance_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/payroll_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/payroll_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/student_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/student_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/subjects_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/timetable_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/timetable_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/guardians.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/guardians.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/profile.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/archived_student/reports.rhtml" afterPath="$PROJECT_DIR$/app/views/archived_student/reports.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/_leave_list.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/_leave_list.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit1.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/leave_management.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_all_employee_new_leave_applications.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_all_leave_application_lists.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/apply_leave.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leave_app.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leave_app.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leave_application.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/leaves.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" afterPath="$PROJECT_DIR$/app/views/employee_attendance/own_leave_application.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/event/index.rhtml" afterPath="$PROJECT_DIR$/app/views/event/index.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/event/show.rhtml" afterPath="$PROJECT_DIR$/app/views/event/show.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/examination_result/academic_report_course.html.erb" afterPath="$PROJECT_DIR$/app/views/examination_result/academic_report_course.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_additional_fees_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_fees_structure.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/_master_category_edit_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/add_particulars.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/add_particulars.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/compare_report.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/compare_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/monthly_report.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/monthly_report.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/search_fees_structure.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb" afterPath="$PROJECT_DIR$/app/views/finance/student_fees_structure.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sms/settings.html.erb" afterPath="$PROJECT_DIR$/app/views/sms/settings.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission1.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission1.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission2.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission2.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/edit_guardian.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/guardians.rhtml" afterPath="$PROJECT_DIR$/app/views/student/guardians.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/index.erb" afterPath="$PROJECT_DIR$/app/views/student/index.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/profile.rhtml" afterPath="$PROJECT_DIR$/app/views/student/profile.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/reports.rhtml" afterPath="$PROJECT_DIR$/app/views/student/reports.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/view_all.rhtml" afterPath="$PROJECT_DIR$/app/views/student/view_all.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/xml/create_xml.html.erb" afterPath="$PROJECT_DIR$/app/views/xml/create_xml.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt.yml" afterPath="$PROJECT_DIR$/config/locales/pt.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="Fedena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,34 +28,17 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6811881">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="batch.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/models/batch.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="5" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.6878173">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="130" column="8" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9186992">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="en.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="232" column="30" selection-start="9117" selection-end="9117" vertical-scroll-proportion="0.21696573">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -142,8 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/_individual_leave_applications.rhtml" />
-        <option value="$PROJECT_DIR$/app/views/employee_attendance/_new_leave_applications.rhtml" />
         <option value="$PROJECT_DIR$/app/views/event/show.rhtml" />
         <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb" />
@@ -156,8 +84,10 @@
         <option value="$PROJECT_DIR$/app/views/student/reports.rhtml" />
         <option value="$PROJECT_DIR$/app/views/sms/settings.html.erb" />
         <option value="$PROJECT_DIR$/app/views/sms_settings/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/views/finance/compare_date.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/user_controller.rb" />
+        <option value="$PROJECT_DIR$/config/locales/pt.yml" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
       </list>
     </option>
   </component>
@@ -187,8 +117,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,26 +181,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fedena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fedena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Favorites" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -285,19 +197,19 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="73" />
-    <property name="options.lastSelected" value="com.intellij.profile.codeInspection.ui.PlatformInspectionsConfigurable" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="87" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="964" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="961" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="964" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="87" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="106" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -579,25 +491,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1286" height="778" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="776" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33689025" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33639145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.06097561" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19585988" sideWeight="0.5990854" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2552" sideWeight="0.66360855" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -633,114 +546,94 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_create_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="45" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-3.7916667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_dates_batch.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="169" selection-end="169" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="45" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-4.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/finance/_fee_collection_list.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="213" selection-end="213" vertical-scroll-proportion="-4.0833335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/batch_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="453" selection-end="453" vertical-scroll-proportion="0.46700507">
-          <folding />
-        </state>
+        <state line="16" column="38" selection-start="453" selection-end="453" vertical-scroll-proportion="0.46700507" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/monthly_report.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="783" selection-end="783" vertical-scroll-proportion="0.92833877">
-          <folding />
-        </state>
+        <state line="19" column="10" selection-start="783" selection-end="783" vertical-scroll-proportion="0.92833877" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sms_settings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="133" selection-start="889" selection-end="889" vertical-scroll-proportion="0.33226836">
-          <folding />
-        </state>
+        <state line="11" column="133" selection-start="889" selection-end="889" vertical-scroll-proportion="0.33226836" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sms/settings.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="58" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.31309903">
-          <folding />
-        </state>
+        <state line="34" column="58" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.31309903" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/student/reports.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="8" selection-start="2508" selection-end="2536" vertical-scroll-proportion="0.2172524">
-          <folding />
-        </state>
+        <state line="68" column="8" selection-start="2508" selection-end="2536" vertical-scroll-proportion="0.2172524" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/compare_report.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="8" selection-start="896" selection-end="896" vertical-scroll-proportion="0.29565218">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="8" selection-start="5431" selection-end="5431" vertical-scroll-proportion="0.9186992">
-          <folding />
-        </state>
+        <state line="29" column="8" selection-start="896" selection-end="896" vertical-scroll-proportion="0.29565218" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/archived_student/reports.rhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="20" selection-start="1762" selection-end="1762" vertical-scroll-proportion="1.8176638">
-          <folding />
-        </state>
+        <state line="48" column="20" selection-start="1762" selection-end="1762" vertical-scroll-proportion="1.8176638" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/compare_date.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="46" selection-start="623" selection-end="623" vertical-scroll-proportion="0.5769231">
-          <folding />
-        </state>
+        <state line="14" column="46" selection-start="623" selection-end="623" vertical-scroll-proportion="0.5769231" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/finance/additional_fees_create_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="40" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.26486486">
-          <folding />
-        </state>
+        <state line="31" column="40" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.26486486" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/event_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="122" selection-start="3953" selection-end="3953" vertical-scroll-proportion="0.25126904">
+        <state line="96" column="122" selection-start="3953" selection-end="3953" vertical-scroll-proportion="0.25126904" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/user_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="35" selection-start="6863" selection-end="6863" vertical-scroll-proportion="0.61734694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/development.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17342" column="0" selection-start="1594685" selection-end="1594685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures/users.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="2" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/batch.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="5" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.6878173">
+        <state line="47" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.55954325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/pt.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="29" selection-start="8687" selection-end="8687" vertical-scroll-proportion="3.1467392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="232" column="30" selection-start="9117" selection-end="9117" vertical-scroll-proportion="0.21696573">
           <folding />
         </state>
       </provider>
