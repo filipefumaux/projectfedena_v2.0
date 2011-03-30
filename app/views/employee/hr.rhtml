@@ -15,7 +15,7 @@
   <div id="box">
     <% if permitted_to? :settings, :employee %>
       <div class="link-box">
-        <div class="link-heading"><%= link_to "Settings", :controller=>"employee", :action=>"settings"%></div>
+        <div class="link-heading"><%= link_to t("settings"), :controller=>"employee", :action=>"settings"%></div>
         <div class="link-descr">HR settings.</div>
       </div>
     <%end%>

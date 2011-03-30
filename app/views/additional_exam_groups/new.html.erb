@@ -17,7 +17,7 @@
     <%= t('courses') %> &raquo;
     <%= @course.full_name %> &raquo;
     <%=t('batch') + " #{@batch.name}" %> &raquo;
-    <%= link_to "Additional Exams", batch_additional_exam_groups_path(@batch) %> &raquo;
+    <%= link_to t("additionalExams"), batch_additional_exam_groups_path(@batch) %> &raquo;
     New Additional Exam
   </div>
 

@@ -34,7 +34,7 @@
         ["Event Creation", "/event"],
         ["Human Resource", "/employee/hr"],
         ["Finance", "/finance/index"],
-        ["Users", "/user"],
+        ["Users", "/user"]
       ]
       anylinkmenu.init("menuanchorclass");
     </script>
@@ -47,17 +47,17 @@
           <%= link_to "Dashboard", :controller => "user", :action => "dashboard" %>
           <% this_user = User.find(session[:user_id]) if session[:user_id] %>
           <%  if this_user.student? || this_user.employee? %>
-            <%= link_to "Calendar", :controller => "calendar" %>
+            <%= link_to t("calendar"), :controller => "calendar" %>
           <% end %>
-          <%= link_to "Students", :controller => "student", :action => "index" \
+          <%= link_to t("students"), :controller => "student", :action => "index" \
             if this_user.admin? %>
-          <%= link_to "Attendance", :controller => "student_attendance", :action => "index" \
+          <%= link_to t("attendance"), :controller => "student_attendance", :action => "index" \
             if this_user.admin? %>
-          <%= link_to "Settings", :controller => "configuration", :action => "index" \
+          <%= link_to t("settings"), :controller => "configuration", :action => "index" \
             if this_user.admin? %> <!--
-          <%= link_to "News", :controller => "news", :action => "index" \
+          <%= link_to t("news"), :controller => "news", :action => "index" \
             if this_user.admin? %> -->
-          <%= link_to "Timetable", :controller => "timetable", :action => "index" \
+          <%= link_to t("timetable"), :controller => "timetable", :action => "index" \
             if this_user.admin? %>
           <% if this_user.admin? %>
             <a href="#" class="menuanchorclass" rel="anylinkmenu1">More ▼</a>
@@ -65,7 +65,7 @@
 
         </div>
         <div id="header_link" >
-          Logged in as:
+          <%= t("loggedInAs") %>:
           <%= link_to this_user.first_name, :controller => 'user', :action => 'profile',
             :id => this_user.username %> &nbsp;|&nbsp;
           <%= link_to "Messages",:controller => "reminder", :action => "index" %>(<%= render :partial => 'layouts/reminder_count' %>)&nbsp;|&nbsp;

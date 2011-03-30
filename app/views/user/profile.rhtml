@@ -50,7 +50,7 @@
       <% end %>
       <%= link_to "► Edit",{:controller => "user", :action => "edit", :id => @user.username }, :class => "user_button"%>
       <% unless @current_user.id == @user.id %>
-        <%= link_to "► Delete", { :controller => "user", :action => "delete", :id => @user.username}, :class => "user_button", :confirm=>"Are you sure you want to delete this USER?" %>
+        <%= link_to "► "+t("delete"), { :controller => "user", :action => "delete", :id => @user.username}, :class => "user_button", :confirm=>"Are you sure you want to delete this USER?" %>
       <% end %>
       <% unless @user.admin %>
         <% unless @user.role_name == 'Student' %>

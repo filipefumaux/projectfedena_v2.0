@@ -94,7 +94,7 @@
       <% if permitted_to? :del_guardian,:student %>
         <%  if @archived_student.archived_guardians.size > 1 %>
           <div class="parent-edit-button">
-            <%= link_to "► Delete",
+            <%= link_to "► "+t("delete"),
               {:controller => 'student', :action => 'del_guardian', :id => p.id },
               {:confirm => 'Are you completely sure?'} %>
           </div>
