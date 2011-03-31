@@ -1,6 +1,6 @@
  <div id="content-header">
   <img src="/images/attendence/attendence.png" />
-  <h1>Attendance</h1>
+  <h1><%= t("attendance.title") %></h1>
   <h3>Advance search</h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -11,12 +11,12 @@
   <div id="box">
  <% remote_form_for :advance_search do |f| %>
    <div class="label-field-pair">
-      <label for="student">Student name</label>
+      <label for="student"><%= t("student.name") %></label>
       <div class="text-input-bg">
         <%= f.text_field :student_name, :value => @student.full_name, :disabled=> true %></div>
     </div>
     <div class="label-field-pair">
-      <label for="student">Admission no.</label>
+      <label for="student"><%= t("student.admNo") %></label>
       <div class="text-input-bg">
         <%= f.text_field :student_id, :value => @student.admission_no, :disabled=> true  %></div>
     </div>
@@ -26,7 +26,7 @@
       <div class="text-input-bg">
             <%= f.select :subject_id,
               @subjects.map {|b| [b.name, b.id] },
-              {:prompt => 'All Subjects'} %>
+              {:prompt => t('subject.all')} %>
       </div>
     </div>
    <% end %>

@@ -1,8 +1,8 @@
 
 <div id="content-header">
   <img src="/images/attendence/attendence.png" />
-  <h1>Attendance</h1>
-  <h3>Attendance home</h3>
+  <h1><%= t("attendance.title") %></h1>
+  <h3><%= t("attendance.home") %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -17,7 +17,7 @@
   <div id="box">
     <% if @current_user.admin? %>
       <div class="link-box">
-        <div class="link-heading"><%= link_to "Attendance Register", :controller => 'attendances', :action => 'index'  %></div>
+        <div class="link-heading"><%= link_to t("attendance.register"), :controller => 'attendances', :action => 'index'  %></div>
         <div class="link-descr">Attendance register for students</div>
       </div>
 
@@ -29,7 +29,7 @@
 
       <% if permitted_to? :index, :attendances %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Attendance Register", :controller => 'attendances', :action => 'index'  %></div>
+          <div class="link-heading"><%= link_to t("attendance.register"), :controller => 'attendances', :action => 'index'  %></div>
           <div class="link-descr">Attendance register for students</div>
         </div>
       <% end %>

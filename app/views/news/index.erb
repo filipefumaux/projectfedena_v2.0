@@ -9,7 +9,7 @@
 
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "View all", :controller => 'news', :action => 'all' %></li>
+    <li><%= link_to t("viewAll"), :controller => 'news', :action => 'all' %></li>
     <% if permitted_to? :add,:news %>
       <li><%= link_to 'Add', :controller => 'news', :action => 'add' %>
     <% end %>

@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt="" />
-  <h1><%= "Employee" %></h1>
-  <h3><%= "Department wise payslip" %></h3>
+  <h1><%= t("employee.title") %></h1>
+  <h3><%= t("employee.departmentWisePayslip") %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -12,7 +12,7 @@
     :url => { :action => 'update_employee_payslip'} do |f| %>
     <div id="box">
        <div class="label-field-pair">
-   <label for="student_course"><%= "Select a department:" %></label>
+   <label for="student_course"><%= t("selectDepartment") %>:</label>
       <div class="text-input-bg"> <%= f.select :department_id, @departments.map { |c| [c.name, c.id] },
           {:prompt => t('selectDepartment')}
       %>

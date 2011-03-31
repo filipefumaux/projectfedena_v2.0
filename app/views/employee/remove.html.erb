@@ -47,10 +47,10 @@
   </div>
 
   <div id="delete-student">
-    <h4>Delete student</h4>
-    <p>Completely delete student's records from the school's databases. Use this option only if you created the student record by accident and want to remove it completely.</p>
+    <h4><%= t("student.delete") %></h4>
+    <p><%= t("student.warning") %></p>
 
-    <p class="warning">(Warning: All records will be deleted for the student and cannot be recovered.)</p>
+    <p class="warning"><%= t("student.warningDelete")%></p>
     <%= link_to image_tag('/images/buttons/delete.png', :border => 0),
       { :action => 'destroy', :id => @employee.id }, :confirm => t('sureQuestion') %>
   </div>
