@@ -11,7 +11,7 @@
     <%# end %>
     <% link_text = "#{r.username} (#{r.first_name} #{r.last_name})" %>
     <%= link_to link_text, :controller => 'user', :action => 'profile', :id => r.username %> <br/>
-    <small>Role: <b><%= r.role_name %></b></small>
+    <small><%= t("role") %>: <b><%= r.role_name %></b></small>
     </div>
   <%= '</div>' if i%4 == 3 %>
   <% end %>

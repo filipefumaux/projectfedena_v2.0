@@ -1,6 +1,6 @@
 <div id="content-header">
  <img src="/images/HR/show_hr.png" alt="" />
-  <h1>Employee</h1>
+  <h1><%= t("employee.title") %></h1>
   <h3>Advanced search</h3>
   <div id="app-back-button">
    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="label_field_pair">
-        <label class="label_for_student" >Gender</label>
+        <label class="label_for_student" ><%= t("gender") %></label>
         <div class="student_gender_value">
           <label class="label_for_gender" >All</label>
           <%= f.radio_button  :gender_equals, "" %>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Blood group</label>
+        <label for="student_admission_no"><%= t("bloodGroup") %></label>
         <div class="text-input-bg">
           <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>t('select')}%>
         </div>
@@ -148,7 +148,7 @@
 
       <p>You have searched for:</p>
       <div class="search-again">
-  <%#= link_to_function '► Search again' do |page|
+  <%#= link_to_function '► ' + t("searchAgain") do |page|
   page.visual_effect :toggle_slide, "search-form"
   page.hide "search-result"
   end %>
@@ -183,9 +183,9 @@
           <% end %>
 
         
-        <%= link_to "► Search again", {:action=>"advanced_search"}%>
+        <%= link_to "► " + t("searchAgain"), {:action=>"advanced_search"}%>
         <% unless @employees1.empty? %>
-        <%= link_to "► View PDF report",   {:action => "advanced_search_pdf",:for =>searched_for, :result2=>@employees2 , :result =>@employees1,:status=>params[:search][:status_equals], :format => 'pdf'}, :target => '_blank' , :class=> 'submit_button' %>
+        <%= link_to "► View " + t("pdfReport"),   {:action => "advanced_search_pdf",:for =>searched_for, :result2=>@employees2 , :result =>@employees1,:status=>params[:search][:status_equals], :format => 'pdf'}, :target => '_blank' , :class=> 'submit_button' %>
         <% end %>
       </div>
       <div class="extender"></div>
@@ -216,22 +216,22 @@
         <% end %>
         <% unless  params[:search][:gender_equals].empty? %>
           <% if  params[:search][:gender_equals] == 'm' %>
-            <span> Gender: </span> male
+            <span> <%= t("gender") %>: </span> male
           <% elsif  params[:search][:gender_equals] == 'f' %>
-            <span> Gender: </span> female
+            <span> <%= t("gender") %>: </span> female
           <% else %>
-            <span> Gender: </span> All
+            <span> <%= t("gender") %>: </span> All
           <% end %>m
           <% end %>
         <% unless  params[:search][:blood_group_like].empty? %>
-          <span> Blood group:</span> <%= params[:search][:blood_group_like] %>
+          <span> <%= t("bloodGroup") %>:</span> <%= params[:search][:blood_group_like] %>
         <% end %>
         <% unless  params[:search][:marital_status_like].empty? %>
           <span> Marital status:</span> <%= params[:search][:marital_status_like] %>
         <% end %>
         <% unless  params[:search][:nationality_id_equals].empty? %>
           <% nationality = Country.find(params[:search][:nationality_id_equals]) %>
-          <span> Nationality: </span> <%= nationality.name %>
+          <span> <%= t("nationality") %>: </span> <%= nationality.name %>
         <% end %>
         <% unless  params[:adv_search][:doj_option].empty? %>
           <span> Year of joining: </span> <%= params[:adv_search][:doj_option] %>

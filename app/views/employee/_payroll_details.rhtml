@@ -15,7 +15,7 @@
     </ul>
 <% if permitted_to? :edit_payroll_details, :payroll %>
     <div class="edit-delete-link">
-    <%= link_to "Edit", :controller => "payroll", :action => "edit_payroll_details", :id => @employee.id  %>
+    <%= link_to t("edit"), :controller => "payroll", :action => "edit_payroll_details", :id => @employee.id  %>
     </div>
 <% end %>
 <% else %>

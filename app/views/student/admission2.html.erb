@@ -1,6 +1,6 @@
 <div id="content-header">
   <img src="/images/admission/admission_page_logo.jpg" />
-  <h1>Admission</h1>
+  <h1><%= t("admission") %></h1>
   <h3>Step 2 - Parent/guardian details</h3>
 </div>
 
@@ -51,28 +51,28 @@
 
         <br/>
         <span class="span-sub-heading">Parent - Personal  Details</span>
-        <hr class="sub-heading"></hr>
+        <hr class="sub-heading" />
 
         <div class="label-field-pair">
           <label for="parent_detail_name"><%= t('firstName') %></label>
           <div class="text-input-bg"><%= f.text_field :first_name %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
-          <label for="parent_detail_name">Last name</label>
+          <label for="parent_detail_name"><%= t("lastName") %></label>
           <div class="text-input-bg"><%= f.text_field :last_name %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_relation">Relationship</label>
           <div class="text-input-bg"><%= f.text_field :relation %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_dob"><%= t('dateOfBirth') %></label>
@@ -80,21 +80,21 @@
               :year_range => 60.years.ago..20.years.ago %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_education">Education</label>
           <div class="text-input-bg"><%= f.text_field :education %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_occupation">Occupation</label>
           <div class="text-input-bg"><%= f.text_field :occupation %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_income">Income</label>
@@ -105,73 +105,73 @@
 
         <span class="span-sub-heading">Parent - Contact Details</span>
 
-        <hr class="sub-heading"></hr>
+        <hr class="sub-heading" />
 
         <div class="label-field-pair">
-          <label for="parent_detail_email">Email</label>
+          <label for="parent_detail_email"><%= t("email") %></label>
           <div class="text-input-bg"><%= f.text_field :email %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
       </div>
 
       <div id="admission1_form_vertical_block_right">
 
         <div class="label-field-pair">
-          <label for="master_student_city">Address Line 1</label>
+          <label for="master_student_city"><%= t("AddressLine") %> 1</label>
           <div class="text-input-bg"><%= f.text_field :office_address_line1 %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
-          <label for="master_student_city">Address Line 2</label>
+          <label for="master_student_city"><%= t("AddressLine") %> 2</label>
           <div class="text-input-bg"><%= f.text_field :office_address_line2 %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_city"><%= t('city') %></label>
           <div class="text-input-bg"><%= f.text_field :city %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_state"><%= t('state') %></label>
           <div class="text-input-bg"><%= f.text_field :state %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_country"><%= t('country') %></label>
           <div class="text-input-bg"> <%= select :guardian, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => 76 %> </div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_office_phone1">Phone 1</label>
           <div class="text-input-bg"><%= f.text_field :office_phone1 %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_office_phone2">Phone 2</label>
           <div class="text-input-bg"><%= f.text_field :office_phone2 %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
         <div class="label-field-pair">
           <label for="parent_detail_mob_phone">Mobile phone no.</label>
           <div class="text-input-bg"><%= f.text_field :mobile_phone %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
 
       </div>
 

@@ -9,7 +9,7 @@
 <% unless @sent_reminder.is_deleted_by_sender == true %>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "Delete", {:controller=>"reminder", :action=>"delete_reminder_by_sender", :id2=>@sent_reminder.id}, :confirm=>"Are you sure?" %></li>
+    <li><%= link_to t("delete"), {:controller=>"reminder", :action=>"delete_reminder_by_sender", :id2=>@sent_reminder.id}, :confirm=>"Are you sure?" %></li>
   </ul>
 </div>
 <% end %>

@@ -6,8 +6,8 @@
     <%- @categories.each do |c| -%>
       <li class="list<%=cycle('odd', 'even')%>">
         <div class="category-name"><%= c.name %> (<%= c.prefix %>)</div>
-        <div class="category-edit"><%= link_to "Edit", {:action => "edit_category", :id=>c.id} %></div>
-        <div class="category-edit"><%= link_to "Delete", {:action => "delete_category", :id=>c.id},:confirm=>"Are you sure?" %></div>
+        <div class="category-edit"><%= link_to t("edit"), {:action => "edit_category", :id=>c.id} %></div>
+        <div class="category-edit"><%= link_to t("delete"), {:action => "delete_category", :id=>c.id},:confirm=>"Are you sure?" %></div>
       </li>
      <% end %>
   

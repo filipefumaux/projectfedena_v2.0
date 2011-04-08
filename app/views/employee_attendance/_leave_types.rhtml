@@ -8,7 +8,7 @@
     <%- @leave_types.each do |c| -%>
       <li>
         <div class="leave-type-name"><%= c.name %>-<%= c.code %></div>
-        <div class="leave-type-edit"><%= link_to "Edit", {:action => "edit_leave_types", :id=>c.id} %></div>
+        <div class="leave-type-edit"><%= link_to t("edit"), {:action => "edit_leave_types", :id=>c.id} %></div>
         <div class="leave-type-edit"><%= "(Inactive)" unless c.status == true %></div>
         </li>
      <% end %>

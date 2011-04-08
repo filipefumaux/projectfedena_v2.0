@@ -26,10 +26,10 @@
     <div class="profile_info_text2"> <%= @user.first_name %> <%= @user.last_name %> </div>
 
 
-    <div class="profile_info_label">Role</div>
+    <div class="profile_info_label"><%= t("role") %></div>
     <div class="profile_info_text"> <%= @user.role_name %> </div>
 
-    <div class="profile_info_label2">Email</div>
+    <div class="profile_info_label2"><%= t("email") %></div>
     <div class="profile_info_text2"> <%= @user.email %> </div>
     <div class="extender"></div>
   </div>
@@ -39,16 +39,16 @@
 
       <% if @user.role_name == 'Employee' %>
         <% if @config.include?('HR') %>
-          <%= link_to "► View profile",{:controller => "employee", :action => "profile", :id => @employee.id }, :class => "user_button" unless @employee.nil?%>
+          <%= link_to "► " + t("viewProfile"),{:controller => "employee", :action => "profile", :id => @employee.id }, :class => "user_button" unless @employee.nil?%>
         <% end %>
       <% elsif @user.role_name == 'Student' %>
-        <%= link_to "► View profile",{:controller => "student", :action => "profile", :id => @student.id }, :class => "user_button"%>
+        <%= link_to "► " + t("viewProfile"),{:controller => "student", :action => "profile", :id => @student.id }, :class => "user_button"%>
       <% else %>
         <% if @config.include?('HR') %>
-          <%= link_to "► View profile",{:controller => "employee", :action => "profile", :id => @employee.id }, :class => "user_button" unless @employee.nil?%>
+          <%= link_to "► " + t("viewProfile"),{:controller => "employee", :action => "profile", :id => @employee.id }, :class => "user_button" unless @employee.nil?%>
         <% end %>
       <% end %>
-      <%= link_to "► Edit",{:controller => "user", :action => "edit", :id => @user.username }, :class => "user_button"%>
+      <%= link_to "► " + t("edit"),{:controller => "user", :action => "edit", :id => @user.username }, :class => "user_button"%>
       <% unless @current_user.id == @user.id %>
         <%= link_to "► "+t("delete"), { :controller => "user", :action => "delete", :id => @user.username}, :class => "user_button", :confirm=>"Are you sure you want to delete this USER?" %>
       <% end %>

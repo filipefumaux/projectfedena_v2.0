@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/admission/admission_page_logo.jpg" />
-  <h1>Admission</h1>
-  <h3>Previous Details</h3>
+  <h1><%= t("admission") %></h1>
+  <h3><%= t("previousDetails") %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -18,7 +18,7 @@
   <%#= error_messages_for 'employee_bank_details' %>
 
     <span class="span-sub-heading">Previous Educational Details</span>
-    <hr class="sub-heading"></hr>
+    <hr class="sub-heading" />
     <div id="form-contents">
       <%= a.hidden_field :student_id, :value => @student.id %>
       <div class="label-field-pair">

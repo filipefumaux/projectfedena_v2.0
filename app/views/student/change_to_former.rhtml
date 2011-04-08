@@ -11,7 +11,7 @@
 
   <div id="student-details">
     <h3><%= @student.full_name %></h3>
-    <h4>Adm no : <%= @student.admission_no %></h4>
+    <h4><%= t("student.admNo") %> : <%= @student.admission_no %></h4>
     <h4>Class : <%= @student.batch.course_name %></h4>
   </div>
 

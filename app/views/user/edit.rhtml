@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/edit_users/edit_users_logo.jpg" />
-  <h1>Edit User</h1>
-  <h3>Update user information</h3>
+  <h1><%= t("editUser") %></h1>
+  <h3><%= t("updateUserInfo") %></h3>
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
   </div>
@@ -22,7 +22,7 @@
 
 <div id="edit_user_form">
   
-  <div id="necessary-field-notification"> <%= t('warningFieldFill') %>/div>
+  <div id="necessary-field-notification"> <%= t('warningFieldFill') %></div>
 
   
 
@@ -32,21 +32,21 @@
     </div>
 
     <div class="label-field-pair">
-      <label for="user_first_name">First Name</label>
+      <label for="user_first_name"><%= t("firstName") %></label>
       <div class="text-input-bg"><%= u.text_field :first_name, :value => @user.first_name %></div>
     </div>
 
     <div class="label-field-pair">
-      <label for="user_last_name">Last Name</label>
+      <label for="user_last_name"><%= t("lastName") %></label>
       <div class="text-input-bg"><%= u.text_field :last_name, :value => @user.last_name %><br/></div>
       </div>
     <div class="label-field-pair">
-      <label for="user_email">Email <span class="necessary-field">*</span></label>
+      <label for="user_email"><%= t("email") %> <span class="necessary-field">*</span></label>
       <div class="text-input-bg"><%= u.text_field :email, :value => @user.email %></div>
     </div>
 
     <div class="label-field-pair">
-      <label for="user_role">Role</label>
+      <label for="user_role"><%= t("role") %></label>
       <div class="text-input-bg">
 
       <% if @user.username == "admin"  %>

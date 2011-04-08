@@ -4,7 +4,7 @@
   <div id="result-info">
     <%= @course.grade %> - <%= @course.section %> : <%= @examtype.name %>
   </div>
-  <div class="btn"><%= link_to "► View PDF report",   {:action => "all_sub_pdf", :id => @course.id,:id2 => @examtype.id, :format => 'pdf'}, :target => '_blank' %></div>
+  <div class="btn"><%= link_to "► " + t("pdfReport"),   {:action => "all_sub_pdf", :id => @course.id,:id2 => @examtype.id, :format => 'pdf'}, :target => '_blank' %></div>
   <div class="extender"></div>
   <div class="res-table">
     <table border="0" align="center" width="100%" >

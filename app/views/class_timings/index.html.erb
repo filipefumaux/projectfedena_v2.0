@@ -50,7 +50,7 @@
 <%# form_for :class_timing do |f| %>
 
 <%#*<div class="label-field-pair">%>
-<%#*<label for="period_timing_name"><%= t('name') %></label>%>
+<%#*<label for="period_timing_name"><%= t('name') ></label>%>
 <%#*<div class="text-input-bg"><%= f.text_field :name </div>%>
 <%#*</div>%>
 
@@ -80,7 +80,7 @@
 
 <%#*<div id="class-timing-list">%>
 <%#*<div class="class-timing-th">%>
-<%#*<div class="class-timing-td1"><b><%= t('name') %></b></div>%>
+<%#*<div class="class-timing-td1"><b><%= t('name') ></b></div>%>
 <%#*<div class="class-timing-td2"><b>Start Time</b></div>%>
 <%#*<div class="class-timing-td3"><b>End Time</b></div>%>
 <%#*<div class="class-timing-td4"> </div>%>
@@ -93,8 +93,8 @@
 <%#*<div class="class-timing-td2"> <%= x.start_time.strftime("%I:%M %p") unless x.start_time.nil?  &nbsp; </div>%>
 <%#*<div class="class-timing-td3"> <%= x.end_time.strftime("%I:%M %p") unless x.end_time.nil? % &nbsp; </div>%>
 <%#*<div class="class-timing-td4">%>
-<%#= link_to "Edit", :controller => "class_timing", :action=>"edit", :id => x.id %> &nbsp;
-<%#= link_to "Delete", :controller => "class_timing", :action => "delete", :id => x.id %> &nbsp;
+<%#= link_to t("edit"), :controller => "class_timing", :action=>"edit", :id => x.id %> &nbsp;
+<%#= link_to t("delete"), :controller => "class_timing", :action => "delete", :id => x.id %> &nbsp;
 <%#*</div>%>
 <%#*</div>%>
 

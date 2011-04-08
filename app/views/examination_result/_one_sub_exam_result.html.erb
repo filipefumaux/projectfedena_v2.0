@@ -26,6 +26,6 @@
     <%- end -%>
 
 
- <div class="btn"><%= link_to "► View PDF report",  :action => "one_sub_pdf", :id => @exm.id,  :format => 'pdf' %></div>
+ <div class="btn"><%= link_to "► " + t("pdfReport"),  :action => "one_sub_pdf", :id => @exm.id,  :format => 'pdf' %></div>
 
 </div>

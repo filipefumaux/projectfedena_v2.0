@@ -16,9 +16,9 @@
     <li>
       <a href="#" class="drops" id="link_one">Profile &#9660;</a>
       <ul id="box_one" class="scriptaculously" style="display:none;">
-        <li><%= link_to_remote "General", :url => {:action => "profile_general", :id => @employee.id}, :update => "profile-infos" %></li>
+        <li><%= link_to_remote t("general"), :url => {:action => "profile_general", :id => @employee.id}, :update => "profile-infos" %></li>
         <li><%= link_to_remote "Personal", :url => {:action => "profile_personal", :id => @employee.id}, :update => "profile-infos" %></li>
-        <li><%= link_to_remote "Address", :url => {:action => "profile_address", :id => @employee.id}, :update => "profile-infos" %></li>
+        <li><%= link_to_remote t("address"), :url => {:action => "profile_address", :id => @employee.id}, :update => "profile-infos" %></li>
         <li><%= link_to_remote "Contact", :url => {:action => "profile_contact", :id => @employee.id}, :update => "profile-infos" %></li>
         <li><%= link_to_remote "Bank Info", :url => {:action => "profile_bank_details", :id => @employee.id}, :update => "profile-infos" %></li>
         <li><%= link_to_remote "Additional Info", :url => {:action => "profile_additional_details", :id => @employee.id}, :update => "profile-infos" %></li>
@@ -27,7 +27,7 @@
 
     <% if current_username == profile_employee_no %>
       <li>
-        <a href="#" class="drops" id="link_two">Salary &#9660;</a>
+        <a href="#" class="drops" id="link_two"><%= t("salary") %> &#9660;</a>
         <ul id="box_two" class="scriptaculously" style="display:none;">
           <li><%= link_to_remote "Payroll", :url => {:action => "profile_payroll_details", :id => @employee.id}, :update => "profile-infos" %></li>
          </ul>
@@ -35,7 +35,7 @@
     <%else%>
       <% if permitted_to? :payslip, :employee %>
         <li>
-          <a href="#" class="drops" id="link_two">Salary &#9660;</a>
+          <a href="#" class="drops" id="link_two"><%= t("salary") %> &#9660;</a>
           <ul id="box_two" class="scriptaculously" style="display:none;">
             <li><%= link_to_remote "Payroll", :url => {:action => "profile_payroll_details", :id => @employee.id}, :update => "profile-infos" %></li>
           </ul>

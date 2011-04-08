@@ -1,6 +1,6 @@
 <div id="content-header">
   <img src="/images/admission/admission_page_logo.jpg" />
-  <h1>Admission</h1>
+  <h1><%= t("admission") %></h1>
   <h3>Step 4</h3>
 </div>
 
@@ -16,7 +16,7 @@
 
       <div id="form-contents">
       <span class="span-sub-heading">Additional Details</span>
-      <hr class="sub-heading"></hr>
+      <hr class="sub-heading" />
           <% @additional_fields.each do |additional| %>
           <div class="label-field-pair">
             <label><%= additional.name %></label>

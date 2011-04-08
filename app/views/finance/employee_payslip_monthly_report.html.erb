@@ -30,7 +30,7 @@
 </ul>
 
 <ul class="item-list">
-  <li class="heading">Deductions:</li>
+  <li class="heading"><%= t("deductions") %>:</li>
   <% @monthly_payslips.each do |mp| %>
     <% category = PayrollCategory.find(mp.payroll_category_id) %>
     <% @emp = Employee.find(mp.employee_id) %>
@@ -58,11 +58,11 @@
 <ul class="item-list">
   <li class="heading">Total:</li>
   <li class="listodd">
-    <div class="item-name">Deductions :</div>
+    <div class="item-name"><%= t("deductions") %> :</div>
     <div class="item-edit"><span class="currency-type"><%= @currency_type %></span> <%=@net_deductionable_amount %></div>
   </li>
   <li class="listeven">
-    <div class="item-name">Salary :</div>
+    <div class="item-name"><%= t("salary") %> :</div>
     <div class="item-edit"><span class="currency-type"><%= @currency_type %></span> <%=@net_amount%></div>
   </li>
 </ul>

@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="label_field_pair">
-        <label class="label_for_student" for="student_gender">Gender</label>
+        <label class="label_for_student" for="student_gender"><%= t("gender") %></label>
         <div class="student_gender_value">
           <label class="label_for_gender" for="student_gender_true">All</label>
           <%= f.radio_button  :gender_equals, "" %>
@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_blood_group">Blood group</label>
+        <label for="student_blood_group"><%= t("bloodGroup") %></label>
         <div class="text-input-bg">
           <%= select :search, :blood_group_like, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{:prompt=>t('select')}%>
         </div>
@@ -81,7 +81,7 @@
       </div>
 
       <div class="label-field-pair">
-        <label for="student_grade">Admission Date</label>
+        <label for="student_grade"><%= t("admissionDate") %></label>
         <div class="text-input-bg">
           <%= select :advv_search,:doa_option,["equal to","less than","greater than"],{:prompt=>"Option"},
             {:onChange => "#{remote_function(:url => {:action => "list_doa_year"},
@@ -147,7 +147,7 @@
 
       <p>You have searched for:</p>
       <div class="search-again">
-        <%#= link_to_function '► Search again' do |page|
+        <%#= link_to_function '► ' + t("searchAgain") do |page|
           page.visual_effect :toggle_slide, "search-form"
           page.hide "search-result"
         end %>
@@ -184,9 +184,9 @@
         <% end %>
 
 
-        <%= link_to "► Search again", {:action=>"advanced_search"}%>
+        <%= link_to "► " + t("searchAgain"), {:action=>"advanced_search"}%>
         <% unless @students.empty? %>
-          <%= link_to "► View PDF report",   {:action => "advanced_search_pdf",:for =>searched_for, :result=>@students,:search=> params[:search],:status=>params[:search][:is_active_equals], :format => 'pdf'}, :target => '_blank' , :class=> 'submit_button' %>
+          <%= link_to "► " + t("pdfReport"),   {:action => "advanced_search_pdf",:for =>searched_for, :result=>@students,:search=> params[:search],:status=>params[:search][:is_active_equals], :format => 'pdf'}, :target => '_blank' , :class=> 'submit_button' %>
         <% end %>
       </div>
       <div class="extender"></div>
@@ -211,19 +211,19 @@
         <% end %>
         <% unless  params[:search][:gender_equals].empty? %>
           <% if  params[:search][:gender_equals] == 'm' %>
-            <span> Gender: </span> male
+            <span> <%= t("gender") %>: </span> male
           <% elsif  params[:search][:gender_equals] == 'f' %>
-            <span> Gender: </span> female
+            <span> <%= t("gender") %>: </span> female
           <% else %>
-            <span> Gender: </span> All
+            <span> <%= t("gender") %>: </span> All
           <% end %>
         <% end %>
         <% unless  params[:search][:blood_group_like].empty? %>
-          <span> Blood group:</span> <%= params[:search][:blood_group_like] %>
+          <span> <%= t("bloodGroup") %>:</span> <%= params[:search][:blood_group_like] %>
         <% end %>
         <% unless  params[:search][:nationality_id_equals].empty? %>
           <% nationality = Country.find(params[:search][:nationality_id_equals]) %>
-          <span> Nationality: </span> <%= nationality.name %>
+          <span> <%= t("nationality") %>: </span> <%= nationality.name %>
         <% end %>
         <% unless  params[:advv_search][:doa_option].empty? %>
           <span> Year of admission: </span> <%= params[:advv_search][:doa_option] %>
@@ -255,7 +255,7 @@
             <%= order @search, :by => :first_name %>
           </td>
           <td> Batch</td>
-          <td> Adm no</td>
+          <td> <%= t("student.admNo") %></td>
 
         </tr>
         <tr class="tr-blank"></tr>

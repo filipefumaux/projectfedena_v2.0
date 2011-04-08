@@ -64,7 +64,7 @@ class AdditionalExamController < ApplicationController
       student_user = s.user
       unless student_user.nil?
         Reminder.create(:sender=> current_user.id,:recipient=>student_user.id,
-          :subject=>t('exam.additionalScheduled'),          :body=>"#{@additional_exam_group.name} has been scheduled  <br/> Please view calendar for more details")
+          :subject=>t('exam.additionalScheduled'),          :body=>"#{@additional_exam_group.name} "+t("hasBeenScheduled")+"  <br/>"+t("viewCaledarForDetails"))
       end
     end
   end

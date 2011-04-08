@@ -19,14 +19,14 @@
 
     <div id="form-contents">
       <span class="span-sub-heading">Additional Details</span>
-      <hr class="sub-heading"></hr>
+      <hr class="sub-heading" />
         <% @additional_fields.each do |additional| %>
         <div class="label-field-pair">
           <label><%= additional.name %></label>
           <div class="text-input-bg"><%= a.text_field :additional_info,:index => additional.id %></div>
           <div class="extender"></div>
         </div>
-        <hr class="label-underline"></hr>
+        <hr class="label-underline" />
         <% end %>
     </div>
 
