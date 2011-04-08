@@ -94,7 +94,7 @@ en:
   firstName: "Primeiro nome"
   secondName: "Segundo nome"
   lastName: "Último nome"
-  middleName: ""
+  middleName: "Middle Name"
   password: "Senha"
   dateOfBirth: "Data de nascimento"
   email: "Email"
