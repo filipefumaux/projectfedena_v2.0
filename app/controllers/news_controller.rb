@@ -8,7 +8,7 @@ class NewsController < ApplicationController
     if request.post? and @news.save
       sms_setting = SmsSetting.new()
       if sms_setting.application_sms_active
-        students = Student.find(:all,:select=>'phone2',:conditions=>'is_sms_enabled = true')
+        students = Student.find(:all, :select=>'phone2', :conditions=>'is_sms_enabled = true')
       end
       flash[:notice] = 'News added!'
       redirect_to :controller => 'news', :action => 'view', :id => @news.id

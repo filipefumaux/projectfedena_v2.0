@@ -2,7 +2,7 @@ class TimetableController < ApplicationController
   before_filter :login_required
   before_filter :protect_other_student_data
   filter_access_to :all
-  
+
   def generate
     @batches = Batch.active
     if request.post?
@@ -20,7 +20,7 @@ class TimetableController < ApplicationController
       set = 0
       (@start_date..@end_date).each do |d|
         w = d.wday.to_s
-        @period = PeriodEntry.find_all_by_month_date_and_batch_id(d,@batch.id)
+        @period = PeriodEntry.find_all_by_month_date_and_batch_id(d, @batch.id)
         if @period.empty?
           unless Event.is_a_holiday?(d)
             if holiday.include? w
@@ -46,7 +46,7 @@ class TimetableController < ApplicationController
                     unless t.subject_id == p.subject_id
                       PeriodEntry.update(p.id, :month_date=> d, :batch_id => @batch.id, :subject_id => t.subject_id, :class_timing_id => t.class_timing_id, :employee_id => t.employee_id)
                       set = 1
-                      
+
 
                     end
                   end
@@ -56,7 +56,7 @@ class TimetableController < ApplicationController
             end
           end
         end
-          
+
         if set == 0
           flash[:notice] = t('timetable.alreadyPublished')
         elsif set == 1
@@ -65,7 +65,7 @@ class TimetableController < ApplicationController
           flash[:notice] = t('timetable.created')
         end
       end
-    
+
       @config = Configuration.available_modules
       if @config.include?('HR')
         redirect_to :action=>"edit2", :id => @batch.id
@@ -85,15 +85,17 @@ class TimetableController < ApplicationController
         page.replace_html 'extra-class-form', :partial => "extra_class_form"
       end
     end
-      
+
   end
+
   def extra_class_edit
     @config = Configuration.available_modules
     @period_id = params[:id]
     @period_entry = PeriodEntry.find(@period_id)
-    @subjects = Subject.find_all_by_batch_id(@period_entry.batch_id,:conditions=>'is_deleted=false')
+    @subjects = Subject.find_all_by_batch_id(@period_entry.batch_id, :conditions=>'is_deleted=false')
     @employee = EmployeesSubject.find_all_by_subject_id(@period_entry.subject_id)
   end
+
   def list_employee_by_subject
     @period_id = params[:period_id]
     @subject = Subject.find(params[:subject_id])
@@ -102,6 +104,7 @@ class TimetableController < ApplicationController
       page.replace_html "employee-update-#{@period_id}", :partial => "list_employee_by_subject"
     end
   end
+
   def save_extra_class
     @period = PeriodEntry.find(params[:period_entry][:period_id])
     PeriodEntry.update(@period.id, :subject_id => params[:period_entry][:subject_id], :employee_id => params[:period_entry][:employee_id])
@@ -196,13 +199,13 @@ class TimetableController < ApplicationController
   def update_multiple_timetable_entries
     @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     subject = Subject.find(params[:subject_id])
-    tte_ids = params[:tte_ids].split(",").each {|x| x.to_i}
+    tte_ids = params[:tte_ids].split(",").each { |x| x.to_i }
     course = subject.batch
     @validation_problems = {}
 
     tte_ids.each do |tte_id|
-      errors = { "info" => {"sub_id" => subject.id, "tte_id" => tte_id},
-        "messages" => [] }
+      errors = {"info" => {"sub_id" => subject.id, "tte_id" => tte_id},
+                "messages" => []}
 
       # check for weekly subject limit.
       errors["messages"] << "Weekly subject limit reached." \
@@ -323,7 +326,7 @@ class TimetableController < ApplicationController
   def update_multiple_timetable_entries2
     @weekday = [t('sun'), t('mon'), t('tue'), t('wed'), t('thu'), t('fri'), t('sat')]
     employees_subject = EmployeesSubject.find(params[:emp_sub_id])
-    tte_ids = params[:tte_ids].split(",").each {|x| x.to_i}
+    tte_ids = params[:tte_ids].split(",").each { |x| x.to_i }
     @batch = employees_subject.subject.batch
     subject = employees_subject.subject
     employee = employees_subject.employee
@@ -331,8 +334,8 @@ class TimetableController < ApplicationController
 
     tte_ids.each do |tte_id|
       tte = TimetableEntry.find(tte_id)
-      errors = { "info" => {"sub_id" => employees_subject.subject_id, "emp_id"=> employees_subject.employee_id,"tte_id" => tte_id},
-        "messages" => [] }
+      errors = {"info" => {"sub_id" => employees_subject.subject_id, "emp_id"=> employees_subject.employee_id, "tte_id" => tte_id},
+                "messages" => []}
 
       # check for weekly subject limit.
       errors["messages"] << "Weekly subject limit reached." \
@@ -341,7 +344,7 @@ class TimetableController < ApplicationController
       #check for overlapping classes
       errors["messages"] << "Class overlap occured." \
         unless TimetableEntry.find(:first,
-        :conditions => "week_day_id = #{tte.week_day_id} AND
+                                   :conditions => "week_day_id = #{tte.week_day_id} AND
                                                class_timing_id = #{tte.class_timing_id} AND
                                                employee_id = #{employee.id}").nil?
 
@@ -377,11 +380,11 @@ class TimetableController < ApplicationController
     @errors = {"messages" => []}
     subject = Subject.find(params[:sub_id])
     tte = TimetableEntry.find(params[:tte_id])
-    overlapped_tte = TimetableEntry.find_by_week_day_id_and_class_timing_id_and_employee_id(tte.week_day_id,tte.class_timing_id,params[:emp_id])
+    overlapped_tte = TimetableEntry.find_by_week_day_id_and_class_timing_id_and_employee_id(tte.week_day_id, tte.class_timing_id, params[:emp_id])
     if overlapped_tte.nil?
       TimetableEntry.update(params[:tte_id], :subject_id => params[:sub_id], :employee_id => params[:emp_id])
     else
-      TimetableEntry.update(overlapped_tte.id,:subject_id => nil, :employee_id => nil )
+      TimetableEntry.update(overlapped_tte.id, :subject_id => nil, :employee_id => nil)
       TimetableEntry.update(params[:tte_id], :subject_id => params[:sub_id], :employee_id => params[:emp_id])
     end
     @timetable = TimetableEntry.find_all_by_batch_id(subject.batch_id)
@@ -391,6 +394,7 @@ class TimetableController < ApplicationController
   def tt_entry_noupdate2
     render :update => "error_div_#{params[:tte_id]}", :text => t('cancelled')
   end
+
   #PDF Reports
   def timetable_pdf
     @batch = Batch.find(params[:course_id])

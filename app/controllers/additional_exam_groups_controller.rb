@@ -21,9 +21,9 @@ class AdditionalExamGroupsController < ApplicationController
     if @batch.is_active?
       @students = @batch.students
     else
-      @students =    Student.find(:all,:joins =>'INNER JOIN `batch_students` ON `students`.id = `batch_students`.student_id AND batch_students.batch_id ='+ @batch.id.to_s )
+      @students = Student.find(:all, :joins =>'INNER JOIN `batch_students` ON `students`.id = `batch_students`.student_id AND batch_students.batch_id ='+ @batch.id.to_s)
     end
- 
+
   end
 
   def show
@@ -34,10 +34,8 @@ class AdditionalExamGroupsController < ApplicationController
     @students=@batch.students
     @additional_exam_group = AdditionalExamGroup.new(params[:additional_exam_group])
     @additional_exam_group.batch_id = @batch.id
-   
 
 
- 
     if @additional_exam_group.save
 
       flash[:notice] = "Additional Exam Group successfuly saved."

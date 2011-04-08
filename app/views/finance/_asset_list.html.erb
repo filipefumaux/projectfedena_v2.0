@@ -1,31 +1,31 @@
 <table id="listing" width="99%" align="center">
   <tr class="tr-head">
-    <td >Asset</td>
+    <td>Asset</td>
     <td>Created At</td>
-     <td></td>
+    <td></td>
   </tr>
 
   <% @assets.each do |a| %>
-    <% if a.is_inactive? %>
-      <tr class="inactive">
-        <td class="col-3"><%=link_to a.title+" ( inactive )" ,:action=>"each_asset_view",:id => a.id%></td>
-        <td class="col-3"><%=link_to a.created_at.strftime("%d-%m-%Y"),:action =>"each_asset_view",:id => a.id%></td>
-        <td class="col-1">
-          <%= link_to_remote t('edit'), :url => { :action => 'edit_asset', :id => a.id } %> |
-          <%= link_to_remote t('delete'), :url => { :action => 'delete_asset', :id => a.id } %>
-        </td>
-        
-      </tr>
-    <% else %>
-      <tr class="tr-<%= cycle('odd', 'even')%> ">
-        <td class="col-3"><%=link_to a.title ,:action=>"each_asset_view",:id => a.id%></td>
-        <td class="col-3"><%=link_to a.created_at.strftime("%d-%m-%Y"),:action =>"each_asset_view",:id => a.id%></td>
-        <td class="col-1">
-          <%= link_to_remote t('edit'), :url => { :action => 'edit_asset', :id => a.id } %> |
-          <%= link_to_remote t('delete'), :url => { :action => 'delete_asset', :id => a.id },:confirm=>t('areYouSure') %>
-        </td>
+      <% if a.is_inactive? %>
+          <tr class="inactive">
+            <td class="col-3"><%= link_to a.title+" ( inactive )", :action=>"each_asset_view", :id => a.id %></td>
+            <td class="col-3"><%= link_to a.created_at.strftime("%d-%m-%Y"), :action =>"each_asset_view", :id => a.id %></td>
+            <td class="col-1">
+              <%= link_to_remote t('edit'), :url => {:action => 'edit_asset', :id => a.id} %> |
+              <%= link_to_remote t('delete'), :url => {:action => 'delete_asset', :id => a.id} %>
+            </td>
 
-      </tr>
-    <% end %>
+          </tr>
+      <% else %>
+          <tr class="tr-<%= cycle('odd', 'even') %> ">
+            <td class="col-3"><%= link_to a.title, :action=>"each_asset_view", :id => a.id %></td>
+            <td class="col-3"><%= link_to a.created_at.strftime("%d-%m-%Y"), :action =>"each_asset_view", :id => a.id %></td>
+            <td class="col-1">
+              <%= link_to_remote t('edit'), :url => {:action => 'edit_asset', :id => a.id} %> |
+              <%= link_to_remote t('delete'), :url => {:action => 'delete_asset', :id => a.id}, :confirm=>t('areYouSure') %>
+            </td>
+
+          </tr>
+      <% end %>
   <% end %>
 </table>

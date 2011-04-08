@@ -21,9 +21,9 @@ class ClassTimingsController < ApplicationController
     respond_to do |format|
       if @class_timing.save
         @class_timing.batch.nil? ?
-          @class_timings = ClassTiming.default :
-          @class_timings = ClassTiming.for_batch(@class_timing.batch_id)
-      #  flash[:notice] = 'Class timing was successfully created.'
+            @class_timings = ClassTiming.default :
+            @class_timings = ClassTiming.for_batch(@class_timing.batch_id)
+        #  flash[:notice] = 'Class timing was successfully created.'
         format.html { redirect_to class_timing_url(@class_timing) }
         format.js { render :action => 'create' }
       else
@@ -37,7 +37,7 @@ class ClassTimingsController < ApplicationController
   def edit
     @class_timing = ClassTiming.find(params[:id])
     respond_to do |format|
-      format.html { }
+      format.html {}
       format.js { render :action => 'edit' }
     end
   end
@@ -47,9 +47,9 @@ class ClassTimingsController < ApplicationController
     respond_to do |format|
       if @class_timing.update_attributes(params[:class_timing])
         @class_timing.batch.nil? ?
-          @class_timings = ClassTiming.default :
-          @class_timings = ClassTiming.for_batch(@class_timing.batch_id)
-   #     flash[:notice] = 'Class timing updated successfully.'
+            @class_timings = ClassTiming.default :
+            @class_timings = ClassTiming.for_batch(@class_timing.batch_id)
+        #     flash[:notice] = 'Class timing updated successfully.'
         format.html { redirect_to class_timing_url(@class_timing) }
         format.js { render :action => 'update' }
       else

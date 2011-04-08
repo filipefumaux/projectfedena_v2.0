@@ -1,7 +1,7 @@
 class BatchesController < ApplicationController
   before_filter :init_data
   filter_access_to :all
-  
+
   def index
     @batches = @course.batches
   end
@@ -29,7 +29,7 @@ class BatchesController < ApplicationController
       redirect_to [@course, @batch]
     else
       flash[:notice] = "Please fill all feilds"
-       redirect_to  edit_course_batch_path(@course, @batch)
+      redirect_to edit_course_batch_path(@course, @batch)
     end
   end
 
@@ -39,13 +39,13 @@ class BatchesController < ApplicationController
 
   def destroy
     if @batch.students.empty? and @batch.subjects.empty?
-    @batch.inactivate
-    flash[:notice] = 'Batch deleted successfully.'
-     redirect_to @course
+      @batch.inactivate
+      flash[:notice] = 'Batch deleted successfully.'
+      redirect_to @course
     else
-     flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Students first.</p>' if @batch.students.empty?
-     flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Subjects first.</p>' if @batch.subjects.empty?
-   redirect_to [@course, @batch]
+      flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Students first.</p>' if @batch.students.empty?
+      flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Subjects first.</p>' if @batch.subjects.empty?
+      redirect_to [@course, @batch]
     end
   end
 

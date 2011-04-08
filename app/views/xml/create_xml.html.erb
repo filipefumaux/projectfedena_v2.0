@@ -1,27 +1,32 @@
 <div id="content-header">
-  <img src="/images/show_finance.png" alt="" />
+  <img src="/images/show_finance.png" alt=""/>
+
   <h1>Finance</h1>
+
   <h3>Export to Tally</h3>
+
   <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 <div id="page-yield">
   <div class="box">
-<div class="label-field-pair">
-  <% form_for :tally do |f| %>
-    <label for="student_grade"><%= t('employee.startDate') %></label>
-    <div class="text-input-bg"><%= calendar_date_select_tag 'xml[start_date]', Date.today,
-        :year_range => 1.years.ago..1.years.from_now %>
-    </div>
-  </div>
-  <div class="label-field-pair">
-    <label for="student_grade"><%= t('endDate') %></label>
-    <div class="text-input-bg"><%= calendar_date_select_tag 'xml[end_date]', Date.today,
-        :year_range => 1.years.ago..1.years.from_now %>
-    </div>
-  </div>
-<%= submit_tag t('saveChanges'),:class=>'submit_button' %>
-<% end %>
-  </div>
+    <div class="label-field-pair">
+      <% form_for :tally do |f| %>
+          <label for="student_grade"><%= t('employee.startDate') %></label>
+
+          <div class="text-input-bg"><%= calendar_date_select_tag 'xml[start_date]', Date.today,
+                                                                  :year_range => 1.years.ago..1.years.from_now %>
+          </div>
+          </div>
+          <div class="label-field-pair">
+            <label for="student_grade"><%= t('endDate') %></label>
+
+            <div class="text-input-bg"><%= calendar_date_select_tag 'xml[end_date]', Date.today,
+                                                                    :year_range => 1.years.ago..1.years.from_now %>
+            </div>
+          </div>
+          <%= submit_tag t('saveChanges'), :class=>'submit_button' %>
+      <% end %>
+      </div>
 </div>

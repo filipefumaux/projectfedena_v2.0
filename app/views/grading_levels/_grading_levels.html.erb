@@ -1,30 +1,32 @@
 <div class="add_grade">
-<%= link_to_remote 'Add Grades', :url => { :action => 'new', :id => @batch }%>
+  <%= link_to_remote 'Add Grades', :url => {:action => 'new', :id => @batch} %>
 
 </div>
-<%  unless @grading_levels.empty? %>
-  <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
-    <tr class="tr-head">
-      <td><%= t('name') %></td>
-      <td>Min score</td>
-      <td></td>
-    </tr>
-    <% @grading_levels.each do |grade| %>
-      <tr id="grading-level-<%= grade.id %>" class="tr-<%= cycle('odd', 'even') %>">
-        <td class="col-2"><%= grade.name %></td>
-        <td class="col-2"><%= grade.min_score %></td>
-        <td class="col-1"><small><%= link_to_remote(t('edit'),
-              :url => edit_grading_level_path(grade), :method => 'get' ) %>
-            | <%= link_to_remote(t('delete'),
-              :url => grading_level_path(grade),
-              :method => 'delete',
-              :confirm => t('areYouSure'),
-              :update => "grading-level-#{grade.id}") %></small></td>
+<% unless @grading_levels.empty? %>
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('name') %></td>
+        <td>Min score</td>
+        <td></td>
       </tr>
-    <% end %>
-  </table>
+      <% @grading_levels.each do |grade| %>
+          <tr id="grading-level-<%= grade.id %>" class="tr-<%= cycle('odd', 'even') %>">
+            <td class="col-2"><%= grade.name %></td>
+            <td class="col-2"><%= grade.min_score %></td>
+            <td class="col-1">
+              <small><%= link_to_remote(t('edit'),
+                                        :url => edit_grading_level_path(grade), :method => 'get') %>
+                | <%= link_to_remote(t('delete'),
+                                     :url => grading_level_path(grade),
+                                     :method => 'delete',
+                                     :confirm => t('areYouSure'),
+                                     :update => "grading-level-#{grade.id}") %></small>
+            </td>
+          </tr>
+      <% end %>
+    </table>
 <% else %>
 
-  <h4>Set in common</h4>
+    <h4>Set in common</h4>
 
 <% end %>

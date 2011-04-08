@@ -3,16 +3,16 @@ class Student < ActiveRecord::Base
   belongs_to :batch
   belongs_to :student_category
   belongs_to :nationality, :class_name => 'Country'
-  has_one    :immediate_contact
-  has_one    :student_previous_data
-  has_many   :student_previous_subject_mark
-  has_many   :guardians, :foreign_key => 'ward_id', :dependent => :destroy
-  has_many   :finance_transactions
-  has_many   :fee_category ,:class_name => "FinanceFeeCategory"
+  has_one :immediate_contact
+  has_one :student_previous_data
+  has_many :student_previous_subject_mark
+  has_many :guardians, :foreign_key => 'ward_id', :dependent => :destroy
+  has_many :finance_transactions
+  has_many :fee_category, :class_name => "FinanceFeeCategory"
 
   has_and_belongs_to_many :graduated_batches, :class_name => 'Batch', :join_table => 'batch_students'
 
-  named_scope :active, :conditions => { :is_active => true }
+  named_scope :active, :conditions => {:is_active => true}
 
   validates_presence_of :admission_no, :admission_date, :first_name, :batch_id, :date_of_birth
   validates_uniqueness_of :admission_no
@@ -26,7 +26,7 @@ class Student < ActiveRecord::Base
     errors.add(:gender, 'attribute is invalid.') unless ['m', 'f'].include? self.gender.downcase \
       unless self.gender.nil?
     errors.add(:admission_no, 'can\'t be zero') if self.admission_no=='0'
-      
+
   end
 
   def first_and_last_name
@@ -57,9 +57,9 @@ class Student < ActiveRecord::Base
 
   def image_file=(input_data)
     return if input_data.blank?
-    self.photo_filename     = input_data.original_filename
+    self.photo_filename = input_data.original_filename
     self.photo_content_type = input_data.content_type.chomp
-    self.photo_data         = input_data.read
+    self.photo_data = input_data.read
   end
 
   def next_student
@@ -74,7 +74,7 @@ class Student < ActiveRecord::Base
   end
 
   def finance_fee_by_date(date)
-    FinanceFee.find_by_fee_collection_id_and_student_id(date.id,self.id)
+    FinanceFee.find_by_fee_collection_id_and_student_id(date.id, self.id)
   end
 
   def check_fees_paid(date)
@@ -84,7 +84,7 @@ class Student < ActiveRecord::Base
     financefee = date.fee_transactions(self.id)
     unless particulars.nil?
       return financefee.check_transaction_done unless financefee.nil?
-      
+
     else
       return false
     end
@@ -93,9 +93,9 @@ class Student < ActiveRecord::Base
   def self.next_admission_no
     '' #stub for logic to be added later.
   end
-  
+
   def get_fee_strucure_elements(date)
-    elements = FinanceFeeStructureElement.get_student_fee_components(self,date)
+    elements = FinanceFeeStructureElement.get_student_fee_components(self, date)
     elements[:all] + elements[:by_batch] + elements[:by_category] + elements[:by_batch_and_category]
   end
 
@@ -134,9 +134,9 @@ class Student < ActiveRecord::Base
       end
       #
     end
- 
+
   end
-  
+
   def student_user
     User.find_by_username(self.admission_no).id
   end
@@ -147,7 +147,7 @@ class Student < ActiveRecord::Base
       u.first_name, u.last_name, u.username = first_name, last_name, admission_no.to_s
       u.password = "#{admission_no.to_s}123"
       u.role = 'Student'
-      u.email = ( email == '' or User.find_by_email(email) ) ? "noreply#{admission_no.to_s}@fedena.com" : email
+      u.email = (email == '' or User.find_by_email(email)) ? "noreply#{admission_no.to_s}@fedena.com" : email
     end
     user.save
   end

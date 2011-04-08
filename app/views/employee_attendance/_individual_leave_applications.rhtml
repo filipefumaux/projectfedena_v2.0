@@ -1,45 +1,45 @@
 <div class="heading">My leave applications</div>
 <% unless @applied_leaves == [] %>
-  <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
-    <tr class="tr-head">
-      <td>
-        <%= t('employee.startDate') %>
-      </td>
-      <td>
-        <%= t('endDate') %>
-      </td>
-      <td>
-        Status
-      </td>
-    </tr>
-    <tr class="tr-blank"></tr>
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td>
+          <%= t('employee.startDate') %>
+        </td>
+        <td>
+          <%= t('endDate') %>
+        </td>
+        <td>
+          Status
+        </td>
+      </tr>
+      <tr class="tr-blank"></tr>
 
 
-    <% @applied_leaves.each do |l| %>
-      <% unless l.viewed_by_manager? %>
-        <tr class="tr-<%= cycle('odd', 'even') %>">
-          <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}",:controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-          <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-          <td class="col-1"><%= link_to "Pending",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-        </tr>
-      <% else %>
-        <% if l.approved? %>
-          <tr class="tr-<%= cycle('odd', 'even') %>">
-            <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-            <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-            <td class="col-1"><%= link_to "Approved",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-          </tr>
-        <% else %>
-          <tr class="tr-<%= cycle('odd', 'even') %>">
-            <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-            <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-            <td class="col-1"><%= link_to "Denied",  :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
-          </tr>
-        <% end %>
+      <% @applied_leaves.each do |l| %>
+          <% unless l.viewed_by_manager? %>
+              <tr class="tr-<%= cycle('odd', 'even') %>">
+                <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                <td class="col-1"><%= link_to "Pending", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+              </tr>
+          <% else %>
+              <% if l.approved? %>
+                  <tr class="tr-<%= cycle('odd', 'even') %>">
+                    <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                    <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                    <td class="col-1"><%= link_to "Approved", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                  </tr>
+              <% else %>
+                  <tr class="tr-<%= cycle('odd', 'even') %>">
+                    <td class="col-3"><%= link_to "#{l.start_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                    <td class="col-3"><%= link_to "#{l.end_date.strftime("%d/%m/%Y")}", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                    <td class="col-1"><%= link_to "Denied", :controller=>"employee_attendance", :action=>"own_leave_application", :id=>l.id %></td>
+                  </tr>
+              <% end %>
+          <% end %>
       <% end %>
-    <% end %>
-  </table>
-  <%= will_paginate @applied_leaves %>
+    </table>
+    <%= will_paginate @applied_leaves %>
 <% else %>
-  <span>There are no leave applications</span>
+    <span>There are no leave applications</span>
 <% end %>

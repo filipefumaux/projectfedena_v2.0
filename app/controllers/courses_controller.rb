@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   before_filter :login_required
   before_filter :find_course, :only => [:show, :edit, :update, :destroy]
   filter_access_to :all
-  
+
   def index
     @courses = Course.active
   end
@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
   end
 
   def update_batch
-    @batch = Batch.find_all_by_course_id(params[:course_name], :conditions => { :is_deleted => false, :is_active => true })
+    @batch = Batch.find_all_by_course_id(params[:course_name], :conditions => {:is_deleted => false, :is_active => true})
 
     render(:update) do |page|
       page.replace_html 'update_batch', :partial=>'update_batch'
@@ -53,13 +53,13 @@ class CoursesController < ApplicationController
   def destroy
     if @course.batches.active.empty?
       @course.inactivate
-       flash[:notice]="Course deleted successfully."
+      flash[:notice]="Course deleted successfully."
       redirect_to :action=>'manage_course'
     else
       flash[:warn_notice]="<p>Unable to Delete. Please remove exising batches and students.</p>"
       redirect_to :action=>'manage_course'
     end
-  
+
   end
 
   def show

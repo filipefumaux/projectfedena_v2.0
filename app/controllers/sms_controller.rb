@@ -1,10 +1,10 @@
 class SmsController < ApplicationController
   filter_access_to :all
-  
+
   def index
     @config = Configuration.available_modules
     unless @config.include?('SMS')
-      redirect_to :controller=>"user" , :action=>"dashboard"
+      redirect_to :controller=>"user", :action=>"dashboard"
     else
       @sms_setting = SmsSetting.new()
     end
@@ -13,7 +13,7 @@ class SmsController < ApplicationController
   def settings
     @config = Configuration.available_modules
     unless @config.include?('SMS')
-      redirect_to :controller=>"user" , :action=>"dashboard"
+      redirect_to :controller=>"user", :action=>"dashboard"
     else
       @application_sms_enabled = SmsSetting.find_by_settings_key("ApplicationEnabled")
       @student_admission_sms_enabled = SmsSetting.find_by_settings_key("StudentAdmissionEnabled")
@@ -24,7 +24,7 @@ class SmsController < ApplicationController
       @students_sms_enabled = SmsSetting.find_by_settings_key("StudentSmsEnabled")
       @employees_sms_enabled = SmsSetting.find_by_settings_key("EmployeeSmsEnabled")
       if request.post?
-        SmsSetting.update(@application_sms_enabled.id,:is_enabled=>params[:sms_settings][:application_enabled])
+        SmsSetting.update(@application_sms_enabled.id, :is_enabled=>params[:sms_settings][:application_enabled])
         redirect_to :action=>"settings"
       end
     end
@@ -38,13 +38,13 @@ class SmsController < ApplicationController
     @parents_sms_enabled = SmsSetting.find_by_settings_key("ParentSmsEnabled")
     @students_sms_enabled = SmsSetting.find_by_settings_key("StudentSmsEnabled")
     @employees_sms_enabled = SmsSetting.find_by_settings_key("EmployeeSmsEnabled")
-    SmsSetting.update(@student_admission_sms_enabled.id,:is_enabled=>params[:general_settings][:student_admission_enabled])
-    SmsSetting.update(@exam_schedule_result_sms_enabled.id,:is_enabled=>params[:general_settings][:exam_schedule_result_enabled])
-    SmsSetting.update(@student_attendance_sms_enabled.id,:is_enabled=>params[:general_settings][:student_attendance_enabled])
-    SmsSetting.update(@news_events_sms_enabled.id,:is_enabled=>params[:general_settings][:news_events_enabled])
-    SmsSetting.update(@parents_sms_enabled.id,:is_enabled=>params[:general_settings][:sms_parents_enabled])
-    SmsSetting.update(@students_sms_enabled.id,:is_enabled=>params[:general_settings][:sms_students_enabled])
-    SmsSetting.update(@employees_sms_enabled.id,:is_enabled=>params[:general_settings][:sms_employees_enabled])
+    SmsSetting.update(@student_admission_sms_enabled.id, :is_enabled=>params[:general_settings][:student_admission_enabled])
+    SmsSetting.update(@exam_schedule_result_sms_enabled.id, :is_enabled=>params[:general_settings][:exam_schedule_result_enabled])
+    SmsSetting.update(@student_attendance_sms_enabled.id, :is_enabled=>params[:general_settings][:student_attendance_enabled])
+    SmsSetting.update(@news_events_sms_enabled.id, :is_enabled=>params[:general_settings][:news_events_enabled])
+    SmsSetting.update(@parents_sms_enabled.id, :is_enabled=>params[:general_settings][:sms_parents_enabled])
+    SmsSetting.update(@students_sms_enabled.id, :is_enabled=>params[:general_settings][:sms_students_enabled])
+    SmsSetting.update(@employees_sms_enabled.id, :is_enabled=>params[:general_settings][:sms_employees_enabled])
     redirect_to :action=>"settings"
   end
 
@@ -58,24 +58,24 @@ class SmsController < ApplicationController
           student = Student.find(s_id)
           guardian = student.immediate_contact
           if student.is_sms_enabled
-            if sms_setting.student_sms_active           
+            if sms_setting.student_sms_active
               @recipients.push student.phone2 unless (student.phone2.nil? or student.phone2 == "")
             end
             if sms_setting.parent_sms_active
-               unless guardian.nil?
-              @recipients.push guardian.mobile_phone unless (guardian.mobile_phone.nil? or guardian.mobile_phone == "")
-               end
+              unless guardian.nil?
+                @recipients.push guardian.mobile_phone unless (guardian.mobile_phone.nil? or guardian.mobile_phone == "")
+              end
             end
           end
           unless @recipients.empty?
             message = params[:send_sms][:message]
-            sms = SmsManager.new(message,@recipients)
+            sms = SmsManager.new(message, @recipients)
             sms.send_sms
           end
         end
       end
       render(:update) do |page|
-        page.replace_html 'status-message',:text=>"<p class=\"flash-msg\"> SMS sent successfully selected students and their guardians</p>"
+        page.replace_html 'status-message', :text=>"<p class=\"flash-msg\"> SMS sent successfully selected students and their guardians</p>"
         page.visual_effect(:highlight, 'status-message')
       end
     end
@@ -83,7 +83,7 @@ class SmsController < ApplicationController
 
   def list_students
     batch = Batch.find(params[:batch_id])
-    @students = Student.find_all_by_batch_id(batch.id,:conditions=>'is_sms_enabled=true')
+    @students = Student.find_all_by_batch_id(batch.id, :conditions=>'is_sms_enabled=true')
   end
 
   def batches
@@ -104,20 +104,20 @@ class SmsController < ApplicationController
               if sms_setting.parent_sms_active
                 guardian = student.immediate_contact
                 unless guardian.nil?
-                @recipients.push guardian.mobile_phone unless (guardian.mobile_phone.nil? or guardian.mobile_phone == "")
+                  @recipients.push guardian.mobile_phone unless (guardian.mobile_phone.nil? or guardian.mobile_phone == "")
                 end
               end
             end
           end
           unless @recipients.empty?
             message = params[:send_sms][:message]
-            sms = SmsManager.new(message,@recipients)
+            sms = SmsManager.new(message, @recipients)
             sms.send_sms
           end
         end
       end
       render(:update) do |page|
-        page.replace_html 'status-message',:text=>"<p class=\"flash-msg\">SMS sent successfully to students(guardians) of selected course</p>"
+        page.replace_html 'status-message', :text=>"<p class=\"flash-msg\">SMS sent successfully to students(guardians) of selected course</p>"
         page.visual_effect(:highlight, 'status-message')
       end
     end
@@ -144,7 +144,7 @@ class SmsController < ApplicationController
       end
       unless @recipients.empty?
         message = params[:send_sms][:message]
-        sms = SmsManager.new(message,@recipients)
+        sms = SmsManager.new(message, @recipients)
         sms.send_sms
       end
     end
@@ -159,7 +159,7 @@ class SmsController < ApplicationController
       end
       unless @recipients.empty?
         message = params[:send_sms][:message]
-        sms = SmsManager.new(message,@recipients)
+        sms = SmsManager.new(message, @recipients)
         sms.send_sms
       end
     end
@@ -178,13 +178,13 @@ class SmsController < ApplicationController
           end
           unless @recipients.empty?
             message = params[:send_sms][:message]
-            sms = SmsManager.new(message,@recipients)
+            sms = SmsManager.new(message, @recipients)
             sms.send_sms
           end
         end
       end
       render(:update) do |page|
-        page.replace_html 'status-message',:text=>"<p class=\"flash-msg\">SMS sent successfully to selected employees</p>"
+        page.replace_html 'status-message', :text=>"<p class=\"flash-msg\">SMS sent successfully to selected employees</p>"
         page.visual_effect(:highlight, 'status-message')
       end
     end
@@ -212,13 +212,13 @@ class SmsController < ApplicationController
           end
           unless @recipients.empty?
             message = params[:send_sms][:message]
-            sms = SmsManager.new(message,@recipients)
+            sms = SmsManager.new(message, @recipients)
             sms.send_sms
           end
         end
       end
       render(:update) do |page|
-        page.replace_html 'status-message',:text=>"<p class=\"flash-msg\">SMS sent successfully to employees of selected department</p>"
+        page.replace_html 'status-message', :text=>"<p class=\"flash-msg\">SMS sent successfully to employees of selected department</p>"
         page.visual_effect(:highlight, 'status-message')
       end
     end

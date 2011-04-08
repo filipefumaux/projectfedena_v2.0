@@ -6,10 +6,10 @@ class FinanceDonation < ActiveRecord::Base
 
   def create_finance_transaction
     transaction = FinanceTransaction.create(
-      :title => "Donation from " + donor,
-      :description => description,
-      :amount => amount,
-      :category => FinanceTransactionCategory.find_by_name('Donation')
+        :title => "Donation from " + donor,
+        :description => description,
+        :amount => amount,
+        :category => FinanceTransactionCategory.find_by_name('Donation')
     )
     self.transaction_id = transaction.id
   end

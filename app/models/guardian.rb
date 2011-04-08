@@ -22,5 +22,5 @@ class Guardian < ActiveRecord::Base
     guardian_attributes["ward_id"] = archived_student
     self.delete if ArchivedGuardian.create(guardian_attributes)
   end
-  
+
 end

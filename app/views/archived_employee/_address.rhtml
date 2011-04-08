@@ -22,7 +22,7 @@
 
 <div class="new_profile_info_area1">
   <div class="profile_info_label_top2"><%= t('pinCode') %></div>
-  <div class="profile_info_text_top2"> <%=  @employee.home_pin_code %> </div>
+  <div class="profile_info_text_top2"> <%= @employee.home_pin_code %> </div>
 
   <div class="profile_info_label_top"></div>
   <div class="profile_info_text_top"></div>
@@ -30,7 +30,7 @@
 
 <div class="new_profile_info_area1">
   <div class="profile_info_label_top2"><%= t('officeAddress') %></div>
-  <div class="profile_info_text_top2"><%=  @employee.office_address_line1 %></div>
+  <div class="profile_info_text_top2"><%= @employee.office_address_line1 %></div>
 
   <div class="profile_info_label_top">&nbsp;</div>
   <div class="profile_info_text_top"><%= @employee.office_address_line2 %></div>
@@ -38,7 +38,7 @@
 
 <div class="new_profile_info_area1">
   <div class="profile_info_label_top2"><%= t('city') %></div>
-  <div class="profile_info_text_top2"> <%=  @employee.office_city %> </div>
+  <div class="profile_info_text_top2"> <%= @employee.office_city %> </div>
 
   <div class="profile_info_label_top"><%= t('state') %></div>
   <div class="profile_info_text_top"><%= @employee.office_state %></div>
@@ -46,7 +46,7 @@
 
 <div class="new_profile_info_area1">
   <div class="profile_info_label_top2"><%= t('country') %></div>
-  <div class="profile_info_text_top2"> <%=  @office_country %> </div>
+  <div class="profile_info_text_top2"> <%= @office_country %> </div>
 
   <div class="profile_info_label_top"><%= t('pinCode') %></div>
   <div class="profile_info_text_top"><%= @employee.office_pin_code %></div>
@@ -57,6 +57,6 @@
 <div class="edit-pdf-group">
   <div class="pdf">
     <%= link_to " ► " + t('pdfReport'),
-      {:controller => "employee", :action => "profile_pdf", :id => @employee.id},:target => '_blank', :class=> 'user_button' %>
+                {:controller => "employee", :action => "profile_pdf", :id => @employee.id}, :target => '_blank', :class=> 'user_button' %>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class EmployeeAttendanceController < ApplicationController
-  before_filter :login_required,:configuration_settings_for_hr
+  before_filter :login_required, :configuration_settings_for_hr
   before_filter :protect_leave_dashboard, :only => [:leaves, :employee_attendance_pdf]
   before_filter :protect_applied_leave, :only => [:own_leave_application, :cancel_application]
   before_filter :protect_manager_leave_application_view, :only => [:leave_application]
@@ -30,7 +30,7 @@ class EmployeeAttendanceController < ApplicationController
       unless params[:employee_attendance].nil?
         params[:employee_attendance].each_pair do |emp, att|
           @employee_attendance = EmployeeAttendance.create(:attendance_date => params[:date],
-            :employees_id => emp, :employee_leave_types_id=> att) unless att == ""
+                                                           :employees_id => emp, :employee_leave_types_id=> att) unless att == ""
         end
         flash[:notice]="attendance registered"
         redirect_to :controller=>"employee_attendance", :action => "register"
@@ -77,7 +77,7 @@ class EmployeeAttendanceController < ApplicationController
     @leave_types = EmployeeLeaveType.find(:all, :conditions => "status = true")
     @total_leaves = 0
     @leave_types.each do |lt|
-      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id,lt.id).size
+      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id, lt.id).size
       #@total_leaves = @total_leaves + leave_count
     end
   end
@@ -138,13 +138,13 @@ class EmployeeAttendanceController < ApplicationController
     start_date = @applied_leave.start_date
     end_date = @applied_leave.end_date
     (start_date..end_date).each do |d|
-      unless(d.strftime('%A') == "Sunday")
-        EmployeeAttendance.create(:attendance_date=>d, :employee_id=>@applied_employee.id,:employee_leave_type_id=>@applied_leave.employee_leave_types_id, :reason => @applied_leave.reason, :is_half_day => @applied_leave.is_half_day)
+      unless (d.strftime('%A') == "Sunday")
+        EmployeeAttendance.create(:attendance_date=>d, :employee_id=>@applied_employee.id, :employee_leave_type_id=>@applied_leave.employee_leave_types_id, :reason => @applied_leave.reason, :is_half_day => @applied_leave.is_half_day)
         att = EmployeeAttendance.find_by_attendance_date(d)
         EmployeeAttendance.update(att.id, :is_half_day => @applied_leave.is_half_day)
       end
     end
-    
+
     flash[:notice]="Leave approved for #{@applied_employee.first_name} from #{@applied_leave.start_date} to #{@applied_leave.end_date}"
     redirect_to :controller=>"employee_attendance", :action=>"leaves", :id=>@manager
   end
@@ -183,7 +183,7 @@ class EmployeeAttendanceController < ApplicationController
   def individual_leave_applications
     @employee = Employee.find(params[:id])
     @pending_applied_leaves = ApplyLeave.find_all_by_employee_id(@employee.id, :conditions=> "approved = false AND viewed_by_manager = false", :order=>"start_date DESC")
-    @applied_leaves = ApplyLeave.paginate(:page => params[:page],  :conditions=>[ "employee_id = '#{@employee.id}'"], :order=>"start_date DESC")
+    @applied_leaves = ApplyLeave.paginate(:page => params[:page], :conditions=>["employee_id = '#{@employee.id}'"], :order=>"start_date DESC")
     render :partial => "individual_leave_applications"
   end
 
@@ -211,7 +211,7 @@ class EmployeeAttendanceController < ApplicationController
     @employee = Employee.find(params[:employee_id])
 
     @all_pending_applied_leaves = ApplyLeave.find_all_by_employee_id(params[:employee_id], :conditions=> "approved = false AND viewed_by_manager = false", :order=>"start_date DESC")
-    @all_applied_leaves = ApplyLeave.paginate(:page => params[:page],  :conditions=> ["employee_id = '#{@employee.id}'"], :order=>"start_date DESC")
+    @all_applied_leaves = ApplyLeave.paginate(:page => params[:page], :conditions=> ["employee_id = '#{@employee.id}'"], :order=>"start_date DESC")
     render :update do |page|
       page.replace_html "all-application-view", :partial => "all_leave_application_lists"
     end
@@ -225,7 +225,7 @@ class EmployeeAttendanceController < ApplicationController
     @leave_types = EmployeeLeaveType.find(:all, :conditions => "status = true")
     @total_leaves = 0
     @leave_types.each do |lt|
-      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id,lt.id).size
+      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id, lt.id).size
       @total_leaves = @total_leaves + leave_count
     end
 

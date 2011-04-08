@@ -23,8 +23,8 @@ class ArchivedStudentController < ApplicationController
     @student= ArchivedStudent.find params[:id]
     @batch = @student.batch
     @grouped_exams = GroupedExam.find_all_by_batch_id(@batch.id)
-    @normal_subjects = Subject.find_all_by_batch_id(@batch.id,:conditions=>"no_exams = false AND elective_group_id IS NULL AND is_deleted = false")
-    @student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>{:batch_id=>@batch.id})
+    @normal_subjects = Subject.find_all_by_batch_id(@batch.id, :conditions=>"no_exams = false AND elective_group_id IS NULL AND is_deleted = false")
+    @student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>{:batch_id=>@batch.id})
     @elective_subjects = []
     @student_electives.each do |e|
       @elective_subjects.push Subject.find(e.subject_id)
@@ -60,7 +60,7 @@ class ArchivedStudentController < ApplicationController
       @exam_groups = ExamGroup.find_all_by_batch_id(@batch.id)
     end
     general_subjects = Subject.find_all_by_batch_id(@batch.id, :conditions=>"elective_group_id IS NULL and is_deleted=false")
-    student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>"batch_id = #{@batch.id}")
+    student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>"batch_id = #{@batch.id}")
     elective_subjects = []
     student_electives.each do |elect|
       elective_subjects.push Subject.find(elect.subject_id)
@@ -74,11 +74,11 @@ class ArchivedStudentController < ApplicationController
     @batch = Batch.find(params[:year])
     @start_date = @batch.start_date.to_date
     if @student.created_at.to_date > @batch.end_date.to_date
-      @end_date =  @batch.end_date.to_date
+      @end_date = @batch.end_date.to_date
     else
-      @end_date =  @student.created_at.to_date
+      @end_date = @student.created_at.to_date
     end
-    @report = PeriodEntry.find_all_by_batch_id(@batch.id,  :conditions =>{:month_date => @start_date..@end_date})
+    @report = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => @start_date..@end_date})
 
   end
 
@@ -89,7 +89,7 @@ class ArchivedStudentController < ApplicationController
       @batch = @exam_group.batch
       @student = @batch.students.first
       general_subjects = Subject.find_all_by_batch_id(@batch.id, :conditions=>"elective_group_id IS NULL")
-      student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>"batch_id = #{@batch.id}")
+      student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>"batch_id = #{@batch.id}")
       elective_subjects = []
       student_electives.each do |elect|
         elective_subjects.push Subject.find(elect.subject_id)
@@ -97,17 +97,17 @@ class ArchivedStudentController < ApplicationController
       @subjects = general_subjects + elective_subjects
       @exams = []
       @subjects.each do |sub|
-        exam = Exam.find_by_exam_group_id_and_subject_id(@exam_group.id,sub.id)
+        exam = Exam.find_by_exam_group_id_and_subject_id(@exam_group.id, sub.id)
         @exams.push exam unless exam.nil?
       end
       @graph = open_flash_chart_object(770, 350,
-        "/archived_student/graph_for_generated_report?batch=#{@student.batch.id}&examgroup=#{@exam_group.id}&student=#{@student.id}")
+                                       "/archived_student/graph_for_generated_report?batch=#{@student.batch.id}&examgroup=#{@exam_group.id}&student=#{@student.id}")
     else
       @exam_group = ExamGroup.find(params[:exam_group])
       @student = ArchivedStudent.find(params[:student])
       @batch = @student.batch
       general_subjects = Subject.find_all_by_batch_id(@student.batch.id, :conditions=>"elective_group_id IS NULL")
-      student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>"batch_id = #{@student.batch.id}")
+      student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>"batch_id = #{@student.batch.id}")
       elective_subjects = []
       student_electives.each do |elect|
         elective_subjects.push Subject.find(elect.subject_id)
@@ -115,11 +115,11 @@ class ArchivedStudentController < ApplicationController
       @subjects = general_subjects + elective_subjects
       @exams = []
       @subjects.each do |sub|
-        exam = Exam.find_by_exam_group_id_and_subject_id(@exam_group.id,sub.id)
+        exam = Exam.find_by_exam_group_id_and_subject_id(@exam_group.id, sub.id)
         @exams.push exam unless exam.nil?
       end
       @graph = open_flash_chart_object(770, 350,
-        "/archived_student/graph_for_generated_report?batch=#{@student.batch.id}&examgroup=#{@exam_group.id}&student=#{@student.id}")
+                                       "/archived_student/graph_for_generated_report?batch=#{@student.batch.id}&examgroup=#{@exam_group.id}&student=#{@student.id}")
     end
   end
 
@@ -138,16 +138,16 @@ class ArchivedStudentController < ApplicationController
     @student = ArchivedStudent.find(params[:student])
     @batch = @student.batch
     @subject = Subject.find(params[:subject])
-    @exam_groups = ExamGroup.find(:all,:conditions=>{:batch_id=>@batch.id})
+    @exam_groups = ExamGroup.find(:all, :conditions=>{:batch_id=>@batch.id})
     @graph = open_flash_chart_object(770, 350,
-      "/archived_student/graph_for_generated_report3?subject=#{@subject.id}&student=#{@student.id}")
+                                     "/archived_student/graph_for_generated_report3?subject=#{@subject.id}&student=#{@student.id}")
   end
 
   def previous_years_marks_overview
     @student = ArchivedStudent.find(params[:student])
     @all_batches = @student.all_batches
     @graph = open_flash_chart_object(770, 350,
-      "/archived_student/graph_for_previous_years_marks_overview?student=#{params[:student]}&graphtype=#{params[:graphtype]}")
+                                     "/archived_student/graph_for_previous_years_marks_overview?student=#{params[:student]}&graphtype=#{params[:graphtype]}")
   end
 
 
@@ -156,7 +156,7 @@ class ArchivedStudentController < ApplicationController
     unless params[:student].nil?
       @student = ArchivedStudent.find(params[:student])
       @batch = @student.batch
-      @type  = params[:type]
+      @type = params[:type]
       if params[:type] == 'grouped'
         @grouped_exams = GroupedExam.find_all_by_batch_id(@batch.id)
         @exam_groups = []
@@ -167,7 +167,7 @@ class ArchivedStudentController < ApplicationController
         @exam_groups = ExamGroup.find_all_by_batch_id(@batch.id)
       end
       general_subjects = Subject.find_all_by_batch_id(@student.batch.id, :conditions=>"elective_group_id IS NULL AND is_deleted=false")
-      student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>"batch_id = #{@student.batch.id}")
+      student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>"batch_id = #{@student.batch.id}")
       elective_subjects = []
       student_electives.each do |elect|
         elective_subjects.push Subject.find(elect.subject_id)
@@ -177,14 +177,14 @@ class ArchivedStudentController < ApplicationController
 
   end
 
-    
+
   def generated_report4_pdf
 
     #grouped-exam-report-for-batch
     unless params[:student].nil?
       @student = ArchivedStudent.find(params[:student])
       @batch = @student.batch
-      @type  = params[:type]
+      @type = params[:type]
       if params[:type] == 'grouped'
         @grouped_exams = GroupedExam.find_all_by_batch_id(@batch.id)
         @exam_groups = []
@@ -195,7 +195,7 @@ class ArchivedStudentController < ApplicationController
         @exam_groups = ExamGroup.find_all_by_batch_id(@batch.id)
       end
       general_subjects = Subject.find_all_by_batch_id(@student.batch.id, :conditions=>"elective_group_id IS NULL")
-      student_electives = StudentsSubject.find_all_by_student_id(@student.id,:conditions=>"batch_id = #{@student.batch.id}")
+      student_electives = StudentsSubject.find_all_by_student_id(@student.id, :conditions=>"batch_id = #{@student.batch.id}")
       elective_subjects = []
       student_electives.each do |elect|
         elective_subjects.push Subject.find(elect.subject_id)
@@ -216,7 +216,7 @@ class ArchivedStudentController < ApplicationController
     examgroup = ExamGroup.find(params[:examgroup])
     batch = student.batch
     general_subjects = Subject.find_all_by_batch_id(batch.id, :conditions=>"elective_group_id IS NULL")
-    student_electives = StudentsSubject.find_all_by_student_id(student.id,:conditions=>"batch_id = #{batch.id}")
+    student_electives = StudentsSubject.find_all_by_student_id(student.id, :conditions=>"batch_id = #{batch.id}")
     elective_subjects = []
     student_electives.each do |elect|
       elective_subjects.push Subject.find(elect.subject_id)
@@ -228,7 +228,7 @@ class ArchivedStudentController < ApplicationController
     data2 = []
 
     subjects.each do |s|
-      exam = Exam.find_by_exam_group_id_and_subject_id(examgroup.id,s.id)
+      exam = Exam.find_by_exam_group_id_and_subject_id(examgroup.id, s.id)
       res = ArchivedExamScore.find_by_exam_id_and_student_id(exam, student)
       unless res.nil?
         x_labels << s.code
@@ -255,7 +255,7 @@ class ArchivedStudentController < ApplicationController
     x_axis.labels = x_labels
 
     y_axis = YAxis.new
-    y_axis.set_range(0,100,20)
+    y_axis.set_range(0, 100, 20)
 
     title = Title.new(student.full_name)
 
@@ -305,7 +305,7 @@ class ArchivedStudentController < ApplicationController
     line.values = data
 
     y = YAxis.new
-    y.set_range(0,100,20)
+    y.set_range(0, 100, 20)
 
     title = Title.new(subject.name)
 
@@ -337,7 +337,7 @@ class ArchivedStudentController < ApplicationController
     student.all_batches.each do |b|
       x_labels << b.name
       exam = ArchivedExamScore.new()
-      data << exam.batch_wise_aggregate(student,b)
+      data << exam.batch_wise_aggregate(student, b)
     end
 
     if params[:graphtype] == 'Line'
@@ -352,7 +352,7 @@ class ArchivedStudentController < ApplicationController
     x_axis.labels = x_labels
 
     y_axis = YAxis.new
-    y_axis.set_range(0,100,20)
+    y_axis.set_range(0, 100, 20)
 
     title = Title.new(student.full_name)
 

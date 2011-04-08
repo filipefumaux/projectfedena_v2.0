@@ -1,7 +1,7 @@
 <div id="new_profile_info_top">
   <div class="profile_info_label_top">Reporting Manager</div>
   <div class="profile_info_text_top">
-    <%=  @reporting_manager%>
+    <%= @reporting_manager %>
   </div>
 
 </div>
@@ -11,8 +11,8 @@
 <div class="extender"></div>
 <div class="edit-pdf-group">
   <% if permitted_to? :change_reporting_manager, :employee %>
-    <div class="edit">
-      <%= link_to "► " + t("edit"),  :controller => "employee", :action => "change_reporting_manager", :id =>@employee.id %>
-    </div>
-  <%end%>
+      <div class="edit">
+        <%= link_to "► " + t("edit"), :controller => "employee", :action => "change_reporting_manager", :id =>@employee.id %>
+      </div>
+  <% end %>
 </div>

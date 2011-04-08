@@ -1,3 +1,3 @@
 class ArchivedEmployeeSalaryStructure < ActiveRecord::Base
-   has_many :payroll_categories
+  has_many :payroll_categories
 end

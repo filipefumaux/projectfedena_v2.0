@@ -10,7 +10,7 @@ class PayrollController < ApplicationController
       flash[:notice]="payroll category saved"
       redirect_to :action => "add_category"
     end
-    
+
   end
 
   def edit_category
@@ -37,12 +37,12 @@ class PayrollController < ApplicationController
   end
 
   def delete_category
-    employees = EmployeeSalaryStructure.find(:all ,:conditions=>"payroll_category_id = #{params[:id]}")
+    employees = EmployeeSalaryStructure.find(:all, :conditions=>"payroll_category_id = #{params[:id]}")
     if employees.empty?
-    PayrollCategory.find(params[:id]).destroy
-    @departments = PayrollCategory.find :all
-    flash[:notice]= t('successfullyDeleted')
-    redirect_to :action => "add_category"
+      PayrollCategory.find(params[:id]).destroy
+      @departments = PayrollCategory.find :all
+      flash[:notice]= t('successfullyDeleted')
+      redirect_to :action => "add_category"
     else
       flash[:notice]=t('unableToDelete')
       redirect_to :action => "add_category"
@@ -55,13 +55,13 @@ class PayrollController < ApplicationController
     @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id != \'\'")
     payroll_created = EmployeeSalaryStructure.find_all_by_employee_id(@employee.id)
     if payroll_created.empty?
-    if request.post?
-      params[:manage_payroll].each_pair do |k, v|
-        EmployeeSalaryStructure.create(:employee_id => params[:id], :payroll_category_id => k, :amount => v['amount'])
+      if request.post?
+        params[:manage_payroll].each_pair do |k, v|
+          EmployeeSalaryStructure.create(:employee_id => params[:id], :payroll_category_id => k, :amount => v['amount'])
+        end
+        flash[:notice] = "Data saved for #{@employee.first_name}"
+        redirect_to :controller => "employee", :action => "profile", :id=> @employee.id
       end
-      flash[:notice] = "Data saved for #{@employee.first_name}"
-      redirect_to :controller => "employee", :action => "profile", :id=> @employee.id
-    end
     else
       redirect_to :controller=>"employee", :action=>"profile", :id=>@employee.id
     end
@@ -70,13 +70,13 @@ class PayrollController < ApplicationController
   def update_dependent_fields
     cat_id = params[:cat_id]
     amount = params[:amount]
-    @dependent_categories = PayrollCategory.find_all_by_payroll_category_id(cat_id,:conditions=>"status = true")
+    @dependent_categories = PayrollCategory.find_all_by_payroll_category_id(cat_id, :conditions=>"status = true")
     render :update do |page|
       @dependent_categories.each do |c|
         percentage_value = c.percentage
         calculated_amount =(amount.to_i*percentage_value/100)
         page["manage_payroll_#{c.id}_amount"].value = calculated_amount
-        page << remote_function(:url  => {:action => "update_dependent_fields"}, :with => "'amount='+ #{calculated_amount} + '&cat_id=' + #{c.id}")
+        page << remote_function(:url => {:action => "update_dependent_fields"}, :with => "'amount='+ #{calculated_amount} + '&cat_id=' + #{c.id}")
       end
     end
   end
@@ -90,11 +90,11 @@ class PayrollController < ApplicationController
         row_id = EmployeeSalaryStructure.find_by_employee_id_and_payroll_category_id(@employee, k)
         unless row_id.nil?
           EmployeeSalaryStructure.update(row_id, :employee_id => params[:id], :payroll_category_id => k,
-          :amount => v['amount'])
+                                         :amount => v['amount'])
         else
           EmployeeSalaryStructure.create(:employee_id => params[:id], :payroll_category_id => k, :amount => v['amount'])
         end
-        
+
       end
       flash[:notice] = "Data saved for #{@employee.first_name}"
       redirect_to :controller => "employee", :action => "profile", :id=> @employee.id

@@ -1,16 +1,18 @@
-
 <div id="content-header">
-    <img src="/images/show_settings.png" />
-  <h1><%= t("students")%></h1>
+  <img src="/images/show_settings.png"/>
+
+  <h1><%= t("students") %></h1>
+
   <h3>Categories</h3>
+
   <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
 <div id="page-yield">
- <% unless flash[:notice].nil? %>
-    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% unless flash[:notice].nil? %>
+      <p class="flash-msg"> <%= flash[:notice] %> </p>
   <% end %>
   <div id="student-category-form">
     <%= render :partial => "student_category_create_form" %>

@@ -1,26 +1,26 @@
 class Employee < ActiveRecord::Base
-  belongs_to  :employee_category
-  belongs_to  :employee_position
-  belongs_to  :employee_grade
-  belongs_to  :employee_department
-  belongs_to  :nationality, :class_name => 'Country'
+  belongs_to :employee_category
+  belongs_to :employee_position
+  belongs_to :employee_grade
+  belongs_to :employee_department
+  belongs_to :nationality, :class_name => 'Country'
   has_and_belongs_to_many :subjects
-  has_many    :timetable_entries
-  has_many    :employee_bank_details
-  has_many    :employee_additional_details
-  has_many    :apply_leaves
-  has_many    :monthly_payslips
-  has_many    :employee_salary_structures
+  has_many :timetable_entries
+  has_many :employee_bank_details
+  has_many :employee_additional_details
+  has_many :apply_leaves
+  has_many :monthly_payslips
+  has_many :employee_salary_structures
 
   validates_presence_of :employee_category_id, :employee_number, :first_name, :employee_position_id,
-    :employee_department_id, :employee_grade_id, :date_of_birth
-  validates_uniqueness_of  :employee_number
+                        :employee_department_id, :employee_grade_id, :date_of_birth
+  validates_uniqueness_of :employee_number
 
   def image_file=(input_data)
     return if input_data.blank?
-    self.photo_filename     = input_data.original_filename
+    self.photo_filename = input_data.original_filename
     self.photo_content_type = input_data.content_type.chomp
-    self.photo_data         = input_data.read
+    self.photo_data = input_data.read
   end
 
   def max_hours_per_day
@@ -36,13 +36,13 @@ class Employee < ActiveRecord::Base
   end
 
   def next_employee
-    next_st = self.employee_department.employees.first(:conditions => "id>#{self.id}",:order => "id ASC")
+    next_st = self.employee_department.employees.first(:conditions => "id>#{self.id}", :order => "id ASC")
     next_st ||= employee_department.employees.first(:order => "id ASC")
     next_st ||= self.employee_department.employees.first(:order => "id ASC")
   end
 
   def previous_employee
-    prev_st = self.employee_department.employees.first(:conditions => "id<#{self.id}",:order => "id DESC")
+    prev_st = self.employee_department.employees.first(:conditions => "id<#{self.id}", :order => "id DESC")
     prev_st ||= employee_department.employees.first(:order => "id DESC")
     prev_st ||= self.employee_department.empoyees.first(:order => "id DESC")
   end
@@ -52,7 +52,7 @@ class Employee < ActiveRecord::Base
   end
 
   def is_paylip_approved(date)
-    approve = MonthlyPayslip.find_all_by_salary_date_and_employee_id(date,self.id,:conditions => ["is_approved = true"])
+    approve = MonthlyPayslip.find_all_by_salary_date_and_employee_id(date, self.id, :conditions => ["is_approved = true"])
     if approve.empty?
       return false
     else
@@ -60,10 +60,10 @@ class Employee < ActiveRecord::Base
     end
   end
 
-  def self.total_employees_salary(employees,start_date,end_date)
+  def self.total_employees_salary(employees, start_date, end_date)
     salary = 0
     employees.each do |e|
-      salary_dates = e.all_salaries(start_date,end_date)
+      salary_dates = e.all_salaries(start_date, end_date)
       salary_dates.each do |s|
         salary += e.employee_salary(s.salary_date.to_date)
       end
@@ -74,11 +74,11 @@ class Employee < ActiveRecord::Base
   def employee_salary(salary_date)
 
     monthly_payslips = MonthlyPayslip.find(:all,
-      :order => 'salary_date desc',
-      :conditions => ["employee_id ='#{self.id}'and salary_date = '#{salary_date}' and is_approved = 1"])
+                                           :order => 'salary_date desc',
+                                           :conditions => ["employee_id ='#{self.id}'and salary_date = '#{salary_date}' and is_approved = 1"])
     individual_payslip_category = IndividualPayslipCategory.find(:all,
-      :order => 'salary_date desc',
-      :conditions => ["employee_id ='#{self.id}'and salary_date >= '#{salary_date}'"])
+                                                                 :order => 'salary_date desc',
+                                                                 :conditions => ["employee_id ='#{self.id}'and salary_date >= '#{salary_date}'"])
     individual_category_non_deductionable = 0
     individual_category_deductionable = 0
     individual_payslip_category.each do |pc|
@@ -116,9 +116,9 @@ class Employee < ActiveRecord::Base
   end
 
 
-  def salary(start_date,end_date)
-    MonthlyPayslip.find_by_employee_id(self.id,:order => 'salary_date desc',
-      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"]).salary_date
+  def salary(start_date, end_date)
+    MonthlyPayslip.find_by_employee_id(self.id, :order => 'salary_date desc',
+                                       :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"]).salary_date
 
   end
 
@@ -143,10 +143,10 @@ class Employee < ActiveRecord::Base
       self.delete
     end
   end
- 
 
-  def all_salaries(start_date,end_date)
-    MonthlyPayslip.find_all_by_employee_id(self.id,:select =>"distinct salary_date" ,:order => 'salary_date desc',
-      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"])
+
+  def all_salaries(start_date, end_date)
+    MonthlyPayslip.find_all_by_employee_id(self.id, :select =>"distinct salary_date", :order => 'salary_date desc',
+                                           :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"])
   end
 end

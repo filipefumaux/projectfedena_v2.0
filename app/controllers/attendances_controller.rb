@@ -1,5 +1,6 @@
 class AttendancesController < ApplicationController
   filter_access_to :all
+
   def index
     @batches = Batch.active
     @config = Configuration.find_by_config_key('StudentAttendanceType')
@@ -30,7 +31,7 @@ class AttendancesController < ApplicationController
       @sub =Subject.find params[:subject_id]
       @batch = @sub.batch_id
       @students = Student.find_all_by_batch_id(@batch)
-      @dates = PeriodEntry.find_all_by_batch_id_and_subject_id(@batch,@sub.id,  :conditions =>{:month_date => start_date..end_date},:order=>'month_date ASC')
+      @dates = PeriodEntry.find_all_by_batch_id_and_subject_id(@batch, @sub.id, :conditions =>{:month_date => start_date..end_date}, :order=>'month_date ASC')
     end
     respond_to do |format|
       format.js { render :action => 'show' }
@@ -62,12 +63,12 @@ class AttendancesController < ApplicationController
           end
           if sms_setting.parent_sms_active
             unless @student.immediate_contact_id.nil?
-            guardian = Guardian.find(@student.immediate_contact_id)
-            recipients.push guardian.mobile_phone unless guardian.mobile_phone.nil?
+              guardian = Guardian.find(@student.immediate_contact_id)
+              recipients.push guardian.mobile_phone unless guardian.mobile_phone.nil?
             end
           end
           unless recipients.empty?
-            sms = SmsManager.new(message,recipients)
+            sms = SmsManager.new(message, recipients)
             sms.send_sms
           end
         end
@@ -80,7 +81,7 @@ class AttendancesController < ApplicationController
         end
         start_date = @today.beginning_of_month
         end_date = @today.end_of_month
-        @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date},:order=>'month_date ASC')
+        @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date}, :order=>'month_date ASC')
         format.js { render :action => 'create' }
       end
     end
@@ -91,7 +92,7 @@ class AttendancesController < ApplicationController
     @absentee = Attendance.find params[:id]
     @student = Student.find(@absentee.student_id)
     respond_to do |format|
-      format.html { }
+      format.html {}
       format.js { render :action => 'edit' }
     end
   end
@@ -111,7 +112,7 @@ class AttendancesController < ApplicationController
         end
         start_date = @today.beginning_of_month
         end_date = @today.end_of_month
-        @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date},:order=>'month_date ASC')
+        @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date}, :order=>'month_date ASC')
         format.js { render :action => 'update' }
       end
     end
@@ -132,7 +133,7 @@ class AttendancesController < ApplicationController
       end
       start_date = @today.beginning_of_month
       end_date = @today.end_of_month
-      @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date},:order=>'month_date ASC')
+      @dates = PeriodEntry.find_all_by_batch_id(@batch.id, :conditions =>{:month_date => start_date..end_date}, :order=>'month_date ASC')
       format.js { render :action => 'update' }
     end
   end

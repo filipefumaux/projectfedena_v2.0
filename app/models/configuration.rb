@@ -1,6 +1,6 @@
 class Configuration < ActiveRecord::Base
 
-  EXAM_RESULT_TYPE_OPTIONS        = ['Marks', 'Grades', 'MarksAndGrades']
+  EXAM_RESULT_TYPE_OPTIONS = ['Marks', 'Grades', 'MarksAndGrades']
   STUDENT_ATTENDANCE_TYPE_OPTIONS = ['Daily', 'SubjectWise']
 
   class << self
@@ -9,7 +9,7 @@ class Configuration < ActiveRecord::Base
       c = find_by_config_key(key)
       c.nil? ? nil : c.config_value
     end
-  
+
     def save_institution_logo(upload)
       directory, filename = "#{RAILS_ROOT}/public/uploads/image", 'institute_logo.jpg'
       path = File.join(directory, filename) # create the file path
@@ -28,8 +28,8 @@ class Configuration < ActiveRecord::Base
     def set_value(key, value)
       config = find_by_config_key(key)
       config.nil? ?
-        Configuration.create(:config_key => key, :config_value => value) :
-        config.update_attribute(:config_value, value)
+          Configuration.create(:config_key => key, :config_value => value) :
+          config.update_attribute(:config_value, value)
     end
 
     def get_multiple_configs_as_hash(keys)

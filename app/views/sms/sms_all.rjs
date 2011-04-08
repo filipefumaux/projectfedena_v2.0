@@ -1,2 +1,1 @@
-
-page.replace_html 'sms-box',:text=>"SMS sent across batches and empoloyee departments."
+page.replace_html 'sms-box', :text=>"SMS sent across batches and empoloyee departments."

@@ -6,7 +6,7 @@ class XmlController < ApplicationController
 
 
   def index
-    
+
   end
 
   def settings
@@ -14,9 +14,10 @@ class XmlController < ApplicationController
     if request.post?
       Xml.set_ledger_name(params[:xml_settings])
       flash[:notice] = "XML settings updated successfully"
-      redirect_to  :action => "settings"
+      redirect_to :action => "settings"
     end
   end
+
   #enevelope = REXML::Element.new "ENVELOPE"
   #    header = enevelope.add_element "HEADER"
   #    tally_request = header.add_element "TALLYREQUEST"
@@ -48,19 +49,19 @@ class XmlController < ApplicationController
       @start_date = params[:xml][:start_date].to_date
       @end_date = params[:xml][:end_date].to_date
       employees = Employee.find(:all)
-      
+
       @salaries = []
-      @months = MonthlyPayslip.find(:all,:select =>"distinct salary_date" ,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@end_date}' and is_approved = 1"])
+      @months = MonthlyPayslip.find(:all, :select =>"distinct salary_date", :order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@end_date}' and is_approved = 1"])
       @months.each do |m|
         @salary = Employee.total_employees_salary(employees, m.salary_date, m.salary_date)
         @salaries.push @salary
       end
       transactions = FinanceTransaction.find(:all,
-        :order => 'created_at desc', :conditions => ["created_at >= '#{@start_date}' and created_at <= '#{@end_date}'"])
+                                             :order => 'created_at desc', :conditions => ["created_at >= '#{@start_date}' and created_at <= '#{@end_date}'"])
 
       count = 0
-      category = [1,2,3]
-      file = File.new("Tally.xml",'w')
+      category = [1, 2, 3]
+      file = File.new("Tally.xml", 'w')
       doc = REXML::Document.new
 
       enevelope = REXML::Element.new "ENVELOPE"
@@ -87,15 +88,15 @@ class XmlController < ApplicationController
             nar = "#{trans.title} - #{trans.description}"
           end
           tally_message = requestdata.add_element "TALLYMESSAGE"
-          tally_message.add_attribute("xmlns:UDF","TallyUDF")
+          tally_message.add_attribute("xmlns:UDF", "TallyUDF")
           count += 1
-     
+
           @ledger = Xml.find_by_finance_name(trans.category.name)
           if trans.category.is_income?
             voucher = tally_message.add_element "VOUCHER"
-            voucher.add_attribute("REMOTEID","")
-            voucher.add_attribute("VCHTYPE","Receipt")
-            voucher.add_attribute("ACTION","Create")
+            voucher.add_attribute("REMOTEID", "")
+            voucher.add_attribute("VCHTYPE", "Receipt")
+            voucher.add_attribute("ACTION", "Create")
             date = voucher.add_element "DATE"
             date.text = trans.created_at.strftime("%Y%m%d")
             #            date.text = "20090901"
@@ -197,9 +198,9 @@ class XmlController < ApplicationController
             #            voucheramt = enevelope.add_element "DSPVCHDRAMT"
           else
             voucher = tally_message.add_element "VOUCHER"
-            voucher.add_attribute("REMOTEID","")
-            voucher.add_attribute("VCHTYPE","Payment")
-            voucher.add_attribute("ACTION","Create")
+            voucher.add_attribute("REMOTEID", "")
+            voucher.add_attribute("VCHTYPE", "Payment")
+            voucher.add_attribute("ACTION", "Create")
             date = voucher.add_element "DATE"
             date.text = trans.created_at.strftime("%Y%m%d")
             #            date.text = "20090901"
@@ -307,11 +308,11 @@ class XmlController < ApplicationController
         count += 1
         @ledger = Xml.find_by_finance_name("Salary")
         tally_message = requestdata.add_element "TALLYMESSAGE"
-        tally_message.add_attribute("xmlns:UDF","TallyUDF")
+        tally_message.add_attribute("xmlns:UDF", "TallyUDF")
         voucher = tally_message.add_element "VOUCHER"
-        voucher.add_attribute("REMOTEID","")
-        voucher.add_attribute("VCHTYPE","Payment")
-        voucher.add_attribute("ACTION","Create")
+        voucher.add_attribute("REMOTEID", "")
+        voucher.add_attribute("VCHTYPE", "Payment")
+        voucher.add_attribute("ACTION", "Create")
         date = voucher.add_element "DATE"
         date.text = @start_date.beginning_of_month.strftime("%Y%m%d")
         #            date.text = "20090901"
@@ -414,7 +415,7 @@ class XmlController < ApplicationController
         #        voucheramt = enevelope.add_element "DSPVCHDRAMT"
         @start_date = @start_date+1.month
       end
-    
+
       #    enevelope = REXML::Element.new "ENVELOPE"
       #    header = enevelope.add_element "HEADER"
       #    tally_request = header.add_element "TALLYREQUEST"

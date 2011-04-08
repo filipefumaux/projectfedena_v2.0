@@ -1,11 +1,12 @@
-
-
 <div id="content-header">
-  <img src="/images/attendence/attendence.png" alt="" />
+  <img src="/images/attendence/attendence.png" alt=""/>
+
   <h1>Leave Management</h1>
+
   <h3>Apply or check status</h3>
+
   <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
@@ -13,20 +14,21 @@
   <ul>
     <li><%= link_to "Apply", :controller=>"employee_attendance", :action=>"leaves", :id=> @employee.id %></li>
     <li><%= link_to_remote "My leaves",
-        :update => "application-list",
-        :url => {:action => "individual_leave_applications", :id=>@employee.id} %></li>
-      <% unless @reporting_employees == [] %>
+                           :update => "application-list",
+                           :url => {:action => "individual_leave_applications", :id=>@employee.id} %></li>
+    <% unless @reporting_employees == [] %>
         <% if @total_leave_count == 0 %>
 
         <% else %>
         <span class="new-leaves-count">  <li><b><%= link_to_remote "New leaves (#{@total_leave_count})",
-                :update => "application-list",
-                :url => {:action => "new_leave_applications", :id=>@employee.id} %></b></li></span>
-            <% end %>
-      <li><%= link_to_remote "All leaves",
-          :update => "application-list",
-          :url => {:action => "all_leave_applications", :id=>@employee.id} %></li>
-      <% end %>
+                                                                   :update => "application-list",
+                                                                   :url => {:action => "new_leave_applications", :id=>@employee.id} %></b>
+        </li></span>
+        <% end %>
+        <li><%= link_to_remote "All leaves",
+                               :update => "application-list",
+                               :url => {:action => "all_leave_applications", :id=>@employee.id} %></li>
+    <% end %>
   </ul>
 </div>
 
@@ -37,52 +39,58 @@
 <div id="page-yield">
 
   <% unless flash[:notice].nil? %>
-    <p class="flash-msg"> <%= flash[:notice] %> </p>
+      <p class="flash-msg"> <%= flash[:notice] %> </p>
   <% end %>
-        <% reporting_manager = Employee.find(@employee.id).reporting_manager_id %>
-    <% unless @current_user.admin? %>
-        <% if reporting_manager.nil?  %>
-    <p class="flash-msg">Sorry, You cannot apply for a leave without a reporting manager. Please contact administrator. </p>
-</div>
-<% end %>
-<% end %>
- <% unless reporting_manager.nil? and not @current_user.admin? %>
-  <div id="application-list">
-    <div class="heading">Apply for a leave</div>
-    <% form_for :leave_apply do |l| %>
-      <%= error_messages_for :leave_apply %>
-      <%= l.hidden_field :employee_id, :value=>@employee.id %>
-      <div class="label-field-pair">
-        <label for="leave_type"><%= t('attendance.leaveType') %>:</label>
-        <div class="text-input-bg"><%= select :leave_apply, :employee_leave_types_id, @leave_types.map {|s| [s.name, s.id]},:prompt => t('select') %></div>
-      </div>
-      <div class="label-field-pair">
-          <label for="create_user" id="create_user_option"> <%= t('attendance.isHalfDay') %></label>
-         <div class="text-input-bg"><%= check_box_tag :is_half_day, :checked => false %></div>
-      </div>
+  <% reporting_manager = Employee.find(@employee.id).reporting_manager_id %>
+  <% unless @current_user.admin? %>
+      <% if reporting_manager.nil? %>
+          <p class="flash-msg">Sorry, You cannot apply for a leave without a reporting manager. Please contact
+            administrator. </p>
+          </div>
+      <% end %>
+  <% end %>
+  <% unless reporting_manager.nil? and not @current_user.admin? %>
+      <div id="application-list">
+        <div class="heading">Apply for a leave</div>
+        <% form_for :leave_apply do |l| %>
+            <%= error_messages_for :leave_apply %>
+            <%= l.hidden_field :employee_id, :value=>@employee.id %>
+            <div class="label-field-pair">
+              <label for="leave_type"><%= t('attendance.leaveType') %>:</label>
 
-      <div class="label-field-pair">
-        <label for="start_date"><%= t('employee.startDate') %></label>
-        <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[start_date]'  %></div>
-      </div>
-      <div class="label-field-pair">
-        <label for="end_date"><%= t('endDate') %>:</label>
-        <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[end_date]'  %></div>
-      </div>
-      <div class="label-field-pair">
-        <label for="reason"><%= t('employee.reason') %></label>
-        <div class="text-input-bg"><%= l.text_field   :reason %></div><%= t('employee.startDate') %>
-      </div>
-      
+              <div class="text-input-bg"><%= select :leave_apply, :employee_leave_types_id, @leave_types.map { |s| [s.name, s.id] }, :prompt => t('select') %></div>
+            </div>
+            <div class="label-field-pair">
+              <label for="create_user" id="create_user_option"> <%= t('attendance.isHalfDay') %></label>
 
-      <div id="submit-button">
-        <%=  submit_tag("► " + t('create')) %>
+              <div class="text-input-bg"><%= check_box_tag :is_half_day, :checked => false %></div>
+            </div>
+
+            <div class="label-field-pair">
+              <label for="start_date"><%= t('employee.startDate') %></label>
+
+              <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[start_date]' %></div>
+            </div>
+            <div class="label-field-pair">
+              <label for="end_date"><%= t('endDate') %>:</label>
+
+              <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[end_date]' %></div>
+            </div>
+            <div class="label-field-pair">
+              <label for="reason"><%= t('employee.reason') %></label>
+
+              <div class="text-input-bg"><%= l.text_field :reason %></div><%= t('employee.startDate') %>
+            </div>
+
+
+            <div id="submit-button">
+              <%= submit_tag("► " + t('create')) %>
+            </div>
+        <% end %>
+        <div class="extender"></div>
       </div>
-    <% end %>
-    <div class="extender"></div>
+  <% end %>
+
+
+
   </div>
-<% end %>
-
-
-
-</div>

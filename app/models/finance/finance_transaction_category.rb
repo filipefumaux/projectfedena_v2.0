@@ -1,6 +1,6 @@
 class FinanceTransactionCategory < ActiveRecord::Base
   has_many :finance_transactions
-  has_one  :trigger, :class_name => "FinanceTransactionTrigger", :foreign_key => "category_id"
+  has_one :trigger, :class_name => "FinanceTransactionTrigger", :foreign_key => "category_id"
 
 
   validates_presence_of :name

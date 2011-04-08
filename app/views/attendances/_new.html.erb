@@ -3,23 +3,24 @@
 <div id="ajax-edit">
   </br></br>
   <% form_remote_for @absentee do |f| %>
-    <%= f.hidden_field :student_id, :value => @student.id %>
-    <%= f.hidden_field :period_table_entry_id, :value => @period_entry_id %>
-    <div class="label-field-pair">
-      <label for="reason"> <%= t('attendance.reasonForAbsence') %></label>
-      <div class="text-input-bg"><%= f.text_field :reason %></div>
-    </div>
-    <% if @config.config_value == 'Daily' %>
-      <div class="label-checkbox-pair">
-        <label><%= f.check_box :forenoon, :checked => true %><%= t('forenoon') %></label>
+      <%= f.hidden_field :student_id, :value => @student.id %>
+      <%= f.hidden_field :period_table_entry_id, :value => @period_entry_id %>
+      <div class="label-field-pair">
+        <label for="reason"> <%= t('attendance.reasonForAbsence') %></label>
 
+        <div class="text-input-bg"><%= f.text_field :reason %></div>
       </div>
-      <div class="label-checkbox-pair">
-        <label><%= f.check_box :afternoon, :checked => true %><%= t('afternoon') %></label>
-      </div>
-    <% end %>
-  <div class="extender"></div>
-    <%= f.submit " ► " + t('add'), :class => 'submit-button', :confirm => t('areYouSure') %>
+      <% if @config.config_value == 'Daily' %>
+          <div class="label-checkbox-pair">
+            <label><%= f.check_box :forenoon, :checked => true %><%= t('forenoon') %></label>
+
+          </div>
+          <div class="label-checkbox-pair">
+            <label><%= f.check_box :afternoon, :checked => true %><%= t('afternoon') %></label>
+          </div>
+      <% end %>
+      <div class="extender"></div>
+      <%= f.submit " ► " + t('add'), :class => 'submit-button', :confirm => t('areYouSure') %>
   <% end %>
   <div id="form-errors"></div>
 </div>

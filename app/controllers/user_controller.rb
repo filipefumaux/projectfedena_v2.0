@@ -9,11 +9,11 @@ class UserController < ApplicationController
     return 'dashboard' if action_name == 'dashboard'
     'application'
   end
-  
+
   def all
     @users = User.all
   end
-  
+
   def list_user
     if params[:user_type] == 'Admin'
       @users = User.find(:all, :conditions => {:admin => true}, :order => 'first_name ASC')
@@ -55,28 +55,28 @@ class UserController < ApplicationController
   def list_employee_user
     emp_dept = params[:dept_id]
     @employee = Employee.find_all_by_employee_department_id(emp_dept, :order =>'first_name ASC')
-    @users = @employee.collect { |employee| employee.user}
+    @users = @employee.collect { |employee| employee.user }
     @users.delete(nil)
-    render(:update) {|page| page.replace_html 'users', :partial=> 'users'}
+    render(:update) { |page| page.replace_html 'users', :partial=> 'users' }
   end
 
   def list_student_user
     batch = params[:batch_id]
-    @student = Student.find_all_by_batch_id(batch, :conditions => { :is_active => true },:order =>'first_name ASC')
-    @users = @student.collect { |student| student.user}
+    @student = Student.find_all_by_batch_id(batch, :conditions => {:is_active => true}, :order =>'first_name ASC')
+    @users = @student.collect { |student| student.user }
     @users.delete(nil)
-    render(:update) {|page| page.replace_html 'users', :partial=> 'users'}
+    render(:update) { |page| page.replace_html 'users', :partial=> 'users' }
   end
 
   def change_password
-    
+
     if request.post?
       @user = current_user
       if User.authenticate?(@user.username, params[:user][:old_password])
         if params[:user][:new_password] == params[:user][:confirm_password]
           @user.password = params[:user][:new_password]
           @user.update_attributes(:password => @user.password,
-            :role => @user.role_name
+                                  :role => @user.role_name
           )
           flash[:notice] = t('passwordChangeOK')
           redirect_to :action => 'dashboard'
@@ -99,7 +99,7 @@ class UserController < ApplicationController
         if params[:user][:new_password] == params[:user][:confirm_password]
           user.password = params[:user][:new_password]
           user.update_attributes(:password => user.password,
-            :role => user.role_name
+                                 :role => user.role_name
           )
           flash[:notice]= t('passwordUpdated')
           redirect_to :action=>"edit", :id=>user.username
@@ -108,7 +108,7 @@ class UserController < ApplicationController
         end
       end
 
-      
+
     end
   end
 
@@ -120,16 +120,16 @@ class UserController < ApplicationController
       if @user.save
         if @config.include?('HR')
           @employee = Employee.new
-          @employee.first_name =  @user.first_name
-          @employee.last_name =  @user.last_name
-          @employee.employee_number =  @user.username
-          @employee.employee_number =  @user.username
-          @employee.employee_category_id =  1
-          @employee.employee_position_id =  1
-          @employee.employee_department_id =  1
-          @employee.employee_grade_id =  1
-          @employee.date_of_birth =  Date.today - 20.year
-          @employee.joining_date =  Date.today - 5.year
+          @employee.first_name = @user.first_name
+          @employee.last_name = @user.last_name
+          @employee.employee_number = @user.username
+          @employee.employee_number = @user.username
+          @employee.employee_category_id = 1
+          @employee.employee_position_id = 1
+          @employee.employee_department_id = 1
+          @employee.employee_grade_id = 1
+          @employee.date_of_birth = Date.today - 20.year
+          @employee.joining_date = Date.today - 5.year
           @employee.save
         end
         flash[:notice] = t('userCreated')
@@ -167,10 +167,10 @@ class UserController < ApplicationController
   def forgot_password
 #    flash[:notice]="You do not have permission to access forgot password!"
 #    redirect_to :action=>"login"
-  
+
     if request.post? and params[:reset_password]
       if user = User.find_by_email(params[:reset_password][:email])
-        user.reset_password_code = Digest::SHA1.hexdigest( "#{user.email}#{Time.now.to_s.split(//).sort_by {rand}.join}" )
+        user.reset_password_code = Digest::SHA1.hexdigest("#{user.email}#{Time.now.to_s.split(//).sort_by { rand }.join}")
         user.reset_password_code_until = 1.day.from_now
         user.role = user.role_name
         user.save(false)
@@ -249,7 +249,7 @@ class UserController < ApplicationController
           user.password = params[:set_new_password][:new_password]
           user.update_attributes(:password => user.password, :reset_password_code => nil, :reset_password_code_until => nil, :role => user.role_name)
           #User.update(user.id, :password => params[:set_new_password][:new_password],
-           # :reset_password_code => nil, :reset_password_code_until => nil)
+          # :reset_password_code => nil, :reset_password_code_until => nil)
           flash[:notice] = t('passwordResetOK')
           redirect_to :action => 'index'
         else
@@ -272,18 +272,18 @@ class UserController < ApplicationController
       @user.privileges = Privilege.find_all_by_id(new_privileges)
 
       flash[:notice] = t('ruleUpdated')
-      redirect_to :action => 'profile',:id => @user.username
+      redirect_to :action => 'profile', :id => @user.username
     end
   end
 
   def header_link
-   @user = current_user
+    @user = current_user
     #@reminders = @users.check_reminders
     @config = Configuration.available_modules
     @employee = Employee.find_by_employee_number(@user.username)
     @employee ||= Employee.first if current_user.admin?
     @student = Student.find_by_admission_no(@user.username)
     render :partial=>'header_link'
-end
+  end
 end
 

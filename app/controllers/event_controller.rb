@@ -1,7 +1,7 @@
 class EventController < ApplicationController
   before_filter :login_required
   filter_access_to :all
-  
+
   def index
     @events = Event.new(params[:events])
     if params[:id].nil?
@@ -11,8 +11,8 @@ class EventController < ApplicationController
       @date = date.to_time
     end
     if request.post? and @events.save
-      Event.update(@events.id,:start_date=>params[:start_date],
-        :end_date=>params[:end_date])
+      Event.update(@events.id, :start_date=>params[:start_date],
+                   :end_date=>params[:end_date])
       #      if params[:events][:is_common] == "0" and @events.save
       redirect_to :action=>"show", :id=>@events.id
       #      else
@@ -44,9 +44,9 @@ class EventController < ApplicationController
     batch_id_list = params[:select_options][:batch_id] unless params[:select_options].nil?
     unless batch_id_list.nil?
       batch_id_list.each do |c|
-        batch_event_exists = BatchEvent.find_by_event_id_and_batch_id(event.id,c)
+        batch_event_exists = BatchEvent.find_by_event_id_and_batch_id(event.id, c)
         if batch_event_exists.nil?
-          BatchEvent.create(:event_id => event.id,:batch_id=>c)
+          BatchEvent.create(:event_id => event.id, :batch_id=>c)
           #send reminder to students
           #        @batch_students = Student.find(:all, :conditions=>"batch_id = #{c}")
           #        @batch_students.each do |s|
@@ -86,9 +86,9 @@ class EventController < ApplicationController
     department_id_list = params[:select_options][:department_id] unless params[:select_options].nil?
     unless department_id_list.nil?
       department_id_list.each do |c|
-        department_event_exists = EmployeeDepartmentEvent.find_by_event_id_and_employee_department_id(event.id,c)
+        department_event_exists = EmployeeDepartmentEvent.find_by_event_id_and_employee_department_id(event.id, c)
         if department_event_exists.nil?
-          EmployeeDepartmentEvent.create(:event_id=>event.id,:employee_department_id=>c)
+          EmployeeDepartmentEvent.create(:event_id=>event.id, :employee_department_id=>c)
           #        @dept_emp = Employee.find(:all, :conditions=>"employee_department_id = #{c}")
           #        @dept_emp.each do |e|
           #          emp_user = User.find_by_username(e.employee_number)
@@ -125,7 +125,7 @@ class EventController < ApplicationController
     event = Event.find(params[:id])
     if event.is_common == true
       if event.is_holiday == true
-        @pe = PeriodEntry.find(:all, :conditions=>"month_date BETWEEN '" + event.start_date.strftime("%Y-%m-%d") + "' AND '" +  event.end_date.strftime("%Y-%m-%d") +"'")
+        @pe = PeriodEntry.find(:all, :conditions=>"month_date BETWEEN '" + event.start_date.strftime("%Y-%m-%d") + "' AND '" + event.end_date.strftime("%Y-%m-%d") +"'")
         unless @pe.nil?
           @pe.each do |p|
             p.delete
@@ -134,9 +134,9 @@ class EventController < ApplicationController
       end
       @users = User.find(:all)
       @users.each do |u|
-        Reminder.create(:sender=> current_user.id,:recipient=>u.id,
-          :subject=>"New Event : #{event.title}",
-          :body=>" New event description : #{event.description} <br/> " + t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+        Reminder.create(:sender=> current_user.id, :recipient=>u.id,
+                        :subject=>"New Event : #{event.title}",
+                        :body=>" New event description : #{event.description} <br/> " + t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
       end
       sms_setting = SmsSetting.new()
       if sms_setting.application_sms_active and sms_setting.event_news_sms_active
@@ -151,7 +151,7 @@ class EventController < ApplicationController
               end
               if sms_setting.parent_sms_active
                 unless guardian.nil?
-                recipients.push guardian.mobile_phone unless guardian.mobile_phone.nil?
+                  recipients.push guardian.mobile_phone unless guardian.mobile_phone.nil?
                 end
               end
             end
@@ -159,14 +159,14 @@ class EventController < ApplicationController
             employee = u.employee_record
             if sms_setting.employee_sms_active
               unless employee.nil?
-              recipients.push employee.mobile_phone unless employee.mobile_phone.nil?
-                end
+                recipients.push employee.mobile_phone unless employee.mobile_phone.nil?
+              end
             end
           end
         end
         unless recipients.empty?
           message = "Event Notification: #{event.title}. From : #{event.start_date} to #{event.end_date}"
-          sms = SmsManager.new(message,recipients)
+          sms = SmsManager.new(message, recipients)
           sms.send_sms
         end
       end
@@ -175,7 +175,7 @@ class EventController < ApplicationController
       unless batch_event.empty?
         batch_event.each do |b|
           if event.is_holiday == true
-            @pe = PeriodEntry.find_all_by_batch_id(b.id, :conditions=>"month_date BETWEEN '" + event.start_date.strftime("%Y-%m-%d") + "' AND '" +  event.end_date.strftime("%Y-%m-%d") +"'")
+            @pe = PeriodEntry.find_all_by_batch_id(b.id, :conditions=>"month_date BETWEEN '" + event.start_date.strftime("%Y-%m-%d") + "' AND '" + event.end_date.strftime("%Y-%m-%d") +"'")
             unless @pe.nil?
               @pe.each do |p|
                 p.delete
@@ -186,9 +186,9 @@ class EventController < ApplicationController
           @batch_students.each do |s|
             student_user = s.user
             unless student_user.nil?
-              Reminder.create(:sender => current_user.id,:recipient=>student_user.id,
-                :subject=>"New Event : #{event.title}",
-                :body=>" New event description : #{event.description} <br/> "+ t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+              Reminder.create(:sender => current_user.id, :recipient=>student_user.id,
+                              :subject=>"New Event : #{event.title}",
+                              :body=>" New event description : #{event.description} <br/> "+ t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
             end
           end
         end
@@ -199,14 +199,14 @@ class EventController < ApplicationController
           @dept_emp = Employee.find(:all, :conditions=>"employee_department_id = #{d.employee_department_id}")
           @dept_emp.each do |e|
             emp_user = e.user
-            Reminder.create(:sender => current_user.id,:recipient=>emp_user.id,
-              :subject=>"New Event : #{event.title}",
-              :body=>" New event description : #{event.description} <br/> "+t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
+            Reminder.create(:sender => current_user.id, :recipient=>emp_user.id,
+                            :subject=>"New Event : #{event.title}",
+                            :body=>" New event description : #{event.description} <br/> "+t('startDate')+" : " + event.start_date.strftime("%d/%m/%Y %I:%M %p") + " <br/> "+t('endDate')+" : " + event.end_date.strftime("%d/%m/%Y %I:%M %p"))
           end
         end
       end
     end
-    redirect_to :controller=>'calendar',:action=>'index'
+    redirect_to :controller=>'calendar', :action=>'index'
   end
 
   def cancel_event
@@ -214,7 +214,7 @@ class EventController < ApplicationController
     batch_event = BatchEvent.find(:all, :conditions=>"event_id = #{params[:id]}")
     dept_event = EmployeeDepartmentEvent.find(:all, :conditions=>"event_id = #{params[:id]}")
     event.destroy
-    
+
     batch_event.each { |x| x.destroy } unless batch_event.nil?
     dept_event.each { |x| x.destroy } unless dept_event.nil?
     flash[:notice] = 'Event creation cancelled'

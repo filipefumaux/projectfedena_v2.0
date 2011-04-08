@@ -1,6 +1,7 @@
 class GradingLevelsController < ApplicationController
   before_filter :login_required
   filter_access_to :all
+
   def index
     @batches = Batch.active
     @grading_levels = GradingLevel.default
@@ -20,8 +21,8 @@ class GradingLevelsController < ApplicationController
     respond_to do |format|
       if @grading_level.save
         @grading_level.batch.nil? ?
-          @grading_levels = GradingLevel.default :
-          @grading_levels = GradingLevel.for_batch(@grading_level.batch_id)
+            @grading_levels = GradingLevel.default :
+            @grading_levels = GradingLevel.for_batch(@grading_level.batch_id)
         #flash[:notice] = 'Grading level was successfully created.'
         format.html { redirect_to grading_level_url(@grading_level) }
         format.js { render :action => 'create' }
@@ -36,7 +37,7 @@ class GradingLevelsController < ApplicationController
   def edit
     @grading_level = GradingLevel.find params[:id]
     respond_to do |format|
-      format.html { }
+      format.html {}
       format.js { render :action => 'edit' }
     end
   end
@@ -45,9 +46,9 @@ class GradingLevelsController < ApplicationController
     @grading_level = GradingLevel.find params[:id]
     respond_to do |format|
       if @grading_level.update_attributes(params[:grading_level])
-        @grading_level.batch.nil? ? 
-          @grading_levels = GradingLevel.default :
-          @grading_levels = GradingLevel.for_batch(@grading_level.batch_id)
+        @grading_level.batch.nil? ?
+            @grading_levels = GradingLevel.default :
+            @grading_levels = GradingLevel.for_batch(@grading_level.batch_id)
         #flash[:notice] = 'Grading level update successfully.'
         format.html { redirect_to grading_level_url(@grading_level) }
         format.js { render :action => 'update' }

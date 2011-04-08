@@ -1,9 +1,12 @@
 <div id="content-header">
-  <img src="/images/student_details/student_details_logo.jpg" />
-  <h1><%= t("students")%></h1>
+  <img src="/images/student_details/student_details_logo.jpg"/>
+
+  <h1><%= t("students") %></h1>
+
   <h3><%= t("reportsCenter") %></h3>
+
   <div id="app-back-button">
-     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
@@ -14,53 +17,53 @@
     <h3><%= t("academics") %></h3>
 
     <div class="exam-results-reports-col">
-    <% if permitted_to? :exam_report, :student %>
-      <h4><%= t("recentExams") %></h4>
-      <ul>
-        <% @exam_groups.each do |e| %>
-          <li><%= link_to e.name, { :controller => 'exam', :action => 'generated_report',:exam_group=>e.id, :student => @student.id} %></li>
-        <% end %>
-      </ul>
-    <%end%>
+      <% if permitted_to? :exam_report, :student %>
+          <h4><%= t("recentExams") %></h4>
+          <ul>
+            <% @exam_groups.each do |e| %>
+                <li><%= link_to e.name, {:controller => 'exam', :action => 'generated_report', :exam_group=>e.id, :student => @student.id} %></li>
+            <% end %>
+          </ul>
+      <% end %>
 
       <h4><%= t("subjectwiseResults") %></h4>
       <ul>
         <% @subjects.each do |s| %>
-          <li><%= link_to s.name, { :controller => 'exam', :action => 'generated_report3', :student => @student.id, :subject => s.id } %></li>
+            <li><%= link_to s.name, {:controller => 'exam', :action => 'generated_report3', :student => @student.id, :subject => s.id} %></li>
         <% end %>
       </ul>
     </div>
-    
+
     <div class="exam-results-reports-col">
 
       <h4><%= t('detailedReports') %></h4>
       <ul>
         <% unless @grouped_exams.empty? %>
-        <li><%= link_to t('finalReportGrouped'),{:controller=>'exam', :action=>'generated_report4',:student=>@student.id,:type=>'grouped'} %></li>
-        <li><%= link_to 'Compare with past years (Exams Grouped)', { :controller => 'exam', :action => 'previous_years_marks_overview',:student=>@student.id,:type=>'grouped' } %></li>
+            <li><%= link_to t('finalReportGrouped'), {:controller=>'exam', :action=>'generated_report4', :student=>@student.id, :type=>'grouped'} %></li>
+            <li><%= link_to 'Compare with past years (Exams Grouped)', {:controller => 'exam', :action => 'previous_years_marks_overview', :student=>@student.id, :type=>'grouped'} %></li>
         <% else %>
-        <li><%= link_to t('finalReport'),{:controller=>'exam', :action=>'generated_report4',:student=>@student.id,:type=>'general'} %></li>
-        <li><%= link_to t('compareWithPastYears'), { :controller => 'exam', :action => 'previous_years_marks_overview',:student=>@student.id } %></li>
+            <li><%= link_to t('finalReport'), {:controller=>'exam', :action=>'generated_report4', :student=>@student.id, :type=>'general'} %></li>
+            <li><%= link_to t('compareWithPastYears'), {:controller => 'exam', :action => 'previous_years_marks_overview', :student=>@student.id} %></li>
         <% end %>
       </ul>
 
       <% unless @old_batches.empty? %>
-        <h4><%= t('archives') %></h4>
-        <ul>
-          <% @old_batches.each do |b| %>
-          <% unless @grouped_exams.empty? %>
-            <li><%= link_to b.name+'-G', { :controller => 'exam', :action => 'academic_report', :student => @student.id, :year => b.id,:type=>'grouped' } %></li>
-            <% else %>
-            <li><%= link_to b.name, { :controller => 'exam', :action => 'academic_report', :student => @student.id, :year => b.id,:type=>'general' } %></li>
+          <h4><%= t('archives') %></h4>
+          <ul>
+            <% @old_batches.each do |b| %>
+                <% unless @grouped_exams.empty? %>
+                    <li><%= link_to b.name+'-G', {:controller => 'exam', :action => 'academic_report', :student => @student.id, :year => b.id, :type=>'grouped'} %></li>
+                <% else %>
+                    <li><%= link_to b.name, {:controller => 'exam', :action => 'academic_report', :student => @student.id, :year => b.id, :type=>'general'} %></li>
+                <% end %>
             <% end %>
-          <% end %>
-        </ul>
+          </ul>
       <% end %>
 
 
     </div>
 
-    <div class="extender"> </div>
+    <div class="extender"></div>
 
   </div>
 
@@ -73,16 +76,16 @@
     <ul>
       <li><%= link_to t('currentYearReports'), :controller => 'student_attendance', :action => 'student', :id => @student %></li>
     </ul>
-      <% unless @old_batches.empty? %>
-    <h4>><%= t('archives') %><</h4>
+    <% unless @old_batches.empty? %>
+        <h4>><%= t('archives') %><</h4>
 
-  <ul>
- <% @old_batches.each do |b| %>
-       <li><%= link_to b.name, :controller => 'student_attendance', :action => 'student_report', :id => @student, :year => b.id %></li>
+        <ul>
+          <% @old_batches.each do |b| %>
+              <li><%= link_to b.name, :controller => 'student_attendance', :action => 'student_report', :id => @student, :year => b.id %></li>
+          <% end %>
+        </ul>
+
     <% end %>
-  </ul>
-
-<% end %>
   </div>
 
 </div>

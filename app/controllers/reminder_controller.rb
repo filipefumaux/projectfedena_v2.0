@@ -1,7 +1,7 @@
 class ReminderController < ApplicationController
   before_filter :login_required
-  before_filter :protect_view_reminders, :only=>[:view_reminder,:mark_unread,:delete_reminder_by_recipient]
-  before_filter :protect_sent_reminders, :only=>[:view_sent_reminder,:delete_reminder_by_sender]
+  before_filter :protect_view_reminders, :only=>[:view_reminder, :mark_unread, :delete_reminder_by_recipient]
+  before_filter :protect_sent_reminders, :only=>[:view_sent_reminder, :delete_reminder_by_sender]
 
   def index
     @user = current_user
@@ -16,11 +16,11 @@ class ReminderController < ApplicationController
     @new_reminder_count = Reminder.find_all_by_recipient(@user.id, :conditions=>"is_read = false")
     if request.post?
       unless params[:reminder][:body] == "" or params[:recipients] == ""
-        recipients_array = params[:recipients].split(",").collect{ |s| s.to_i }
+        recipients_array = params[:recipients].split(",").collect { |s| s.to_i }
         recipients_array.each do |r|
           user = User.find(r)
           Reminder.create(:sender => @user.id, :recipient => user.id, :subject=>params[:reminder][:subject],
-            :body=>params[:reminder][:body], :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
+                          :body=>params[:reminder][:body], :is_read=>false, :is_deleted_by_sender=>false, :is_deleted_by_recipient=>false)
         end
         flash[:notice] = "Message sent successfully"
         redirect_to :controller=>"reminder", :action=>"create_reminder"
@@ -84,7 +84,7 @@ class ReminderController < ApplicationController
   end
 
   def update_recipient_list
-    recipients_array = params[:recipients].split(",").collect{ |s| s.to_i }
+    recipients_array = params[:recipients].split(",").collect { |s| s.to_i }
     @recipients = User.find(recipients_array)
     render :update do |page|
       page.replace_html 'recipient-list', :partial => 'recipient_list'
@@ -93,7 +93,7 @@ class ReminderController < ApplicationController
 
   def sent_reminder
     @user = current_user
-    @sent_reminders = Reminder.paginate(:page => params[:page], :conditions=>["sender = '#{@user.id}' and is_deleted_by_sender = false"],  :order=>"created_at DESC")
+    @sent_reminders = Reminder.paginate(:page => params[:page], :conditions=>["sender = '#{@user.id}' and is_deleted_by_sender = false"], :order=>"created_at DESC")
     @new_reminder_count = Reminder.find_all_by_recipient(@user.id, :conditions=>"is_read = false")
   end
 
@@ -126,12 +126,12 @@ class ReminderController < ApplicationController
     if request.post?
       unless params[:reminder][:body] == "" or params[:recipients] == ""
         Reminder.create(:sender=>user.id, :recipient=>@sender.id, :subject=>params[:reminder][:subject],
-          :body=>params[:reminder][:body], :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
+                        :body=>params[:reminder][:body], :is_read=>false, :is_deleted_by_sender=>false, :is_deleted_by_recipient=>false)
         flash[:notice]="Your reply has been sent"
         redirect_to :controller=>"reminder", :action=>"view_reminder", :id2=>params[:id2]
       else
         flash[:notice]="<b>ERROR:</b>Please enter both subject and body"
-        redirect_to :controller=>"reminder", :action=>"view_reminder",:id2=>params[:id2]
+        redirect_to :controller=>"reminder", :action=>"view_reminder", :id2=>params[:id2]
       end
     end
   end
@@ -152,7 +152,7 @@ class ReminderController < ApplicationController
   def send_reminder
     unless params[:create_reminder][:message] == "" or params[:create_reminder][:to] == ""
       Reminder.create(:sender=>params[:create_reminder][:from], :recipient=>params[:create_reminder][:to], :subject=>params[:create_reminder][:subject],
-        :body=>params[:create_reminder][:message] , :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
+                      :body=>params[:create_reminder][:message], :is_read=>false, :is_deleted_by_sender=>false, :is_deleted_by_recipient=>false)
       render(:update) do |page|
         page.replace_html 'error-msg', :text=> '<p class="flash-msg">Your message has been sent</p>'
       end

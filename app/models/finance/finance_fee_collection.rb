@@ -1,21 +1,21 @@
 class FinanceFeeCollection < ActiveRecord::Base
   belongs_to :batch
   has_many :finance_fees
-  belongs_to :fee_category,:class_name => "FinanceFeeCategory"
+  belongs_to :fee_category, :class_name => "FinanceFeeCategory"
 
-  validates_presence_of :name,:start_date,:fee_category_id,:end_date,:due_date
+  validates_presence_of :name, :start_date, :fee_category_id, :end_date, :due_date
 
   def full_name
     "#{name} - #{start_date.to_s}"
   end
 
   def fee_transactions(student_id)
-    FinanceFee.find_by_fee_collection_id_and_student_id(self.id,student_id)
+    FinanceFee.find_by_fee_collection_id_and_student_id(self.id, student_id)
   end
 
   def check_transaction(transactions)
     transactions.finance_fees_id.nil? ? false : true
-   
+
   end
 
   def self.shorten_string(string, count)

@@ -5,7 +5,7 @@ class ExamGroup < ActiveRecord::Base
   belongs_to :grouped_exam
 
   has_many :exams
-  
+
   accepts_nested_attributes_for :exams
 
   attr_accessor :maximum_marks, :minimum_marks, :weightage
@@ -19,11 +19,11 @@ class ExamGroup < ActiveRecord::Base
     exams = self.exams
     batch_students = batch.students
     total_students_marks = 0
- #   total_max_marks = 0
+    #   total_max_marks = 0
     students_attended = []
     exams.each do |exam|
       batch_students.each do |student|
-        exam_score = ExamScore.find_by_student_id_and_exam_id(student.id,exam.id)
+        exam_score = ExamScore.find_by_student_id_and_exam_id(student.id, exam.id)
         unless exam_score.nil?
           total_students_marks = total_students_marks+exam_score.marks
           unless students_attended.include? student.id
@@ -43,20 +43,20 @@ class ExamGroup < ActiveRecord::Base
   end
 
   def batch_average_percentage
-    
+
   end
 
   def subject_wise_batch_average_marks(subject_id)
     batch = self.batch
     subject = Subject.find(subject_id)
-    exam = Exam.find_by_exam_group_id_and_subject_id(self.id,subject.id)
+    exam = Exam.find_by_exam_group_id_and_subject_id(self.id, subject.id)
     batch_students = batch.students
     total_students_marks = 0
     #   total_max_marks = 0
     students_attended = []
 
     batch_students.each do |student|
-      exam_score = ExamScore.find_by_student_id_and_exam_id(student.id,exam.id)
+      exam_score = ExamScore.find_by_student_id_and_exam_id(student.id, exam.id)
       unless exam_score.nil?
         total_students_marks = total_students_marks+exam_score.marks
         unless students_attended.include? student.id
@@ -79,23 +79,23 @@ class ExamGroup < ActiveRecord::Base
     total_marks = 0
     max_total = 0
     exams.each do |exam|
-      exam_score = ExamScore.find_by_exam_id_and_student_id(exam.id,student.id)
+      exam_score = ExamScore.find_by_exam_id_and_student_id(exam.id, student.id)
       total_marks = total_marks + exam_score.marks unless exam_score.nil?
       max_total = max_total + exam.maximum_marks unless exam_score.nil?
     end
-    result = [total_marks,max_total]
+    result = [total_marks, max_total]
   end
 
-    def archived_total_marks(student)
+  def archived_total_marks(student)
     exams = Exam.find_all_by_exam_group_id(self.id)
     total_marks = 0
     max_total = 0
     exams.each do |exam|
-      exam_score = ArchivedExamScore.find_by_exam_id_and_student_id(exam.id,student.id)
+      exam_score = ArchivedExamScore.find_by_exam_id_and_student_id(exam.id, student.id)
       total_marks = total_marks + exam_score.marks unless exam_score.nil?
       max_total = max_total + exam.maximum_marks unless exam_score.nil?
     end
-    result = [total_marks,max_total]
+    result = [total_marks, max_total]
   end
 
 end

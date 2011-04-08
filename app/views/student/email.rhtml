@@ -1,9 +1,12 @@
 <div id="content-header">
-  <img src="/images/student_details/student_details_logo.jpg" />
-  <h1><%= t("students")%></h1>
+  <img src="/images/student_details/student_details_logo.jpg"/>
+
+  <h1><%= t("students") %></h1>
+
   <h3>Send email</h3>
+
   <div id="app-back-button">
-   <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
@@ -12,39 +15,40 @@
   <div id="student_profile_heading">
 
 
-
     <div id="student_main_info">
       <span class="name"> <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %>  </span>
       <span class="course"> <%= t("courseAndBatch") %>: <%= @student.batch.course_name %> </span>
       <span class="adm"> <%= t("student.admNo") %> : <%= @student.admission_no %> </span>
     </div>
 
-    <div class="extender"> </div>
+    <div class="extender"></div>
 
   </div>
 
 
   <% form_for :email do |f| %>
 
-  <div class="label-field-pair">
-    <label for="email_subject"><%= t('subject') %></label>
-    <div class="text-input-bg"><%= f.text_field 'subject' %></div>
-  </div>
+      <div class="label-field-pair">
+        <label for="email_subject"><%= t('subject') %></label>
 
-  <div class="label-field-pair">
-    <label for="email_recipients">Recipients</label>
-    <div class="text-input-bg"><%= select 'email', 'recipients', ['Student', 'Guardian', 'Student & guardian'] %></div>
-  </div>
+        <div class="text-input-bg"><%= f.text_field 'subject' %></div>
+      </div>
 
-  <div class="message-area">
-    <br/>
-    <label for="email_message">Message</label>
-    <%= f.text_area 'message' %>
-  </div>
+      <div class="label-field-pair">
+        <label for="email_recipients">Recipients</label>
 
-  <div class="submit-area">
-    <%= submit_tag '' , :value => "► " + t('create') %>
-  </div>
+        <div class="text-input-bg"><%= select 'email', 'recipients', ['Student', 'Guardian', 'Student & guardian'] %></div>
+      </div>
+
+      <div class="message-area">
+        <br/>
+        <label for="email_message">Message</label>
+        <%= f.text_area 'message' %>
+      </div>
+
+      <div class="submit-area">
+        <%= submit_tag '', :value => "► " + t('create') %>
+      </div>
 
   <% end %>
 

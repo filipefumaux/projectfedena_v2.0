@@ -1,13 +1,14 @@
+<% @students.each_with_index do |r, i| %>
 
-<% @students.each_with_index do |r,i| %>
+    <%= '<div class="students-on-one-line">' if i%4 == 0 %>
 
-  <%= '<div class="students-on-one-line">' if i%4 == 0 %>
-
-  <div id="student_name">
-    <% link_value = r.first_name + " " + r.last_name %>
-    <%=  link_to link_value, :controller => "examination_result", :action => "exam_report", :id => r.id, :exam => @examtype, :course => @course %><br/>
-    <small><%= t("courseAndBatch") %>: <%= r.course.grade %> <%= r.course.section %><br/>Adm No. <%= r.admission_no %></small>
-  </div>
-  <%= '</div>' if i%4 == 3 %>
+    <div id="student_name">
+      <% link_value = r.first_name + " " + r.last_name %>
+      <%= link_to link_value, :controller => "examination_result", :action => "exam_report", :id => r.id, :exam => @examtype, :course => @course %>
+      <br/>
+      <small><%= t("courseAndBatch") %>: <%= r.course.grade %> <%= r.course.section %>
+        <br/>Adm No. <%= r.admission_no %></small>
+    </div>
+    <%= '</div>' if i%4 == 3 %>
 
 <% end %>

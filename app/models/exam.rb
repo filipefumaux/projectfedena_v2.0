@@ -5,12 +5,12 @@ class Exam < ActiveRecord::Base
   validates_presence_of :end_time
 
   belongs_to :exam_group
-  belongs_to :subject, :conditions => { :is_deleted => false }
+  belongs_to :subject, :conditions => {:is_deleted => false}
 
   belongs_to :event
 
   has_many :exam_scores
-   has_many :archived_exam_scores
+  has_many :archived_exam_scores
 
   accepts_nested_attributes_for :exam_scores
 
@@ -29,13 +29,13 @@ class Exam < ActiveRecord::Base
   end
 
   def score_for(student_id)
-    exam_score = self.exam_scores.find(:first, :conditions => { :student_id => student_id })
+    exam_score = self.exam_scores.find(:first, :conditions => {:student_id => student_id})
     exam_score.nil? ? ExamScore.new : exam_score
   end
 
   def class_average_marks
     results = ExamScore.find_all_by_exam_id(self)
-    scores = results.collect { |x| x.marks unless x.marks.nil?}
+    scores = results.collect { |x| x.marks unless x.marks.nil? }
     return (scores.sum / scores.size) unless scores.size == 0
     return 0
   end
@@ -49,11 +49,11 @@ class Exam < ActiveRecord::Base
   def update_exam_event
     if self.event.nil?
       new_event = Event.create do |e|
-        e.title       = "Exam"
+        e.title = "Exam"
         e.description = "#{self.exam_group.name} for #{self.subject.batch.full_name} - #{self.subject.name}"
-        e.start_date  = self.start_time
-        e.end_date    = self.end_time
-        e.is_exam     = true
+        e.start_date = self.start_time
+        e.end_date = self.end_time
+        e.is_exam = true
       end
       batch_event = BatchEvent.create do |be|
         be.event_id = new_event.id

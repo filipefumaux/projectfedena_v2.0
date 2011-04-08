@@ -1,5 +1,6 @@
 class CalendarController < ApplicationController
   before_filter :login_required
+
   def index
     @user = current_user
     if params[:new_month].nil?
@@ -8,11 +9,11 @@ class CalendarController < ApplicationController
       d = params[:new_month].to_i
       passed_date = (params[:passed_date]).to_date
       if params[:new_month].to_i > passed_date.month
-        @show_month  = passed_date+1.month
+        @show_month = passed_date+1.month
       else
         @show_month = passed_date-1.month
-      end      
-    end    
+      end
+    end
     @start_date = @show_month.beginning_of_month
     @start_date_day = @start_date.wday
     @last_day = @show_month.end_of_month
@@ -23,7 +24,7 @@ class CalendarController < ApplicationController
     d = params[:new_month].to_i
     passed_date = (params[:passed_date]).to_date
     if params[:new_month].to_i > passed_date.month
-      @show_month  = passed_date+1.month
+      @show_month = passed_date+1.month
     else
       @show_month = passed_date-1.month
     end
@@ -31,7 +32,7 @@ class CalendarController < ApplicationController
     @start_date_day = @start_date.wday
     @last_day = @show_month.end_of_month
     render :update do |page|
-      page.replace_html 'calendar', :partial => 'month',:object => @show_month
+      page.replace_html 'calendar', :partial => 'month', :object => @show_month
       page.replace_html :tooltip_header, :text => ''
     end
   end
@@ -178,8 +179,8 @@ class CalendarController < ApplicationController
     first_day = @date.beginning_of_month.to_time
     last_day = @date.end_of_month.to_time
 
-    common_event = Event.find_all_by_is_common_and_is_holiday(true,false, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
-    non_common_events = Event.find_all_by_is_common_and_is_holiday_and_is_exam(false,false,false, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
+    common_event = Event.find_all_by_is_common_and_is_holiday(true, false, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
+    non_common_events = Event.find_all_by_is_common_and_is_holiday_and_is_exam(false, false, false, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
     @common_event_array = []
     common_event.each do |h|
       if "#{h.start_date.year}-#{h.start_date.month}-#{h.start_date.day}".to_date == "#{h.end_date.year}-#{h.end_date.month}-#{h.end_date.day}".to_date
@@ -243,8 +244,8 @@ class CalendarController < ApplicationController
     first_day = @date.beginning_of_month.to_time
     last_day = @date.end_of_month.to_time
 
-    common_holiday_event = Event.find_all_by_is_common_and_is_holiday(true,true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
-    non_common_holiday_events = Event.find_all_by_is_common_and_is_holiday(false,true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
+    common_holiday_event = Event.find_all_by_is_common_and_is_holiday(true, true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
+    non_common_holiday_events = Event.find_all_by_is_common_and_is_holiday(false, true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
     @common_holiday_event_array = []
     common_holiday_event.each do |h|
       if "#{h.start_date.year}-#{h.start_date.month}-#{h.start_date.day}".to_date == "#{h.end_date.year}-#{h.end_date.month}-#{h.end_date.day}".to_date
@@ -307,7 +308,7 @@ class CalendarController < ApplicationController
     @date = params[:id].to_date
     first_day = @date.beginning_of_month.to_time
     last_day = @date.end_of_month.to_time
-    not_common_exam_event = Event.find_all_by_is_common_and_is_holiday_and_is_exam(false,false,true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
+    not_common_exam_event = Event.find_all_by_is_common_and_is_holiday_and_is_exam(false, false, true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
     @student_batch_exam_event_array = []
     if @user.student == true
       user_student = Student.find_by_admission_no(@user.username)
@@ -360,7 +361,7 @@ class CalendarController < ApplicationController
     first_day = @date.beginning_of_month.to_time
     last_day = @date.end_of_month.to_time
 
-    finance_due_check = Event.find_all_by_is_due(true,true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day,last_day])
+    finance_due_check = Event.find_all_by_is_due(true, true, :conditions => ["(start_date >= ? and start_date <= ?) or (end_date >= ? and end_date <= ?)", first_day, last_day, first_day, last_day])
     @finance_due = []
     finance_due_check.each do |h|
       if "#{h.start_date.year}-#{h.start_date.month}-#{h.start_date.day}".to_date == "#{h.end_date.year}-#{h.end_date.month}-#{h.end_date.day}".to_date
@@ -375,7 +376,7 @@ class CalendarController < ApplicationController
         end
       end
     end
-  
+
   end
 
 end

@@ -9,7 +9,7 @@ class ExamScore < ActiveRecord::Base
     percentage = self.marks.to_i * 100 / self.exam.maximum_marks
   end
 
-  def grouped_exam_subject_total(subject,student,type,batch = "")
+  def grouped_exam_subject_total(subject, student, type, batch = "")
     if batch == ""
       batch = student.batch.id
     end
@@ -26,7 +26,7 @@ class ExamScore < ActiveRecord::Base
     total_marks = 0
     exam_groups.each do |exam_group|
       unless exam_group.exam_type == 'Grades'
-        exam = Exam.find_by_subject_id_and_exam_group_id(subject.id,exam_group.id)
+        exam = Exam.find_by_subject_id_and_exam_group_id(subject.id, exam_group.id)
         unless exam.nil?
           exam_score = ExamScore.find_by_student_id(student.id, :conditions=>{:exam_id=>exam.id})
           total_marks = total_marks+exam_score.marks unless exam_score.nil?
@@ -36,9 +36,8 @@ class ExamScore < ActiveRecord::Base
     total_marks
   end
 
-  
 
-  def batch_wise_aggregate(student,batch)
+  def batch_wise_aggregate(student, batch)
     check = ExamGroup.find_all_by_batch_id(batch.id)
     var = []
     check.each do |x|
@@ -67,7 +66,7 @@ class ExamScore < ActiveRecord::Base
     else
       aggr = 'nil'
     end
-    
+
   end
 
   private

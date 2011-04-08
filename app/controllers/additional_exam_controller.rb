@@ -1,6 +1,7 @@
 class AdditionalExamController < ApplicationController
   before_filter :login_required
   filter_access_to :all
+
   def index
   end
 
@@ -11,10 +12,10 @@ class AdditionalExamController < ApplicationController
 
     unless @name == ''
       @additional_exam_group = AdditionalExamGroup.new
-      
-      @normal_subjects = Subject.find_all_by_batch_id(@batch.id,:conditions=>"no_exams = false AND elective_group_id IS NULL AND is_deleted = false")
+
+      @normal_subjects = Subject.find_all_by_batch_id(@batch.id, :conditions=>"no_exams = false AND elective_group_id IS NULL AND is_deleted = false")
       @elective_subjects = []
-      elective_subjects = Subject.find_all_by_batch_id(@batch.id,:conditions=>"no_exams = false AND elective_group_id IS NOT NULL AND is_deleted = false")
+      elective_subjects = Subject.find_all_by_batch_id(@batch.id, :conditions=>"no_exams = false AND elective_group_id IS NOT NULL AND is_deleted = false")
       elective_subjects.each do |e|
         is_assigned = StudentsSubject.find_all_by_subject_id(e.id)
         unless is_assigned.empty?
@@ -24,13 +25,11 @@ class AdditionalExamController < ApplicationController
       @all_subjects = @normal_subjects+@elective_subjects
       @all_subjects.each { |subject| @additional_exam_group.additional_exams.build(:subject_id => subject.id) }
 
- 
 
       @students_list = ""
       for student in params[:students_list]
         @students_list += student + ","
       end unless params[:students_list].nil?
-
 
 
       if @type == 'Marks' or @type == 'MarksAndGrades'
@@ -55,22 +54,22 @@ class AdditionalExamController < ApplicationController
   def publish
     @additional_exam_group = AdditionalExamGroup.find(params[:id])
     @additional_exams = @additional_exam_group.additional_exams
-    @batch =  @additional_exam_group.batch
+    @batch = @additional_exam_group.batch
     @sms_setting_notice = ""
     @no_exam_notice = ""
-  if params[:status] == "schedule"
-    students=@additional_exam_group.students
-    students.each do |s|
-      student_user = s.user
-      unless student_user.nil?
-        Reminder.create(:sender=> current_user.id,:recipient=>student_user.id,
-          :subject=>t('exam.additionalScheduled'),          :body=>"#{@additional_exam_group.name} "+t("hasBeenScheduled")+"  <br/>"+t("viewCaledarForDetails"))
+    if params[:status] == "schedule"
+      students=@additional_exam_group.students
+      students.each do |s|
+        student_user = s.user
+        unless student_user.nil?
+          Reminder.create(:sender=> current_user.id, :recipient=>student_user.id,
+                          :subject=>t('exam.additionalScheduled'), :body=>"#{@additional_exam_group.name} "+t("hasBeenScheduled")+"  <br/>"+t("viewCaledarForDetails"))
+        end
       end
     end
-  end
     unless @additional_exams.empty?
-      AdditionalExamGroup.update( @additional_exam_group.id,:is_published=>true) if params[:status] == "schedule"
-      AdditionalExamGroup.update( @additional_exam_group.id,:result_published=>true) if params[:status] == "result"
+      AdditionalExamGroup.update(@additional_exam_group.id, :is_published=>true) if params[:status] == "schedule"
+      AdditionalExamGroup.update(@additional_exam_group.id, :result_published=>true) if params[:status] == "result"
       sms_setting = SmsSetting.new()
       if sms_setting.application_sms_active and sms_setting.exam_result_schedule_sms_active
         students = @additional_exam_group.students
@@ -88,7 +87,7 @@ class AdditionalExamController < ApplicationController
             @message = "#{@additional_exam_group.name} "+t('exam.timetablePublished') if params[:status] == "schedule"
             @message = "#{@additional_exam_group.name} "+t('exam.resultHasBeenPublished') if params[:status] == "result"
             unless recipients.empty?
-              sms = SmsManager.new(@message,recipients)
+              sms = SmsManager.new(@message, recipients)
               sms.send_sms
             end
           end
@@ -107,9 +106,9 @@ class AdditionalExamController < ApplicationController
         students = @additional_exam_group.students
         students.each do |s|
           student_user = s.user
-          Reminder.create(:sender=> current_user.id,:recipient=>student_user.id,
-            :subject=>t('resultPublished'),
-            :body=>"#{ @additional_exam_group.name} "+t('resultHasBeenPublished')+"  <br/> "+t('exam.viewResultReport'))
+          Reminder.create(:sender=> current_user.id, :recipient=>student_user.id,
+                          :subject=>t('resultPublished'),
+                          :body=>"#{ @additional_exam_group.name} "+t('resultHasBeenPublished')+"  <br/> "+t('exam.viewResultReport'))
         end
       end
     else
@@ -122,7 +121,7 @@ class AdditionalExamController < ApplicationController
   end
 
   def update_batch
-    @batch = Batch.find_all_by_course_id(params[:course_name], :conditions => { :is_deleted => false})
+    @batch = Batch.find_all_by_course_id(params[:course_name], :conditions => {:is_deleted => false})
 
     render(:update) do |page|
       page.replace_html 'update_batch', :partial=>'update_batch'

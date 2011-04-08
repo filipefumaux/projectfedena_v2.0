@@ -13,13 +13,13 @@ class AdditionalExamGroup < ActiveRecord::Base
   end
 
   def students
-     students_array=[]
-     list=self.students_list.split(",")
-      list.each do |id|
-        student =  Student.find_by_id(id)
-        students_array.push student unless student.nil?
-      end
-      return students_array
+    students_array=[]
+    list=self.students_list.split(",")
+    list.each do |id|
+      student = Student.find_by_id(id)
+      students_array.push student unless student.nil?
+    end
+    return students_array
   end
-  
+
 end

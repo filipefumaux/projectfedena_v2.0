@@ -9,7 +9,7 @@ class AdditionalExamsController < ApplicationController
     @students = @additional_exam.additional_exam_group.students
     unless  additional_exam_subject.elective_group_id.nil?
       assigned_students_subject = StudentsSubject.find_all_by_subject_id(additional_exam_subject.id)
-      assigned_students=       assigned_students_subject .map{|s| s.student}
+      assigned_students= assigned_students_subject.map { |s| s.student }
       assigned_students_with_exam=assigned_students&@students
       @students= assigned_students_with_exam
     end
@@ -31,17 +31,17 @@ class AdditionalExamsController < ApplicationController
   def save_additional_scores
     @additional_exam = AdditionalExam.find(params[:id])
     @additional_exam_group = @additional_exam.additional_exam_group
-    
+
     params[:additional_exam].each_pair do |student_id, details|
-      @additional_exam_score = AdditionalExamScore.find(:first, :conditions => {:additional_exam_id => @additional_exam.id, :student_id => student_id} )
+      @additional_exam_score = AdditionalExamScore.find(:first, :conditions => {:additional_exam_id => @additional_exam.id, :student_id => student_id})
       if @additional_exam_score.nil?
 
         AdditionalExamScore.create do |score|
-          score.additional_exam_id          = @additional_exam.id
-          score.student_id       = student_id
-          score.marks            = details[:marks]
+          score.additional_exam_id = @additional_exam.id
+          score.student_id = student_id
+          score.marks = details[:marks]
           score.grading_level_id = details[:grading_level_id]
-          score.remarks          = details[:remarks]
+          score.remarks = details[:remarks]
         end
       else
         @additional_exam_score.update_attributes(details)
@@ -75,10 +75,10 @@ class AdditionalExamsController < ApplicationController
     end
   end
 
-    def destroy
+  def destroy
     @additional_exam = AdditionalExam.find params[:id], :include => :additional_exam_group
     batch_id = @additional_exam.additional_exam_group.batch_id
-    batch_event = BatchEvent.find_by_event_id_and_batch_id(@additional_exam.event_id,batch_id)
+    batch_event = BatchEvent.find_by_event_id_and_batch_id(@additional_exam.event_id, batch_id)
     event = Event.find(@additional_exam.event_id)
     event.destroy
     batch_event.destroy
@@ -92,8 +92,6 @@ class AdditionalExamsController < ApplicationController
     @batch = @additional_exam_group.batch
     @course = @batch.course
   end
-
-
 
 
 end

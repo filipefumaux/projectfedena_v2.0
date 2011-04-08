@@ -4,7 +4,7 @@ class AdditionalExamScore < ActiveRecord::Base
   belongs_to :grading_level
 
   before_save :calculate_grade
-  
+
   private
   def calculate_grade
     additional_exam = self.additional_exam

@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_filter :login_required
   filter_access_to :all
+
   def index
     @batches = Batch.active
   end
@@ -35,7 +36,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find params[:id]
     @elective_group = ElectiveGroup.find params[:id2] unless params[:id2].nil?
     respond_to do |format|
-      format.html { }
+      format.html {}
       format.js { render :action => 'edit' }
     end
   end
@@ -56,12 +57,12 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
-     @subject = Subject.find params[:id]
-   @subject_exams= Exam.find_by_subject_id(@subject.id)
-   if @subject_exams.nil?
-    @subject.inactivate
-   else
-    @error_text = t('subject.cannotDelete')
+    @subject = Subject.find params[:id]
+    @subject_exams= Exam.find_by_subject_id(@subject.id)
+    if @subject_exams.nil?
+      @subject.inactivate
+    else
+      @error_text = t('subject.cannotDelete')
     end
   end
 

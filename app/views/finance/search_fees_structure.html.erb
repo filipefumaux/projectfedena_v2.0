@@ -1,17 +1,16 @@
-
-
-  <% if @students_result.nil? or @students_result.empty? %>
-  <div id="no_result"><%= t('noUserFound') %></div>
+<% if @students_result.nil? or @students_result.empty? %>
+    <div id="no_result"><%= t('noUserFound') %></div>
 <% else %>
-  <% @students_result.each_with_index do |r,i| %>
-    <%= '<div class="students-on-one-line">' if i%4 == 0 %>
-    <div id="ajax_result">
-      <% link_value = r.first_name + " " + r.last_name %>
-      <%= link_to link_value, :controller => "finance", :action => "fees_structure_dates", :id => r.id %><br/>
-      <small><%= t('course') %> : <%= r.batch.name %> </small>
-      <small><br/>Adm No.<%= r.admission_no %></small> <%= @st.to_s %>
-    </div>
-   <%= '</div>' if i%4 == 3 %>
-  <% end %>
+    <% @students_result.each_with_index do |r, i| %>
+        <%= '<div class="students-on-one-line">' if i%4 == 0 %>
+        <div id="ajax_result">
+          <% link_value = r.first_name + " " + r.last_name %>
+          <%= link_to link_value, :controller => "finance", :action => "fees_structure_dates", :id => r.id %>
+          <br/>
+          <small><%= t('course') %> : <%= r.batch.name %> </small>
+          <small><br/>Adm No.<%= r.admission_no %></small> <%= @st.to_s %>
+        </div>
+        <%= '</div>' if i%4 == 3 %>
+    <% end %>
 
 <% end %>

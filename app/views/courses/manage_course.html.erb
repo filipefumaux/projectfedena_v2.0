@@ -1,9 +1,12 @@
 <div id="content-header">
-    <img src="/images/show_settings.png" alt="Course" />
+  <img src="/images/show_settings.png" alt="Course"/>
+
   <h1><%= t('courses') %></h1>
+
   <h3>Manage Course</h3>
+
   <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
@@ -17,28 +20,29 @@
 
 <div id="page-yield">
 
-    <% unless flash[:notice].nil? %>
-    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% unless flash[:notice].nil? %>
+      <p class="flash-msg"> <%= flash[:notice] %> </p>
   <% end %>
 
 
-    <% unless flash[:warn_notice].nil? %>
-    <div id="errorExplanation" class="errorExplanation"><%= flash[:warn_notice] %> </div>
+  <% unless flash[:warn_notice].nil? %>
+      <div id="errorExplanation" class="errorExplanation"><%= flash[:warn_notice] %> </div>
   <% end %>
 
- <div class="box">
-<h4 align="center"><%= t('courses') %></h4>
+  <div class="box">
+    <h4 align="center"><%= t('courses') %></h4>
 
-<ul id="category-list">
+    <ul id="category-list">
 
-    <% @courses.each do |course| %>
-      <li class="list<%=cycle('odd', 'even')%>">
-        <div class="category-name"><%= link_to course.full_name, course %></div>
-        <div class="category-edit"><%= link_to t('edit'), edit_course_path(course) if permitted_to? :edit, :courses %></div><div class="category-delete">   <%= link_to(t('delete'), course_path(course), :method => 'delete', :confirm => t('areYouSure')) if permitted_to? :destroy, :courses %></div>
-      </li>
-     <% end %>
+      <% @courses.each do |course| %>
+          <li class="list<%= cycle('odd', 'even') %>">
+            <div class="category-name"><%= link_to course.full_name, course %></div>
+            <div class="category-edit"><%= link_to t('edit'), edit_course_path(course) if permitted_to? :edit, :courses %></div>
+            <div class="category-delete">   <%= link_to(t('delete'), course_path(course), :method => 'delete', :confirm => t('areYouSure')) if permitted_to? :destroy, :courses %></div>
+          </li>
+      <% end %>
 
-</ul>
-  <div class="extender"></div>
+    </ul>
+    <div class="extender"></div>
   </div>
 </div>

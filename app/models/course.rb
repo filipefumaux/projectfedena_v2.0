@@ -5,8 +5,8 @@ class Course < ActiveRecord::Base
   has_many :batches
   accepts_nested_attributes_for :batches
 
-  named_scope :active, :conditions => { :is_deleted => false }, :order => 'course_name asc'
-  named_scope :deleted, :conditions => { :is_deleted => true }, :order => 'course_name asc'
+  named_scope :active, :conditions => {:is_deleted => false}, :order => 'course_name asc'
+  named_scope :deleted, :conditions => {:is_deleted => true}, :order => 'course_name asc'
 
   def presence_of_initial_batch
     errors.add_to_base "Should have an initial batch" if batches.length == 0
@@ -15,7 +15,7 @@ class Course < ActiveRecord::Base
   def inactivate
     update_attribute(:is_deleted, true)
   end
-  
+
   def full_name
     "#{course_name} #{section_name}"
   end

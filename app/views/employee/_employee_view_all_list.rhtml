@@ -4,12 +4,12 @@
     <td><%= t('employee.number') %></td>
     <td><%= t('department') %></td>
   </tr>
-<% @employees.each do |e| %>
-  <tr class="tr-<%= cycle('odd','even') %>">
-    <td class="col-3"><%= link_to "#{e.full_name}", :controller=>"employee", :action=>"profile", :id=>e.id %></td>
-     <td class="col-3"><%=e.employee_number %></td>
-     <td class="col-3"><%=e.employee_department.name %></td>
+  <% @employees.each do |e| %>
+      <tr class="tr-<%= cycle('odd', 'even') %>">
+        <td class="col-3"><%= link_to "#{e.full_name}", :controller=>"employee", :action=>"profile", :id=>e.id %></td>
+        <td class="col-3"><%= e.employee_number %></td>
+        <td class="col-3"><%= e.employee_department.name %></td>
 
-</tr>
-<% end %>
+      </tr>
+  <% end %>
 </table>

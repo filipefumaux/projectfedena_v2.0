@@ -1,7 +1,7 @@
 class EmployeeAttendancesController < ApplicationController
-  before_filter :login_required,:configuration_settings_for_hr
+  before_filter :login_required, :configuration_settings_for_hr
   filter_access_to :all
-  
+
   def index
     @departments = EmployeeDepartment.find(:all, :conditions=>"status = true", :order=> "name ASC")
   end
@@ -12,13 +12,13 @@ class EmployeeAttendancesController < ApplicationController
     unless params[:next].nil?
       @today = params[:next].to_date
     else
-    @today = Date.today
+      @today = Date.today
     end
     @start_date = @today.beginning_of_month
     @end_date = @today.end_of_month
-     respond_to do |format|
-       format.js {render :action => 'show'}
-     end
+    respond_to do |format|
+      format.js { render :action => 'show' }
+    end
   end
 
   def new
@@ -28,7 +28,7 @@ class EmployeeAttendancesController < ApplicationController
     @leave_types = EmployeeLeaveType.find(:all, :conditions=>"status = true", :order=>"name ASC")
 
     respond_to do |format|
-      format.js {render :action => 'new'}
+      format.js { render :action => 'new' }
     end
   end
 
@@ -38,7 +38,7 @@ class EmployeeAttendancesController < ApplicationController
     @date = params[:employee_attendance][:attendance_date]
     if @attendance.save
       respond_to do |format|
-        format.js {render :action => 'create'}
+        format.js { render :action => 'create' }
       end
     end
   end
@@ -48,7 +48,7 @@ class EmployeeAttendancesController < ApplicationController
     @employee = Employee.find(@attendance.employee_id)
     @leave_types = EmployeeLeaveType.find(:all, :conditions=>"status = true", :order=>"name ASC")
     respond_to do |format|
-      format.js {render :action => 'edit'}
+      format.js { render :action => 'edit' }
     end
   end
 
@@ -59,7 +59,7 @@ class EmployeeAttendancesController < ApplicationController
         @employee = Employee.find(@attendance.employee_id)
         @date = @attendance.attendance_date
       end
-      format.js {render :action => 'update'}
+      format.js { render :action => 'update' }
     end
   end
 
@@ -69,7 +69,7 @@ class EmployeeAttendancesController < ApplicationController
     respond_to do |format|
       @employee = Employee.find(@attendance.employee_id)
       @date = @attendance.attendance_date
-      format.js {render :action => 'update'}
+      format.js { render :action => 'update' }
     end
   end
 end

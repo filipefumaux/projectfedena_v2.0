@@ -1,6 +1,7 @@
 class WeekdayController < ApplicationController
   before_filter :login_required
   filter_access_to :all
+
   def index
     @batches = Batch.active
     @weekdays = Weekday.default
@@ -16,21 +17,20 @@ class WeekdayController < ApplicationController
       @weekdays = Weekday.default
     else
       @weekdays = Weekday.for_batch(params[:batch_id])
-      @b  = Batch.find params[:batch_id]
+      @b = Batch.find params[:batch_id]
     end
     render :update do |page|
       page.replace_html "weekdays", :partial => "weekdays"
     end
   end
 
-  
 
   def create
     batch = params[:weekday][:batch_id]
     week = []
     if request.post?
       if params[:weekday][:batch_id].empty?
-        @weekday =  Weekday.default
+        @weekday = Weekday.default
       else
         @weekday = Weekday.find_all_by_batch_id(batch)
       end
@@ -39,11 +39,11 @@ class WeekdayController < ApplicationController
       end
       week = params[:weekdays]
       unless week.nil?
-        week.each  do |w|
+        week.each do |w|
           Weekday.create(:batch_id => batch, :weekday=>w)
         end
       end
     end
-    redirect_to :action => "index" 
+    redirect_to :action => "index"
   end
 end

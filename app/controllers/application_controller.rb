@@ -2,11 +2,10 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery # :secret => '434571160a81b5595319c859d32060c1'
   filter_parameter_logging :password
-  
+
   before_filter { |c| Authorization.current_user = c.current_user }
   before_filter :message_user
   #before_filter :set_user_language
-  
 
 
   def initialize
@@ -21,7 +20,7 @@ class ApplicationController < ActionController::Base
     User.find(session[:user_id]) unless session[:user_id].nil?
   end
 
-  
+
   def find_finance_managers
     Privilege.find_by_name('FinanceControl').users
   end
@@ -30,7 +29,7 @@ class ApplicationController < ActionController::Base
     flash[:notice] = "Sorry, you are not allowed to access that page."
     redirect_to :controller => 'user', :action => 'dashboard'
   end
-  
+
   protected
   def login_required
     redirect_to '/' unless session[:user_id]
@@ -44,7 +43,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
 
   def configuration_settings_for_finance
     finance = Configuration.find_by_config_value("Finance")
@@ -83,6 +81,7 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
   #  end
 
   #reminder filters

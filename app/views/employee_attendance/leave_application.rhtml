@@ -1,69 +1,80 @@
- <div id="content-header">
-   <img src="/images/attendence/attendence.png" alt="" />
-    <h1><%= t('employee.leaveApp') %></h1>
-    <h3><%= t('employee.approveDeny') %></h3>
-    <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
-    </div>
+<div id="content-header">
+  <img src="/images/attendence/attendence.png" alt=""/>
+
+  <h1><%= t('employee.leaveApp') %></h1>
+
+  <h3><%= t('employee.approveDeny') %></h3>
+
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
+</div>
 
 
 
 
 
-     <div id="page-yield">
+<div id="page-yield">
 
-       <% unless flash[:notice].nil? %>
-         <p class="flash-msg"> <%= flash[:notice] %> </p>
-       <% end %>
+  <% unless flash[:notice].nil? %>
+      <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
 
 
-<div id="leave-info">
-  <ul id="category-list">
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('name') %>:</div>
+  <div id="leave-info">
+    <ul id="category-list">
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('name') %>:</div>
         <%= Employee.find(@applied_leave.employee_id).first_name %></li>
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('managerName') %>:</div>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('managerName') %>:</div>
         <% reporting_manager = Employee.find(@applied_leave.employee_id).reporting_manager_id %>
-       <%= Employee.find(reporting_manager).first_name %></li>
-        <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('attendance.leaveType') %>:</div>
+        <%= Employee.find(reporting_manager).first_name %></li>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('attendance.leaveType') %>:</div>
         <%= @leave_type.name %></li>
-        <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('halfDay') %>:</div>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('halfDay') %>:</div>
         <% if @applied_leave.is_half_day == true %>
-        <%= "Yes" %>
+            <%= "Yes" %>
         <% else %>
-        <%= "No" %>
+            <%= "No" %>
         <% end %>
-        </li>
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('leaveStartDate') %>:</div>
+      </li>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('leaveStartDate') %>:</div>
         <%= @applied_leave.start_date.strftime("%d %b, %Y") %></li>
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('leaveEndDate') %>:</div>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('leaveEndDate') %>:</div>
         <%= @applied_leave.end_date.strftime("%d %b, %Y") %></li>
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('employee.reason') %></div>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('employee.reason') %></div>
         <%= @applied_leave.reason %></li>
-       <li class="list<%= cycle('odd','even') %>"><div class="category-name"><%= t('status') %>:</div>
+      <li class="list<%= cycle('odd', 'even') %>">
+        <div class="category-name"><%= t('status') %>:</div>
         <%= "Approved" if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>
         <%= "Denied" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == true %>
         <%= "Pending approval" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == false %>
-       </li>
-  </ul>
+      </li>
+    </ul>
 
 
-      <% unless @applied_leave.viewed_by_manager == true %>
-  <div class="buttons">
-      <div class="approve_button">    <%= link_to_remote " ► " + t('employee.approve'),
-             :update => "remark-form",
-             :url => {:action => "approve_remarks", :id=>@applied_leave.id},:class=>'approve_button' %> </div>
+    <% unless @applied_leave.viewed_by_manager == true %>
+        <div class="buttons">
+          <div class="approve_button">    <%= link_to_remote " ► " + t('employee.approve'),
+                                                             :update => "remark-form",
+                                                             :url => {:action => "approve_remarks", :id=>@applied_leave.id}, :class=>'approve_button' %> </div>
 
-   <div class="cancel_button"><%= link_to_remote " ► " + t('employee.deny'),
-             :update => "remark-form",
-             :url => {:action => "deny_remarks", :id=>@applied_leave.id},:class=>'cancel_button'  %>
-   </div>
+          <div class="cancel_button"><%= link_to_remote " ► " + t('employee.deny'),
+                                                        :update => "remark-form",
+                                                        :url => {:action => "deny_remarks", :id=>@applied_leave.id}, :class=>'cancel_button' %>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
-        <% end %>
-</div>
-     </div>
 
 
 
 
-<div id="remark-form"> </div>
+<div id="remark-form"></div>

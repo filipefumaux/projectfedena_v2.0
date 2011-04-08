@@ -6,10 +6,10 @@ class Event < ActiveRecord::Base
 
   class << self
     def is_a_holiday?(day)
-      return true if Event.holidays.count(:all, :conditions => ["start_date <=? AND end_date >= ?", day, day] ) > 0
+      return true if Event.holidays.count(:all, :conditions => ["start_date <=? AND end_date >= ?", day, day]) > 0
       false
     end
   end
 
-  
+
 end

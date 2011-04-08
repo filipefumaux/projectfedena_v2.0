@@ -1,9 +1,12 @@
 <div id="content-header">
-   <img src="/images/student_details/student_details_logo.jpg" />
-  <h1><%= t("students")%></h1>
+  <img src="/images/student_details/student_details_logo.jpg"/>
+
+  <h1><%= t("students") %></h1>
+
   <h3><%= t("student.remove") %></h3>
+
   <div id="app-back-button">
-      <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+    <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
   </div>
 </div>
 
@@ -11,10 +14,11 @@
 
   <div id="delete-student">
     <h4><%= t("student.delete") %></h4>
+
     <p><%= t("student.warning") %></p>
 
-    <p class="warning"><%= t("student.warningDelete")%></p>
-    <%= link_to "► "+t("delete"), { :action => 'destroy', :id =>params[:id]}, :confirm => 'Are you completely sure?', :class=> 'user_button' %>
+    <p class="warning"><%= t("student.warningDelete") %></p>
+    <%= link_to "► "+t("delete"), {:action => 'destroy', :id =>params[:id]}, :confirm => 'Are you completely sure?', :class=> 'user_button' %>
   </div>
 
 </div>

@@ -1,9 +1,9 @@
 class EmployeeController < ApplicationController
-  before_filter :login_required,:configuration_settings_for_hr
+  before_filter :login_required, :configuration_settings_for_hr
   filter_access_to :all
   before_filter :protect_other_employee_data, :only => [:individual_payslip_pdf]
   prawnto :prawn => {:left_margin => 25, :right_margin => 25}
-  
+
   def add_category
     @categories = EmployeeCategory.find(:all)
     @category = EmployeeCategory.new(params[:category])
@@ -12,7 +12,7 @@ class EmployeeController < ApplicationController
       redirect_to :controller => "employee", :action => "add_category"
     end
   end
-  
+
   def edit_category
     @category = EmployeeCategory.find(params[:id])
     if request.post? and @category.update_attributes(params[:category])
@@ -22,7 +22,7 @@ class EmployeeController < ApplicationController
   end
 
   def delete_category
-    employees = Employee.find(:all ,:conditions=>"employee_category_id = #{params[:id]}")
+    employees = Employee.find(:all, :conditions=>"employee_category_id = #{params[:id]}")
     category_position = EmployeePosition.find(:all, :conditions=>"employee_category_id = #{params[:id]}")
     if employees.empty? and category_position.empty?
       EmployeeCategory.find(params[:id]).destroy
@@ -37,7 +37,7 @@ class EmployeeController < ApplicationController
 
   def add_position
     @positions = EmployeePosition.find(:all)
-    @categories = EmployeeCategory.find(:all,:order => "name asc")
+    @categories = EmployeeCategory.find(:all, :order => "name asc")
     @position = EmployeePosition.new(params[:position])
     if request.post? and @position.save
       flash[:notice] = "Employee position created"
@@ -56,7 +56,7 @@ class EmployeeController < ApplicationController
   end
 
   def delete_position
-    employees = Employee.find(:all ,:conditions=>"employee_position_id = #{params[:id]}")
+    employees = Employee.find(:all, :conditions=>"employee_position_id = #{params[:id]}")
 
     if employees.empty?
       EmployeePosition.find(params[:id]).destroy
@@ -87,7 +87,7 @@ class EmployeeController < ApplicationController
   end
 
   def delete_department
-    employees = Employee.find(:all ,:conditions=>"employee_department_id = #{params[:id]}")
+    employees = Employee.find(:all, :conditions=>"employee_department_id = #{params[:id]}")
     if employees.empty?
       EmployeeDepartment.find(params[:id]).destroy
       @departments = EmployeeDepartment.find :all
@@ -117,7 +117,7 @@ class EmployeeController < ApplicationController
   end
 
   def delete_grade
-    employees = Employee.find(:all ,:conditions=>"employee_grade_id = #{params[:id]}")
+    employees = Employee.find(:all, :conditions=>"employee_grade_id = #{params[:id]}")
     if employees.empty?
       EmployeeGrade.find(params[:id]).destroy
       @grades = EmployeeGrade.find :all
@@ -145,8 +145,9 @@ class EmployeeController < ApplicationController
       redirect_to :action => "add_bank_details"
     end
   end
+
   def delete_bank_details
-    employees = EmployeeBankDetail.find(:all ,:conditions=>"bank_field_id = #{params[:id]}")
+    employees = EmployeeBankDetail.find(:all, :conditions=>"bank_field_id = #{params[:id]}")
     if employees.empty?
       BankField.find(params[:id]).destroy
       @bank_details = BankField.find(:all)
@@ -174,8 +175,9 @@ class EmployeeController < ApplicationController
       redirect_to :action => "add_additional_details"
     end
   end
+
   def delete_additional_details
-    employees = EmployeeAdditionalDetail.find(:all ,:conditions=>"additional_field_id = #{params[:id]}")
+    employees = EmployeeAdditionalDetail.find(:all, :conditions=>"additional_field_id = #{params[:id]}")
     if employees.empty?
       AdditionalField.find(params[:id]).destroy
       @additional_details = AdditionalField.find(:all)
@@ -191,13 +193,13 @@ class EmployeeController < ApplicationController
     @user = current_user
     @user_name = @user.username
     @employee1 = Employee.find_by_employee_number(@user_name)
-    @categories = EmployeeCategory.find(:all,:order => "name asc")
+    @categories = EmployeeCategory.find(:all, :order => "name asc")
     @positions = []
-    @grades = EmployeeGrade.find(:all,:order => "name asc")
-    @departments = EmployeeDepartment.find(:all,:order => "name asc")
+    @grades = EmployeeGrade.find(:all, :order => "name asc")
+    @departments = EmployeeDepartment.find(:all, :order => "name asc")
     @nationalities = Country.all
     @employee = Employee.new(params[:employee])
-    @last_admitted_employee = Employee.find(:last,:conditions=>"employee_number != 'admin'")
+    @last_admitted_employee = Employee.find(:last, :conditions=>"employee_number != 'admin'")
     @config = Configuration.find_by_config_key('EmployeeNumberAutoIncrement')
 
     if request.post?
@@ -227,9 +229,9 @@ class EmployeeController < ApplicationController
         @user.role = 'Employee'
         @user.email = "noreply" + @employee.employee_number.to_s + "@fedena.com"
         @user.save
-        
+
         flash[:notice] = "Employee #{@employee.first_name} record saved"
-        redirect_to :controller =>"employee" ,:action => "admission2", :id => @employee.id
+        redirect_to :controller =>"employee", :action => "admission2", :id => @employee.id
       end
     end
   end
@@ -238,15 +240,15 @@ class EmployeeController < ApplicationController
     category = EmployeeCategory.find(params[:category_id])
     @positions = EmployeePosition.find_all_by_employee_category_id(category.id)
     render :update do |page|
-      page.replace_html 'positions1', :partial => 'positions', :object => @positions  
+      page.replace_html 'positions1', :partial => 'positions', :object => @positions
     end
   end
 
   def edit1
-    @categories = EmployeeCategory.find(:all,:order => "name asc")
+    @categories = EmployeeCategory.find(:all, :order => "name asc")
     @positions = EmployeePosition.find(:all)
-    @grades = EmployeeGrade.find(:all,:order => "name asc")
-    @departments = EmployeeDepartment.find(:all,:order => "name asc")
+    @grades = EmployeeGrade.find(:all, :order => "name asc")
+    @departments = EmployeeDepartment.find(:all, :order => "name asc")
     @employee = Employee.find(params[:id])
     if request.post? and @employee.update_attributes(params[:employee])
       if params[:employee][:gender] == "true"
@@ -262,7 +264,7 @@ class EmployeeController < ApplicationController
       end
 
       flash[:notice] = "Employee #{@employee.first_name} general information updated"
-      redirect_to :controller =>"employee" ,:action => "profile", :id => @employee.id
+      redirect_to :controller =>"employee", :action => "profile", :id => @employee.id
     end
   end
 
@@ -271,7 +273,7 @@ class EmployeeController < ApplicationController
     @employee = Employee.find(params[:id])
     if request.post? and @employee.update_attributes(params[:employee])
       flash[:notice] = "Employee #{@employee.first_name} personal information updated"
-      redirect_to :controller =>"employee" ,:action => "profile", :id => @employee.id
+      redirect_to :controller =>"employee", :action => "profile", :id => @employee.id
     end
   end
 
@@ -283,14 +285,14 @@ class EmployeeController < ApplicationController
       if sms_setting.application_sms_active and sms_setting.employee_sms_active
         recipient = ["#{@employee.mobile_phone}"]
         message = "Joining Info for #{@employee.first_name}. Username: #{@employee.employee_number}, Password: #{@employee.employee_number}123. Please change your password after logging in."
-        sms = SmsManager.new(message,recipient)
+        sms = SmsManager.new(message, recipient)
         sms.send_sms
       end
       flash[:notice] = "address and contact details saved for #{ @employee.first_name}"
       redirect_to :action => "admission3", :id => @employee.id
     end
-  end  
-  
+  end
+
   def edit2
     @employee = Employee.find(params[:id])
     @countries = Country.find(:all)
@@ -318,24 +320,24 @@ class EmployeeController < ApplicationController
     if request.post?
       params[:employee_bank_details].each_pair do |k, v|
         EmployeeBankDetail.create(:employee_id => params[:id],
-          :bank_field_id => k,:bank_info => v['bank_info'])
+                                  :bank_field_id => k, :bank_info => v['bank_info'])
       end
       flash[:notice] = "Bank details saved for #{@employee.first_name}"
       redirect_to :action => "admission3_1", :id => @employee.id
     end
   end
-  
+
   def edit3
     @employee = Employee.find(params[:id])
     @bank_fields = BankField.find(:all, :conditions=>"status = true")
     if request.post?
       params[:employee_bank_details].each_pair do |k, v|
-        row_id= EmployeeBankDetail.find_by_employee_id_and_bank_field_id(@employee.id,k)
+        row_id= EmployeeBankDetail.find_by_employee_id_and_bank_field_id(@employee.id, k)
         unless row_id.nil?
-          bank_detail = EmployeeBankDetail.find_by_employee_id_and_bank_field_id(@employee.id,k)
-          EmployeeBankDetail.update(bank_detail.id,:bank_info => v['bank_info'])
+          bank_detail = EmployeeBankDetail.find_by_employee_id_and_bank_field_id(@employee.id, k)
+          EmployeeBankDetail.update(bank_detail.id, :bank_info => v['bank_info'])
         else
-          EmployeeBankDetail.create(:employee_id=>@employee.id,:bank_field_id=>k,:bank_info=>v['bank_info'])
+          EmployeeBankDetail.create(:employee_id=>@employee.id, :bank_field_id=>k, :bank_info=>v['bank_info'])
         end
       end
       flash[:notice] = "Employee #{@employee.first_name} bank details updated"
@@ -352,7 +354,7 @@ class EmployeeController < ApplicationController
     if request.post?
       params[:employee_additional_details].each_pair do |k, v|
         EmployeeAdditionalDetail.create(:employee_id => params[:id],
-          :additional_field_id => k,:additional_info => v['additional_info'])
+                                        :additional_field_id => k, :additional_info => v['additional_info'])
       end
       flash[:notice] = "Bank details saved for #{@employee.first_name}"
       redirect_to :action => "edit_privilege", :id => @employee.employee_number
@@ -367,7 +369,7 @@ class EmployeeController < ApplicationController
       new_privileges = params[:user][:privilege_ids] if params[:user]
       new_privileges ||= []
       @user.privileges = Privilege.find_all_by_id(new_privileges)
-      redirect_to :action => 'admission4',:id => @employee.id
+      redirect_to :action => 'admission4', :id => @employee.id
     end
   end
 
@@ -376,12 +378,12 @@ class EmployeeController < ApplicationController
     @additional_fields = AdditionalField.find(:all, :conditions=>"status = true")
     if request.post?
       params[:employee_additional_details].each_pair do |k, v|
-        row_id= EmployeeAdditionalDetail.find_by_employee_id_and_additional_field_id(@employee.id,k)
+        row_id= EmployeeAdditionalDetail.find_by_employee_id_and_additional_field_id(@employee.id, k)
         unless row_id.nil?
-          additional_detail = EmployeeAdditionalDetail.find_by_employee_id_and_additional_field_id(@employee.id,k)
-          EmployeeAdditionalDetail.update(additional_detail.id,:additional_info => v['additional_info'])
+          additional_detail = EmployeeAdditionalDetail.find_by_employee_id_and_additional_field_id(@employee.id, k)
+          EmployeeAdditionalDetail.update(additional_detail.id, :additional_info => v['additional_info'])
         else
-          EmployeeAdditionalDetail.create(:employee_id=>@employee.id,:additional_field_id=>k,:additional_info=>v['additional_info'])
+          EmployeeAdditionalDetail.create(:employee_id=>@employee.id, :additional_field_id=>k, :additional_info=>v['additional_info'])
         end
       end
       flash[:notice] = "Employee #{@employee.first_name} additional details updated"
@@ -391,16 +393,16 @@ class EmployeeController < ApplicationController
 
   def admission4
     @departments = EmployeeDepartment.find(:all)
-    @categories  = EmployeeCategory.find(:all)
-    @positions   = EmployeePosition.find(:all)
-    @grades      = EmployeeGrade.find(:all)
+    @categories = EmployeeCategory.find(:all)
+    @positions = EmployeePosition.find(:all)
+    @grades = EmployeeGrade.find(:all)
     if request.post?
       @employee = Employee.find(params[:id])
       Employee.update(@employee, :reporting_manager_id => params[:employee][:reporting_manager_id])
       flash[:notice]="employee reporting manager saved"
       redirect_to :controller => "payroll", :action => "manage_payroll", :id=>@employee.id
     end
-  
+
   end
 
   def view_rep_manager
@@ -411,9 +413,9 @@ class EmployeeController < ApplicationController
 
   def change_reporting_manager
     @departments = EmployeeDepartment.find(:all)
-    @categories  = EmployeeCategory.find(:all)
-    @positions   = EmployeePosition.find(:all)
-    @grades      = EmployeeGrade.find(:all)
+    @categories = EmployeeCategory.find(:all)
+    @positions = EmployeePosition.find(:all)
+    @grades = EmployeeGrade.find(:all)
     @emp = Employee.find(params[:id])
     @reporting_manager = Employee.find(@emp.reporting_manager_id).first_name unless @emp.reporting_manager_id.nil?
     if request.post?
@@ -431,9 +433,9 @@ class EmployeeController < ApplicationController
 
   def search
     @departments = EmployeeDepartment.find(:all)
-    @categories  = EmployeeCategory.find(:all)
-    @positions   = EmployeePosition.find(:all)
-    @grades      = EmployeeGrade.find(:all)
+    @categories = EmployeeCategory.find(:all)
+    @positions = EmployeePosition.find(:all)
+    @grades = EmployeeGrade.find(:all)
   end
 
   def search_ajax
@@ -443,11 +445,11 @@ class EmployeeController < ApplicationController
     other_conditions += " AND employee_position_id = '#{params[:employee_position_id]}'" unless params[:employee_position_id] == ""
     other_conditions += " AND employee_grade_id = '#{params[:employee_grade_id]}'" unless params[:employee_grade_id] == ""
     @employee = Employee.find(:all,
-      :conditions => "(first_name LIKE \"#{params[:query]}%\"
+                              :conditions => "(first_name LIKE \"#{params[:query]}%\"
                        OR middle_name LIKE \"#{params[:query]}%\"
                        OR last_name LIKE \"#{params[:query]}%\"
                        OR (concat(first_name, \" \", last_name) LIKE \"#{params[:query]}%\"))" + other_conditions,
-      :order => "first_name asc") unless params[:query] == ''
+                              :order => "first_name asc") unless params[:query] == ''
     render :layout => false
   end
 
@@ -458,11 +460,11 @@ class EmployeeController < ApplicationController
     other_conditions += " AND employee_position_id = '#{params[:employee_position_id]}'" unless params[:employee_position_id] == ""
     other_conditions += " AND employee_grade_id = '#{params[:employee_grade_id]}'" unless params[:employee_grade_id] == ""
     @employee = Employee.find(:all,
-      :conditions => "(first_name LIKE \"#{params[:query]}%\"
+                              :conditions => "(first_name LIKE \"#{params[:query]}%\"
                        OR middle_name LIKE \"#{params[:query]}%\"
                        OR last_name LIKE \"#{params[:query]}%\"
                        OR (concat(first_name, \" \", last_name) LIKE \"#{params[:query]}%\"))" + other_conditions,
-      :order => "first_name asc") unless params[:query] == ''
+                              :order => "first_name asc") unless params[:query] == ''
     render :layout => false
   end
 
@@ -592,8 +594,8 @@ class EmployeeController < ApplicationController
 
   def create_payslip_category
     @employee=Employee.find(params[:employee_id])
-    IndividualPayslipCategory.create(:employee_id=>params[:employee_id],:name=>params[:name],:amount=>params[:amount])
-    @created_category = IndividualPayslipCategory.find_by_employee_id_and_name_and_amount(params[:employee_id],params[:name],params[:amount])
+    IndividualPayslipCategory.create(:employee_id=>params[:employee_id], :name=>params[:name], :amount=>params[:amount])
+    @created_category = IndividualPayslipCategory.find_by_employee_id_and_name_and_amount(params[:employee_id], params[:name], params[:amount])
     if params[:is_deduction] == nil
       IndividualPayslipCategory.update(@created_category.id, :is_deduction=>false)
     else
@@ -605,17 +607,17 @@ class EmployeeController < ApplicationController
     else
       IndividualPayslipCategory.update(@created_category.id, :include_every_month=>params[:include_every_month])
     end
-    
-    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id,nil)
-    render :partial => "payslip_category_list",:locals => {:emp_id => @employee.id}
-    
+
+    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id, nil)
+    render :partial => "payslip_category_list", :locals => {:emp_id => @employee.id}
+
   end
 
   def remove_new_paylist_category
     removal_category = IndividualPayslipCategory.find(params[:id])
     employee = removal_category.employee_id
     removal_category.destroy
-    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(employee,nil)
+    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(employee, nil)
     render :partial => "list_payslip_category"
   end
 
@@ -625,7 +627,7 @@ class EmployeeController < ApplicationController
     @independent_categories = PayrollCategory.find_all_by_payroll_category_id_and_status(nil, true)
     @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id != \'\'")
     @employee_additional_categories = IndividualPayslipCategory.find_all_by_employee_id(@employee.id, :conditions=>"include_every_month = true")
-    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id,nil)
+    @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id, nil)
     @user = current_user
     privilege = Privilege.find(14)
     finance_manager = privilege.users
@@ -633,7 +635,7 @@ class EmployeeController < ApplicationController
     body = "Payslip has been generated for "+@employee.first_name+" "+@employee.last_name+". Kindly approve this request"
     finance_manager.each do |f|
       Reminder.create(:sender=>@user.id, :recipient=>f.id, :subject=> subject,
-        :body => body, :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
+                      :body => body, :is_read=>false, :is_deleted_by_sender=>false, :is_deleted_by_recipient=>false)
     end
 
     if request.post?
@@ -641,29 +643,29 @@ class EmployeeController < ApplicationController
       start_date = salary_date - ((salary_date.day - 1).days)
       end_date = start_date + 1.month
       payslip_exists = MonthlyPayslip.find_all_by_employee_id(@employee.id,
-        :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
+                                                              :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
       if payslip_exists == []
         params[:manage_payroll].each_pair do |k, v|
           row_id = EmployeeSalaryStructure.find_by_employee_id_and_payroll_category_id(@employee, k)
           category_name = PayrollCategory.find(k).name
           unless row_id.nil?
-            MonthlyPayslip.create(:salary_date=>start_date,:employee_id => params[:id],
-              :payroll_category_id => k,:amount => v['amount'])
+            MonthlyPayslip.create(:salary_date=>start_date, :employee_id => params[:id],
+                                  :payroll_category_id => k, :amount => v['amount'])
           else
-            MonthlyPayslip.create(:salary_date=>start_date,:employee_id => params[:id],
-              :payroll_category_id => k,:amount => v['amount'])
+            MonthlyPayslip.create(:salary_date=>start_date, :employee_id => params[:id],
+                                  :payroll_category_id => k, :amount => v['amount'])
           end
         end
-        individual_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id,nil)
+        individual_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id, nil)
         individual_payslip_category.each do |c|
           IndividualPayslipCategory.update(c.id, :salary_date=>start_date)
         end
         flash[:notice] = "#{@employee.first_name} salary slip generated for #{params[:salary_date]}"
         redirect_to :controller => "employee", :action => "profile", :id=> @employee.id
       else #else for if payslip_exists == []
-        individual_payslips_generated = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id,nil)
+        individual_payslips_generated = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id, nil)
         unless individual_payslips_generated.nil?
-          individual_payslips_generated.each do|i|
+          individual_payslips_generated.each do |i|
             i.delete
           end
         end
@@ -671,12 +673,12 @@ class EmployeeController < ApplicationController
         redirect_to :controller => "employee", :action => "profile", :id=> @employee.id
       end
     end
-    
+
   end
 
   def view_payslip
     @employee = Employee.find(params[:id])
-    @salary_dates = MonthlyPayslip.find_all_by_employee_id(params[:id], :conditions=>"is_approved = true",:select => "distinct salary_date")
+    @salary_dates = MonthlyPayslip.find_all_by_employee_id(params[:id], :conditions=>"is_approved = true", :select => "distinct salary_date")
     render :partial => "select_dates"
   end
 
@@ -690,12 +692,12 @@ class EmployeeController < ApplicationController
       return
     end
     @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],
-      :conditions=> "employee_id =#{params[:emp_id]}",
-      :order=> "payroll_category_id ASC")
+                                                               :conditions=> "employee_id =#{params[:emp_id]}",
+                                                               :order=> "payroll_category_id ASC")
 
     @individual_payslip_category = IndividualPayslipCategory.find_all_by_salary_date(params[:salary_date],
-      :conditions=>"employee_id =#{params[:emp_id]}",
-      :order=>"id ASC")
+                                                                                     :conditions=>"employee_id =#{params[:emp_id]}",
+                                                                                     :order=>"id ASC")
     @individual_category_non_deductionable = 0
     @individual_category_deductionable = 0
     @individual_payslip_category.each do |pc|
@@ -736,7 +738,7 @@ class EmployeeController < ApplicationController
   end
 
   def delete_payslip
-    @individual_payslip_category=IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(params[:id],params[:id2])
+    @individual_payslip_category=IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(params[:id], params[:id2])
     @individual_payslip_category.each do |pc|
       pc.destroy
     end
@@ -755,7 +757,7 @@ class EmployeeController < ApplicationController
 
     @total_leaves = 0
     @leave_types.each do |lt|
-      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id,lt.id).size
+      leave_count = EmployeeAttendance.find_all_by_employee_id_and_employee_leave_type_id(@employee.id, lt.id).size
       @total_leaves = @total_leaves + leave_count
     end
     render :partial => "attendance_report"
@@ -768,7 +770,7 @@ class EmployeeController < ApplicationController
 
   def update_subjects
     batch = Batch.find(params[:batch_id])
-    @subjects = Subject.find_all_by_batch_id(batch.id,:conditions=>"is_deleted=false")
+    @subjects = Subject.find_all_by_batch_id(batch.id, :conditions=>"is_deleted=false")
 
     render :update do |page|
       page.replace_html 'subjects1', :partial => 'subjects', :object => @subjects
@@ -816,7 +818,7 @@ class EmployeeController < ApplicationController
     @timetable = TimetableEntry.find_all_by_employee_id(@employee.id)
     @period_timing = ClassTiming.find(:all, :conditions => "is_break = false")
     @day = Weekday.all(:select => "DISTINCT(weekday)")
-    @weekday = ["Sun", "Mon", "Tue","Wed", "Thu", "Fri", "Sat"]
+    @weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   end
 
   def timetable_pdf
@@ -825,11 +827,12 @@ class EmployeeController < ApplicationController
     @timetable = TimetableEntry.find_all_by_employee_id(@employee.id)
     @period_timing = ClassTiming.find(:all, :conditions => "is_break = false")
     @day = Weekday.all(:select => "DISTINCT(weekday)")
-    @weekday = ["Mon", "Tue","Wed", "Thu", "Fri", "Sat", "Sun"]
+    @weekday = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     respond_to do |format|
       format.pdf { render :layout => false }
     end
   end
+
   #HR Management special methods...
 
   def hr
@@ -866,38 +869,38 @@ class EmployeeController < ApplicationController
     start_date = salary_date - ((salary_date.day - 1).days)
     end_date = start_date + 1.month
     employees = Employee.find(:all)
-    unless(finance_manager.nil? and finance.nil?)
+    unless (finance_manager.nil? and finance.nil?)
       finance_manager.each do |f|
         Reminder.create(:sender=>@user.id, :recipient=>f.id, :subject=> subject,
-          :body => body, :is_read=>false, :is_deleted_by_sender=>false,:is_deleted_by_recipient=>false)
+                        :body => body, :is_read=>false, :is_deleted_by_sender=>false, :is_deleted_by_recipient=>false)
       end
-      employees.each do|e|
+      employees.each do |e|
         payslip_exists = MonthlyPayslip.find_all_by_employee_id(e.id,
-          :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
+                                                                :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
         if payslip_exists == []
           salary_structure = EmployeeSalaryStructure.find_all_by_employee_id(e.id)
           unless salary_structure == []
             salary_structure.each do |ss|
               MonthlyPayslip.create(:salary_date=>start_date,
-                :employee_id=>e.id,
-                :payroll_category_id=>ss.payroll_category_id,
-                :amount=>ss.amount,:is_approved => false,:approver => nil)
+                                    :employee_id=>e.id,
+                                    :payroll_category_id=>ss.payroll_category_id,
+                                    :amount=>ss.amount, :is_approved => false, :approver => nil)
             end
           end
         end
       end
     else
-      employees.each do|e|
+      employees.each do |e|
         payslip_exists = MonthlyPayslip.find_all_by_employee_id(e.id,
-          :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
+                                                                :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
         if payslip_exists == []
           salary_structure = EmployeeSalaryStructure.find_all_by_employee_id(e.id)
           unless salary_structure == []
             salary_structure.each do |ss|
               MonthlyPayslip.create(:salary_date=>start_date,
-                :employee_id=>e.id,
-                :payroll_category_id=>ss.payroll_category_id,
-                :amount=>ss.amount,:is_approved => true,:approver => @user.id)
+                                    :employee_id=>e.id,
+                                    :payroll_category_id=>ss.payroll_category_id,
+                                    :amount=>ss.amount, :is_approved => true, :approver => @user.id)
             end
           end
         end
@@ -917,16 +920,16 @@ class EmployeeController < ApplicationController
       start_date = salary_date - ((salary_date.day - 1).days)
       end_date = start_date + 1.month
       employees = Employee.find(:all)
-      employees.each do|e|
+      employees.each do |e|
         payslip_record = MonthlyPayslip.find_all_by_employee_id(e.id,
-          :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
+                                                                :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
         payslip_record.each do |pr|
           pr.destroy
         end
         individual_payslip_record = IndividualPayslipCategory.find_all_by_employee_id(e.id,
-          :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
+                                                                                      :conditions => ["salary_date >= ? and salary_date < ?", start_date, end_date])
         unless individual_payslip_record.nil?
-          individual_payslip_record.each do|ipr|
+          individual_payslip_record.each do |ipr|
             ipr.destroy
           end
         end
@@ -950,7 +953,7 @@ class EmployeeController < ApplicationController
     end
     @all_employee_total_leave_count = 0
     @all_employee.each do |a|
-      @all_emp_app_leaves = ApplyLeave.count(:conditions=>["employee_id =? AND viewed_by_manager =?" , a.id, false])
+      @all_emp_app_leaves = ApplyLeave.count(:conditions=>["employee_id =? AND viewed_by_manager =?", a.id, false])
       @all_employee_total_leave_count = @all_employee_total_leave_count + @all_emp_app_leaves
     end
 
@@ -1003,7 +1006,7 @@ class EmployeeController < ApplicationController
 
   def department_payslip
     @departments = EmployeeDepartment.find(:all, :conditions=>"status = true", :order=> "name ASC")
-    @salary_dates = MonthlyPayslip.find(:all, :conditions=>"is_approved = true",:select => "distinct salary_date")
+    @salary_dates = MonthlyPayslip.find(:all, :conditions=>"is_approved = true", :select => "distinct salary_date")
   end
 
   def update_employee_payslip
@@ -1023,12 +1026,12 @@ class EmployeeController < ApplicationController
       return
     end
     @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(@salary_date,
-      :conditions=> "employee_id =#{@employee.id}",
-      :order=> "payroll_category_id ASC")
+                                                               :conditions=> "employee_id =#{@employee.id}",
+                                                               :order=> "payroll_category_id ASC")
 
     @individual_payslip_category = IndividualPayslipCategory.find_all_by_salary_date(@salary_date,
-      :conditions=>"employee_id =#{@employee.id}",
-      :order=>"id ASC")
+                                                                                     :conditions=>"employee_id =#{@employee.id}",
+                                                                                     :order=>"id ASC")
     @individual_category_non_deductionable = 0
     @individual_category_deductionable = 0
     @individual_payslip_category.each do |pc|
@@ -1077,7 +1080,7 @@ class EmployeeController < ApplicationController
 
     @currency_type = Configuration.find_by_config_key("CurrencyType").config_value
     @salary_date = params[:salary_date] if params[:salary_date]
-    
+
     #    @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(@salary_date,
     #      :conditions=> "employee_id =#{@employee.id}",
     #      :order=> "payroll_category_id ASC")
@@ -1133,12 +1136,12 @@ class EmployeeController < ApplicationController
     @position = EmployeePosition.find(@employee.employee_position_id).name
     @salary_date = Date.parse(params[:id2])
     @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(@salary_date,
-      :conditions=> "employee_id =#{@employee.id}",
-      :order=> "payroll_category_id ASC")
+                                                               :conditions=> "employee_id =#{@employee.id}",
+                                                               :order=> "payroll_category_id ASC")
 
     @individual_payslip_category = IndividualPayslipCategory.find_all_by_salary_date(@salary_date,
-      :conditions=>"employee_id =#{@employee.id}",
-      :order=>"id ASC")
+                                                                                     :conditions=>"employee_id =#{@employee.id}",
+                                                                                     :order=>"id ASC")
     @individual_category_non_deductionable = 0
     @individual_category_deductionable = 0
     @individual_payslip_category.each do |pc|
@@ -1178,7 +1181,8 @@ class EmployeeController < ApplicationController
       format.pdf { render :layout => false }
     end
   end
-    def employee_individual_payslip_pdf
+
+  def employee_individual_payslip_pdf
     @employee = Employee.find(params[:id])
     @department = EmployeeDepartment.find(@employee.employee_department_id).name
     @currency_type = Configuration.find_by_config_key("CurrencyType").config_value
@@ -1187,12 +1191,12 @@ class EmployeeController < ApplicationController
     @position = EmployeePosition.find(@employee.employee_position_id).name
     @salary_date = Date.parse(params[:id2])
     @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(@salary_date,
-      :conditions=> "employee_id =#{@employee.id}",
-      :order=> "payroll_category_id ASC")
+                                                               :conditions=> "employee_id =#{@employee.id}",
+                                                               :order=> "payroll_category_id ASC")
 
     @individual_payslip_category = IndividualPayslipCategory.find_all_by_salary_date(@salary_date,
-      :conditions=>"employee_id =#{@employee.id}",
-      :order=>"id ASC")
+                                                                                     :conditions=>"employee_id =#{@employee.id}",
+                                                                                     :order=>"id ASC")
     @individual_category_non_deductionable = 0
     @individual_category_deductionable = 0
     @individual_payslip_category.each do |pc|
@@ -1232,6 +1236,7 @@ class EmployeeController < ApplicationController
       format.pdf { render :layout => false }
     end
   end
+
   def advanced_search
     @search = Employee.search(params[:search])
     if params[:search]
@@ -1390,7 +1395,7 @@ class EmployeeController < ApplicationController
         end
       end
     end
-    
+
   end
 
 
@@ -1399,10 +1404,10 @@ class EmployeeController < ApplicationController
   end
 
   def one_click_approve
-    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],:conditions => ["is_approved = false"])
+    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date], :conditions => ["is_approved = false"])
     @salary_date = params[:salary_date]
     render :update do |page|
-      page.replace_html "approve",:partial=> "one_click_approve"
+      page.replace_html "approve", :partial=> "one_click_approve"
     end
   end
 

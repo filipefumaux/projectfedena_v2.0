@@ -1,20 +1,16 @@
-
-
-
-
 <ul>
-    <%- @new_payslip_category.each do |c| -%>
-<li>
-   
-<div class="name"><%= c.name %></div>
-<div class="val"> <span>:</span><%= c.amount %></div>
- <div class="del-button"> <%= link_to_remote image_tag("/images/buttons/delete-new.png", :alt=>t('delete'), :border => 0), :url => { :action => "remove_new_paylist_category", :id => c.id },
-                                      :update => "list-payslip-category", :confirm=>"Are you sure" %></div>
+  <%- @new_payslip_category.each do |c| -%>
+      <li>
+
+        <div class="name"><%= c.name %></div>
+        <div class="val"><span>:</span><%= c.amount %></div>
+        <div class="del-button"> <%= link_to_remote image_tag("/images/buttons/delete-new.png", :alt=>t('delete'), :border => 0), :url => {:action => "remove_new_paylist_category", :id => c.id},
+                                                    :update => "list-payslip-category", :confirm=>"Are you sure" %></div>
 
 
-</li>
+      </li>
 
-    
-      <% end %>
+
+  <% end %>
 </ul>
 

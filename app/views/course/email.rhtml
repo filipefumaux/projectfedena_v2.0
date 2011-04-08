@@ -1,9 +1,12 @@
 <div id="content-header">
-  <img src="/images/admission/admission_page_logo.jpg" />
-  <h1>Class : <%= @course.name%></h1>
+  <img src="/images/admission/admission_page_logo.jpg"/>
+
+  <h1>Class : <%= @course.name %></h1>
+
   <h3>Send email</h3>
+
   <div id="app-back-button">
-     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
   </div>
 </div>
 
@@ -11,24 +14,26 @@
 
   <% form_for :email do |f| %>
 
-    <div class="label-field-pair">
-      <label for="email_subject"><%= t('subject') %></label>
-      <div class="text-input-bg"><%= f.text_field 'subject' %></div>
-    </div>
+      <div class="label-field-pair">
+        <label for="email_subject"><%= t('subject') %></label>
 
-    <div class="label-field-pair">
-      <label for="email_recipients">Recipients</label>
-      <div class="text-input-bg"><%= select 'email', 'recipients', ['Students', 'Guardians', 'Students & Guardians'] %></div>
-    </div>
+        <div class="text-input-bg"><%= f.text_field 'subject' %></div>
+      </div>
 
-    <div class="message-area">
-      <label for="email_message">Message</label>
-      <%= f.text_area 'message' %>
-    </div>
+      <div class="label-field-pair">
+        <label for="email_recipients">Recipients</label>
 
-    <div class="submit-area">
-      <%= image_submit_tag '/images/buttons/send.png' %>
-    </div>
+        <div class="text-input-bg"><%= select 'email', 'recipients', ['Students', 'Guardians', 'Students & Guardians'] %></div>
+      </div>
+
+      <div class="message-area">
+        <label for="email_message">Message</label>
+        <%= f.text_area 'message' %>
+      </div>
+
+      <div class="submit-area">
+        <%= image_submit_tag '/images/buttons/send.png' %>
+      </div>
 
   <% end %>
 
