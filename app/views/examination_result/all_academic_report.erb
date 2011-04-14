@@ -64,7 +64,7 @@
           </tr>
           <tr class="tr-even">
             <td class="td-name">
-              <div style="width:150px;"><b>Percentage/grade</b></div>
+              <div style="width:150px;"><b><%= t("percentage") %>/<%= t("grade") %></b></div>
             </td>
 
             <% exam.each do |t| %>
@@ -78,7 +78,7 @@
           </tr>
           <tr class="tr-odd">
             <td class="td-name">
-              <div><b>Class average</b></div>
+              <div><b><%= t('classAverage') %></b></div>
             </td>
             <% class_avg = 0 %>
             <% exam.each do |t| %>

@@ -16,5 +16,5 @@
       </div>
     </div>
 <% else %>
-    <p class="flash-msg">No bank details entered for <%= @employee.first_name %>.</p>
+    <p class="flash-msg"><%= t('employee.noBankDetails') %> <%= @employee.first_name %>.</p>
 <% end %>

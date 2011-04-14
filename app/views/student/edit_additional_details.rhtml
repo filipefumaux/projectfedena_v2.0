@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/admission/admission_page_logo.jpg" alt=""/>
 
-  <h1>Student Settings</h1>
+  <h1><%= t("student.settings") %></h1>
 
-  <h3>Edit Additional Details</h3>
+  <h3><%= t("edit") %> <%= t("additionalDetails") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -27,14 +27,14 @@
         </div>
 
         <div class="label-checkbox-pair">
-          <label class="status" for="status">Status</label>
+          <label class="status" for="status"><%= t('status') %></label>
 
           <div id="radio-buttons">
             <%= c.radio_button "status", "true", :checked => "checked" %>
-            <label class="label_for_status" for="add_grade_status_true">Active</label>
+            <label class="label_for_status" for="add_grade_status_true"><%= t('active') %></label>
 
             <%= c.radio_button "status", "false" %>
-            <label class="label_for_status" for="add_grade_status_false">Inactive</label>
+            <label class="label_for_status" for="add_grade_status_false"><%= t('inactive') %></label>
           </div>
         </div>
 

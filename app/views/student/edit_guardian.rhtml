@@ -3,7 +3,7 @@
 
   <h1>Parent Information</h1>
 
-  <h3>Edit Parent/guardian details</h3>
+  <h3><%= t("edit")%> Parent/guardian details</h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -21,13 +21,13 @@
 
 
         <div class="label-field-pair">
-          <label for="parent_detail_student_id">Student Admission no.</label>
+          <label for="parent_detail_student_id"><%= t("student.admissionNo") %></label>
 
           <div class="text_display"><%= @student.admission_no %></div>
           <%= s.hidden_field :ward_id, :value => @student.id %>
         </div>
         <br/>
-        <span class="span-sub-heading">Parent - Personal Details</span>
+        <span class="span-sub-heading"><%= t("student.parent") %> - <%= t("personalDetails") %></span>
         <hr class="sub-heading"/>
 
         <div class="label-field-pair">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_relation">Relation</label>
+          <label for="parent_detail_relation"><%= t("student.relation") %></label>
 
           <div class="text-input-bg"><%= s.text_field :relation, :value => @parent.relation %></div>
         </div>
@@ -61,13 +61,13 @@
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_occupation">Occupation</label>
+          <label for="parent_detail_occupation"><%= t('student.occupation') %></label>
 
           <div class="text-input-bg"><%= s.text_field :occupation, :value => @parent.occupation %></div>
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_income">Income</label>
+          <label for="parent_detail_income"><%= t('income') %></label>
 
           <div class="text-input-bg"><%= s.text_field :income, :value => @parent.income %></div>
         </div>
@@ -78,16 +78,16 @@
           <div class="text-input-bg"><%= s.text_field :email, :value => @parent.email %></div>
         </div>
         <br/>
-        <span class="span-sub-heading">Parent - Contact Details</span>
+        <span class="span-sub-heading"><%= t("student.parent") %> - <%= t("student.contactDetails") %></span>
         <hr class="sub-heading"/>
         <div class="label-field-pair">
-          <label for="master_student_city"><%= t("AddressLine") %> 1</label>
+          <label for="master_student_city"><%= t("addressLine") %> 1</label>
 
           <div class="text-input-bg"><%= s.text_field :office_address_line1, :value => @parent.office_address_line1 %></div>
         </div>
 
         <div class="label-field-pair">
-          <label for="master_student_city"><%= t("AddressLine") %> 2</label>
+          <label for="master_student_city"><%= t("addressLine") %> 2</label>
 
           <div class="text-input-bg"><%= s.text_field :office_address_line2, :value => @parent.office_address_line2 %></div>
         </div>
@@ -111,19 +111,19 @@
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_office_phone1">Phone 1</label>
+          <label for="parent_detail_office_phone1"><%= t("phone") %> 1</label>
 
           <div class="text-input-bg"><%= s.text_field :office_phone1, :value => @parent.office_phone1 %></div>
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_office_phone2">Phone 2</label>
+          <label for="parent_detail_office_phone2"><%= t("phone") %> 2</label>
 
           <div class="text-input-bg"><%= s.text_field :office_phone2, :value => @parent.office_phone2 %></div>
         </div>
 
         <div class="label-field-pair">
-          <label for="parent_detail_mob_phone">Mobile phone no.</label>
+          <label for="parent_detail_mob_phone"><%= t('student.mobilePhone') %></label>
 
           <div class="text-input-bg"><%= s.text_field :mobile_phone, :value => @parent.mobile_phone %></div>
         </div>

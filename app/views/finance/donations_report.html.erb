@@ -3,7 +3,7 @@
 
   <h1>Finance Monthly Report</h1>
 
-  <h3>Donations</h3>
+  <h3><%= t("donations") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,10 +17,10 @@
   <% donations_expenses=0 %>
   <div id="fees-table">
     <div class="fees-th">
-      <div class="fees-table-description">Description</div>
+      <div class="fees-table-description"><%= t('description') %></div>
       <div class="fees-table-expenses">Expense</div>
-      <div class="fees-table-income">Income</div>
-      <div class="fees-table-date">Date</div>
+      <div class="fees-table-income"><%= t('income') %></div>
+      <div class="fees-table-date"><%= t("date") %></div>
     </div>
 
     <% @donations.each do |d| %>

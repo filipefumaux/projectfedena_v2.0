@@ -17,7 +17,7 @@
           </div>
       <% end %>
       <div class="extender"></div>
-      <%= f.submit '► Update', :class => 'submit-button' %>
+      <%= f.submit '► ' + t("update"), :class => 'submit-button' %>
   <% end %>
   <div id="delete-button"><%= link_to_remote(" ► " + t('delete'),
                                              :url => attendance_path(@absentee),

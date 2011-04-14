@@ -1,6 +1,6 @@
 <% unless @payroll_details.empty? %>
     <ul class="item-list">
-      <li class="heading">Basic payroll details</li>
+      <li class="heading"><%= t('basicPayrollDetails') %></li>
       <% @payroll_details.each do |p| %>
 
           <% @payroll_category=PayrollCategory.find(p.payroll_category_id) %>
@@ -14,5 +14,5 @@
       <% end %>
     </ul>
 <% else %>
-    <p class="flash-msg">No payroll details entered for <%= @employee.first_name %>.</p>
+    <p class="flash-msg"><%= t('noPayrollDetailsFor') %> <%= @employee.first_name %>.</p>
 <% end %>

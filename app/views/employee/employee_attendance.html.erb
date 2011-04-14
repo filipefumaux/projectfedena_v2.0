@@ -17,8 +17,8 @@
   <% end %>
   <div id="box">
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Add Leave types", :controller=>"employee_attendance", :action=>"add_leave_types" %></div>
-      <div class="link-descr">Add and edit employee attendance types.</div>
+      <div class="link-heading"><%= link_to t("add")+" "+ t('leaveTypes'), :controller=>"employee_attendance", :action=>"add_leave_types" %></div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + "employee attendance types"%>.</div>
     </div>
 
     <div class="link-box">

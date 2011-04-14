@@ -3,7 +3,7 @@
 
   <h1><%= t("admission") %></h1>
 
-  <h3>Step 4</h3>
+  <h3><%= t('step') %> 4</h3>
 </div>
 
 <div id="page-yield">
@@ -17,7 +17,7 @@
       <%#= error_messages_for 'employee_bank_details' %>
 
       <div id="form-contents">
-        <span class="span-sub-heading">Additional Details</span>
+        <span class="span-sub-heading"><%= t("additionalDetails") %></span>
         <hr class="sub-heading"/>
         <% @additional_fields.each do |additional| %>
             <div class="label-field-pair">
@@ -30,7 +30,7 @@
       </div>
 
       <div class="save-proceed-button">
-        <%= submit_tag "► Save & Proceed" %>
+        <%= submit_tag t('saveAndProceed') %>
       </div>
   <% end %>
 

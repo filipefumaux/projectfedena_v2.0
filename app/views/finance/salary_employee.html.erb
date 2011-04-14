@@ -14,10 +14,10 @@
   <% total=0 %>
   <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
     <tr class="tr-head">
-      <td>Sl no.</td>
+      <td><%= t("slNo") %></td>
       <td>Employee Name</td>
       <td><%= t("salary") %> ( <%= currency %> )</td>
-      <td>Salary Date</td>
+      <td><%= t("employee.salaryDate") %></td>
     </tr>
     <tr class="tr-blank"></tr>
     <% amount=0 %>
@@ -46,7 +46,7 @@
     <% end %>
     <tr class="tr-blank"></tr>
     <tr class="tr-head">
-      <td>Total Salary</td>
+      <td><%= t('totalSalary') %></td>
       <td></td>
       <td align="right"><%= total %></td>
       <td></td>

@@ -3,7 +3,7 @@
 
   <h1><%= t('exam.additionalExams') %></h1>
 
-  <h3>Showing Additional Exam group</h3>
+  <h3><%= t('showAdditionalExamGroup') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -13,7 +13,7 @@
   <ul>
     <% if permitted_to? :publish, :additional_exam %>
         <% if @additional_exam_group.is_published %>
-            <li><%= link_to_remote("Publish Result", :url=>{:controller=>'additional_exam', :action=>'publish', :id=>@additional_exam_group.id, :status=>"result"},
+            <li><%= link_to_remote(t('exam.publishResults'), :url=>{:controller=>'additional_exam', :action=>'publish', :id=>@additional_exam_group.id, :status=>"result"},
                                    :before => "Element.show('loader')",
                                    :success => "Element.hide('loader')") %></li>
         <% end %>

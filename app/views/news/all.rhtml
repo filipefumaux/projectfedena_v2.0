@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/manage_news/manage_news_logo.png"/>
 
-  <h1>School News</h1>
+  <h1><%= t('schoolNews') %></h1>
 
-  <h3>Latest announcements</h3>
+  <h3><%= t('latestAnnouncements') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -20,7 +20,7 @@
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
         <td>
-          Sl no.
+          <%= t("slNo") %>
         </td>
         <td>
           Title
@@ -32,7 +32,7 @@
           Comments
         </td>
         <td>
-          Posted
+          <%= t('posted') %>
         </td>
       </tr>
       <tr class="tr-blank"></tr>

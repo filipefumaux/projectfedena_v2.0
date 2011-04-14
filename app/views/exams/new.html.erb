@@ -35,22 +35,22 @@
               <div class="text-input-bg"><%= f.select :subject_id, @subjects.map { |s| [s.name, s.id] } %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_start_time">Start Time</label>
+              <label for="subject_start_time"><%= t("startTime") %></label>
 
               <div class="text-input-bg"> <%= f.calendar_date_select :start_time %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_end_time">End Time</label>
+              <label for="subject_end_time"><%= t("endTime") %></label>
 
               <div class="text-input-bg"> <%= f.calendar_date_select :end_time %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_maximum_marks">Maximum Marks</label>
+              <label for="subject_maximum_marks"><%= t('exam.maxMarks') %></label>
 
               <div class="text-input-bg"><%= f.text_field :maximum_marks %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_minimum_marks">Minimum Marks</label>
+              <label for="subject_minimum_marks"><%= t('exam.minMarks') %></label>
 
               <div class="text-input-bg"> <%= f.text_field :minimum_marks %></div>
             </div>

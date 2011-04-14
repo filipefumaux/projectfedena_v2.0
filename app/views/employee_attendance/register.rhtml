@@ -11,9 +11,9 @@
 <div id="content-header">
   <img src="/images/attendence/attendence.png" alt=""/>
 
-  <h1>Employee Attendance</h1>
+  <h1><%= t('employee.attendance') %></h1>
 
-  <h3>Register</h3>
+  <h3><%= t('register') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -47,7 +47,7 @@
         <%= error_messages_for 'employee_attendance' %>
 
         <div class="label-field-pair">
-          <label for="joining_date">Attendance date</label>
+          <label for="joining_date"><%= t('attendanceDate') %></label>
 
           <div class="text-input-bg"><%= text_field_tag :date, :attendance_date, :value=>Date.today %></div>
         </div>

@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_news/show_news_logo.png"/>
 
-  <h1>News</h1>
+  <h1><%= t("news") %></h1>
 
-  <h3>Read news</h3>
+  <h3><%= t('readNews') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -19,7 +19,7 @@
     <%= @news.title %>
   </div>
   <div id="create_date">
-    Posted on <%= @news.created_at.strftime("%A, %d %B, %Y") %>
+    <%= t('postedOn') %> <%= @news.created_at.strftime("%A, %d %B, %Y") %>
   </div>
   <div id="news_content">
     <%= sanitize @news.content, :tags => %w[b i a h1 h2 h3 u strike p], :attributes => %w[href] %>

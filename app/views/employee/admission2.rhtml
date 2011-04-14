@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Employee Admission</h1>
+  <h1><%= t('employee.admission') %></h1>
 
-  <h3>Step-2</h3>
+  <h3><%= t('step') %>-2</h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -110,7 +110,7 @@
           <div class="extender"></div>
         </div>
         <br/>
-        <span class="span-sub-heading">Contact Details</span>
+        <span class="span-sub-heading"><%= t("student.contactDetails") %></span>
         <hr class="sub-heading"/>
 
         <div class="label-field-pair">
@@ -128,7 +128,7 @@
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label>Mobile</label>
+          <label><%= t('student.mobilePhone') %></label>
 
           <div class="text-input-bg"><%= a.text_field :mobile_phone %></div>
           <div class="extender"></div>
@@ -157,7 +157,7 @@
       </div>
 
       <div class="save-proceed-button">
-        <%= submit_tag "► Save & Proceed" %>
+        <%= submit_tag t('saveAndProceed') %>
       </div>
   <% end %>
 

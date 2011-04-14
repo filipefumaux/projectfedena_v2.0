@@ -1417,7 +1417,7 @@ class EmployeeController < ApplicationController
     dates.each do |d|
       d.approve(current_user.id)
     end
-    flash[:notice] = 'Payslip has been approved'
+    flash[:notice] = t("payslipApproved")
     redirect_to :action => "hr"
 
   end

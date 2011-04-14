@@ -18,9 +18,9 @@
   <div id="errors"></div>
   <div id="msg"></div>
   <div class="linker">
-    <%= link_to_remote 'Add Normal Subject', :url => {:action => 'new_subject', :id => @batch} %> |
-    <%= link_to 'Add Electives', batch_elective_groups_path(@batch) %> |
-    <%= link_to_remote 'Assign old batch subjects', :url => {:controller=>'batch_transfers', :action => 'get_previous_batch_subjects', :id => @batch} %>
+    <%= link_to_remote t("subject.addNormal"), :url => {:action => 'new_subject', :id => @batch} %> |
+    <%= link_to t('batch.addElectives'), batch_elective_groups_path(@batch) %> |
+    <%= link_to_remote t('subject.assignOldBatch'), :url => {:controller=>'batch_transfers', :action => 'get_previous_batch_subjects', :id => @batch} %>
   </div>
   <div id="previous-batch-subjects"></div>
 

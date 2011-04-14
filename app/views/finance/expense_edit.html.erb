@@ -1,8 +1,8 @@
-<h1>Create expense</h1>
+<h1><%= t('finance.createExpense') %></h1>
 
 <p>
   <%= link_to "Finance", :action => "index" %>
-  <%= link_to "Transactions", :action => "transactions" %>
+  <%= link_to t("transactions"), :action => "transactions" %>
 </p>
 
 <%= render :partial => "transaction_edit_form" %>

@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Fees</h1>
+  <h1><%= t("fees") %></h1>
 
-  <h3>Additional Fees</h3>
+  <h3><%= t("finance.additionalFees") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -15,13 +15,13 @@
   <% end %>
   <div class="box">
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Create", :action => "additional_fees_create_form" %></div>
+      <div class="link-heading"><%= link_to t("create"), :action => "additional_fees_create_form" %></div>
       <div class="link-descr">Creates Additional fees</div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "View", :action => "additional_fees_list" %></div>
-      <div class="link-descr">View Additional Fees</div>
+      <div class="link-heading"><%= link_to t("view"), :action => "additional_fees_list" %></div>
+      <div class="link-descr">View <%= t("finance.additionalFees") %></div>
     </div>
 
   </div>

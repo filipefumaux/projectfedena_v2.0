@@ -5,10 +5,10 @@
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="grade-name"><%= g.name %>(<%= g.priority %>)</div>
             <div class="grade-edit"><%= link_to t("edit"), :action => "edit_grade", :id=>g.id %></div>
-            <div class="grade-edit"><%= link_to t("delete"), {:action => "delete_grade", :id=>g.id}, :confirm => "Are you sure?" %></div>
+            <div class="grade-edit"><%= link_to t("delete"), {:action => "delete_grade", :id=>g.id}, :confirm => t('areYouSure') %></div>
           </li>
       <% end %>
   <% else %>
-      <p class="flash-msg"> No Employee grades record found</p>
+      <p class="flash-msg"> <%= t('employee.noGradesRecordFound') %></p>
   <% end %>
 </ul>

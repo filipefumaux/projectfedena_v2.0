@@ -7,7 +7,7 @@
               (<%= p.employee_category.prefix unless p.employee_category_id.nil? %>)
             </div>
             <div class="position-edit"><%= link_to t("edit"), :action => "edit_position", :id=>p.id %></div>
-            <div class="position-edit"><%= link_to t("delete"), {:action => "delete_position", :id=>p.id}, :confirm =>"Are you sure?" %></div>
+            <div class="position-edit"><%= link_to t("delete"), {:action => "delete_position", :id=>p.id}, :confirm =>t('areYouSure') %></div>
           </li>
       <% end %>
   <% else %>

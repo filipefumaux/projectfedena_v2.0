@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Additional Fees</h1>
+  <h1><%= t("finance.additionalFees") %></h1>
 
-  <h3>Create Additional Fees </h3>
+  <h3>Create <%= t("finance.additionalFees") %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -22,12 +22,12 @@
           <div class="input-container"><%= form.text_field :name %></div>
         </div>
         <div class="label-field-pair">
-          <div class="label-container"><label>Description: </label></div>
+          <div class="label-container"><label><%= t('description') %>: </label></div>
           <div class="input-container"><%= form.text_field :description %></div>
         </div>
         <div class="label-field-pair">
           <div class="label-container"><label><%= t('course') %> : </label></div>
-          <div class="input-container"><%= form.select :batch_id, @batches.map { |c| [c.full_name, c.id] }, :prompt => "Select Course" %></div>
+          <div class="input-container"><%= form.select :batch_id, @batches.map { |c| [c.full_name, c.id] }, :prompt => t('selectCourse') %></div>
         </div>
         <div class="label-field-pair">
           <div class="label-container"><label><%= t('employee.startDate') %>*:</label></div>

@@ -20,7 +20,7 @@
     <% form_for :manage_payroll do |s| %>
 
         <div class="payslip-field-pair">
-          <label for="salary_date">Salary date</label>
+          <label for="salary_date"><%= t("employee.salaryDate") %></label>
 
           <div class="payslip-input-bg">
             <%= calendar_date_select_tag 'salary_date', Date.today,

@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Edit payroll</h1>
+  <h1><%= t("edit")%> <%= t('payroll') %></h1>
 
-  <h3> edit payroll details </h3>
+  <h3><%= t("edit")%> <%= t('payrollDetails') %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -16,7 +16,7 @@
       <p class="flash-msg"> <%= flash[:notice] %> </p>
   <% end %>
 
-  <span class="span-sub-heading">Payroll Details</span>
+  <span class="span-sub-heading"><%= t('payrollDetails') %></span>
   <hr class="sub-heading"/>
 
   <% form_for :manage_payroll do |s| %>

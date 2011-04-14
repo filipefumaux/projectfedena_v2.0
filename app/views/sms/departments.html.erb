@@ -3,7 +3,7 @@
 
   <h1>SMS</h1>
 
-  <h3>Departments</h3>
+  <h3><%= t('departments') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -39,7 +39,7 @@
             <br/>
           </div>
         </div>
-        <%= submit_tag 'Send SMS', :class=>'submit_button' %>
+        <%= submit_tag t('sendSMS'), :class=>'submit_button' %>
 
     <% end %>
 

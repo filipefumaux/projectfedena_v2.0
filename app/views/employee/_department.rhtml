@@ -5,7 +5,7 @@
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="department-name"><%= d.name %>(<%= d.code %>)</div>
             <div class="department-edit"><%= link_to t("edit"), :action => "edit_department", :id=>d.id %></div>
-            <div class="department-edit"><%= link_to t("delete"), {:action => "delete_department", :id=>d.id}, :confirm => "Are you sure?" %></div>
+            <div class="department-edit"><%= link_to t("delete"), {:action => "delete_department", :id=>d.id}, :confirm => t('areYouSure') %></div>
           </li>
       <% end %>
   <% else %>

@@ -3,7 +3,7 @@
 
   <h1><%= t('exam.additionalExams') %></h1>
 
-  <h3>New Additional Exam</h3>
+  <h3><%= t('exam.newAdditional') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -21,12 +21,12 @@
       <%= t('courses') %> &raquo;
       <%= @course.full_name %> &raquo;
       <%= t('batch') + " #{@batch.name}" %> &raquo;
-      <%= link_to 'Additional Exams', batch_additional_exam_groups_path(@batch) %> &raquo;
+      <%= link_to t('exam.additional'), batch_additional_exam_groups_path(@batch) %> &raquo;
       <%= link_to @additional_exam_group.name, [@batch, @additional_exam_group] %> &raquo;
       New
     </div>
 
-    <h5>For additional exam group - <%= @additional_exam_group.name %></h5>
+    <h5><%= "For additional exam group" %> - <%= @additional_exam_group.name %></h5>
     <% unless @additional_exam_group.exam_type == 'Grades' %>
         <% form_for [@additional_exam_group, @additional_exam] do |f| %>
             <div class="label-field-pair">
@@ -35,22 +35,22 @@
               <div class="text-input-bg"><%= f.select :subject_id, @subjects.map { |s| [s.name, s.id] } %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_start_time">Start Time</label>
+              <label for="subject_start_time"><%= t("startTime") %></label>
 
               <div class="text-input-bg"> <%= f.calendar_date_select :start_time %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_end_time">End Time</label>
+              <label for="subject_end_time"><%= t("endTime") %></label>
 
               <div class="text-input-bg"> <%= f.calendar_date_select :end_time %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_maximum_marks">Maximum Marks</label>
+              <label for="subject_maximum_marks"><%= t('exam.maxMarks') %></label>
 
               <div class="text-input-bg"><%= f.text_field :maximum_marks %></div>
             </div>
             <div class="label-field-pair">
-              <label for="subject_minimum_marks">Minimum Marks</label>
+              <label for="subject_minimum_marks"><%= t('exam.minMarks') %></label>
 
               <div class="text-input-bg"> <%= f.text_field :minimum_marks %></div>
             </div>

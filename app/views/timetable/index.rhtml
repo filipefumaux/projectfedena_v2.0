@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_timetable.png"/>
 
-  <h1>Timetable</h1>
+  <h1><%= t("timetable.title") %></h1>
 
-  <h3>Home</h3>
+  <h3><%= t('home') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -53,7 +53,7 @@
     <% end %>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Institutional Timetable", :action => "timetable" %></div>
+      <div class="link-heading"><%= link_to t("timetable.institutional"), :action => "timetable" %></div>
       <div class="link-descr">View the entire timetable for a day</div>
     </div>
     <% if permitted_to? :edit, :timetable %>

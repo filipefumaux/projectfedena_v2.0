@@ -3,7 +3,7 @@
 
   <h1>Tally</h1>
 
-  <h3>Settings</h3>
+  <h3><%= t("settings") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,19 +17,19 @@
   <div class="box">
     <% form_for :xml_settings do |f| %>
         <div class="label-field-pair">
-          <label for="student_grade"><%= "Ledger name corresponding to salary" %></label>
+          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toSalary') %></label>
 
           <div class="text-input-bg"> <%= text_field :xml_settings, :salary, :value => @xml[:salary] %>
           </div>
         </div>
         <div class="label-field-pair">
-          <label for="student_grade">Ledger name corresponding to fees</label>
+          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toFees')%></label>
 
           <div class="text-input-bg"><%= text_field :xml_settings, :fee, :value => @xml[:fee] %>
           </div>
         </div>
         <div class="label-field-pair">
-          <label for="student_grade">Ledger name corresponding to donation</label>
+          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toDonation')%></label>
 
           <div class="text-input-bg"> <%= text_field :xml_settings, :donation, :value => @xml[:donation] %>
           </div>

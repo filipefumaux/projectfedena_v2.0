@@ -17,7 +17,7 @@
     <div id="asset-description"><%= @asset.description %></div>
     <br/>
 
-    <div id="asset-amt">Amount : <%= @currency_type + " " %><%= @asset.amount %></div>
+    <div id="asset-amt"><%= t('amount') %> : <%= @currency_type + " " %><%= @asset.amount %></div>
     <div id="asset-date">Created At : <%= @asset.created_at.strftime("%A, %d %B, %Y") %></div>
   </div>
 

@@ -10,13 +10,13 @@
 
       <div class="text-input-bg">
         <%= form.select(:fee_category_id, @fee_categories.map { |item| [item.name, item.id] },
-                        {:prompt => "Select category"},
+                        {:prompt => t('selectCategory')},
                         {:onchange => "#{remote_function(:url => {:action => "fee_collection_batch_update"}, :with => "'id='+value")}"})
         %></div>
     </div>
     <div id="batchs"></div>
     <div class="label-field-pair">
-      <label for="reason"> Fee Collection Name:</label>
+      <label for="reason"> <%= t('finance.feeCollName') %>:</label>
 
       <div class="text-input-bg"><%= form.text_field :name %></div>
     </div>

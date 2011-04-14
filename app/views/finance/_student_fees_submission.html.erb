@@ -1,14 +1,14 @@
-<div class="name">Fees Receipt Number</div>
+<div class="name"><%= t('finance.receiptNumber') %></div>
 <div class="val"><span>:</span>F<%= @financefee.id %></div>
 <% unless @fee_category.nil? %>
-    <div class="name">Fee Category Name</div>
+    <div class="name"><%= t('finance.feeCategoryName') %></div>
     <div class="val"><span>:</span><%= @fee_category.name %></div>
 <% end %>
 <% unless @student.student_category.nil? %>
-    <div class="name">Student Category</div>
+    <div class="name"><%= t('student.category') %></div>
     <div class="val"><span>:</span><%= @student.student_category.name %></div>
 <% else %>
-    <div class="name">Student Category</div>
+    <div class="name"><%= t('student.category') %></div>
     <div class="val"><span>:</span>N.A</div>
 <% end %>
 
@@ -37,9 +37,9 @@
     <% unless @fee_particulars.nil? %>
         <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
           <tr class="tr-head">
-            <td>Sl no.</td>
-            <td>Particulars</td>
-            <td>Amount (<%= currency %>  )</td>
+            <td><%= t("slNo") %></td>
+            <td><%= t('finance.particulars') %></td>
+            <td><%= t('amount') %> (<%= currency %>  )</td>
           </tr>
           <tr class="tr-blank"></tr>
           <% @fee_particulars.each_with_index do |fee, i| %>
@@ -74,7 +74,7 @@
           <tr class="tr-blank"></tr>
           <tr class="tr-blank"></tr>
           <tr class="tr-<%= cycle("odd", "even") %>" cellpadding="1" cellspacing="1">
-            <td class="col-1">Total Fees</td>
+            <td class="col-1"><%= t('finance.totalFees') %></td>
             <td class="col-1"></td>
             <td class="col-6"><%= total_fees %></td>
           </tr>

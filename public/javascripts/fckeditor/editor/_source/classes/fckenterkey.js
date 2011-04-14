@@ -46,7 +46,7 @@ var FCKEnterKey = function( targetWindow, enterMode, shiftEnterMode, tabSpaces )
 		[ 9 		, 'Tab' ],
 		[ 8			, 'Backspace' ],
 		[ CTRL + 8		, 'CtrlBackspace' ],
-		[ 46		, t('delete') ]
+		[ 46		, 'delete']
 	] ) ;
 
 	if ( tabSpaces > 0 )
@@ -77,7 +77,7 @@ function FCKEnterKey_OnKeystroke(  keyCombination, keystrokeValue )
 			case 'Backspace' :
 				return oEnterKey.DoBackspace() ;
 				break ;
-			case t('delete') :
+			case 'delete' :
 				return oEnterKey.DoDelete() ;
 				break ;
 			case 'Tab' :

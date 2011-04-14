@@ -317,7 +317,6 @@ es:
   salary:
     title: "Salary"
     salaryDate: "Salary date"
-    salaryMonth: "Salary month"
     salaryAccount: "Salary Account"
     attendance: "Employee Attendance"
     selectAnEmployee: "Select an employee"
@@ -342,7 +341,6 @@ es:
   role: "Role"
   email: "Email"
   editDetails: "Edit details"
-  studentDetails: "Student details"
   step: "Step"
   admission: "Admission"
   previousDetails: "Previous Details"
@@ -364,5 +362,3 @@ es:
   advanced: "Advanced"
   searchByName: "Search by name"
   searchForEmployees: "Search for employees"
-  employeesearch: "Employee search"
-  employeePayslip: "Employee payslip"

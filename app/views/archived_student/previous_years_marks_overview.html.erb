@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/student_details/student_details_logo.jpg"/>
 
-  <h1>Student</h1>
+  <h1><%= t('student.student') %></h1>
 
   <h3>Previous marks overview</h3>
 
@@ -39,7 +39,7 @@
             <div class="month">
               <% exam = ArchivedExamScore.new() %>
               <% aggr = exam.batch_wise_aggregate(@student, b) %>
-              <%= b.name %> | Aggregate : <%= "%.2f" %aggr.to_f unless aggr=="nil" %>
+              <%= b.name %> | <%= t('aggregate') %> : <%= "%.2f" %aggr.to_f unless aggr=="nil" %>
             </div>
 
             <div class="extender"></div>

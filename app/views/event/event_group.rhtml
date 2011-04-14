@@ -1,7 +1,7 @@
 <%= flash[:notice] %>
 
-<%= link_to_remote "Select Courses", :url=>{:controller=>"event", :action=>"select_course", :id=>params[:id]} %> |
-<%= link_to_remote "Select Employee Department", :url=>{:controller=>"event", :action=>"select_employee_department", :id=>params[:id]} %>
+<%= link_to_remote t("selectCourses"), :url=>{:controller=>"event", :action=>"select_course", :id=>params[:id]} %> |
+<%= link_to_remote t('selectEmployeeDepart'), :url=>{:controller=>"event", :action=>"select_employee_department", :id=>params[:id]} %>
 
 <div id="select-options"></div>
 

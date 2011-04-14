@@ -1,6 +1,6 @@
 <% unless @batch.nil? %>
     <div class="add_sub">
-      <%= link_to_remote 'Add Normal Subject', :url => {:action => 'new', :id => @batch} unless defined? @elective_group %>
+      <%= link_to_remote t("subject.addNormal"), :url => {:action => 'new', :id => @batch} unless defined? @elective_group %>
     </div>
 <% end %>
 <% unless @subjects.empty? %>
@@ -8,7 +8,7 @@
       <% unless params[:subject].nil? %>
           <% if params[:subject][:elective_group_id]=="" %>
               <div class="add_sub">
-                <%= link_to_remote 'Add Subject to this Elective group', :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=> params[:subject][:elective_group_id]} if defined? @elective_group %>
+                <%= link_to_remote t('addSubjectToElectiveGroup'), :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=> params[:subject][:elective_group_id]} if defined? @elective_group %>
               </div>
           <% end %>
       <% end %>
@@ -44,7 +44,7 @@
 
 <% unless @batch.nil? %>
     <div class="add_sub">
-      <%= link_to 'New Elective Group', new_batch_elective_group_path(@batch) unless defined? @elective_group %>
+      <%= link_to t('newElectiveGroup'), new_batch_elective_group_path(@batch) unless defined? @elective_group %>
     </div>
 <% end %>
 
@@ -52,7 +52,7 @@
     <% @elective_groups.each do |e| %>
         <% @esubjects = @batch.elective_batch_subject(e.id) #Subject.find_all_by_elective_group_id(e.id)  %>
         <div class="add_sub">
-          <%= link_to_remote 'Add Subject to this Elective group', :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>e} %>
+          <%= link_to_remote t('addSubjectToElectiveGroup'), :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>e} %>
         </div>
         <ul id="category-list">
           <h5><%= e.name %></h5>

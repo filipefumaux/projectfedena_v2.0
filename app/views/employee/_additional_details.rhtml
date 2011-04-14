@@ -24,7 +24,7 @@
     </div>
 <% else %>
     <p class="flash-msg"><%= t('noAdditionalDetails') %> <%= @employee.first_name %>
-      . <%= link_to "ADD", :controller => "employee", :action => "edit3_1", :id => @employee.id %></p>
+      . <%= link_to t("add"), :controller => "employee", :action => "edit3_1", :id => @employee.id %></p>
 <% end %>
 
 

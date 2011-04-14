@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/student_details/student_details_logo.jpg"/>
 
-  <h1>Parents info</h1>
+  <h1><%= t('student.parentInfo') %></h1>
 
-  <h3>Parents profile</h3>
+  <h3><%= t('student.parentProfile') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -40,7 +40,7 @@
   <div id="guardians-links">
 
     <ul>
-      <span>Parents/Guardian:</span>
+      <span><%= t('student.parentGuardian') %>:</span>
       <% @parents.each do |p| %>
           <li><a href="#guardian-details-id-<%= p.id %>"><%= p.first_name %> <%= p.last_name %></a> (<%= p.relation %>)
           </li>
@@ -63,7 +63,7 @@
             <%= p.first_name %> <%= p.last_name %>
           </div>
 
-          <div class="profile_info_label2">Relation</div>
+          <div class="profile_info_label2"><%= t("student.relation") %></div>
           <div class="profile_info_text2"><%= p.relation %></div>
 
           <div class="profile_info_label"><%= t('dateOfBirth') %></div>
@@ -74,15 +74,15 @@
             <div class="profile_info_label2"><%= t("email") %></div>
             <div class="profile_info_text2"> <%= p.email %> </div>
 
-            <div class="profile_info_label">Phone 1</div>
+            <div class="profile_info_label"><%= t("phone") %> 1</div>
             <div class="profile_info_text"> <%= p.office_phone1 %> </div>
           </div>
 
           <div class="new_profile_info_area1">
-            <div class="profile_info_label2">Phone 2</div>
+            <div class="profile_info_label2"><%= t("phone") %> 2</div>
             <div class="profile_info_text2"> <%= p.office_phone2 %> </div>
 
-            <div class="profile_info_label">Mobile phone</div>
+            <div class="profile_info_label"><%= t("student.mobilePhone") %></div>
             <div class="profile_info_text"> <%= p.mobile_phone %> </div>
           </div>
 
@@ -95,10 +95,10 @@
           </div>
 
           <div class="new_profile_info_area1">
-            <div class="profile_info_label2">Income</div>
+            <div class="profile_info_label2"><%= t('income') %></div>
             <div class="profile_info_text2"> <%= p.income %> </div>
 
-            <div class="profile_info_label">Occupation</div>
+            <div class="profile_info_label"><%= t('student.occupation') %></div>
             <div class="profile_info_text"> <%= p.occupation %> </div>
           </div>
           <div class="extender"></div>

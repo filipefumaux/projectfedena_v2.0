@@ -2,7 +2,7 @@
   <table align="center" width="100%" cellpadding="1" cellspacing="1">
     <tr class="tr-head">
       <td>
-        Sl no.
+        <%= t("slNo") %>
       </td>
       <td>
         <%= t("name") %>
@@ -44,7 +44,7 @@
           </td>
 
           <td class="col-4">
-            <%= link_to 'View Profile', :controller => "student", :action => "profile", :id => r.id %>
+            <%= link_to t("dashboard.viewProfile"), :controller => "student", :action => "profile", :id => r.id %>
           </td>
         </tr>
     <% end %>

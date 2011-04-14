@@ -3,15 +3,15 @@
                    :complete => 'Modalbox.hide();return false;' do |f| %>
 
     <div class="label-field-pair">
-      <div class="label-container"><label>Title :</label></div>
+      <div class="label-container"><label><%= t('title') %> :</label></div>
       <div class="input-container"><%= f.text_field :title %></div>
     </div>
     <div class="label-field-pair">
-      <div class="label-container"><label>Description :</label></div>
+      <div class="label-container"><label><%= t('description') %> :</label></div>
       <div class="text-input-bg"> <%= f.text_field :description %></div>
     </div>
     <div class="label-field-pair">
-      <div class="label-container"><label>Amount :</label></div>
+      <div class="label-container"><label><%= t('amount') %> :</label></div>
       <div class="input-container"><%= f.text_field :amount %></div>
     </div>
     <div class="label-field-pair">

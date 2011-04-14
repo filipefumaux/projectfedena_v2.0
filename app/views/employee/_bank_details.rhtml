@@ -23,6 +23,6 @@
       <% end %>
     </div>
 <% else %>
-    <p class="flash-msg">No bank details entered for <%= @employee.first_name %>
-      . <%= link_to "ADD", :controller => "employee", :action => "edit3", :id => @employee.id %></p>
+    <p class="flash-msg"><%= t('employee.noBankDetails') %> <%= @employee.first_name %>
+      . <%= link_to t("add"), :controller => "employee", :action => "edit3", :id => @employee.id %></p>
 <% end %>

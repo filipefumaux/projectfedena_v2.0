@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Employee Admission</h1>
+  <h1><%= t('employee.admission') %></h1>
 
-  <h3>Step-1</h3>
+  <h3><%= t('step') %>-1</h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -24,7 +24,7 @@
       <div id="admission1_form">
 
         <div id="necessary-field-notification"> <%= t('warningFieldFill') %></div>
-        <span class="span-sub-heading">General Details</span>
+        <span class="span-sub-heading"><%= t("generalDetails") %></span>
         <hr class="sub-heading"/>
         <div class="label-field-pair">
           <label for="employee_id">Employee no. <span class="necessary-field">*</span> </label>
@@ -39,7 +39,7 @@
         <hr class="label-underline"/>
 
         <div class="label-field-pair">
-          <label for="employee_joining_date">Joining date. </label>
+          <label for="employee_joining_date"><%= t('employee.joiningDate') %>. </label>
 
           <div class="text-input-bg"><%= calendar_date_select_tag 'employee[joining_date]', Date.today,
                                                                   :year_range => 25.years.ago..0.years.from_now %></div>
@@ -67,10 +67,10 @@
           <label class="label_for_employee_gender" for="master_student_gender"><%= t("gender") %></label>
 
           <div class="employee_gender_value">
-            <label class="label_for_gender" for="master_student_gender_true">Male</label>
+            <label class="label_for_gender" for="master_student_gender_true"><%= t('male') %></label>
             <%= a.radio_button "gender", "true", :checked => "checked" %>
 
-            <label class="label_for_gender" for="master_student_gender_false">Female</label>
+            <label class="label_for_gender" for="master_student_gender_false"><%= t('female') %></label>
             <%= a.radio_button "gender", "false" %>
           </div>
         </div>
@@ -90,7 +90,7 @@
         <hr class="label-underline"/>
 
         <div class="label-field-pair">
-          <label for="employee_category">Category <span class="necessary-field">*</span> </label>
+          <label for="employee_category"><%= t("category") %> <span class="necessary-field">*</span> </label>
 
           <div class="text-input-bg"><%= select :employee, :employee_category_id, @categories.map { |s| [s.name, s.id] },
                                                 {:prompt => t('select')},
@@ -112,7 +112,7 @@
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_job_title">Job Title</label>
+          <label for="employee_job_title"><%= t('employee.jobTitle') %></label>
 
           <div class="text-input-bg"><%= a.text_field :job_title %></div>
         </div>
@@ -124,13 +124,13 @@
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair-text-area">
-          <label for="employee_experience">Experience Info</label>
+          <label for="employee_experience"><%= t('employee.xpInfo') %></label>
 
           <div class="textarea-input-bg"><%= a.text_area :experience_detail, :cols => 27, :rows => 5, :class => 'admission1-textarea' %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_total-experience">Total Experience</label>
+          <label for="employee_total-experience"><%= t('employee.totalXP') %></label>
 
           <div class="text-input-bg"><%= select :employee, :experience_year, (0..20), {:prompt=>"Year"} %>
             <%= select :employee, :experience_month, (0..11), {:prompt=>"Month"} %></div>
@@ -139,45 +139,45 @@
 
 
         <div class="label_field_pair">
-          <label class="employee_status" for="employee_status">Status</label>
+          <label class="employee_status" for="employee_status"><%= t('status') %></label>
 
-          <label class="label_for_status" for="employee_status_true">Active</label>
+          <label class="label_for_status" for="employee_status_true"><%= t('active') %></label>
           <%= a.radio_button "status", "true", :checked => "checked" %>
 
-          <label class="label_for_status" for="employee_status_false">Inactive</label>
+          <label class="label_for_status" for="employee_status_false"><%= t('inactive') %></label>
           <%= a.radio_button "status", "false" %>
         </div>
 
 
         <br/>
-        <span class="span-sub-heading">Personal Details</span>
+        <span class="span-sub-heading"><%= t("personalDetails") %></span>
         <hr class="sub-heading"/>
         <div class="label-field-pair">
-          <label for="employee_martial_status">Martial status</label>
+          <label for="employee_martial_status"><%= t('employee.maritalStatus') %></label>
 
           <div class="text-input-bg"><%= select :employee, :marital_status, ["Single", "Married", "Divorced"] %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="children_count">No of children</label>
+          <label for="children_count"><%= t("employee.numberOfChildren") %></label>
 
           <div class="text-input-bg"><%= a.text_field :children_count %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_father">Father name</label>
+          <label for="employee_father"><%= t('fatherName') %></label>
 
           <div class="text-input-bg"><%= a.text_field :father_name %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_mother">Mother name</label>
+          <label for="employee_mother"><%= t('motherName') %></label>
 
           <div class="text-input-bg"><%= a.text_field :mother_name %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_spouse">Spouse name</label>
+          <label for="employee_spouse"><%= t('spouseName') %></label>
 
           <div class="text-input-bg"><%= a.text_field :husband_name %></div>
         </div>
@@ -229,7 +229,7 @@
         </script>
 
         <div class="label-field-pair">
-          <label for="master_student_image_file">Upload photo</label>
+          <label for="master_student_image_file"><%= t('uploadPhoto') %></label>
 
           <div class="text-input-bg"><%= a.file_field :image_file %></div>
 
@@ -237,7 +237,7 @@
 
       </div>
 
-      <%= submit_tag "► Save & Proceed", :class => "submit_button" %>
+      <%= submit_tag t('saveAndProceed'), :class => "submit_button" %>
   <% end %>
 
 </div>

@@ -3,7 +3,7 @@
 
   <h1><%= t("employee.title") %></h1>
 
-  <h3>Advanced search</h3>
+  <h3><%= t('advancedSearch') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -33,9 +33,9 @@
         <div class="student_gender_value">
           <label class="label_for_gender">All</label>
           <%= f.radio_button :gender_equals, "" %>
-          <label class="label_for_gender">Male</label>
+          <label class="label_for_gender"><%= t('male') %></label>
           <%= f.radio_button :gender_equals, "m" %>
-          <label class="label_for_gender">Female</label>
+          <label class="label_for_gender"><%= t('female') %></label>
           <%= f.radio_button :gender_equals, "f" %>
         </div>
       </div>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="label-field-pair">
-        <label for="student_admission_no">Marital status</label>
+        <label for="student_admission_no"><%= t('employee.maritalStatus') %></label>
 
         <div class="text-input-bg">
           <%= select :search, :marital_status_like, ["Single", "Married", "Divorced"], {:prompt=>t('select')} %>
@@ -137,7 +137,7 @@
         </div>
       </div>
       <div class="label_field_pair">
-        <label class="label_for_student" for="student_gender">Status</label>
+        <label class="label_for_student" for="student_gender"><%= t('status') %></label>
 
         <div class="student_gender_value">
           <label class="label_for_gender" for="student_gender_true">Present</label>
@@ -150,7 +150,7 @@
       </div>
 
 
-      <%= f.submit "Search", :class=>'submit' %>
+      <%= f.submit t("search"), :class=>'submit' %>
   <% end %>
 </div>
 
@@ -164,7 +164,7 @@
     </script>
     <div id="search-result">
 
-      <p>You have searched for:</p>
+      <p><%= t('searchedFor') %>:</p>
 
       <div class="search-again">
         <%#= link_to_function '► ' + t("searchAgain") do |page|
@@ -223,15 +223,15 @@
         <% end %>
         <% unless  params[:search][:employee_category_id_equals].empty? %>
             <% category = EmployeeCategory.find(params[:search][:employee_category_id_equals]) %>
-            <span> Category: </span> <%= category.name %>
+            <span> <%= t("category") %>: </span> <%= category.name %>
         <% end %>
         <% unless  params[:search][:employee_position_id_equals].empty? %>
             <% position = EmployeePosition.find(params[:search][:employee_position_id_equals]) %>
-            <span> Employee position: </span> <%= position.name %>
+            <span> t('employeePosition'): </span> <%= position.name %>
         <% end %>
         <% unless  params[:search][:employee_grade_id_equals].empty? %>
             <% grade = EmployeeGrade.find(params[:search][:employee_grade_id_equals]) %>
-            <span> Employee grade: </span> <%= grade.name %>
+            <span> <%= t('employee.grade') %>: </span> <%= grade.name %>
         <% end %>
         <% unless  params[:search][:gender_equals].empty? %>
             <% if  params[:search][:gender_equals] == 'm' %>
@@ -246,7 +246,7 @@
             <span> <%= t("bloodGroup") %>:</span> <%= params[:search][:blood_group_like] %>
         <% end %>
         <% unless  params[:search][:marital_status_like].empty? %>
-            <span> Marital status:</span> <%= params[:search][:marital_status_like] %>
+            <span> <%= t('employee.maritalStatus') %>:</span> <%= params[:search][:marital_status_like] %>
         <% end %>
         <% unless  params[:search][:nationality_id_equals].empty? %>
             <% nationality = Country.find(params[:search][:nationality_id_equals]) %>
@@ -258,7 +258,7 @@
             <%= params[:adv_search][:joining_date_year] %>
         <% end %>
         <% unless  params[:adv_search][:dob_option].empty? %>
-            <span>Year of birth: </span> <%= params[:adv_search][:dob_option] %>
+            <span><%= t('yearOfBirth') %>: </span> <%= params[:adv_search][:dob_option] %>
 
             <%= params[:adv_search][:birth_date_year] %>
         <% end %>
@@ -276,7 +276,7 @@
       <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
         <tr class="tr-head">
           <td>
-            Sl no.
+            <%= t("slNo") %>
           </td>
           <td>
             <%= order @search, :by => :first_name %>

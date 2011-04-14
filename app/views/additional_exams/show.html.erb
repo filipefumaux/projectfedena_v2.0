@@ -20,7 +20,7 @@
       <%= t('courses') %> &raquo;
       <%= @additional_exam_group.batch.course.full_name %> &raquo;
       <%= @additional_exam_group.batch.name %> &raquo;
-      <%= link_to 'Additional Exams', batch_additional_exam_groups_path(@batch) %> &raquo;
+      <%= link_to t('exam.additional'), batch_additional_exam_groups_path(@batch) %> &raquo;
       <%= link_to @additional_exam_group.name, [@additional_exam_group.batch, @additional_exam_group] %> &raquo;
       <%= @additional_exam.subject.name %>
     </div>
@@ -54,7 +54,7 @@
                     </td>
                 <% else %>
                     <td class="col-2"><%= select "additional_exam[#{student.id}]", "grading_level_id", @grades.map { |g| [g.name, g.id] },
-                                                 {:prompt =>"Select Grade", :selected => @additional_exam_score.grading_level_id} %></td>
+                                                 {:prompt =>t('selectGrade'), :selected => @additional_exam_score.grading_level_id} %></td>
                 <% end %>
 
                 <td class="col-2">

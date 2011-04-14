@@ -8,7 +8,7 @@
 <div class="extender"></div>
 <div id="add-payslip-category-link">
 
-  <%= link_to_remote "► Add new category",
+  <%= link_to_remote "► " + t('addNewCategory'),
                      :update => "payslip-category-form",
                      :url => {:action => "add_payslip_category"},
                      :with=>"'emp_id=#{emp_id}'", :class=>'submit_button' %>

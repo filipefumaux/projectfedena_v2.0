@@ -2,7 +2,7 @@
   <label for="subject_name"><%= t('subject') %></label>
 
   <div class="text-input-bg"><%= select :subject_assignment, :subject_id, @subjects.map { |s| [s.name, s.id] },
-                                        {:prompt => "Select subject"},
+                                        {:prompt => t('selectSubject')},
                                         {:onChange => "#{remote_function(:url => {:action => "select_department"}, :with => "'subject_id='+value")}"} %>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Donations</h1>
+  <h1><%= t("donations") %></h1>
 
-  <h3>Add new donation</h3>
+  <h3><%= t('addNew') %> donation</h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -29,12 +29,12 @@
             <div class="text-field-bg"><%= f.text_field :donor %></div>
           </div>
           <div class="label-field-pair">
-            <label for="description">Description:</label>
+            <label for="description"><%= t('description') %>:</label>
 
             <div class="text-field-bg"><%= f.text_field :description %></div>
           </div>
           <div class="label-field-pair">
-            <label for="amount">Amount:</label>
+            <label for="amount"><%= t('amount') %>:</label>
 
             <div class="text-field-bg"><%= f.text_field :amount %></div>
           </div>

@@ -5,7 +5,7 @@
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="category-name"><%= c.name %></div>
             <div class="category-edit"><%= link_to t("edit"), {:action => "edit_additional_details", :id=>c.id} %></div>
-            <div class="category-edit"><%= link_to t("delete"), {:action => "delete_additional_details", :id=>c.id}, :confirm => "Are you sure?" %></div>
+            <div class="category-edit"><%= link_to t("delete"), {:action => "delete_additional_details", :id=>c.id}, :confirm => t('areYouSure') %></div>
           </li>
       <% end %>
 

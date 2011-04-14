@@ -3,7 +3,7 @@
 
   <h1>Subjects</h1>
 
-  <h3>Home</h3>
+  <h3><%= t('home') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,7 +17,7 @@
   <div class="box">
 
     <div class="label-field-pair">
-      <label for="student_course">Select a batch:
+      <label for="student_course"><%= t("batch.select") %>:
         <%= image_tag("loader.gif", :align => "absmiddle", :border => 0, :id => "loader", :style =>"display: none;") %>
       </label>
 

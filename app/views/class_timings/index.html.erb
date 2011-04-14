@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/show_news/show_news_logo.png"/>
 
-  <h1>Timetable</h1>
+  <h1><%= t("timetable.title") %></h1>
 
   <h3>Set class timings</h3>
 
@@ -17,7 +17,7 @@
   <% end %>
 
   <div class="label-field-pair">
-    <label>Select a batch:</label>
+    <label><%= t("batch.select") %>:</label>
 
     <div class="text-input-bg">
       <%= select :batch, :id,

@@ -13,7 +13,7 @@
 
   <h1>Monthly payslip</h1>
 
-  <h3>Edit</h3>
+  <h3><%= t('edit') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -36,11 +36,11 @@
       <% end %>
 
       <div class="label-field-pair">
-        <label for="salary_date">Salary date</label>
+        <label for="salary_date"><%= t("employee.salaryDate") %></label>
 
         <div class="text-input-bg"><%= text_field_tag :salary_date, @date %>**select the last day of the month</div>
       </div>
-      <%= submit_tag "Update" %>
+      <%= submit_tag t("update") %>
   <% end %>
 
 </div>

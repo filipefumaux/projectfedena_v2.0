@@ -21,7 +21,7 @@
     <%= @course.full_name %> &raquo;
     <%= t('batch') + " #{@batch.name}" %> &raquo;
     <%= link_to t("additionalExams"), batch_additional_exam_groups_path(@batch) %> &raquo;
-    New Additional Exam
+    <%= t('exam.newAdditional') %>
   </div>
 
 
@@ -42,7 +42,7 @@
             <div class="text-input-bg"><%= form.text_field :name, :value=>@ename %></div>
           </div>
           <div class="label-field-pair">
-            <label for="exam_type">Exam Type</label>
+            <label for="exam_type"><%= t('exam.type') %></label>
 
             <div class="text-input-bg"><%= select :exam_option, :exam_type, ['Marks', 'Grades', 'MarksAndGrades'] %></div>
           </div>

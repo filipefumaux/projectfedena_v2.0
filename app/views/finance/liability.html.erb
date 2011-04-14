@@ -21,11 +21,11 @@
             page << "Modalbox.show($('modal-box'), {title: 'Create new Liability', width: 500});"
         } %>
       </div>
-      <div class="link-descr"> Creates new liability</div>
+      <div class="link-descr"><%= "Creates new liability" %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "View", :action => "view_liability" %> </div>
+      <div class="link-heading"><%= link_to t("view"), :action => "view_liability" %> </div>
       <div class="link-descr"> Liability view</div>
     </div>
 

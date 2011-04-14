@@ -101,7 +101,7 @@ class ExamController < ApplicationController
         students.each do |s|
           student_user = s.user
           Reminder.create(:sender=> current_user.id, :recipient=>student_user.id,
-                          :subject=>"Result Published",
+                          :subject=>t("resultPublished"), #"Result Published"
                           :body=>"#{@exam_group.name} "+t('resultHasBeenPublished')+"  <br/> "+t('exam.viewResultReport'))
         end
       end

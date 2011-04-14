@@ -3,7 +3,7 @@
 
   <h1><%= t("admission") %></h1>
 
-  <h3>Step 2 - Parent/guardian details</h3>
+  <h3><%= t('step') %> 2 - Parent/guardian details</h3>
 </div>
 
 <div id="page-yield">
@@ -27,7 +27,7 @@
             end %>
           </div>
           <div id="skip">
-            <%= link_to "► Finish", {:controller => "student", :action => "admission3", :id => @student.id} %>
+            <%= link_to "► " + t("finish"), {:controller => "student", :action => "admission3", :id => @student.id} %>
           </div>
           <script type="text/javascript">
               Event.observe(window, 'load', function() {
@@ -49,14 +49,14 @@
         <div id="admission1_form_vertical_block_left">
 
           <div class="label-field-pair">
-            <label for="parent_detail_student_id">Student Admission no.</label>
+            <label for="parent_detail_student_id"><%= t("student.admissionNo") %></label>
 
             <div class="text_display"><%= @student.admission_no %></div>
             <%= f.hidden_field :ward_id, :value => @student.id %>
           </div>
 
           <br/>
-          <span class="span-sub-heading">Parent - Personal  Details</span>
+          <span class="span-sub-heading"><%= t("student.parent") %> - <%= t("personalDetails") %></span>
           <hr class="sub-heading"/>
 
           <div class="label-field-pair">
@@ -76,7 +76,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_relation">Relationship</label>
+            <label for="parent_detail_relation"><%= t("student.relation") %></label>
 
             <div class="text-input-bg"><%= f.text_field :relation %></div>
           </div>
@@ -101,7 +101,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_occupation">Occupation</label>
+            <label for="parent_detail_occupation"><%= t('student.occupation') %></label>
 
             <div class="text-input-bg"><%= f.text_field :occupation %></div>
           </div>
@@ -109,14 +109,14 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_income">Income</label>
+            <label for="parent_detail_income"><%= t('income') %></label>
 
             <div class="text-input-bg"><%= f.text_field :income %></div>
           </div>
 
           <br/>
 
-          <span class="span-sub-heading">Parent - Contact Details</span>
+          <span class="span-sub-heading"><%= t("student.parent") %> - <%= t("student.contactDetails") %></span>
 
           <hr class="sub-heading"/>
 
@@ -132,7 +132,7 @@
         <div id="admission1_form_vertical_block_right">
 
           <div class="label-field-pair">
-            <label for="master_student_city"><%= t("AddressLine") %> 1</label>
+            <label for="master_student_city"><%= t("addressLine") %> 1</label>
 
             <div class="text-input-bg"><%= f.text_field :office_address_line1 %></div>
           </div>
@@ -140,7 +140,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="master_student_city"><%= t("AddressLine") %> 2</label>
+            <label for="master_student_city"><%= t("addressLine") %> 2</label>
 
             <div class="text-input-bg"><%= f.text_field :office_address_line2 %></div>
           </div>
@@ -172,7 +172,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_office_phone1">Phone 1</label>
+            <label for="parent_detail_office_phone1"><%= t("phone") %> 1</label>
 
             <div class="text-input-bg"><%= f.text_field :office_phone1 %></div>
           </div>
@@ -180,7 +180,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_office_phone2">Phone 2</label>
+            <label for="parent_detail_office_phone2"><%= t("phone") %> 2</label>
 
             <div class="text-input-bg"><%= f.text_field :office_phone2 %></div>
           </div>
@@ -188,7 +188,7 @@
           <hr class="label-underline"/>
 
           <div class="label-field-pair">
-            <label for="parent_detail_mob_phone">Mobile phone no.</label>
+            <label for="parent_detail_mob_phone"><%= t('student.mobilePhone') %></label>
 
             <div class="text-input-bg"><%= f.text_field :mobile_phone %></div>
           </div>
@@ -198,7 +198,7 @@
         </div>
 
         <div class="extender">
-          <%= submit_tag "", :value => " ► Finish", :name => "commit", :class => "submit_button3" %>
+          <%= submit_tag "", :value => " ► " + t("finish"), :name => "commit", :class => "submit_button3" %>
         </div>
         <div id="skip">
           <%= link_to "► Click here to skip", {:controller => "student", :action => "admission3", :id => @student.id} %>

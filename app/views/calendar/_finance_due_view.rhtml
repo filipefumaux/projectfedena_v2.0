@@ -7,8 +7,8 @@
             <%= h.title %></div>
           <div class="extender"></div>
           <div class="desc"><%= h.description %>
-            <br/>Start time :<%= h.start_date.strftime("%I:%M %p") %>
-            <br/>End time :<%= h.end_date.strftime("%I:%M %p") %></div>
+            <br/><%= t("startTime") %> :<%= h.start_date.strftime("%I:%M %p") %>
+            <br/><%= t("endTime") %> :<%= h.end_date.strftime("%I:%M %p") %></div>
           <div class="extender"></div>
         </div>
     <% end %>

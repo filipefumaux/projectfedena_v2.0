@@ -1,5 +1,5 @@
 <div class="add_grade">
-  <%= link_to_remote 'Add Grades', :url => {:action => 'new', :id => @batch} %>
+  <%= link_to_remote t('addGrade')+'s', :url => {:action => 'new', :id => @batch} %>
 
 </div>
 <% unless @grading_levels.empty? %>
@@ -27,6 +27,6 @@
     </table>
 <% else %>
 
-    <h4>Set in common</h4>
+    <h4><%= t('setInCommon') %></h4>
 
 <% end %>

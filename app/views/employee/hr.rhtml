@@ -19,20 +19,20 @@
     <% if permitted_to? :settings, :employee %>
         <div class="link-box">
           <div class="link-heading"><%= link_to t("settings"), :controller=>"employee", :action=>"settings" %></div>
-          <div class="link-descr">HR settings.</div>
+          <div class="link-descr"><%= t('hrSettings') %>.</div>
         </div>
     <% end %>
 
     <% if permitted_to? :employee_management, :employee %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Employee Management", :controller=>"employee", :action=>"employee_management" %></div>
+          <div class="link-heading"><%= link_to t('employee.management'), :controller=>"employee", :action=>"employee_management" %></div>
           <div class="link-descr">Manage all employees</div>
         </div>
     <% end %>
 
     <% if permitted_to? :employee_attendance, :employee %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Employee Attendance ", :controller=>"employee", :action=>"employee_attendance" %></div>
+          <div class="link-heading"><%= link_to t('employee.attendance'), :controller=>"employee", :action=>"employee_attendance" %></div>
           <div class="link-descr">Manage all employee attendance and leaves</div>
         </div>
     <% end %>
@@ -46,14 +46,14 @@
 
     <% if permitted_to? :search, :employee %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Employee search", :controller=>"employee", :action=>"search" %></div>
-          <div class="link-descr">Search for employees</div>
+          <div class="link-heading"><%= link_to t("employee.search"), :controller=>"employee", :action=>"search" %></div>
+          <div class="link-descr"><%= t("searchForEmployees") %></div>
         </div>
     <% end %>
     <% if permitted_to? :department_payslip, :employee %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Employee payslip", :controller=>"employee", :action=>"department_payslip" %></div>
-          <div class="link-descr">Search for employees</div>
+          <div class="link-heading"><%= link_to t("employee.payslip"), :controller=>"employee", :action=>"department_payslip" %></div>
+          <div class="link-descr"><%= t("searchForEmployees") %></div>
         </div>
     <% end %>
     <% finance = Configuration.available_modules %>

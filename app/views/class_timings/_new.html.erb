@@ -1,4 +1,4 @@
-<label class="head_label">Add new class timing for
+<label class="head_label"><%= t('class.addNewTiming') %>
   <span>
     <% if @batch.nil? %>
       <%= "common" %>
@@ -22,13 +22,13 @@
 
 
       <div class="label-field-pair">
-        <label for="name"> Start time</label>
+        <label for="name"> <%= t("startTime") %></label>
 
         <div class="time-select-field"><%= time_select :class_timing, :start_time, {:minute_step => 5} %></div>
       </div>
 
       <div class="label-field-pair">
-        <label for="name"> End time </label>
+        <label for="name"> <%= t("endTime") %> </label>
 
         <div class="time-select-field"><%= time_select :class_timing, :end_time, {:minute_step => 5} %></div>
       </div>
@@ -37,7 +37,7 @@
         <label><%= f.check_box :is_break, :checked => false %> Is a break</label>
       </div>
 
-      <%= f.submit '► Save', :class => 'submit-button' %>
+      <%= f.submit '► ' + t("save"), :class => 'submit-button' %>
 
   <% end %>
 </div>

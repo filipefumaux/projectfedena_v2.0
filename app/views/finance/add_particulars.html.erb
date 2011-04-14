@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Additional Fees</h1>
+  <h1><%= t("finance.additionalFees") %></h1>
 
-  <h3>Create Additional Fees </h3>
+  <h3>Create <%= t("finance.additionalFees") %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -16,17 +16,17 @@
   <div id="message"></div>
   <br/>
 
-  <div class="name">Category Name</div>
+  <div class="name"><%= t('categoryName') %></div>
   <div class="val"><span>:</span><%= @additional_category.name %></div>
-  <div class="name">Description</div>
+  <div class="name"><%= t('description') %></div>
   <div class="val"><span>:</span><%= @additional_category.description %></div>
 
 
   <% unless @additional_category.batch.nil? %>
-      <div class="name">Course</div>
+      <div class="name"><%= t("course")%></div>
       <div class="val"><span>:</span><%= @additional_category.batch.full_name %></div>
   <% else %>
-      <div class="name">Course</div>
+      <div class="name"><%= t("course")%></div>
       <div class="val"><span>:</span>ALL</div>
   <% end %>
   <div class="name"><%= t('startDate') %></div>

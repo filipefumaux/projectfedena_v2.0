@@ -14,7 +14,7 @@
 
 
     <div class="label-field-pair">
-      <label for="salary_date">Salary date</label>
+      <label for="salary_date"><%= t("employee.salaryDate") %></label>
 
       <div class="text-input-bg"><%= calendar_date_select_tag 'salary_date', Date.today,
                                                               :year_range => 2.years.ago..0.years.from_now %></div>
@@ -22,7 +22,7 @@
     <div class="extender"></div>
 
     <div id="submit-button">
-      <%= submit_tag("► Go") %>
+      <%= submit_tag "► " + t("go") %>
     </div>
 
 

@@ -3,7 +3,7 @@
 
   <h1><%= t("student.info") %></h1>
 
-  <h3>Student profile</h3>
+  <h3><%= t("student.profile") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -49,7 +49,7 @@
     <div id="student_main_info">
       <h3> <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %>  </h3>
       <h4> <%= t('course') %> : <%= @student.batch.course.full_name %> </h4>
-      <h4> Batch : <%= @student.batch.name %> </h4>
+      <h4> <%= t("batch.title") %> : <%= @student.batch.name %> </h4>
       <h4> <%= t("student.admNo") %> : <%= @student.admission_no %> </h4>
     </div>
 
@@ -88,7 +88,7 @@
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Religion</div>
+      <div class="profile_info_label_top2"><%= t('student.religin') %></div>
       <div class="profile_info_text_top2"> <%= @student.religion %> </div>
 
       <div class="profile_info_label_top"><%= t("address") %></div>
@@ -108,12 +108,12 @@
       <div class="profile_info_label_top2"><%= t('country') %></div>
       <div class="profile_info_text_top2"> <%= @student.country.name unless @student.country_id.nil? %> </div>
 
-      <div class="profile_info_label_top">Phone</div>
+      <div class="profile_info_label_top"><%= t("phone") %></div>
       <div class="profile_info_text_top"> <%= @student.phone1 %> </div>
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Mobile</div>
+      <div class="profile_info_label_top2"><%= t('student.mobilePhone') %></div>
       <div class="profile_info_text_top2"> <%= @student.phone2 %> </div>
 
       <div class="profile_info_label_top"><%= t("email") %>  </div>
@@ -121,12 +121,12 @@
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">SMS Alerts</div>
+      <div class="profile_info_label_top2"><%= t('smsAlerts') %></div>
       <div class="profile_info_text_top2"> <%= @student.is_sms_enabled? ? "Enabled" :"Disabled" %> </div>
     </div>
     <div class="new_profile_info_area1">
       <div class="profile_info_label_top"></div>
-      <div class="profile_info_text_top">In case of emegencies, contact :</div>
+      <div class="profile_info_text_top"><%= t('student.emergenciesContact') %>:</div>
 
       <div class="profile_info_label_top2"></div>
       <div class="profile_info_text_top2">
@@ -135,14 +135,14 @@
         <%= "(" + @immediate_contact.mobile_phone + ")" if @immediate_contact and !@immediate_contact.mobile_phone.empty? %>
         <% if @current_user.admin? %>
             <% unless @immediate_contact.nil? %>
-                <span>(<%= link_to "Change immediate contact", :controller => 'student', :action => 'admission3_1', :id => @student.id %>
+                <span>(<%= link_to t('student.changeImmediateContact'), :controller => 'student', :action => 'admission3_1', :id => @student.id %>
                   )</span>
             <% else %>
                 <% if permitted_to? :add_guardian, :student %>
-                    <span>No Guardians added yet (<%= link_to "Add Guardian", :controller => 'student', :action => 'add_guardian', :id => @student.id %>
+                    <span><%= t('student.noGuardianAdded') %> (<%= link_to t("student.addGuardian"), :controller => 'student', :action => 'add_guardian', :id => @student.id %>
                       )</span>
                 <% else %>
-                    <span> No Guardians added yet</span>
+                    <span> <%= t('student.noGuardianAdded') %></span>
                 <% end %>
             <% end %>
         <% end %>
@@ -163,10 +163,10 @@
             <% unless this_user.student? %>
                 <% detail = StudentAdditionalDetails.find_by_student_id(@student.id) %>
                 <% unless detail.nil? %>
-                    <span> (<%= link_to "Edit Addditional Details", :controller => 'student', :action => 'edit_admission4', :id => @student.id %>
+                    <span> (<%= link_to t("edit") +" "+t("additionalDetails"), :controller => 'student', :action => 'edit_admission4', :id => @student.id %>
                       )</span>
                 <% else %>
-                    <span> (<%= link_to "Add Addditional Details", :controller => 'student', :action => 'admission4', :id => @student.id %>
+                    <span> (<%= link_to t("add") +" "+t("additionalDetails"), :controller => 'student', :action => 'admission4', :id => @student.id %>
                       )</span>
                 <% end %>
             <% end %>
@@ -179,7 +179,7 @@
           <div class="profile_info_label_top2"></div>
           <div class="profile_info_text_top2"><%= t("previousDetails") %></div>
 
-          <div class="profile_info_label_top">Previous Institution</div>
+          <div class="profile_info_label_top"><%= t('previousInstitution') %></div>
           <div class="profile_info_text_top"><%= link_to @previous_data.institution, :action=>'show_previous_details', :id => @student.id %></div>
         </div>
     <% end %>

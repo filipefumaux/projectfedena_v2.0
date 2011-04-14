@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Fees</h1>
+  <h1><%= t("fees") %></h1>
 
-  <h3>Additional Fees</h3>
+  <h3><%= t("finance.additionalFees") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -14,10 +14,10 @@
     <% unless @additional_categories.nil? %>
         <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
           <tr class="tr-head">
-            <td>Sl no.</td>
-            <td>Fees Name</td>
-            <td>Batch Name</td>
-            <td>Created Date</td>
+            <td><%= t("slNo") %></td>
+            <td><%= t("feesName") %></td>
+            <td><%= t("batchName") %></td>
+            <td><%= t("createdDate") %></td>
           </tr>
           <tr class="tr-blank"></tr>
 
@@ -28,7 +28,7 @@
                   <% unless fees.check_fee_collection_for_additional_fees == false %>
                       <span class="small"> <%= link_to_remote t('delete'), :confirm=>"Delete this category ?", :url => {:action => 'additional_fees_delete', :id => fees.id} %></span>
                   <% else %>
-                      <span class="small-strike">delete</span>
+                      <span class="small-strike"><%= t("delete") %></span>
                   <% end %>
                   <span class="small"> <%= link_to_remote t('edit'), :url => {:action => 'additional_fees_edit', :id => fees.id} %></span>
                 </td>
@@ -41,7 +41,7 @@
     <% else %>
         <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
           <tr class="tr-head">
-            <td>No Categories to display!</td>
+            <td><%= t("noCategoriesDisplay") %>!</td>
           </tr>
         </table>
 

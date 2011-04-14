@@ -1,12 +1,12 @@
 <% unless @finance_fee_particulars_list.empty? %>
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
-        <td>Sl no.</td>
-        <td>Particulars</td>
-        <td>Student Category</td>
-        <td>Admission No</td>
-        <td>Amount ( <%= currency %> )</td>
-        <td>Created Date</td>
+        <td><%= t("slNo") %></td>
+        <td><%= t('finance.particulars') %></td>
+        <td><%= t('student.category') %></td>
+        <td><%= t("admissionNumber") %></td>
+        <td><%= t('amount') %> ( <%= currency %> )</td>
+        <td><%= t("createdDate") %></td>
         <td></td>
 
       </tr>

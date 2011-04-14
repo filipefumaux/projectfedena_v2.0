@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/manage_news/manage_news_logo.png"/>
 
-  <h1>School News</h1>
+  <h1><%= t('schoolNews') %></h1>
 
-  <h3>Latest announcements</h3>
+  <h3><%= t('latestAnnouncements') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -25,9 +25,9 @@
   <div class="news_search_add">
     <div id="news_bg">
       <form name="s1form" action="" style="display:inline;">
-        <h2>Search News</h2>
+        <h2><%= t("searchNews") %></h2>
         <%= text_field_tag("query", params['query'], :autocomplete => 'off') %>
-        <div id="go"><%= submit_tag "", :value =>"Go", :controller=> 'news', :action=>"index" %></div>
+        <div id="go"><%= submit_tag "", :value => t("go"), :controller=> 'news', :action=>"index" %></div>
       </form>
       <div class="extender2"></div>
     </div>

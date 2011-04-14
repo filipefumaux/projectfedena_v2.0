@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Finance</h1>
+  <h1><%= t('finance.title') %></h1>
 
   <h3>Asset Liability Management</h3>
 
@@ -15,8 +15,8 @@
   <% end %>
   <div class="box">
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Asset", :action => "asset" %> </div>
-      <div class="link-descr">Manages Asset</div>
+      <div class="link-heading"><%= link_to t('asset'), :action => "asset" %> </div>
+      <div class="link-descr"><%= "Manages Asset" %></div>
     </div>
 
     <div class="link-box">

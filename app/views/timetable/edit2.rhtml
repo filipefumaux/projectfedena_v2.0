@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_timetable.png"/>
 
-  <h1>Timetable</h1>
+  <h1><%= t("timetable.title") %></h1>
 
-  <h3>Edit - <%= @batch.full_name %> </h3>
+  <h3><%= t("edit")%> - <%= @batch.full_name %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -86,7 +86,7 @@
         <% end %>
         <% @subjects= @subjects + @ele_subjects %>
         <%= select :timetable_entries, :subject_id, @subjects.map { |s| [s.name, s.id] },
-                   {:prompt => "Select subject"},
+                   {:prompt => t('selectSubject')},
                    {:onChange => "#{remote_function(:url => {:action => "update_employees"},
                                                     :with => "'subject_id='+value",
                                                     :update=>"employee-list",

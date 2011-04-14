@@ -3,7 +3,7 @@
 
   <h1>Reminder</h1>
 
-  <h3>View</h3>
+  <h3><%= t("view") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -14,7 +14,7 @@
   <ul>
     <li><%= link_to "Back to Inbox", :controller=>"reminder", :action=>"index" %></li>
     <li><%= link_to "Mark as unread", :controller=> "reminder", :action=>"mark_unread", :id2=>@new_reminder.id %></li>
-    <li><%= link_to t("delete"), {:controller=>"reminder", :action=>"delete_reminder_by_recipient", :id2=>@new_reminder.id}, :confirm=>"Are you sure?" %></li>
+    <li><%= link_to t("delete"), {:controller=>"reminder", :action=>"delete_reminder_by_recipient", :id2=>@new_reminder.id}, :confirm=>t('areYouSure') %></li>
   </ul>
 </div>
 

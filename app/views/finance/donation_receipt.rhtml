@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Donations</h1>
+  <h1><%= t("donations") %></h1>
 
   <h3>Donation receipt</h3>
 
@@ -23,10 +23,10 @@
     <div class="field1">Donor:</div>
     <div class="val"> <%= @donation.donor %></div>
 
-    <div class="field1">Description:</div>
+    <div class="field1"><%= t('description') %>:</div>
     <div class="val"><%= @donation.description %></div>
 
-    <div class="field1">Amount:</div>
+    <div class="field1"><%= t('amount') %>:</div>
     <div class="val"><%= @donation.amount %></div>
     <div class="field1">Transaction ID:</div>
     <div class="val"><%= @donation.transaction.id unless @donation.transaction_id.nil? %></div>

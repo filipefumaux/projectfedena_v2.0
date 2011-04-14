@@ -35,7 +35,7 @@
       <div id="admission1_form">
 
         <div id="necessary-field-notification"> <%= t('warningFieldFill') %></div>
-        <span class="span-sub-heading">General Details</span>
+        <span class="span-sub-heading"><%= t("generalDetails") %></span>
         <hr class="sub-heading"/>
         <div class="label-field-pair">
           <label for="employee_id">Employee no. <span class="necessary-field">*</span> </label>
@@ -45,7 +45,7 @@
         <hr class="label-underline"/>
 
         <div class="label-field-pair">
-          <label for="employee_joining_date">Joining date. </label>
+          <label for="employee_joining_date"><%= t('employee.joiningDate') %>. </label>
 
           <div class="text-input-bg"><%= a.text_field :joining_date, :autocomplete => 'off', :value => @employee.joining_date %></div>
         </div>
@@ -84,7 +84,7 @@
         <hr class="label-underline"/>
 
         <div class="label-field-pair">
-          <label for="employee_category">Category <span class="necessary-field">*</span> </label>
+          <label for="employee_category"><%= t("category") %> <span class="necessary-field">*</span> </label>
 
           <div class="text-input-bg"><%= select :employee, :employee_category_id, @categories.map { |s| [s.name, s.id] },
                                                 {:prompt => t('select')},
@@ -111,7 +111,7 @@
         <hr class="label-underline"/>
 
         <div class="label-field-pair">
-          <label for="employee_job_title">Job Title</label>
+          <label for="employee_job_title"><%= t('employee.jobTitle') %></label>
 
           <div class="text-input-bg"><%= a.text_field :job_title, :value => @employee.job_title %></div>
         </div>
@@ -124,13 +124,13 @@
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair-text-area">
-          <label for="employee_experience">Experience Info</label>
+          <label for="employee_experience"><%= t('employee.xpInfo') %></label>
 
           <div class="textarea-input-bg"><%= a.text_area :experience_detail, :cols => 27, :rows => 5, :class => 'admission1-textarea' %></div>
         </div>
         <hr class="label-underline"/>
         <div class="label-field-pair">
-          <label for="employee_total-experience">Total Experience</label>
+          <label for="employee_total-experience"><%= t('employee.totalXP') %></label>
 
           <div class="text-input-bg"><%= select :employee, :experience_year, (0..20), {:prompt=>"Year"} %>
             <%= select :employee, :experience_month, (0..11), {:prompt=>"Month"} %></div>
@@ -141,10 +141,10 @@
           <label class="label_for_employee_gender" for="master_student_gender"><%= t("gender") %></label>
 
           <div class="employee_gender_value">
-            <label class="label_for_gender" for="master_student_gender_true">Male</label>
+            <label class="label_for_gender" for="master_student_gender_true"><%= t('male') %></label>
             <%= a.radio_button "gender", "true", :checked => "checked" %>
 
-            <label class="label_for_gender" for="master_student_gender_false">Female</label>
+            <label class="label_for_gender" for="master_student_gender_false"><%= t('female') %></label>
             <%= a.radio_button "gender", "false" %>
           </div>
         </div>
@@ -152,12 +152,12 @@
 
 
         <div class="label_field_pair">
-          <label class="employee_status" for="employee_status">Status</label>
+          <label class="employee_status" for="employee_status"><%= t('status') %></label>
 
-          <label class="label_for_status" for="employee_status_true">Active</label>
+          <label class="label_for_status" for="employee_status_true"><%= t('active') %></label>
           <%= a.radio_button "status", "true", :checked => "checked" %>
 
-          <label class="label_for_status" for="employee_status_false">Inactive</label>
+          <label class="label_for_status" for="employee_status_false"><%= t('inactive') %></label>
           <%= a.radio_button "status", "false" %>
         </div>
 

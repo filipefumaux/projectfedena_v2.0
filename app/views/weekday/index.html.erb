@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_timetable.png"/>
 
-  <h1>Timetable</h1>
+  <h1><%= t("timetable.title") %></h1>
 
-  <h3>Weekdays</h3>
+  <h3><%= t("weekdays") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -18,7 +18,7 @@
 
   <div class="box">
     <div class="label-field-pair">
-      <label for="timetable_entry_course_id">Select a batch:</label>
+      <label for="timetable_entry_course_id"><%= t("batch.select") %>:</label>
 
       <div class="text-input-bg"><%= select :batch, :id,
                                             @batches.map { |b| [b.full_name, b.id] },

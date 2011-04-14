@@ -19,7 +19,7 @@
 
     <div class="text-input-bg" id="courses1">
       <%= select :examination_result, :course_id, @courses.map { |c| [c.grade + " - " + c.section, c.id] },
-                 {:selected => @sel_course_id, :include_blank => "Select course"},
+                 {:selected => @sel_course_id, :include_blank => t('selectCourse')},
                  {:onChange => "#{remote_function(:url => {:action => "update_one_subject"},
                                                   :with => "'course_id='+value",
                                                   :before => "Element.show('loader')",

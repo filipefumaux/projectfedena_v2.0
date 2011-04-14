@@ -3,7 +3,7 @@
 
   <h1><%= t("employeeEditInfo") %></h1>
 
-  <h3>Contact</h3>
+  <h3><%= t("contact") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -19,7 +19,7 @@
 
   <% form_for :employee do |a| %>
       <%= error_messages_for 'employee' %>
-      <span class="span-sub-heading">Contact Details</span>
+      <span class="span-sub-heading"><%= t("student.contactDetails") %></span>
       <hr class="sub-heading"/>
       <div class="label-field-pair">
         <label>Office phone1</label>
@@ -36,7 +36,7 @@
       </div>
       <hr class="label-underline"/>
       <div class="label-field-pair">
-        <label>Mobile</label>
+        <label><%= t('student.mobilePhone') %></label>
 
         <div class="text-input-bg"><%= a.text_field :mobile_phone %></div>
         <div class="extender"></div>

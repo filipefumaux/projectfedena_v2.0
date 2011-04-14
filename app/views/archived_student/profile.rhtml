@@ -3,7 +3,7 @@
 
   <h1><%= t("student.info") %></h1>
 
-  <h3>Student profile</h3>
+  <h3><%= t("student.profile") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Religion</div>
+      <div class="profile_info_label_top2"><%= t('student.religin') %></div>
       <div class="profile_info_text_top2"> <%= @archived_student.religion %> </div>
 
       <div class="profile_info_label_top"><%= t("address") %></div>
@@ -105,12 +105,12 @@
       <div class="profile_info_label_top2"><%= t('country') %></div>
       <div class="profile_info_text_top2"> <%= @archived_student.country.name unless @archived_student.country_id.nil? %> </div>
 
-      <div class="profile_info_label_top">Phone 1</div>
+      <div class="profile_info_label_top"><%= t("phone") %> 1</div>
       <div class="profile_info_text_top"> <%= @archived_student.phone1 %> </div>
     </div>
 
     <div class="new_profile_info_area1">
-      <div class="profile_info_label_top2">Phone 2</div>
+      <div class="profile_info_label_top2"><%= t("phone") %> 2</div>
       <div class="profile_info_text_top2"> <%= @archived_student.phone2 %> </div>
 
       <div class="profile_info_label_top"><%= t("email") %>  </div>

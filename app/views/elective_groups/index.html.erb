@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam"/>
 
-  <h1>Batches</h1>
+  <h1><%= t("batch.batches") %></h1>
 
   <h3>Electives</h3>
 
@@ -27,7 +27,7 @@
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @course.full_name, @course %> &raquo;
       <%= link_to @batch.name, [@course, @batch] %> &raquo;
-      Elective Group
+      <%= t('student.electiveGroup') %>
     </div>
 
 

@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>User Privileges</h1>
+  <h1><%= t('userPrivileges') %></h1>
 
-  <h3>Set Privilege</h3>
+  <h3><%= t('setPrivilege') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -13,7 +13,7 @@
 
 
 <div class="label_field_pair">
-  <label>Set privileges for <%= @user.first_name.capitalize+" "+@user.last_name.capitalize %></label></div>
+  <label><%= t('setPrivilegeFor') %> <%= @user.first_name.capitalize+" "+@user.last_name.capitalize %></label></div>
 <div id="list_content">
   <div id="list">
     <div class="sel-list">

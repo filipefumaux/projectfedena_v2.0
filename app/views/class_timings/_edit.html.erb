@@ -20,13 +20,13 @@
 
 
       <div class="label-field-pair">
-        <label for="name"> Start time </label>
+        <label for="name"> <%= t("startTime") %> </label>
 
         <div class="time-select-field"><%= time_select :class_timing, :start_time, {:minute_step => 5} %></div>
       </div>
 
       <div class="label-field-pair">
-        <label for="name"> End time </label>
+        <label for="name"> <%= t("endTime") %> </label>
 
         <div class="time-select-field"><%= time_select :class_timing, :end_time, {:minute_step => 5} %></div>
       </div>
@@ -35,7 +35,7 @@
         <label><%= f.check_box :is_break, :checked => false %> Is a break</label>
       </div>
 
-      <%= submit_tag '► Save', :class => 'submit-button' %>
+      <%= submit_tag '► ' + t("save"), :class => 'submit-button' %>
 
 
   <% end %>

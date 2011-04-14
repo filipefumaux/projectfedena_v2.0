@@ -57,10 +57,10 @@
             if this_user.admin? %> <!--
           <%= link_to t("news"), :controller => "news", :action => "index" \
             if this_user.admin? %> -->
-      <%= link_to t("timetable"), :controller => "timetable", :action => "index" \
+      <%= link_to t("timetable.title"), :controller => "timetable", :action => "index" \
             if this_user.admin? %>
       <% if this_user.admin? %>
-          <a href="#" class="menuanchorclass" rel="anylinkmenu1">More ▼</a>
+          <a href="#" class="menuanchorclass" rel="anylinkmenu1"><%= t("more") %> ▼</a>
       <% end %>
 
     </div>
@@ -68,9 +68,9 @@
       <%= t("loggedInAs") %>:
       <%= link_to this_user.first_name, :controller => 'user', :action => 'profile',
                   :id => this_user.username %> &nbsp;|&nbsp;
-      <%= link_to "Messages", :controller => "reminder", :action => "index" %>
+      <%= link_to t("messages"), :controller => "reminder", :action => "index" %>
       (<%= render :partial => 'layouts/reminder_count' %>)&nbsp;|&nbsp;
-      <%= link_to 'Log out', :controller => 'user', :action => 'logout' %>  &nbsp;&nbsp;
+      <%= link_to t("logout"), :controller => 'user', :action => 'logout' %>  &nbsp;&nbsp;
     </div>
   </div>
 </div>

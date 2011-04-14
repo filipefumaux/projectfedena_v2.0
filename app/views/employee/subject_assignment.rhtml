@@ -14,11 +14,11 @@
 
   <div id="form-content">
     <div class="label-field-pair">
-      <label for="course_name">Course</label>
+      <label for="course_name"><%= t("course")%></label>
 
       <div class="text-input-bg">
         <%= select :subject_assignment, :batch_id, @batches.map { |b| [b.full_name, b.id] },
-                   {:prompt => "Select course"},
+                   {:prompt => t('selectCourse')},
                    {:onChange => "#{remote_function(:url => {:action => "update_subjects"}, :with => "'batch_id='+value")}"} %>
       </div>
     </div>

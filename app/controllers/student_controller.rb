@@ -501,7 +501,7 @@ class StudentController < ApplicationController
     if params[:search]
       unless params[:advv_search][:course_id].empty?
         if params[:search][:batch_id_equals].empty?
-          flash[:notice] ="Please select a batch."
+          flash[:notice] = t("batch.select")
           redirect_to :action=>'advanced_search'
         end
       end

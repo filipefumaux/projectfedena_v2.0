@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>Grouping</h3>
+  <h3><%= t('grouping') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,7 +17,7 @@
   <% end %>
 
   <div class="box">
-    <h4>Connect Exams</h4>
+    <h4><%= t('exam.connect') %></h4>
 
     <div id="list_content">
       <div id="list">
@@ -39,7 +39,7 @@
                     </div>
                 <% end %>
 
-                <%= submit_tag "", :value => "Save", :class => "submit_button" %>
+                <%= submit_tag "", :value => t('save'), :class => "submit_button" %>
             <% end %>
 
         <% end %>

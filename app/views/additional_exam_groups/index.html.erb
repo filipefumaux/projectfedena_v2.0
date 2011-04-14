@@ -27,14 +27,14 @@
       <%= t('courses') %> &raquo;
       <%= @course.full_name %> &raquo;
       <%= t('batch') + " #{@batch.name}" %> &raquo;
-      Additional Exams
+      <%= t('exam.additional') %>
     </div>
 
 
     <table id="listing" width="100%">
       <tr class="tr-head">
-        <td>Exam name</td>
-        <td> Action</td>
+        <td><%= t("exam.name") %></td>
+        <td><%= t('action') %></td>
       </tr>
       <% @config = Configuration.available_modules %>
       <% @additional_exam_groups.each do |exam_group| %>
@@ -49,9 +49,9 @@
                                        :success => "Element.hide('loader')") %>
                 <% else %>
                     <% unless  exam_group.result_published %>
-                        Schedule published.
+                        <%= t('schedulePublished') %>.
                         <% if @config.include?('SMS') %>
-                            <%= link_to_remote "Resend", :url=>{:controller=>'additional_exam', :action=>'publish', :id=>exam_group.id, :status=>"schedule"},
+                            <%= link_to_remote t('resend'), :url=>{:controller=>'additional_exam', :action=>'publish', :id=>exam_group.id, :status=>"schedule"},
                                                :before => "Element.show('loader')",
                                                :success => "Element.hide('loader')" %> SMS notification.<br/>
                         <% end %>
@@ -61,7 +61,7 @@
                     <% else %>
                         <%= t('resultPublished') %>
                         <% if @config.include?('SMS') %>
-                            <%= link_to_remote "Resend  SMS notification", :url=>{:controller=>'additional_exam', :action=>'publish', :id=>exam_group.id, :status=>"result"},
+                            <%= link_to_remote t('resendSMSNotification'), :url=>{:controller=>'additional_exam', :action=>'publish', :id=>exam_group.id, :status=>"result"},
                                                :before => "Element.show('loader')",
                                                :success => "Element.hide('loader')" %>
                         <% end %>

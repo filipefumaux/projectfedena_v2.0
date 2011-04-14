@@ -20,7 +20,7 @@
 
       <div class="label-field-pair">
         <div class="label-container"><label><%= t('selectCourse') %> :</label></div>
-        <div class="input-container"><%= f.select :batch_id, @batches.map { |c| [c.full_name, c.id] }, {:prompt => 'Select Course'} %></div>
+        <div class="input-container"><%= f.select :batch_id, @batches.map { |c| [c.full_name, c.id] }, {:prompt => t('selectCourse')} %></div>
       </div>
 
       <%= submit_tag "► " + t('save'), :class=>'submit_button' %>

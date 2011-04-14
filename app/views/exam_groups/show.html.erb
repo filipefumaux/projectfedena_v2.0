@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>Showing Exam group</h3>
+  <h3><%= t('exam.showExamGroup') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -13,7 +13,7 @@
   <ul>
     <% if permitted_to? :publish, :exam %>
         <% if @exam_group.is_published %>
-            <li><%= link_to_remote("Publish Result", :url=>{:controller=>'exam', :action=>'publish', :id=>@exam_group.id, :status=>"result"},
+            <li><%= link_to_remote(t('exam.publishResults'), :url=>{:controller=>'exam', :action=>'publish', :id=>@exam_group.id, :status=>"result"},
                                    :before => "Element.show('loader')",
                                    :success => "Element.hide('loader')") %></li>
         <% end %>
@@ -50,7 +50,7 @@
           <tr class="tr-head">
             <td><%= t('subject') %></td>
             <td><%= t('maxMarks') %></td>
-            <td>Min marks</td>
+            <td><%= t("minMarks") %></td>
             <td><%= t('manage') %></td>
           </tr>
           <% @exam_group.exams.each do |exam| %>

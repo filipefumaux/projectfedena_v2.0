@@ -3,7 +3,7 @@
 
   <h1>SMS</h1>
 
-  <h3>Batches</h3>
+  <h3><%= t("batch.batches") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -36,7 +36,7 @@
               <%= text_area :send_sms, :message, :rows=>5, :cols=>30 %>
             </div>
           </div>
-          <%= submit_tag 'Send SMS', :class=>'submit_button' %>
+          <%= submit_tag t('sendSMS'), :class=>'submit_button' %>
     <% end %>
     </div>
     <div id="status-message">

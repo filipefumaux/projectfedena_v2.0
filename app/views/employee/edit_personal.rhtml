@@ -34,7 +34,7 @@
       <%= error_messages_for 'employee' %>
 
 
-      <span class="span-sub-heading">Personal Details</span>
+      <span class="span-sub-heading"><%= t("personalDetails") %></span>
       <hr class="sub-heading"/>
       <div class="label-field-pair">
         <label>DOB</label>
@@ -45,7 +45,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label>Martial status</label>
+        <label><%= t('employee.maritalStatus') %></label>
 
         <div class="text-input-bg"><%= select :employee, :marital_status, ["Single", "Married"] %></div>
         <div class="extender"></div>
@@ -54,7 +54,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label>Number of children</label>
+        <label><%= t('employee.numberOfChildren') %></label>
 
         <div class="text-input-bg"><%= a.text_field :children_count %></div>
         <div class="extender"></div>
@@ -63,7 +63,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label>Father name</label>
+        <label><%= t('fatherName') %></label>
 
         <div class="text-input-bg"><%= a.text_field :father_name %></div>
         <div class="extender"></div>
@@ -72,7 +72,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label>Mother name</label>
+        <label><%= t('motherName') %></label>
 
         <div class="text-input-bg"><%= a.text_field :mother_name %></div>
         <div class="extender"></div>
@@ -81,7 +81,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label>Spouse name</label>
+        <label><%= t('spouseName') %></label>
 
         <div class="text-input-bg"><%= a.text_field :husband_name %></div>
         <div class="extender"></div>
@@ -142,7 +142,7 @@
       </script>
 
       <div class="label-field-pair">
-        <label for="master_student_image_file">Upload photo</label>
+        <label for="master_student_image_file"><%= t('uploadPhoto') %></label>
 
         <div class="text_input_bg"><%= a.file_field :image_file %></div>
       </div>

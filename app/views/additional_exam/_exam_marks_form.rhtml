@@ -22,16 +22,16 @@
       <div class="text-input-bg"> <%= f.text_field :minimum_marks %></div>
     </div>
 
-    <h4><%= "Enter exam related details here:" %></h4>
+    <h4><%= t('exam.enterRelatedDetails') %>:</h4>
 
     <table width="100%" id="listing">
       <tr class="tr-head">
-        <td><%= "Subject name" %></td>
-        <td><%= "Max Marks" %></td>
-        <td><%= "Min Marks" %></td>
-        <td><%= "Start time" %></td>
-        <td><%= "End time" %></td>
-        <td><%= "Do not create" %></td>
+        <td><%= t('subject.name') %></td>
+        <td><%= t("maxMarks") %></td>
+        <td><%= t("minMarks") %></td>
+        <td><%= t("startTime") %></td>
+        <td><%= t("endTime") %></td>
+        <td><%= t('doNotCreate') %></td>
       </tr>
 
       <% f.fields_for :additional_exams do |exam_form| %>

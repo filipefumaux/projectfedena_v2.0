@@ -11,7 +11,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "PDF Report", {:controller => "exam", :action => "generated_report2_pdf", :subject_id=> @subject.id}, :target => '_blank', :class=> 'user_button' %></li>
+    <li><%= link_to t("pdfReport"), {:controller => "exam", :action => "generated_report2_pdf", :subject_id=> @subject.id}, :target => '_blank', :class=> 'user_button' %></li>
   </ul>
 </div>
 

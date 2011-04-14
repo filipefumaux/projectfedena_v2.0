@@ -5,7 +5,7 @@
       <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
         <tr class="tr-head">
           <td>
-            Sl no.
+            <%= t("slNo") %>
           </td>
           <td>
             Name
@@ -43,7 +43,7 @@
                 <%= user.username %>
               </td>
               <td class="col-4">
-                <%= link_to 'View Profile', :controller => 'user', :action => 'profile', :id => user.username %>
+                <%= link_to t("dashboard.viewProfile"), :controller => 'user', :action => 'profile', :id => user.username %>
               </td>
 
             </tr>

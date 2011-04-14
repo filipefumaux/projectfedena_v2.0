@@ -18,15 +18,15 @@
       </div>  <%= link_to "Change Type", new_batch_exam_group_path(@batch, :ename=>@name), :class=>"type_link" %>
     </div>
     <h4>
-      Enter exam related details here:
+      <%= t('exam.enterRelatedDetails') %>:
     </h4>
 
     <table width="100%" id="listing">
       <tr class="tr-head">
-        <td>Subject name</td>
-        <td>Start time</td>
-        <td>End time</td>
-        <td>Do not create</td>
+        <td><%= t('subject.name') %></td>
+        <td><%= t("startTime") %></td>
+        <td><%= t("endTime") %></td>
+        <td><%= t('doNotCreate') %></td>
       </tr>
 
       <% f.fields_for :exams do |exam_form| %>

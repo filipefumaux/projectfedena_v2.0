@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png"/>
 
-  <h1>Student</h1>
+  <h1><%= t('student.student') %></h1>
 
   <h3>Electives</h3>
 
@@ -17,7 +17,7 @@
 
   <div class="name">Batch</div>
   <div class="val"><span>:</span><%= @batch.name %></div>
-  <div class="name">Elective Group</div>
+  <div class="name"><%= t('student.electiveGroup') %></div>
   <div class="val"><span>:</span><%= @elective_group.name %></div>
   <div class="name"><%= t('subject') %></div>
   <div class="val"><span>:</span><%= @elective_subject.name %></div>
@@ -32,7 +32,7 @@
           <% assigned = stud_assigned.student_assigned(s.id, @elective_subject.id) %>
           <div class="category-name"> <%= s.full_name %></div>
           <% unless assigned.nil? %>
-              <div class="category-edit"><%= link_to_remote "Remove", :url=>{:controller=>"student", :action=>"unassign_students", :id=>s.id, :id2=>@elective_subject.id} %></div>
+              <div class="category-edit"><%= link_to_remote t("remove"), :url=>{:controller=>"student", :action=>"unassign_students", :id=>s.id, :id2=>@elective_subject.id} %></div>
           <% else %>
               <div class="category-edit"><%= link_to_remote t('assign'), :url=>{:controller=>"student", :action=>"assign_students", :id=>s.id, :id2=>@elective_subject.id} %></div>
           <% end %>

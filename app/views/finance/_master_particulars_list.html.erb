@@ -1,12 +1,12 @@
 <% unless @particulars.empty? %>
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
-        <td>Sl no.</td>
-        <td>Particulars</td>
-        <td>Student Category</td>
-        <td>Admission No</td>
-        <td>Amount ( <%= currency %> )</td>
-        <td>Created Date</td>
+        <td><%= t("slNo") %></td>
+        <td><%= t('finance.particulars') %></td>
+        <td><%= t('student.category') %></td>
+        <td><%= t("admissionNumber") %></td>
+        <td><%= t('amount') %> ( <%= currency %> )</td>
+        <td><%= t("createdDate") %></td>
         <td></td>
       </tr>
       <tr class="tr-blank"></tr>
@@ -34,7 +34,7 @@
               <% unless @finance_fee_category.check_fee_collection == false %>
                   <span class="small"> <%= link_to_remote t('delete'), :confirm=>"Delete the fee particular ?", :url => {:action => 'master_category_particulars_delete', :id => fees.id} %></span>
               <% else %>
-                  <span class="small-strike">delete</span>
+                  <span class="small-strike"><%= t("delete") %></span>
               <% end %>
               <span class="small"> <%= link_to_remote t('edit'), :url => {:action => 'master_category_particulars_edit', :id => fees.id} %></span>
             </td>

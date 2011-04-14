@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/manage_news/manage_news_logo.png"/>
 
-  <h1>Messages</h1>
+  <h1><%= t("messages") %></h1>
 
   <h3>Inbox</h3>
 
@@ -17,8 +17,8 @@
     <% else %>
         <li><%= link_to "Inbox", :controller=>"reminder", :action=>"index" %></li>
     <% end %>
-    <li><%= link_to "Sent", :controller=>"reminder", :action=>"sent_reminder" %></li>
-    <li><%= link_to "Create", :controller=>"reminder", :action=>"create_reminder" %></li>
+    <li><%= link_to t("sent"), :controller=>"reminder", :action=>"sent_reminder" %></li>
+    <li><%= link_to t("create"), :controller=>"reminder", :action=>"create_reminder" %></li>
   </ul>
 </div>
 

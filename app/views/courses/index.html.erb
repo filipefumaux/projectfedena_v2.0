@@ -3,7 +3,7 @@
 
   <h1><%= t('courses') %></h1>
 
-  <h3>Home</h3>
+  <h3><%= t('home') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -19,12 +19,12 @@
   <div class="box">
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to 'Manage courses', :action=>'manage_course' %> </div>
-      <div class="link-descr">Manage Courses and create batches</div>
+      <div class="link-heading"><%= link_to t('manageCourses'), :action=>'manage_course' %> </div>
+      <div class="link-descr"><%= t('descManageCourses') %></div>
     </div>
     <div class="link-box">
-      <div class="link-heading"><%= link_to 'Manage Batches', :action=>'manage_batches' %>  </div>
-      <div class="link-descr">Manage active batches</div>
+      <div class="link-heading"><%= link_to t('batch.manage'), :action=>'manage_batches' %>  </div>
+      <div class="link-descr"><%= t('descManageBatches') %></div>
     </div>
 
     <div class="extender"></div>

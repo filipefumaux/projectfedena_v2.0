@@ -79,7 +79,7 @@
     </tr>
   </table>
   <% if @mmg == @g %>
-      <h4> Total Marks = <%= "%.2f" %@marks_total %> | Aggregate %
+      <h4> <%= t('totalMarks') %> = <%= "%.2f" %@marks_total %> | <%= t('aggregate') %> %
         = <%= "%.2f" %(@marks_total*100/@max_total) unless @max_total ==0 %> </h4>
   <% end %>
 

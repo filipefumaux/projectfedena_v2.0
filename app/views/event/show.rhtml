@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/manage_news/manage_news_logo.png"/>
 
-  <h1>Events</h1>
+  <h1><%= t('events') %></h1>
 
-  <h3>Step 2 - Confirmation</h3>
+  <h3><%= t('step') %> 2 - <%= t('confirmation') %></h3>
 
   <div id="app-back-button">
     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
@@ -16,12 +16,12 @@
 
 
   <div class="detail-box">
-    <div class="label"> Title :</div>
+    <div class="label"><%= t('title') %> :</div>
     <div class="description">
       <%= @event.title %>
     </div>
     <div class="extender"></div>
-    <div class="label">Description :</div>
+    <div class="label"><%= t('description') %> :</div>
     <div class="description">
       <%= @event.description %>
     </div>
@@ -42,9 +42,9 @@
 
 
   <div class="other-events">
-    <div class="head">Other Events</div>
+    <div class="head"><%= "Other Events" %></div>
     <% if  @other_events.empty? %>
-        No other events scheduled...
+        <%= "No other events scheduled" %>...
     <% end %>
 
     <% unless @other_events.empty? %>
@@ -103,7 +103,7 @@
 
     <% else %>
 
-        => This event is common across all courses and departments<br/><br/>
+        => <%= "This event is common across all courses and departments" %><br/><br/>
 
     <% end %>
 

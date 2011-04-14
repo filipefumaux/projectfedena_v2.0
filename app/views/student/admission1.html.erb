@@ -3,7 +3,7 @@
 
   <h1><%= t("admission") %></h1>
 
-  <h3>Step 1 - Student details</h3>
+  <h3><%= t('step') %> 1 - <%= t("student.details") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -12,7 +12,7 @@
 
 <div id="page-yield">
 <% if @config.config_value == '0' %>
-    <p class="flash-msg">Admission no. of last student is <%= @last_admitted_student.admission_no %> </p>
+    <p class="flash-msg"><%= t('student.lastAdmissionNo') %> <%= @last_admitted_student.admission_no %> </p>
 <% end %>
 
 <% unless flash[:notice].nil? %>
@@ -29,7 +29,7 @@
     <div id="autofill-area">
 
       <div class="student_admission_date">
-        <label for="student_admission_no">Admission no. <span class="necessary-field">*</span> </label>
+        <label for="student_admission_no"><%= t("student.admNo") %> <span class="necessary-field">*</span> </label>
 
         <div class="text-input-bg-admission">
           <% unless @config.config_value == '0' or @last_admitted_student.nil? %>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="student_admission_date">
-        <label for="student_admission_date">Admission date. <span class="necessary-field">*</span> </label>
+        <label for="student_admission_date"><%= t("admissionDate") %>. <span class="necessary-field">*</span> </label>
 
         <div class="text-input-bg-admission">
           <%= calendar_date_select_tag 'student[admission_date]', Date.today,
@@ -51,7 +51,7 @@
 
     </div>
 
-    <span class="span-sub-heading">Personal Details</span>
+    <span class="span-sub-heading"><%= t("personalDetails") %></span>
     <hr class="sub-heading"/>
 
     <div class="label-field-pair">
@@ -103,9 +103,9 @@
         <label class="label_for_student_gender" for="student_gender"><%= t("gender") %></label>
 
         <div class="student_gender_value">
-          <label class="label_for_gender" for="student_gender_true">Male</label>
+          <label class="label_for_gender" for="student_gender_true"><%= t('male') %></label>
           <%= s.radio_button "gender", "m", :checked => "checked" %>
-          <label class="label_for_gender" for="student_gender_false">Female</label>
+          <label class="label_for_gender" for="student_gender_false"><%= t('female') %></label>
           <%= s.radio_button "gender", "f" %>
         </div>
       </div>
@@ -121,7 +121,7 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label for="student_birth_place">Birth place</label>
+        <label for="student_birth_place"><%= t('student.birthPlace') %></label>
 
         <div class="text-input-bg"><%= s.text_field :birth_place %></div>
       </div>
@@ -149,13 +149,13 @@
       <div class="label-field-pair">
         <label for="student_category"><%= t('category') %></label>
 
-        <div class="text-input-bg"><%= s.select :student_category_id, StudentCategory.all.map { |c| [c.name, c.id] }, {:prompt => 'Select category'} %></div>
+        <div class="text-input-bg"><%= s.select :student_category_id, StudentCategory.all.map { |c| [c.name, c.id] }, {:prompt => t('selectCategory')} %></div>
       </div>
 
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label for="student_religion">Religion</label>
+        <label for="student_religion"><%= t('student.religin') %></label>
 
         <div class="text-input-bg"><%= s.text_field :religion %></div>
       </div>
@@ -163,17 +163,17 @@
     </div>
 
     <div id="admission1_form_vertical_block_right">
-      <span class="span-sub-heading">Contact Details</span>
+      <span class="span-sub-heading"><%= t("student.contactDetails") %></span>
       <hr class="sub-heading"/>
       <div class="label-field-pair">
-        <label for="student_city"><%= t("AddressLine") %> 1</label>
+        <label for="student_city"><%= t("addressLine") %> 1</label>
 
         <div class="text-input-bg"><%= s.text_field :address_line1 %></div>
       </div>
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label for="student_city"><%= t("AddressLine") %> 2</label>
+        <label for="student_city"><%= t("addressLine") %> 2</label>
 
         <div class="text-input-bg"><%= s.text_field :address_line2 %></div>
       </div>
@@ -209,14 +209,14 @@
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label for="student_phone1">Phone</label>
+        <label for="student_phone1"><%= t("phone") %></label>
 
         <div class="text-input-bg"><%= s.text_field :phone1 %></div>
       </div>
       <hr class="label-underline"/>
 
       <div class="label-field-pair">
-        <label for="student_phone2">Mobile</label>
+        <label for="student_phone2"><%= t('student.mobilePhone') %></label>
 
         <div class="text-input-bg"><%= s.text_field :phone2 %></div>
       </div>
@@ -230,7 +230,7 @@
       <% if @application_sms_enabled.is_enabled == true %>
           <hr class="label-underline"/>
           <div class="label-field-pair">
-            <label for="student_sms">Enable SMS Features</label>
+            <label for="student_sms"><%= t('student.enableSMS') %></label>
 
             <div class="text-input-bg"><%= s.check_box :is_sms_enabled %></div>
           </div>
@@ -269,10 +269,10 @@
               };
           })(jQuery);
       </script>
-      <span class="span-sub-heading">Upload User Photo</span>
+      <span class="span-sub-heading"><%= t("uploadPhoto") %></span>
       <hr class="sub-heading"/>
       <div class="label-field-pair">
-        <label for="student_image_file">Upload photo (50KB max)</label>
+        <label for="student_image_file"><%= t('uploadPhoto') %> (50KB max)</label>
 
         <div class="text-input-bg"><%= s.file_field :image_file %></div>
 
@@ -283,7 +283,7 @@
     </div>
     </div>
 
-    <%= submit_tag "", :value => "► Save & Proceed", :class => "submit_button" %>
+    <%= submit_tag "", :value => t('saveAndProceed'), :class => "submit_button" %>
 <% end %>
 
 </div>
