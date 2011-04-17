@@ -32,29 +32,30 @@ module Spec
       class HelperExampleGroup < FunctionalExampleGroup
         tests HelperExampleGroupController
         attr_accessor :output_buffer
-        
+
         class HelperObject < ActionView::Base
           def initialize(*args)
             @template = self
             super
           end
+
           def protect_against_forgery?
             false
           end
-          
+
           attr_writer :session, :request, :flash, :params, :controller
-          
+
           private
-            attr_reader :session, :request, :flash, :params, :controller
+          attr_reader :session, :request, :flash, :params, :controller
         end
-        
+
         class << self
           # The helper name....
           def helper_name(name=nil)
             @helper_being_described = "#{name}_helper".camelize.constantize
             send :include, @helper_being_described
           end
-          
+
           def helper
             returning HelperObject.new do |helper_object|
               if @helper_being_described.nil?
@@ -67,7 +68,7 @@ module Spec
             end
           end
         end
-        
+
         # Returns an instance of ActionView::Base with the helper being spec'd
         # included.
         #
@@ -89,24 +90,24 @@ module Spec
         def helper
           @helper ||= self.class.helper
         end
-        
+
         def orig_assigns
           helper.assigns
         end
-        
+
         # Reverse the load order so that custom helpers which are defined last
         # are also loaded last.
         ActionView::Base.included_modules.reverse.each do |mod|
           include mod if mod.parents.include?(ActionView::Helpers)
         end
-        
+
         before(:each) do
           @controller.request = @request
           @controller.url = ActionController::UrlRewriter.new @request, {} # url_for
 
           @flash = ActionController::Flash::FlashHash.new
           session['flash'] = @flash
-          
+
           @output_buffer = ""
           @template = helper
           ActionView::Helpers::AssetTagHelper::reset_javascript_include_default
@@ -127,7 +128,7 @@ module Spec
           if helper.respond_to?(:output_buffer)
             erb_args += [nil, nil, '@output_buffer']
           end
-          
+
           helper.instance_eval do
             ERB.new(*erb_args).result(binding)
           end
@@ -141,10 +142,10 @@ module Spec
 
         Spec::Example::ExampleGroupFactory.register(:helper, self)
 
-      protected
+        protected
 
         def _assigns_hash_proxy
-          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) {helper}
+          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) { helper }
         end
 
       end

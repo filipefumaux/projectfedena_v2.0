@@ -1,6 +1,6 @@
 <ul id="grade-list">
   <% unless @grades.empty? %>
-      <li class="heading"> Grade name</li>
+      <li class="heading"> <%= t('gradeName') %></li>
       <% @grades.each do |g| %>
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="grade-name"><%= g.name %>(<%= g.priority %>)</div>

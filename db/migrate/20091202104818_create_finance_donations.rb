@@ -1,9 +1,9 @@
 class CreateFinanceDonations < ActiveRecord::Migration
   def self.up
     create_table :finance_donations do |t|
-      t.string     :donor
-      t.string     :description
-      t.decimal    :amount, :precision => 12, :scale => 2
+      t.string :donor
+      t.string :description
+      t.decimal :amount, :precision => 12, :scale => 2
       t.references :transaction
       t.timestamps
     end

@@ -59,7 +59,7 @@ module AssertSelectSpecHelpers
     @controller.response = xml
     get :xml
   end
-  
+
   def first_non_rspec_line_in_backtrace_of(error)
     rlocation = File.join('rspec', 'lib', 'spec')
     error.backtrace.reject { |line|
@@ -68,14 +68,14 @@ module AssertSelectSpecHelpers
   end
 
   private
-    # necessary for 1.2.1
-    def clear_response
-      render_html("")
-    end
+  # necessary for 1.2.1
+  def clear_response
+    render_html("")
+  end
 end
 
 unless defined?(SpecFailed)
-  SpecFailed = Spec::Expectations::ExpectationNotMetError 
+  SpecFailed = Spec::Expectations::ExpectationNotMetError
 end
 
 describe "should have_tag", :type => :controller do
@@ -91,7 +91,7 @@ describe "should have_tag", :type => :controller do
 
   it "should find specific numbers of elements" do
     render_html %Q{<div id="1"></div><div id="2"></div>}
-    response.should have_tag( "div" )
+    response.should have_tag("div")
     response.should have_tag("div", 2)
     lambda { response.should_not have_tag("div") }.should raise_error(SpecFailed, "should not have tag(\"div\"), but did")
 
@@ -101,14 +101,14 @@ describe "should have_tag", :type => :controller do
 
   it "should expect to find elements when using true" do
     render_html %Q{<div id="1"></div><div id="2"></div>}
-    response.should have_tag( "div", true )
-    lambda { response.should have_tag( "p", true )}.should raise_error(SpecFailed)
+    response.should have_tag("div", true)
+    lambda { response.should have_tag("p", true) }.should raise_error(SpecFailed)
   end
 
   it "should expect to not find elements when using false" do
     render_html %Q{<div id="1"></div><div id="2"></div>}
-    response.should have_tag( "p", false )
-    lambda { response.should have_tag( "div", false )}.should raise_error(SpecFailed)
+    response.should have_tag("p", false)
+    lambda { response.should have_tag("div", false) }.should raise_error(SpecFailed)
   end
 
 
@@ -127,7 +127,7 @@ describe "should have_tag", :type => :controller do
     lambda { response.should have_tag("div", :text=>/foobar/) }.should raise_error(SpecFailed)
     lambda { response.should have_tag("p", :text=>/foo/) }.should raise_error(SpecFailed)
   end
-  
+
   it "should use submitted message" do
     render_html %Q{nothing here}
     lambda {
@@ -185,7 +185,7 @@ describe "should have_tag", :type => :controller do
         elements.size.should == 3
       end
     }.should raise_error(SpecFailed, "expected: 3,\n     got: 2 (using ==)")
-    
+
     lambda {
       response.should have_tag("div#?", /\d+/) { |elements|
         elements.size.should == 3
@@ -197,9 +197,9 @@ describe "should have_tag", :type => :controller do
       with_tag("#1")
       with_tag("#2")
       without_tag("#3")
-    end 
+    end
   end
-  
+
   #added for RSpec
   it "nested tags in form" do
     render_html %Q{
@@ -216,20 +216,20 @@ describe "should have_tag", :type => :controller do
     response.should have_tag("form[action=other]") { |form|
       with_tag("input[type=text][name=other_input]")
     }
-    
+
     lambda {
       response.should have_tag("form[action=test]") { |form|
         with_tag("input[type=text][name=other_input]")
       }
     }.should raise_error(SpecFailed)
-    
+
     lambda {
       response.should have_tag("form[action=test]") {
         with_tag("input[type=text][name=other_input]")
       }
     }.should raise_error(SpecFailed)
   end
-  
+
   it "should report the correct line number for a nested failed expectation" do
     render_html %Q{
       <form action="test">
@@ -241,8 +241,8 @@ describe "should have_tag", :type => :controller do
         @expected_error_line = __LINE__; should have_tag("input[type=text][name=other_input]")
       }
     rescue => e
-      first_non_rspec_line_in_backtrace_of(e).should =~ 
-        /#{File.basename(__FILE__)}:#{@expected_error_line}/
+      first_non_rspec_line_in_backtrace_of(e).should =~
+          /#{File.basename(__FILE__)}:#{@expected_error_line}/
     else
       fail
     end
@@ -259,8 +259,8 @@ describe "should have_tag", :type => :controller do
         @expected_error_line = __LINE__; raise "Failed!"
       }
     rescue => e
-      first_non_rspec_line_in_backtrace_of(e).should =~ 
-        /#{File.basename(__FILE__)}:#{@expected_error_line}/
+      first_non_rspec_line_in_backtrace_of(e).should =~
+          /#{File.basename(__FILE__)}:#{@expected_error_line}/
     else
       fail
     end
@@ -279,21 +279,21 @@ describe "should have_tag", :type => :controller do
         }
       rescue => e
         first_non_rspec_line_in_backtrace_of(e).should =~
-          /#{File.basename(__FILE__)}:#{@expected_error_line}/
+            /#{File.basename(__FILE__)}:#{@expected_error_line}/
       else
         fail
       end
     end
   end
 
-  
+
   it "beatles" do
     unless defined?(BEATLES)
       BEATLES = [
-        ["John", "Guitar"],
-        ["George", "Guitar"],
-        ["Paul", "Bass"],
-        ["Ringo", "Drums"]
+          ["John", "Guitar"],
+          ["George", "Guitar"],
+          ["Paul", "Bass"],
+          ["Ringo", "Drums"]
       ]
     end
 
@@ -350,7 +350,7 @@ describe "should have_tag", :type => :controller do
       with_tag("#1")
       with_tag("#2")
     }
-    
+
     lambda {
       response.should have_tag("div") { |elements|
         elements.size.should == 2
@@ -381,7 +381,7 @@ describe "should have_tag", :type => :controller do
       with_tag("#2")
     }
   end
-  
+
   it "assert_select_from_rjs with multiple items" do
     render_rjs do |page|
       page.replace_html "test", "<div id=\"1\">foo</div>"
@@ -423,7 +423,7 @@ describe "css_select", :type => :controller do
     response.should have_tag("div") {
       css_select("div").should have(2).elements
       css_select("div").each { |element|
-        # Testing as a group is one thing
+      # Testing as a group is one thing
         css_select("#1,#2").should have(2).elements
         # Testing individually is another
         css_select("#1").should have(1).element
@@ -450,7 +450,7 @@ describe "css_select", :type => :controller do
     css_select("#1").should have(1).element
     css_select("#2").should have(1).element
   end
-  
+
 end
 
 describe "have_rjs behaviour_type", :type => :controller do
@@ -467,11 +467,11 @@ describe "have_rjs behaviour_type", :type => :controller do
       page["test5"].hide
     end
   end
-  
+
   it "should pass if any rjs exists" do
     response.should have_rjs
   end
-  
+
   it "should fail if no rjs exists" do
     render_rjs do |page|
     end
@@ -479,7 +479,7 @@ describe "have_rjs behaviour_type", :type => :controller do
       response.should have_rjs
     end.should raise_error(SpecFailed)
   end
-  
+
   it "should find all rjs from multiple statements" do
     response.should have_rjs do
       with_tag("#1")
@@ -495,7 +495,7 @@ describe "have_rjs behaviour_type", :type => :controller do
       with_tag("div", 1)
       with_tag("div#1", "foo")
     }
-    
+
     lambda do
       response.should have_rjs("test1") { |rjs|
         rjs.size.should == 1
@@ -512,7 +512,7 @@ describe "have_rjs behaviour_type", :type => :controller do
     # response.should have_rjs("test4")
     # response.should have_rjs("test5")
   end
-  
+
   # specify "should find rjs using :hide" do
   #   response.should have_rjs(:hide)
   #   response.should have_rjs(:hide, "test4")
@@ -561,7 +561,7 @@ describe "have_rjs behaviour_type", :type => :controller do
       response.should have_rjs(:replace_html, "test3")
     }.should raise_error(SpecFailed)
   end
-    
+
   it "should find rjs using :insert_html (non-positioned)" do
     response.should have_rjs(:insert_html) { |rjs|
       with_tag("div", 1)
@@ -597,32 +597,32 @@ describe "have_rjs behaviour_type", :type => :controller do
       with_tag("div", 1)
       with_tag("#1")
     end
-    response.should have_rjs(:insert, :bottom) {|rjs|
+    response.should have_rjs(:insert, :bottom) { |rjs|
       with_tag("div", 1)
       with_tag("#2")
     }
-    response.should have_rjs(:insert, :bottom, "test2") {|rjs|
+    response.should have_rjs(:insert, :bottom, "test2") { |rjs|
       with_tag("div", 1)
       with_tag("#2")
     }
-    response.should have_rjs(:insert, :before) {|rjs|
+    response.should have_rjs(:insert, :before) { |rjs|
       with_tag("div", 1)
       with_tag("#3")
     }
-    response.should have_rjs(:insert, :before, "test3") {|rjs|
+    response.should have_rjs(:insert, :before, "test3") { |rjs|
       with_tag("div", 1)
       with_tag("#3")
     }
-    response.should have_rjs(:insert, :after) {|rjs|
+    response.should have_rjs(:insert, :after) { |rjs|
       with_tag("div", 1)
       with_tag("#4")
     }
-    response.should have_rjs(:insert, :after, "test4") {|rjs|
+    response.should have_rjs(:insert, :after, "test4") { |rjs|
       with_tag("div", 1)
       with_tag("#4")
     }
   end
-  
+
   it "should find rjs using :insert (positioned)" do
     pending("await fix for http://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/982")
     render_rjs do |page|
@@ -653,24 +653,24 @@ describe "send_email behaviour_type", :type => :controller do
   it "should fail with nothing sent" do
     response.should_not send_email
     lambda {
-      response.should send_email{}
+      response.should send_email {}
     }.should raise_error(SpecFailed, /No e-mail in delivery list./)
   end
-  
+
   it "should pass otherwise" do
     AssertSelectMailer.deliver_test "<div><p>foo</p><p>bar</p></div>"
     response.should send_email
     lambda {
       response.should_not send_email
     }.should raise_error(SpecFailed)
-    response.should send_email{}
+    response.should send_email {}
     response.should send_email {
       with_tag("div:root") {
         with_tag("p:first-child", "foo")
         with_tag("p:last-child", "bar")
       }
     }
-    
+
     lambda {
       response.should_not send_email
     }.should raise_error(SpecFailed, "should not send email, but did")
@@ -696,7 +696,7 @@ describe "string.should have_tag", :type => :helper do
   end
 
   it "should find nested element in one line" do
-    "<div><p>a paragraph</p></div>".should have_tag("div p","a paragraph")
+    "<div><p>a paragraph</p></div>".should have_tag("div p", "a paragraph")
   end
 
   it "should find nested element" do
@@ -716,19 +716,19 @@ describe "string.should have_tag", :type => :helper do
   it "should raise when using an HTML string with unclosed singleton tags when using the XML parsing setting" do
     lambda do
       %Q{<table id="1"><tr><td><img src="image.png" alt="image">Hello</td></tr><tr><td></td></tr><tr><td>World</td></tr></table>}.
-        should have_tag("tr", 3, :xml => true)
+          should have_tag("tr", 3, :xml => true)
     end.should raise_error
   end
 
   it "should find the specific number of elements regardless of unclosed singletons in a HTML string" do
     %Q{<table id="1"><tr><td><img src="image.png" alt="image">Hello</td></tr><tr><td></td></tr><tr><td>World</td></tr></table>}.
-      should have_tag("tr", 3)
+        should have_tag("tr", 3)
   end
 
   it "should find nested tags in an HTML string regardless unclosed singletons" do
     %Q{<table id="1"><tr><td><img src="image.png" alt="image">Hello</td></tr><tr><td></td></tr><tr><td>World</td></tr></table>}.
-      should have_tag("table") do
-        with_tag('tr',3)
+        should have_tag("table") do
+      with_tag('tr', 3)
     end
   end
 
@@ -766,21 +766,22 @@ describe 'selecting in HTML that contains a mock with null_object' do
       def initialize_with_strict_error_checking(text, strict=false, xml=false)
         initialize_without_strict_error_checking(text, true, xml)
       end
+
       alias_method :initialize_without_strict_error_checking, :initialize
       alias_method :initialize, :initialize_with_strict_error_checking
     end
   end
-  
+
   describe 'modified HTML::Document' do
     it 'should raise error on valid HTML even though false is specified' do
-      lambda {HTML::Document.new("<b>#<Spec::Mocks::Mock:0x267b4f0></b>", false, false)}.should raise_error
+      lambda { HTML::Document.new("<b>#<Spec::Mocks::Mock:0x267b4f0></b>", false, false) }.should raise_error
     end
   end
-    
+
   it 'should not print errors from assert_select' do
     mock = mock("Dog", :null_object => true)
     html = "<b>#{mock.colour}</b>"
-    lambda {html.should have_tag('b')}.should_not raise_error
+    lambda { html.should have_tag('b') }.should_not raise_error
   end
 end
 

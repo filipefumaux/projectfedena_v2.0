@@ -3,7 +3,7 @@
 
   <h1><%= t("messages") %></h1>
 
-  <h3>Sent</h3>
+  <h3><%= t('sent') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -21,13 +21,13 @@
 <div id="page-yield">
   <% recipient_user = User.find(@sent_reminder.recipient) %>
   <div id="reminder-body">
-    <div id="reminder-from">To: <%= recipient_user.full_name %></div>
+    <div id="reminder-from"><%= t("to") %>: <%= recipient_user.full_name %></div>
 
-    <div id="reminder-date">Sent on: <%= @sent_reminder.created_at.strftime("%A, %d %B, %Y") %></div>
+    <div id="reminder-date"><%= t('sentOn') %>: <%= @sent_reminder.created_at.strftime("%A, %d %B, %Y") %></div>
 
-    <div id="reminder-subject">Subject: <%= @sent_reminder.subject %></div>
+    <div id="reminder-subject"><%= t('subject.title') %>: <%= @sent_reminder.subject %></div>
 
 
-    <div id="reminder-message"><strong>Message:</strong> <br/><br/><%= @sent_reminder.body %></div>
+    <div id="reminder-message"><strong><%= t('message') %>:</strong> <br/><br/><%= @sent_reminder.body %></div>
   </div>
 </div>

@@ -40,7 +40,7 @@
       <ul>
         <% unless @grouped_exams.empty? %>
             <li><%= link_to t('finalReportGrouped'), {:action=>'generated_report4', :student=>@student.id, :type=>'grouped'} %></li>
-            <li><%= link_to 'Compare with past years(Exams Grouped)', {:action => 'previous_years_marks_overview', :student=>@student.id, :type=>'grouped'} %></li>
+            <li><%= link_to t('student.comparePastYearsGrouped'), {:action => 'previous_years_marks_overview', :student=>@student.id, :type=>'grouped'} %></li>
         <% else %>
             <li><%= link_to t("finalReport"), {:action=>'generated_report4', :student=>@student.id, :type=>'general'} %></li>
             <li><%= link_to t('compareWithPastYears'), {:action => 'previous_years_marks_overview', :student=>@student.id, :type=>'general'} %></li>

@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>Acadamic report</h3>
+  <h3><%= t('academicReport') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,7 +17,7 @@
 
   <table id="listing" wisth="100%">
     <tr class="tr-head">
-      <td><%= t('subject') %></td>
+      <td><%= t('subject.title') %></td>
       <% @exam_groups.each do |exam_group| %>
           <td><%= exam_group.name %></td>
       <% end %>
@@ -79,7 +79,8 @@
     </tr>
   </table>
   <% if @mmg == @g %>
-      <h4> <%= t('totalMarks') %> = <%= "%.2f" %@marks_total %> | <%= t('aggregate') %> % = <%= "%.2f" %(@marks_total*100/@max_total) %> </h4>
+      <h4> <%= t('totalMarks') %> = <%= "%.2f" %@marks_total %> | <%= t('aggregate') %> %
+        = <%= "%.2f" %(@marks_total*100/@max_total) %> </h4>
   <% end %>
 
   <div class="extender"></div>

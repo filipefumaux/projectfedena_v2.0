@@ -20,7 +20,7 @@
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @exam_group.batch.course.full_name, @exam_group.batch.course %> &raquo;
-      <%= link_to "Batch " + @exam_group.batch.name, [@exam_group.batch.course, @exam_group.batch] %> &raquo;
+      <%= link_to ("batch.title") + " " + @exam_group.batch.name, [@exam_group.batch.course, @exam_group.batch] %> &raquo;
       <%= link_to t('exams'), batch_exam_groups_path(@batch) %> &raquo;
       <%= link_to @exam_group.name, [@exam_group.batch, @exam_group] %> &raquo;
       <%= @exam.subject.name %>

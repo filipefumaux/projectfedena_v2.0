@@ -76,19 +76,19 @@ describe CalendarDateSelect::FormHelpers do
   it "should _vdc__should_auto_format_function" do
     @model.start_datetime = Time.parse("January 2, 2007 12:00 AM")
     output = calendar_date_select(:model,
-      :start_datetime,
-      :valid_date_check => "date < new Date()"
+                                  :start_datetime,
+                                  :valid_date_check => "date < new Date()"
     )
     output.should include("valid_date_check:function(date) { return(date &lt; new Date()) }")
 
     output = calendar_date_select(:model,
-      :start_datetime,
-      :valid_date_check => "return(date < new Date())"
+                                  :start_datetime,
+                                  :valid_date_check => "return(date < new Date())"
     )
     output.should include("valid_date_check:function(date) { return(date &lt; new Date()) }")
     output = calendar_date_select(:model,
-      :start_datetime,
-      :valid_date_check => "function(p) { return(date < new Date()) }"
+                                  :start_datetime,
+                                  :valid_date_check => "function(p) { return(date < new Date()) }"
     )
     output.should include("valid_date_check:function(p) { return(date &lt; new Date()) }")
   end
@@ -97,15 +97,15 @@ describe CalendarDateSelect::FormHelpers do
     message = ":valid_date_check function is missing a 'return' statement.  Try something like: :valid_date_check => 'if (date > new(Date)) return true; else return false;'"
     lambda {
       output = calendar_date_select(:model,
-        :start_datetime,
-        :valid_date_check => "date = 5; date < new Date());"
+                                    :start_datetime,
+                                    :valid_date_check => "date = 5; date < new Date());"
       )
     }.should raise_error(ArgumentError, message)
 
     lambda {
       output = calendar_date_select(:model,
-        :start_datetime,
-        :valid_date_check => "function(p) { date = 5; date < new Date()); }"
+                                    :start_datetime,
+                                    :valid_date_check => "function(p) { date = 5; date < new Date()); }"
       )
     }.should raise_error(ArgumentError, message)
   end
@@ -156,7 +156,7 @@ describe CalendarDateSelect::FormHelpers do
     before(:each) do
       @time = Time.parse("January 2, 2007 12:01:23 AM")
     end
-    
+
     it "should use the string verbatim when provided" do
       output = calendar_date_select_tag(:name, "Some String")
 
@@ -180,7 +180,7 @@ describe CalendarDateSelect::FormHelpers do
       output = calendar_date_select_tag(:name, @time, :time => 'mixed')
       output.should include(CalendarDateSelect.format_date(@time))
     end
-    
+
     it "not include the image option in the result input tag" do
       output = calendar_date_select_tag(:name, @time, :time => 'mixed')
       output.should_not include("image=")

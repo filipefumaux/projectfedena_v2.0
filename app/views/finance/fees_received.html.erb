@@ -1,6 +1,6 @@
-<h2>Fee submission</h2>
+<h2><%= t("feeSubmission") %></h2>
 
-<p><%= link_to "Finance", :action => "index" %></p>
+<p><%= link_to t("finance.title"), :action => "index" %></p>
 
 <% @fee_components.each do |c| %>
     <%= c.fee_element.label %> - <%= c.fee_element.amount %> <br/>

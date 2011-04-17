@@ -12,9 +12,9 @@ module Spec
     module Example
       describe CookiesProxy, :type => :controller do
         controller_name :cookies_proxy_examples
-      
+
         describe "with a String key" do
-        
+
           it "should accept a String value" do
             proxy = CookiesProxy.new(self)
             proxy['key'] = 'value'
@@ -25,10 +25,10 @@ module Spec
               proxy['key'].should == ['value']
             end
           end
-          
+
           it "should accept a Hash value" do
             proxy = CookiesProxy.new(self)
-            proxy['key'] = { :value => 'value', :expires => expiration = 1.hour.from_now, :path => path = '/path' }
+            proxy['key'] = {:value => 'value', :expires => expiration = 1.hour.from_now, :path => path = '/path'}
             get :index
             if ::Rails::VERSION::STRING >= "2.3"
               proxy['key'].should == 'value'
@@ -39,11 +39,11 @@ module Spec
               proxy['key'].path.should == path
             end
           end
-            
+
         end
-      
+
         describe "with a Symbol key" do
-        
+
           it "should accept a String value" do
             proxy = CookiesProxy.new(self)
             proxy[:key] = 'value'
@@ -57,7 +57,7 @@ module Spec
 
           it "should accept a Hash value" do
             proxy = CookiesProxy.new(self)
-            proxy[:key] = { :value => 'value', :expires => expiration = 1.hour.from_now, :path => path = '/path' }
+            proxy[:key] = {:value => 'value', :expires => expiration = 1.hour.from_now, :path => path = '/path'}
             get :index
             if ::Rails::VERSION::STRING >= "2.3"
               proxy[:key].should == 'value'
@@ -70,7 +70,7 @@ module Spec
           end
 
         end
-    
+
         describe "#delete" do
           it "should delete from the response cookies" do
             proxy = CookiesProxy.new(self)
@@ -81,7 +81,7 @@ module Spec
           end
         end
       end
-    
+
     end
   end
 end

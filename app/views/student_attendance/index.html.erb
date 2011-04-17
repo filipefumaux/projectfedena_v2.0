@@ -19,33 +19,33 @@
   <div id="box">
     <% if @current_user.admin? %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to t("attendance.register"), :controller => 'attendances', :action => 'index' %></div>
-          <div class="link-descr">Attendance register for students</div>
+          <div class="link-heading"><%= link_to t('attendanceRegister'), :controller => 'attendances', :action => 'index' %></div>
+          <div class="link-descr"><%= t('student.registerAttendance') %></div>
         </div>
 
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Attendance Report", :controller => "attendance_reports", :action => "index" %></div>
-          <div class="link-descr">Attendance report of students</div>
+          <div class="link-heading"><%= link_to t('attendanceReport'), :controller => "attendance_reports", :action => "index" %></div>
+          <div class="link-descr"><%= t('attendanceReport') %> <%= t('student.of') %></div>
         </div>
     <% else %>
 
         <% if permitted_to? :index, :attendances %>
             <div class="link-box">
               <div class="link-heading"><%= link_to t("attendance.register"), :controller => 'attendances', :action => 'index' %></div>
-              <div class="link-descr">Attendance register for students</div>
+              <div class="link-descr"><%= t('student.registerAttendance') %></div>
             </div>
         <% end %>
 
         <% if permitted_to? :index, :attendance_reports or permitted_to? :index, :attendances %>
             <div class="link-box">
-              <div class="link-heading"><%= link_to "Attendance Report", :controller => "attendance_reports", :action => "index" %></div>
-              <div class="link-descr">Attendance report of students</div>
+              <div class="link-heading"><%= link_to t('attendanceReport'), :controller => "attendance_reports", :action => "index" %></div>
+              <div class="link-descr"><%= t('attendanceReport') %> <%= t('student.of') %></div>
             </div>
         <% end %>
     <% end %>
     <!--
        <div class="link-box">
-           <div class="link-heading"><%= link_to "Attendance Report", :controller => "attendance_reports", :action => "advance_search" %></div>
+           <div class="link-heading"><%= link_to t('attendanceReport'), :controller => "attendance_reports", :action => "advance_search" %></div>
            <div class="link-descr">Attendance report for students</div>
          </div>
     -->

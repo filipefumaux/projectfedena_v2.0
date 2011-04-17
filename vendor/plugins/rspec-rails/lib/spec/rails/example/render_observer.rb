@@ -11,7 +11,7 @@ module Spec
         def verify_rendered # :nodoc:
           render_proxy.rspec_verify
         end
-  
+
         def unregister_verify_after_each #:nodoc:
           proc = verify_rendered_proc
           Spec::Example::ExampleGroup.remove_after(:each, &proc)
@@ -25,7 +25,7 @@ module Spec
             super
           end
         end
-        
+
         def should_not_receive(*args)
           if args[0] == :render
             register_verify_after_each
@@ -34,7 +34,7 @@ module Spec
             super
           end
         end
-        
+
         def stub(*args)
           if args[0] == :render
             register_verify_after_each
@@ -43,7 +43,7 @@ module Spec
             super
           end
         end
-        
+
         # FIXME - for some reason, neither alias nor alias_method are working
         # as expected in the else branch, so this is a duplicate of stub()
         # above. Could delegate, but then we'd run into craziness handling
@@ -56,7 +56,7 @@ module Spec
             super
           end
         end
-        
+
         def verify_rendered_proc #:nodoc:
           template = self
           @verify_rendered_proc ||= Proc.new do
@@ -69,11 +69,11 @@ module Spec
           proc = verify_rendered_proc
           Spec::Example::ExampleGroup.after(:each, &proc)
         end
-  
+
         def render_proxy #:nodoc:
           @render_proxy ||= Spec::Mocks::Mock.new("render_proxy")
         end
-  
+
       end
     end
   end

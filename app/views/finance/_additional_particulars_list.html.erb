@@ -4,10 +4,10 @@
 <div class="val"><span>:</span><%= @additional_category.description %></div>
 
 <% unless @additional_category.batch.nil? %>
-    <div class="name"><%= t("course")%></div>
+    <div class="name"><%= t("course") %></div>
     <div class="val"><span>:</span><%= @additional_category.batch.full_name %></div>
 <% else %>
-    <div class="name"><%= t("course")%></div>
+    <div class="name"><%= t("course") %></div>
     <div class="val"><span>:</span>NIL</div>
 <% end %>
 <br/>
@@ -42,7 +42,7 @@
             <td class="col-3"><%= fees.created_at.strftime("%m-%d-%Y") %></td>
             <td class="col-1">
               <% unless @additional_category.check_fee_collection_for_additional_fees == false %>
-                  <span class="small"> <%= link_to_remote t('delete'), :confirm=>"Delete this particular ?", :url => {:action => 'add_particulars_delete', :id => fees.id} %></span>
+                  <span class="small"> <%= link_to_remote t('delete'), :confirm=>t('deleteThisParticular'), :url => {:action => 'add_particulars_delete', :id => fees.id} %></span>
               <% else %>
                   <span class="small-strike"><%= t("delete") %></span>
               <% end %>
@@ -62,4 +62,4 @@
     </table>
 
 <% end %>
-<%= link_to 'Back', {:action => 'additional_fees_list'}, :class=>'user_button' %>
+<%= link_to t('back'), {:action => 'additional_fees_list'}, :class=>'user_button' %>

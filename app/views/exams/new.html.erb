@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>New Exam</h3>
+  <h3><%= t("exam.new") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -20,17 +20,17 @@
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @course.full_name, @course %> &raquo;
-      <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
+      <%= link_to t('batch.title') + " #{@batch.name}", [@course, @batch] %> &raquo;
       <%= link_to t('exams'), batch_exam_groups_path(@batch) %> &raquo;
       <%= link_to @exam_group.name, [@batch, @exam_group] %> &raquo;
       New
     </div>
 
-    <h5>For exam group - <%= @exam_group.name %></h5>
+    <h5><%= t("exam.forExamGroup") %> - <%= @exam_group.name %></h5>
     <% unless @exam_group.exam_type == 'Grades' %>
         <% form_for [@exam_group, @exam] do |f| %>
             <div class="label-field-pair">
-              <label for="subject_id"><%= t('subject') %></label>
+              <label for="subject_id"><%= t('subject.title') %></label>
 
               <div class="text-input-bg"><%= f.select :subject_id, @subjects.map { |s| [s.name, s.id] } %></div>
             </div>

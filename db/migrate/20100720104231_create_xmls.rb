@@ -1,8 +1,8 @@
 class CreateXmls < ActiveRecord::Migration
   def self.up
     create_table :xmls do |t|
-      t.string   :finance_name
-      t.string   :ledger_name
+      t.string :finance_name
+      t.string :ledger_name
       t.timestamps
     end
     create_default

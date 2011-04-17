@@ -39,23 +39,23 @@
 
     <% unless @previous_data.nil? %>
         <div class="new_profile_info_area1">
-          <div class="profile_info_label_top">Institution Name</div>
+          <div class="profile_info_label_top"><%= t("institutionName") %></div>
           <div class="profile_info_text_top"><%= @previous_data.institution %></div>
         </div>
         <div class="new_profile_info_area1">
-          <div class="profile_info_label_top2"><%= t("course")%></div>
+          <div class="profile_info_label_top2"><%= t("course") %></div>
           <div class="profile_info_text_top2"><%= @previous_data.course %></div>
 
-          <div class="profile_info_label_top">Year</div>
+          <div class="profile_info_label_top"><%= t("year") %></div>
           <div class="profile_info_text_top"><%= @previous_data.year %></div>
         </div>
         <div class="new_profile_info_area1">
-          <div class="profile_info_label_top2">Total Mark</div>
+          <div class="profile_info_label_top2"><%= t("totalMarks") %></div>
           <div class="profile_info_text_top2"><%= @previous_data.total_mark %></div>
         </div>
         <div class="new_profile_info_area1">
           <div class="profile_info_label_top"></div>
-          <div class="profile_info_text_top"><u>Subjects</u></div>
+          <div class="profile_info_text_top"><u><%= t('subjects') %></u></div>
         </div>
         <div class="prev_subject_box">
           <% @previous_subjects.each do |s| %>

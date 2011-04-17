@@ -1,14 +1,14 @@
 class CreateNews < ActiveRecord::Migration
   def self.up
     create_table :news do |t|
-      t.string     :title
-      t.text       :content
+      t.string :title
+      t.text :content
       t.references :author
       t.timestamps
     end
 
     create_table :news_comments do |t|
-      t.text       :content
+      t.text :content
       t.references :news
       t.references :author
       t.timestamps

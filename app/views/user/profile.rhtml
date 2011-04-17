@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/user_profile/user_profile_logo.jpg"/>
 
-  <h1>User Profile</h1>
+  <h1><%= t('userProfile') %></h1>
 
-  <h3>User Information</h3>
+  <h3><%= t('userInfo') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -13,7 +13,7 @@
 <% if @current_user.id == @user.id %>
     <div id="inner-tab-menu">
       <ul>
-        <li><%= link_to "Change Password", :controller => "user", :action => "change_password" %></li>
+        <li><%= link_to t("changePassword"), :controller => "user", :action => "change_password" %></li>
       </ul>
     </div>
 <% end %>
@@ -61,7 +61,7 @@
         <% end %>
         <% unless @user.admin %>
             <% unless @user.role_name == 'Student' %>
-                <%= link_to "► Edit Role", {:controller => "user", :action => "edit_privilege", :id => @user.username}, :class => "user_button" %>
+                <%= link_to "► "+t("editRole"), {:controller => "user", :action => "edit_privilege", :id => @user.username}, :class => "user_button" %>
             <% end %>
         <% end %>
       </div>

@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Asset View</h1>
+  <h1><%= t("assetView") %></h1>
 
   <h3><%= @asset.title %></h3>
 
@@ -13,12 +13,12 @@
 
 
   <div id="asset-body">
-    <div id="asset-title">Asset Name : <%= @asset.title %></div>
+    <div id="asset-title"><%= t('assetName') %> : <%= @asset.title %></div>
     <div id="asset-description"><%= @asset.description %></div>
     <br/>
 
     <div id="asset-amt"><%= t('amount') %> : <%= @currency_type + " " %><%= @asset.amount %></div>
-    <div id="asset-date">Created At : <%= @asset.created_at.strftime("%A, %d %B, %Y") %></div>
+    <div id="asset-date"><%= t('createdAt') %> : <%= @asset.created_at.strftime("%A, %d %B, %Y") %></div>
   </div>
 
 

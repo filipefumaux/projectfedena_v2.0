@@ -9,19 +9,19 @@
     <div id="legend-symbol">
       <div style='width:12px;height:12px;background:#0C6C92; -moz-border-radius:2px; -webkit-border-radius:2px; margin:4px 3px 3px 3px; float:left;'></div>
     </div>
-    <div id="legend-text">Examinations</div>
+    <div id="legend-text"><%= t('examinations') %></div>
   </div>
   <div id="legend-entry">
     <div id="legend-symbol">
       <div style='width:12px;height:12px;background:#00b400; -moz-border-radius:2px; -webkit-border-radius:2px; margin:4px 3px 3px 3px; float:left;'></div>
     </div>
-    <div id="legend-text">Holidays</div>
+    <div id="legend-text"><%= t('holidays') %></div>
   </div>
   <div id="legend-entry">
     <div id="legend-symbol">
       <div style='width:12px;height:12px;background:#b40000; -moz-border-radius:2px; -webkit-border-radius:2px; margin:4px 3px 3px 3px; float:left;'></div>
     </div>
-    <div id="legend-text">Dues</div>
+    <div id="legend-text"><%= t('dues') %></div>
   </div>
 </div>
 <br/>
@@ -66,7 +66,7 @@
         <% unless (r == 1 and c <= @start_date_day) %>
             <% unless dt > @last_day.day %>
                 <% if permitted_to? :index, :event %>
-                    <div class="link"><%= link_to 'Add', :controller=>"event", :action=>"index", :id=>Date.parse("#{@show_month.year}-#{@show_month.month}-#{dt}") %>
+                    <div class="link"><%= link_to t('add'), :controller=>"event", :action=>"index", :id=>Date.parse("#{@show_month.year}-#{@show_month.month}-#{dt}") %>
                 <% end %>
                 <span><%= dt %></span></div>
 

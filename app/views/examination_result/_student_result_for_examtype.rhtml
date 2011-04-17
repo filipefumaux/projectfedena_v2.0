@@ -11,11 +11,11 @@
 
   <div id="results-table">
     <div class="results-th">
-      <div class="results-table-subject">Subjects</div>
+      <div class="results-table-subject"><%= t('subjects') %></div>
       <div class="results-table-marks"><%= t('marks') %></div>
-      <div class="results-table-maxmarks">Max</div>
+      <div class="results-table-maxmarks"><%= t('max') %></div>
       <div class="results-table-grade"><%= t('grade') %></div>
-      <div class="results-table-percentage">(in %)</div>
+      <div class="results-table-percentage">(<%= t('in') %> %)</div>
     </div>
     <% total = 0 %>
     <% max_total = 0 %>
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <% if @results.empty? %> <p><%= "No results found." %></p>
+  <% if @results.empty? %> <p><%= t("noResults") %>.</p>
   <% end %>
 
   <script type="text/javascript" src="/javascripts/swfobject.js"></script>

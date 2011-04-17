@@ -3,7 +3,7 @@
 
   <h1><%= t("timetable.title") %></h1>
 
-  <h3><%= t("edit")%> - <%= @batch.full_name %> </h3>
+  <h3><%= t("edit") %> - <%= @batch.full_name %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -19,7 +19,7 @@
         for (x in selected_divs)
             if (id == selected_divs[x]) {
                 exists_in_list = 1;
-                selected_divs.splice(x, 1)
+                selected_divs.splice(x, 1);
                 $('drop_' + id).className = "drop";
             }
         if (!exists_in_list) {
@@ -56,12 +56,13 @@
                           :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_list") %>
                 selected_divs = [];
             }
-            else
+            else{
                     <%= remote_function(:update => "timetable",
-           :url => {:action => "update_multiple_timetable_entries2"},
-           :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_id") %>
-                    }
+                                           :url => {:action => "update_multiple_timetable_entries2"},
+                                          :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_id") %>
+            }
         }
+    }
 </script>
 
 <div id="page-yield">
@@ -76,7 +77,7 @@
     <%= render :partial => "edit_tt_multiple2", :with=> @timetable %>
   </div>
 
-  <h4>Add Subjects/Employee</h4>
+  <h4><%= t('add') %> <%= t('subjects') %>/<%= t('employee.title') %></h4>
 
   <div id="subjects-select">
     <div class="label-field-pair">

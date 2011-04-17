@@ -17,7 +17,7 @@ module OpenFlashChart
     end
 
     def link_to_ofc_load(link_text, div_name)
-      data_name = "#{link_text.gsub(" ","_")}_#{div_name.gsub(" ","_")}"
+      data_name = "#{link_text.gsub(" ", "_")}_#{div_name.gsub(" ", "_")}"
       <<-OUTPUT
       <script type="text/javascript">
       function load_#{data_name}() {
@@ -27,12 +27,12 @@ module OpenFlashChart
     var data_#{data_name} = #{self.render};
     </script>
     #{ActionView::Base.new.link_to_function link_text, "load_#{data_name}()"}
-    OUTPUT
-  end
+      OUTPUT
+    end
 
-  def link_to_remote_ofc_load(link_text, div_name, url)
-    fx_name = "#{link_text.gsub(" ","_")}_#{div_name.gsub(" ","_")}"
-    <<-OUTPUT
+    def link_to_remote_ofc_load(link_text, div_name, url)
+      fx_name = "#{link_text.gsub(" ", "_")}_#{div_name.gsub(" ", "_")}"
+      <<-OUTPUT
     <script type="text/javascript">
     function reload_#{fx_name}() {
     tmp_#{div_name} = findSWF("#{div_name}");
@@ -43,14 +43,14 @@ module OpenFlashChart
     }
     </script>
     #{ActionView::Base.new.link_to_function link_text, "reload_#{fx_name}()"}
-    OUTPUT
-  end
+      OUTPUT
+    end
 
-  def periodically_call_to_remote_ofc_load(div_name, url, options={})
-    fx_name = "#{div_name.gsub(" ","_")}"
-    # fix a bug in rails with url_for
-    url = url.gsub("&amp;","&")
-    <<-OUTPUT
+    def periodically_call_to_remote_ofc_load(div_name, url, options={})
+      fx_name = "#{div_name.gsub(" ", "_")}"
+      # fix a bug in rails with url_for
+      url = url.gsub("&amp;", "&")
+      <<-OUTPUT
     <script type="text/javascript">
     function reload_#{fx_name}() {
     tmp_#{div_name} = findSWF("#{div_name}");
@@ -61,13 +61,13 @@ module OpenFlashChart
     }
     </script>
     #{periodically_call_function("reload_#{fx_name}()", options)}
-    OUTPUT
-  end
+      OUTPUT
+    end
 
 
-  def to_open_flash_chart_data
-    # this builds the open_flash_chart_data js function
-    <<-OUTPUT
+    def to_open_flash_chart_data
+      # this builds the open_flash_chart_data js function
+      <<-OUTPUT
     <script type="text/javascript">
     function ofc_ready() {
     }
@@ -85,6 +85,6 @@ module OpenFlashChart
       </script>
       OUTPUT
     end
-    
+
   end
 end

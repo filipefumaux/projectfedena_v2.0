@@ -5,11 +5,12 @@ ActiveRecord::Associations::AssociationProxy.class_eval do
   end
 end
 
-[ ActiveRecord::Associations::AssociationCollection,
-    ActiveRecord::Associations::HasManyThroughAssociation ].each do |klass|
+[ActiveRecord::Associations::AssociationCollection,
+ ActiveRecord::Associations::HasManyThroughAssociation].each do |klass|
   klass.class_eval do
     protected
     alias :method_missing_without_scopes :method_missing_without_paginate
+
     def method_missing_without_paginate(method, *args)
       if @reflection.klass.scopes.include?(method)
         @reflection.klass.scopes[method].call(self, *args) { |*a| yield(*a) if block_given? }
@@ -29,7 +30,7 @@ ActiveRecord::Associations::HasAndBelongsToManyAssociation.class_eval do
     elsif @reflection.klass.scopes.include?(method)
       @reflection.klass.scopes[method].call(self, *args)
     else
-      @reflection.klass.with_scope(:find => { :conditions => @finder_sql, :joins => @join_sql, :readonly => false }) do
+      @reflection.klass.with_scope(:find => {:conditions => @finder_sql, :joins => @join_sql, :readonly => false}) do
         @reflection.klass.send(method, *args) { |*a| yield(*a) if block_given? }
       end
     end

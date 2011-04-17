@@ -44,7 +44,7 @@
 <div id="header_bg">
   <div id="header">
     <div id="main-menu">
-      <%= link_to "Dashboard", :controller => "user", :action => "dashboard" %>
+      <%= link_to t('dashboard.title'), :controller => "user", :action => "dashboard" %>
       <% this_user = User.find(session[:user_id]) if session[:user_id] %>
       <% if this_user.student? || this_user.employee? %>
           <%= link_to t("calendar"), :controller => "calendar" %>
@@ -86,7 +86,7 @@
             <% dash_news.each do |n| %>
                 <div class="sidebar_news_item<%= cycle("0", "1") %>">
                   <h5><%= link_to n.title, :controller => 'news', :action => 'view', :id => n.id %></h5>
-                  <small><%= time_ago_in_words(n.created_at) %> ago</small>
+                  <small><%= time_ago_in_words(n.created_at) %> <%= t('ago') %></small>
                 </div>
             <% end %>
             <div class="extender"></div>

@@ -7,7 +7,7 @@
           <% link_value = t.first_name + " " + t.last_name %>
           <%= link_to link_value, :controller => "finance", :action => "fees_student_dates", :id => t.id %>
           <br/>
-          <small><%= t("course")%>: <%= t.batch.name %></small>
+          <small><%= t("course") %>: <%= t.batch.name %></small>
           <small><br/>Adm No.<%= t.admission_no %></small> <%= @st.to_s %>
         </div>
     <% end %>

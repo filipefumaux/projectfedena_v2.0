@@ -1,23 +1,24 @@
 module Spec
   module Rails
 
-    class IllegalDataAccessException < StandardError; end
+    class IllegalDataAccessException < StandardError;
+    end
 
     module Mocks
-      
+
       # Creates a mock object instance for a +model_class+ with common
       # methods stubbed out. Additional methods may be easily stubbed (via
       # add_stubs) if +stubs+ is passed.
       def mock_model(model_class, options_and_stubs = {})
         id = options_and_stubs[:id] || next_id
         options_and_stubs = options_and_stubs.reverse_merge({
-          :id => id,
-          :to_param => id.to_s,
-          :new_record? => false,
-          :destroyed? => false,
-          :marked_for_destruction? => false,
-          :errors => stub("errors", :count => 0)
-        })
+                                                                :id => id,
+                                                                :to_param => id.to_s,
+                                                                :new_record? => false,
+                                                                :destroyed? => false,
+                                                                :marked_for_destruction? => false,
+                                                                :errors => stub("errors", :count => 0)
+                                                            })
         m = mock("#{model_class.name}_#{id}", options_and_stubs)
         m.__send__(:__mock_proxy).instance_eval <<-CODE
           def @target.as_new_record
@@ -42,14 +43,16 @@ module Spec
         yield m if block_given?
         m
       end
-      
+
       module ModelStubber
         def connection
           raise Spec::Rails::IllegalDataAccessException.new("stubbed models are not allowed to access the database")
         end
+
         def new_record?
           id.nil?
         end
+
         def as_new_record
           self.id = nil
           self
@@ -101,7 +104,7 @@ module Spec
         returning model_class.new do |model|
           model.id = stubs.delete(:id)
           model.extend ModelStubber
-          stubs.each do |k,v|
+          stubs.each do |k, v|
             if model.has_attribute?(k)
               model[k] = stubs.delete(k)
             end
@@ -110,7 +113,7 @@ module Spec
           yield model if block_given?
         end
       end
-      
+
       # DEPRECATED - use object.stub!(:method => value, :method2 => value)
       #
       # Stubs methods on +object+ (if +object+ is a symbol or string a new mock
@@ -122,15 +125,16 @@ from a future version of rspec-rails. Use this instead:
   
   object.stub!(:method => value, :method2 => value)
   
-WARNING
+        WARNING
         object.stub!(stubs)
       end
 
       private
-        @@model_id = 1000
-        def next_id
-          @@model_id += 1
-        end
+      @@model_id = 1000
+
+      def next_id
+        @@model_id += 1
+      end
 
     end
   end

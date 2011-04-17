@@ -14,7 +14,7 @@
   <ul>
     <li><%= link_to t("viewAll"), :controller => 'news', :action => 'all' %></li>
     <% if permitted_to? :add, :news %>
-        <li><%= link_to 'Add', :controller => 'news', :action => 'add' %>
+        <li><%= link_to t('add'), :controller => 'news', :action => 'add' %>
     <% end %>
   </ul>
 </div>
@@ -44,7 +44,7 @@
               <% link_value = r.title %>
               <%= link_to link_value, :controller => "news", :action => "view", :id => r.id %>
               <br/>
-              <small>posted <%= time_ago_in_words(r.created_at) %> ago</small>
+              <small>posted <%= time_ago_in_words(r.created_at) %> <%= t('ago') %></small>
             </div>
             <%= '<div class="extender"></div>' if i%3 == 2 %>
         <% end %>

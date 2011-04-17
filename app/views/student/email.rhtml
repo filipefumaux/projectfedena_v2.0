@@ -3,7 +3,7 @@
 
   <h1><%= t("students") %></h1>
 
-  <h3>Send email</h3>
+  <h3><%= t('sendEmail') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -29,20 +29,20 @@
   <% form_for :email do |f| %>
 
       <div class="label-field-pair">
-        <label for="email_subject"><%= t('subject') %></label>
+        <label for="email_subject"><%= t('subject.title') %></label>
 
         <div class="text-input-bg"><%= f.text_field 'subject' %></div>
       </div>
 
       <div class="label-field-pair">
-        <label for="email_recipients">Recipients</label>
+        <label for="email_recipients"><%= t('recipients') %></label>
 
         <div class="text-input-bg"><%= select 'email', 'recipients', ['Student', 'Guardian', 'Student & guardian'] %></div>
       </div>
 
       <div class="message-area">
         <br/>
-        <label for="email_message">Message</label>
+        <label for="email_message"><%= t('message') %></label>
         <%= f.text_area 'message' %>
       </div>
 

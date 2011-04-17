@@ -15,14 +15,14 @@
   <% form_for :fees_defaulters do %>
       <div id="batchs1">
         <div class="label-field-pair">
-          <label>Select a class: </label>
+          <label><%= t('selectAClass') %>: </label>
 
           <div class="text-input-bg"> <%= select :fees_defaulters, :batch_id, @batchs.map { |c| [c.full_name, c.id] },
-                                                 {:prompt => "Select class"},
+                                                 {:prompt => t('selectClass')},
                                                  {:onChange => "#{remote_function(:url => {:action => "update_fees_collection_dates_defaulters"}, :with => "'batch_id='+value")}"} %> </div>
         </div>
         <div class="label-field-pair">
-          <label>Select fee collection date: </label>
+          <label><%= t('selectFeeCollectionDate') %>: </label>
 
           <div class="text-input-bg">
             <div id="fees_collection_dates"> <%= render :partial => "fees_collection_dates_defaulters" %> </div>

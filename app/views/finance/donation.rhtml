@@ -11,7 +11,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "Donors", :action => "donors" %></li>
+    <li><%= link_to t('donors'), :action => "donors" %></li>
   </ul>
 </div>
 <div id="page-yield">
@@ -24,7 +24,7 @@
 
         <div id="create_user_form">
           <div class="label-field-pair">
-            <label for="donor_name">Donor name:</label>
+            <label for="donor_name"><%= t('donorName') %>:</label>
 
             <div class="text-field-bg"><%= f.text_field :donor %></div>
           </div>
@@ -38,7 +38,7 @@
 
             <div class="text-field-bg"><%= f.text_field :amount %></div>
           </div>
-          <%= submit_tag "► Add", :class=>'submit_button' %>
+          <%= submit_tag "► "+t("add"), :class=>'submit_button' %>
         </div>
 
 

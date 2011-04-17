@@ -22,7 +22,7 @@ for configuration in %w( sqlite3 mysql postgres )
   EnvTestTask.new("test_#{configuration}") do |t|
     t.pattern = 'test/finder_test.rb'
     t.verbose = true
-    t.env = { 'DB' => configuration }
+    t.env = {'DB' => configuration}
     t.libs << 'test'
   end
 end
@@ -54,6 +54,6 @@ task :rcov do
                  lib/will_paginate/core_ext.rb
                  lib/will_paginate.rb
                  rails* )
-  
+
   system %[rcov -Itest:lib test/*.rb -x #{excludes.join(',')}]
 end

@@ -3,7 +3,7 @@
 
   <h1><%= t('student.student') %></h1>
 
-  <h3>Previous marks overview</h3>
+  <h3><%= t('exam.previousMarksOverview') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -47,7 +47,7 @@
         </div>
         <table id="listing" width="100%">
           <tr class="tr-head">
-            <td><%= t('subject') %></td>
+            <td><%= t('subject.title') %></td>
             <% @exam_groups.each do |exam_group| %>
                 <td><%= exam_group.name %></td>
             <% end %>

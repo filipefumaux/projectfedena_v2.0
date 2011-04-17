@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt="Finance"/>
 
-  <h1><%= @department.name %> Department Salary Report</h1>
+  <h1><%= @department.name %> <%= t('departmentSalaryReport') %></h1>
 
-  <h3>Finance Tranasactions</h3>
+  <h3><%= t('finance.transactions') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -15,8 +15,8 @@
   <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
     <tr class="tr-head">
       <td><%= t("slNo") %></td>
-      <td>Employee Name</td>
-      <td><%= t("salary") %> ( <%= currency %> )</td>
+      <td><%= t("employee.name") %> %</td>
+      <td><%= t("salary.title") %> ( <%= currency %> )</td>
       <td><%= t("employee.salaryDate") %></td>
     </tr>
     <tr class="tr-blank"></tr>

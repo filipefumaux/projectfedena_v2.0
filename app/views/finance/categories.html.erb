@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Finance Management</h1>
+  <h1><%= t('finance.management') %></h1>
 
-  <h3>Categories</h3>
+  <h3><%= t('categories') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,9 +17,9 @@
   <% end %>
   <div class="box">
     <div class="link-heading">
-      <%= link_to_remote 'Create Finance Category', :url => {:action => 'categories_new'} %>
+      <%= link_to_remote t('createFinanceCategory'), :url => {:action => 'categories_new'} %>
     </div>
-    <div class="link-descr"> Create Category</div>
+    <div class="link-descr"> <%= t("create") %> <%= t("category") %></div>
 
     <div id="category-list"><%= render :partial => "category_list" %></div>
     <div id="modal-box" style="display:none;"></div>

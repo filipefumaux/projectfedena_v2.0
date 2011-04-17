@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Fees Submission</h1>
+  <h1><%= t('feesSubmission') %></h1>
 
-  <h3>Student fees submission</h3>
+  <h3><%= t('student.feesSubmission') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -15,13 +15,13 @@
         <p class="flash-msg"><%= flash[:notice] %></p>
     <% end %>
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fees submission by course", :action => "fees_submission_batch" %> </div>
-      <div class="link-descr">Fees submission by selecting each course</div>
+      <div class="link-heading"><%= link_to t('finance.feesSubmissionByCourse'), :action => "fees_submission_batch" %> </div>
+      <div class="link-descr"><%= t('finance.descFeesSubmissionByCourse') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fees submission for each student", :action => "fees_student_search" %> </div>
-      <div class="link-descr">Submitting fees by searching each students</div>
+      <div class="link-heading"><%= link_to t('finance.feesSubmissionForStudent'), :action => "fees_student_search" %> </div>
+      <div class="link-descr"><%= t('finance.descFeesSubmissionForStudent') %></div>
     </div>
 
   </div>

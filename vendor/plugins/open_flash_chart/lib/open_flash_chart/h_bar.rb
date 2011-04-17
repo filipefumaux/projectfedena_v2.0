@@ -1,10 +1,10 @@
 module OpenFlashChart
 
   class HBarValue < Base
-    def initialize(left,right=nil, args={})
+    def initialize(left, right=nil, args={})
       super args
-      @left  = left
-      @right = right || left      
+      @left = left
+      @right = right || left
     end
   end
 
@@ -13,7 +13,7 @@ module OpenFlashChart
       super args
       @type = "hbar"
       @colour = colour
-      @values = []      
+      @values = []
     end
 
     def set_values(v)

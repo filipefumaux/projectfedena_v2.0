@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>Acadamic report</h3>
+  <h3><%= t('academicReport') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -18,7 +18,7 @@
 
     <table id="listing" width="100%">
       <tr class="tr-head">
-        <td>Exam</td>
+        <td><%= t("exam.title") %></td>
         <td><%= t('marks') %></td>
         <td><%= t('maxMarks') %></td>
         <td><%= t('grade') %></td>
@@ -27,7 +27,7 @@
           <tr class="tr-<%= cycle('odd', 'even') %>">
             <td class="col-3">
               <%= exam_group.name %>
-            </td
+            </td>
             <% exam = Exam.find_by_subject_id(@subject.id, :conditions=>{:exam_group_id=>exam_group.id}) %>
             <% exam_score = ExamScore.find_by_student_id(@student.id, :conditions=>{:exam_id=>exam.id}) unless exam.nil? %>
             <% if exam_group.exam_type == 'Marks' %>

@@ -3,10 +3,10 @@ class CreateArchivedExamScores < ActiveRecord::Migration
     create_table :archived_exam_scores do |t|
       t.references :student
       t.references :exam
-      t.decimal    :marks, :precision => 7, :scale => 2
+      t.decimal :marks, :precision => 7, :scale => 2
       t.references :grading_level
-      t.string     :remarks
-      t.boolean    :is_failed
+      t.string :remarks
+      t.boolean :is_failed
       t.timestamps
     end
   end

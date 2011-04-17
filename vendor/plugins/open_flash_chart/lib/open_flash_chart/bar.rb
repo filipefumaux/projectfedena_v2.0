@@ -3,12 +3,12 @@ module OpenFlashChart
   class Bar < BarBase
     def initialize args={}
       super
-      @type = "bar"      
+      @type = "bar"
     end
   end
 
   class BarValue < Base
-    def initialize( top, bottom=nil, args={} )
+    def initialize(top, bottom=nil, args={})
       @top = top
       @bottom = bottom
       super args

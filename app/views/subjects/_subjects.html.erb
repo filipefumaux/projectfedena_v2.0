@@ -33,7 +33,7 @@
                 <% end %>
               </div>
               <% unless subject.elective_group_id.nil? %>
-                  <div class="category-assign"><%= link_to "Assign Students", :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
+                  <div class="category-assign"><%= link_to t("student.assign"), :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
                   </div>
               <% end %>
             </div>
@@ -50,7 +50,7 @@
 
 <% unless @elective_groups.nil? %>
     <% @elective_groups.each do |e| %>
-        <% @esubjects = @batch.elective_batch_subject(e.id) #Subject.find_all_by_elective_group_id(e.id)  %>
+        <% @esubjects = @batch.elective_batch_subject(e.id) #Subject.find_all_by_elective_group_id(e.id)    %>
         <div class="add_sub">
           <%= link_to_remote t('addSubjectToElectiveGroup'), :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>e} %>
         </div>
@@ -76,7 +76,7 @@
                         <s><%= t('delete') %></s>
                     <% end %>
                     <% unless subject.elective_group_id.nil? %></div>
-                        <div class="category-assign"><%= link_to "Assign Students", :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
+                        <div class="category-assign"><%= link_to t("student.assign"), :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
                         </div>
                     <% end %>
                     </div>

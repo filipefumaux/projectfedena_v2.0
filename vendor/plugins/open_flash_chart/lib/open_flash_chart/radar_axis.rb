@@ -3,7 +3,7 @@ module OpenFlashChart
   class RadarAxis < Base
     def initialize(max, args={})
       super args
-      @max = max      
+      @max = max
     end
   end
 

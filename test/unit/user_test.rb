@@ -133,12 +133,12 @@ class UserTest < ActiveSupport::TestCase
   context 'with admin user present' do
     setup do
       @admin_user = Factory.create(:admin_user, :username => 'admin')
-      @new_user   = Factory.build(:admin_user, :username => 'john')
+      @new_user = Factory.build(:admin_user, :username => 'john')
     end
 
     should 'setup a valid saved user' do
       assert @admin_user.valid?
-      assert ! @admin_user.new_record?
+      assert !@admin_user.new_record?
     end
 
     should 'setup a valid unsaved user' do
@@ -168,7 +168,7 @@ class UserTest < ActiveSupport::TestCase
 
   private
   def assert_invalid(object, msg = 'object is valid where it should be invalid')
-    assert ! object.valid?, msg
+    assert !object.valid?, msg
   end
-  
+
 end

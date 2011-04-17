@@ -87,20 +87,23 @@ module WillPaginate
         name = name.to_sym
         scopes[name] = lambda do |parent_scope, *args|
           Scope.new(parent_scope, case options
-            when Hash
-              options
-            when Proc
-              options.call(*args)
-          end) { |*a| yield(*a) if block_given? }
+                                    when Hash
+                                      options
+                                    when Proc
+                                      options.call(*args)
+                                  end) { |*a| yield(*a) if block_given? }
         end
-        (class << self; self end).instance_eval do
+        (
+        class << self;
+          self
+        end).instance_eval do
           define_method name do |*args|
             scopes[name].call(self, *args)
           end
         end
       end
     end
-    
+
     class Scope
       attr_reader :proxy_scope, :proxy_options
 

@@ -3,7 +3,7 @@
 
   <h1><%= t("finance.additionalFees") %></h1>
 
-  <h3>Create <%= t("finance.additionalFees") %> </h3>
+  <h3><%= t("create") %> <%= t("finance.additionalFees") %> </h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -30,7 +30,7 @@
           <div class="input-container"><%= form.select :batch_id, @batches.map { |c| [c.full_name, c.id] }, :prompt => t('selectCourse') %></div>
         </div>
         <div class="label-field-pair">
-          <div class="label-container"><label><%= t('employee.startDate') %>*:</label></div>
+          <div class="label-container"><label><%= t('startDate') %>*:</label></div>
           <div class="input-container"><%= calendar_date_select_tag 'additional_fees[start_date]', Date.today %></div>
         </div>
         <div class="label-field-pair">
@@ -38,7 +38,7 @@
           <div class="input-container"><%= calendar_date_select_tag 'additional_fees[end_date]', Date.today %></div>
         </div>
         <div class="label-field-pair">
-          <div class="label-container"><label>Due date*:</label></div>
+          <div class="label-container"><label><%= t('dueDate') %>*:</label></div>
           <div class="input-container"><%= calendar_date_select_tag 'additional_fees[due_date]', Date.today %></div>
         </div>
 

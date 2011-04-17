@@ -3,7 +3,7 @@ module OpenFlashChart
   class AreaLine < AreaBase
     def initialize args={}
       super
-      @type = "area_line"      
+      @type = "area_line"
     end
   end
 

@@ -12,7 +12,7 @@
 <% if @current_user.admin? and @current_user.id != @user.id %>
     <div id="inner-tab-menu">
       <ul>
-        <li><%= link_to "Change Password", :controller => "user", :action => "user_change_password", :id =>@user.username %></li>
+        <li><%= link_to t("changePassword"), :controller => "user", :action => "user_change_password", :id =>@user.username %></li>
       </ul>
     </div>
 <% end %>

@@ -37,9 +37,9 @@ class ExamTest < ActiveSupport::TestCase
       @course = Factory.create(:course)
       @batch = @course.batches.first
       @subject = Factory.create(:subject, :batch_id => @batch.id)
-      @exam = Factory.create(:exam, 
-        :exam_group_id => @exam_group.id,
-        :subject_id => @subject.id)
+      @exam = Factory.create(:exam,
+                             :exam_group_id => @exam_group.id,
+                             :subject_id => @subject.id)
     end
 
     should 'update exam group date if this date is earlier' do

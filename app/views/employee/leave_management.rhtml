@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Leave Management</h1>
+  <h1><%= t('dashboard.LeaveManagement') %></h1>
 
   <h3></h3>
 
@@ -13,10 +13,10 @@
 <div id="nav">
   <ul>
     <li>
-      <a href="#" class="drops" id="link_one">My Leaves ▼</a>
+      <a href="#" class="drops" id="link_one"><%= t('employee.myLeaves') %> ▼</a>
       <ul id="box_one" class="scriptaculously" style="display:none;">
-        <li><%= link_to "Apply", :controller=>"employee", :action=>"leave_management" %></li>
-        <li><%= link_to_remote "My leaves",
+        <li><%= link_to t('apply'), :controller=>"employee", :action=>"leave_management" %></li>
+        <li><%= link_to_remote t('employee.myLeaves'),
                                :update => "application-list",
                                :url => {:controller=>"employee_attendance", :action => "individual_leave_applications", :id=>@employee.id} %></li>
       </ul>
@@ -28,7 +28,7 @@
               <a href="#" class="drops" id="link_two">My Emp ▼</a>
               <ul id="box_two" class="scriptaculously" style="display:none;">
                 <!-- no new leave applications of any employee -->
-                <li><%= link_to_remote "All Leaves",
+                <li><%= link_to_remote t('allLeaves'),
                                        :update => "application-list",
                                        :url => {:controller=>"employee_attendance", :action => "all_leave_applications", :id=>@employee.id} %></li>
               </ul>
@@ -42,7 +42,7 @@
                 <li><%= link_to_remote "New (#{@total_leave_count})",
                                        :update => "application-list",
                                        :url => {:controller=>"employee_attendance", :action => "new_leave_applications", :id=>@employee.id} %></li>
-                <li><%= link_to_remote "All Leaves",
+                <li><%= link_to_remote t('allLeaves'),
                                        :update => "application-list",
                                        :url => {:controller=>"employee_attendance", :action => "all_leave_applications", :id=>@employee.id} %></li>
               </ul>
@@ -115,7 +115,7 @@
         </div>
 
         <div class="label-field-pair">
-          <label for="start_date"><%= t('employee.startDate') %></label>
+          <label for="start_date"><%= t('startDate') %></label>
 
           <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[start_date]' %></div>
         </div>

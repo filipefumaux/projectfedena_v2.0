@@ -7,7 +7,7 @@ class RspecGenerator < Rails::Generator::Base
 
   def initialize(runtime_args, runtime_options = {})
     if test ?f, 'spec/spec_helper.rb'
-      
+
       puts <<-HELPFUL_INSTRUCTIONS
 
 It looks like you are upgrading rspec-rails in this application. Please let
@@ -21,7 +21,7 @@ this script overwrite everything it wants to with the following exceptions,
 If you have customized spec/spec_helper.rb, please set aside a copy of that
 file so that it can be updated and you can manually restore your changes.
 
-HELPFUL_INSTRUCTIONS
+      HELPFUL_INSTRUCTIONS
     end
     Dir.mkdir('lib/tasks') unless File.directory?('lib/tasks')
 
@@ -34,7 +34,7 @@ HELPFUL_INSTRUCTIONS
         require File.expand_path('../../../lib/spec/rails/version.rb', __FILE__)
         rspec_config = <<-EOF
   config.gem 'rspec-rails', :version => '>= #{Spec::Rails::VERSION::STRING}', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
-  EOF
+        EOF
         File.open(test_env, "wb") do |f|
           f.puts contents
           f.puts
@@ -48,22 +48,22 @@ HELPFUL_INSTRUCTIONS
 
   def manifest
     record do |m|
-      script_options     = { :chmod => 0755, :shebang => options[:shebang] == DEFAULT_SHEBANG ? nil : options[:shebang] }
+      script_options = {:chmod => 0755, :shebang => options[:shebang] == DEFAULT_SHEBANG ? nil : options[:shebang]}
 
       m.directory 'lib/tasks'
-      m.file      'rspec.rake',                    'lib/tasks/rspec.rake'
+      m.file 'rspec.rake', 'lib/tasks/rspec.rake'
 
-      m.file      'script/autospec',               'script/autospec',    script_options
-      m.file      'script/spec',                   'script/spec',        script_options
+      m.file 'script/autospec', 'script/autospec', script_options
+      m.file 'script/spec', 'script/spec', script_options
 
       m.directory 'spec'
-      m.file      'rcov.opts',                     'spec/rcov.opts'
-      m.file      'spec.opts',                     'spec/spec.opts'
-      m.template  'spec_helper.rb',                'spec/spec_helper.rb'
+      m.file 'rcov.opts', 'spec/rcov.opts'
+      m.file 'spec.opts', 'spec/spec.opts'
+      m.template 'spec_helper.rb', 'spec/spec_helper.rb'
     end
   end
 
-protected
+  protected
 
   def banner
     "Usage: #{$0} rspec"

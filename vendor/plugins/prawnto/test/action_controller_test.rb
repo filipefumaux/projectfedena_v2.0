@@ -27,7 +27,7 @@ class ActionControllerTest < Test::Unit::TestCase
     assert_equal({:inline=>false, :prawn=>{:page_orientation=>:landscape, :page_size=>'A4'}}, controller.send(:compute_prawnto_options))
   end
 
-protected
+  protected
   def test_process(controller, action = "test")
     request = ActionController::TestRequest.new
     request.action = action

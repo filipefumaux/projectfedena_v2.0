@@ -2,7 +2,7 @@ module Spec
   module Rails
     module Matchers
 
-      class IncludeText  #:nodoc:
+      class IncludeText #:nodoc:
 
         def initialize(expected)
           @expected = expected
@@ -26,8 +26,8 @@ module Spec
         end
 
         private
-          attr_reader :expected
-          attr_reader :actual
+        attr_reader :expected
+        attr_reader :actual
 
       end
 

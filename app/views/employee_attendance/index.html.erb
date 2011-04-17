@@ -20,17 +20,17 @@
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("add")+" "+t('leaveTypes'), :controller=>"employee_attendance", :action=>"add_leave_types" %></div>
-      <div class="link-descr"><%= t('addAndEdit') + " " + "employee leave types"%>.</div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + t('employee.leaveTypes') %>.</div>
     </div>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("attendance.register"), :controller=>"employee_attendance", :action=>"register" %></div>
-      <div class="link-descr">Register attendance.</div>
+      <div class="link-descr"><%= t('registerAttendance') %>.</div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Attendance report", :controller=>"employee_attendance", :action=>"report" %></div>
-      <div class="link-descr">Attendance reports.</div>
+      <div class="link-heading"><%= link_to t('attendanceReport'), :controller=>"employee_attendance", :action=>"report" %></div>
+      <div class="link-descr"><%= t('attendanceReport') %>.</div>
     </div>
 
   </div>

@@ -50,7 +50,7 @@
 
         <div id="new_profile_info_top">
           <div class="profile_top_banner"><%= image_tag "master_student/profile/topbanner.png" %></div>
-          <div class="profile_info_label"> Name</div>
+          <div class="profile_info_label"> <%= t('name') %></div>
           <div class="profile_info_text">
             <%= p.first_name %> <%= p.last_name %>
           </div>
@@ -101,7 +101,7 @@
                 <div class="parent-edit-button">
                   <%= link_to "► "+t("delete"),
                               {:controller => 'student', :action => 'del_guardian', :id => p.id},
-                              {:confirm => 'Are you completely sure?'} %>
+                              {:confirm => t('sureQuestion')} %>
                 </div>
             <% end %>
         <% end %>

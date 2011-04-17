@@ -1,4 +1,3 @@
-
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
 
 module Rails
@@ -97,9 +96,9 @@ module Rails
       end
 
       private
-        def read_environment_rb
-          File.read("#{RAILS_ROOT}/config/environment.rb")
-        end
+      def read_environment_rb
+        File.read("#{RAILS_ROOT}/config/environment.rb")
+      end
     end
   end
 end

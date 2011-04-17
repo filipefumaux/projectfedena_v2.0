@@ -5,11 +5,11 @@
           <li>
             <div class="leave-type-name"><%= c.name %>-<%= c.code %></div>
             <div class="leave-type-edit"><%= link_to t("edit"), {:action => "edit_leave_types", :id=>c.id} %></div>
-            <div class="leave-type-edit"><%= "(Inactive)" unless c.status == true %></div>
+            <div class="leave-type-edit"><%= "("+t("inactive")+")" unless c.status == true %></div>
           </li>
       <% end %>
 
   <% else %>
-      <p class="flash-msg">Employee leave types records not found</p>
+      <p class="flash-msg"><%= t('employee.leaveTypeNotFound') %></p>
   <% end %>
 </ul>

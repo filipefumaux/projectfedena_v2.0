@@ -3,7 +3,7 @@ require 'rack/utils'
 module Spec
   module Rails
     module Matchers
-      USAGE = ArgumentError.new( 'usage: { :method => "path" }.should route_to( :controller => "controller", :action => "action", [ args ] )' )
+      USAGE = ArgumentError.new('usage: { :method => "path" }.should route_to( :controller => "controller", :action => "action", [ args ] )')
 
       class PathDecomposer
         def self.decompose_path(path)
@@ -20,7 +20,7 @@ module Spec
 
       class RouteTo #:nodoc:
         def initialize(expected, example)
-          @route, @example = expected,example
+          @route, @example = expected, example
         end
 
         def matches?(path)
@@ -28,12 +28,12 @@ module Spec
             @actual = path
             method, path, querystring = PathDecomposer.decompose_path(path)
             params = querystring.blank? ? {} : Rack::Utils.parse_query(querystring).symbolize_keys!
-            @example.assert_routing({ :method => method, :path => path }, @route, {}, params)
+            @example.assert_routing({:method => method, :path => path}, @route, {}, params)
             true
           rescue ActionController::RoutingError, ::Test::Unit::AssertionFailedError, ActionController::MethodNotAllowed => e
             raise e.class, "#{e}\nIf you're expecting this failure, we suggest { :#{method} => \"#{path}\" }.should_not be_routable"
           rescue Exception => e
-            raise e.class, "#{e}\n#{e.backtrace.join( "\n" )}"
+            raise e.class, "#{e}\n#{e.backtrace.join("\n")}"
           end
         end
 
@@ -43,7 +43,7 @@ module Spec
 
         def failure_message_for_should
           "Expected #{@expected.inspect} to route to #{@actual.inspect}, but it didn't.\n"+
-          "In this case, we expected you to get an exception.  So this message probably means something weird happened."
+              "In this case, we expected you to get an exception.  So this message probably means something weird happened."
         end
 
         def failure_message_for_should_not
@@ -55,8 +55,8 @@ module Spec
         end
 
         private
-          attr_reader :expected
-          attr_reader :actual
+        attr_reader :expected
+        attr_reader :actual
 
       end
 
@@ -95,7 +95,7 @@ module Spec
           begin
             @actual = path
             method, path = PathDecomposer.decompose_path(path)
-            @example.assert_recognizes({}, { :method => method, :path => path }, {} )
+            @example.assert_recognizes({}, {:method => method, :path => path}, {})
             true
           rescue ActionController::RoutingError, ActionController::MethodNotAllowed
             false
@@ -105,14 +105,15 @@ module Spec
             true
           end
         end
+
         def failure_message_for_should
           "Expected '#{@actual.keys.first.to_s.upcase} #{@actual.values.first}' to be routable, but it wasn't.\n"+
-          "To really test routability, we recommend #{@actual.inspect}.\n"+
-          "  should route_to( :action => 'action', :controller => 'controller' )\n\n"+
+              "To really test routability, we recommend #{@actual.inspect}.\n"+
+              "  should route_to( :action => 'action', :controller => 'controller' )\n\n"+
 
-          "That way, you'll verify where your route goes to.  Plus, we'll verify\n"+
-          "the generation of the expected path from the action/controller, as in\n"+
-          "the url_for() helper."
+              "That way, you'll verify where your route goes to.  Plus, we'll verify\n"+
+              "the generation of the expected path from the action/controller, as in\n"+
+              "the url_for() helper."
         end
 
         def failure_message_for_should_not

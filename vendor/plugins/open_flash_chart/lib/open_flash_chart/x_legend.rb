@@ -3,7 +3,7 @@ module OpenFlashChart
   class XLegend < Base
     def initialize(text, args={})
       super args
-      @text = text      
+      @text = text
     end
   end
 

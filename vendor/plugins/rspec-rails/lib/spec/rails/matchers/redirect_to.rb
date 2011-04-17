@@ -2,7 +2,7 @@ module Spec
   module Rails
     module Matchers
 
-      class RedirectTo  #:nodoc:
+      class RedirectTo #:nodoc:
 
         include ActionController::StatusCodes
 
@@ -12,9 +12,9 @@ module Spec
         end
 
         def matches?(response_or_controller)
-          response  = response_or_controller.respond_to?(:response) ?
-                      response_or_controller.response :
-                      response_or_controller
+          response = response_or_controller.respond_to?(:response) ?
+              response_or_controller.response :
+              response_or_controller
 
           @redirected = response.redirect?
           @actual = response.redirect_url
@@ -54,7 +54,7 @@ module Spec
 
         def path_hash(url)
           path = url.sub(%r{^\w+://#{@request.host}(?::\d+)?}, "").split("?", 2)[0]
-          ActionController::Routing::Routes.recognize_path path, { :method => :get }
+          ActionController::Routing::Routes.recognize_path path, {:method => :get}
         end
 
         def query_hash(url)
@@ -66,8 +66,8 @@ module Spec
           @expected_status = interpret_status(options[:status])
           self
         end
-        
-       def expected_url
+
+        def expected_url
           case @expected
             when Hash
               return ActionController::UrlRewriter.new(@request, {}).rewrite(@expected)
@@ -93,7 +93,7 @@ module Spec
         end
 
         def failure_message_for_should_not
-            return %Q{expected not to be redirected to #{@expected.inspect}, but was} if @redirected
+          return %Q{expected not to be redirected to #{@expected.inspect}, but was} if @redirected
         end
 
         def description

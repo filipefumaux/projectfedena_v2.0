@@ -17,7 +17,7 @@ class BatchTest < ActiveSupport::TestCase
     should 'not have start date after end date' do
       @batch.start_date = Date.today
       @batch.end_date = Date.today - 1
-      assert ! @batch.valid?
+      assert !@batch.valid?
     end
 
   end

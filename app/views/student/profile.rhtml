@@ -13,15 +13,15 @@
 <div id="inner-tab-menu">
   <ul>
     <% if permitted_to? :reports, :student %>
-        <li><%= link_to 'Reports', :controller => 'student',
+        <li><%= link_to t('reports'), :controller => 'student',
                         :action => 'reports', :id => @student %></li>
     <% end %>
     <% if permitted_to? :guardians, :student %>
-        <li><%= link_to "Guardians", :controller => "student",
+        <li><%= link_to t('guardians'), :controller => "student",
                         :action => "guardians", :id => @student.id %></li>
     <% end %>
     <% if permitted_to? :email, :student %>
-        <li><%= link_to "Send email", :controller => "student",
+        <li><%= link_to t('sendEmail'), :controller => "student",
                         :action => "email", :id => @student.id %></li>
     <% end %>
     <% if permitted_to? :remove, :student or permitted_to? :admission1, :student %>
@@ -139,7 +139,8 @@
                   )</span>
             <% else %>
                 <% if permitted_to? :add_guardian, :student %>
-                    <span><%= t('student.noGuardianAdded') %> (<%= link_to t("student.addGuardian"), :controller => 'student', :action => 'add_guardian', :id => @student.id %>
+                    <span><%= t('student.noGuardianAdded') %>
+                      (<%= link_to t("student.addGuardian"), :controller => 'student', :action => 'add_guardian', :id => @student.id %>
                       )</span>
                 <% else %>
                     <span> <%= t('student.noGuardianAdded') %></span>
@@ -163,10 +164,10 @@
             <% unless this_user.student? %>
                 <% detail = StudentAdditionalDetails.find_by_student_id(@student.id) %>
                 <% unless detail.nil? %>
-                    <span> (<%= link_to t("edit") +" "+t("additionalDetails"), :controller => 'student', :action => 'edit_admission4', :id => @student.id %>
+                    <span> (<%= link_to t('edit') +" "+t("additionalDetails"), :controller => 'student', :action => 'edit_admission4', :id => @student.id %>
                       )</span>
                 <% else %>
-                    <span> (<%= link_to t("add") +" "+t("additionalDetails"), :controller => 'student', :action => 'admission4', :id => @student.id %>
+                    <span> (<%= link_to t('add') +" "+t("additionalDetails"), :controller => 'student', :action => 'admission4', :id => @student.id %>
                       )</span>
                 <% end %>
             <% end %>

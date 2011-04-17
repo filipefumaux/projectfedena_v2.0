@@ -11,7 +11,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "Print Receipt", {:action => 'donation_receipt_pdf', :id => @donation.id}, :format => 'pdf', :target => '_blank' %></li>
+    <li><%= link_to t('finance.printReceipt'), {:action => 'donation_receipt_pdf', :id => @donation.id}, :format => 'pdf', :target => '_blank' %></li>
   </ul>
 </div>
 <div id="page-yield">

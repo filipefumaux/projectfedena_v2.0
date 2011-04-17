@@ -21,7 +21,7 @@ require 'spec/resources/models/person'
 require 'spec/resources/models/thing'
 
 unless ActionController::Routing.controller_paths.include?('spec/resources/controllers')
-  ActionController::Routing.instance_eval {@possible_controllers = nil}
+  ActionController::Routing.instance_eval { @possible_controllers = nil }
   ActionController::Routing.controller_paths << 'spec/resources/controllers'
 end
 
@@ -38,9 +38,9 @@ end
 def fail()
   raise_error(Spec::Expectations::ExpectationNotMetError)
 end
-  
+
 def fail_with(message)
-  raise_error(Spec::Expectations::ExpectationNotMetError,message)
+  raise_error(Spec::Expectations::ExpectationNotMetError, message)
 end
 
 class Proc
@@ -50,7 +50,7 @@ class Proc
 end
 
 ActionController::Routing::Routes.draw do |map|
-  map.connect 'action_with_method_restriction', :controller => 'redirect_spec', :action => 'action_with_method_restriction', :conditions => { :method => :get }
+  map.connect 'action_with_method_restriction', :controller => 'redirect_spec', :action => 'action_with_method_restriction', :conditions => {:method => :get}
   map.connect 'action_to_redirect_to_action_with_method_restriction', :controller => 'redirect_spec', :action => 'action_to_redirect_to_action_with_method_restriction'
 
   map.resources :rspec_on_rails_specs

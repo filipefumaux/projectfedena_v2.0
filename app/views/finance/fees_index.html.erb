@@ -16,28 +16,28 @@
   <% end %>
   <div class="box">
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fees Create", :action => "fees_create" %></div>
-      <div class="link-descr">Creates Master Fees and Additional Fees</div>
+      <div class="link-heading"><%= link_to t('feesCreate'), :action => "fees_create" %></div>
+      <div class="link-descr"><%= t('descFeesCreate') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fee collection", :action => "fee_collection" %></div>
-      <div class="link-descr"><%= "Creates new feel collecting dates" %></div>
+      <div class="link-heading"><%= link_to t('feeColection'), :action => "fee_collection" %></div>
+      <div class="link-descr"><%= t("descCreateFeeCollection") %></div>
     </div>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("fees"), :controller => "finance", :action => "fees_submission_index" %> </div>
-      <div class="link-descr">Fee Submission</div>
+      <div class="link-descr"><%= t('feeSubmission') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fees Structure", :action => "fees_student_structure_search" %> </div>
-      <div class="link-descr">Displays fees Structure for student</div>
+      <div class="link-heading"><%= link_to t('feeStructure'), :action => "fees_student_structure_search" %> </div>
+      <div class="link-descr"><%= t('displayFeesStructure') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Fees Defaulters", :action => "fees_defaulters" %></div>
-      <div class="link-descr">Students with fees dues</div>
+      <div class="link-heading"><%= link_to t('feesDefaulters'), :action => "fees_defaulters" %></div>
+      <div class="link-descr"><%= t('studentsWithFeeDues') %></div>
     </div>
   </div>
 </div>

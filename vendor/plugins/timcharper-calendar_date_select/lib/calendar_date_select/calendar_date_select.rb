@@ -2,55 +2,55 @@ module CalendarDateSelect
   VERSION = '1.16.1'
 
   FORMATS = {
-    :natural => {
-      :date => "%B %d, %Y",
-      :time => " %I:%M %p"
-    },
-    :hyphen_ampm => {
-      :date => "%Y-%m-%d",
-      :time => " %I:%M %p",
-      :javascript_include => "format_hyphen_ampm"
-    },
-    :iso_date => {
-      :date => "%Y-%m-%d",
-      :time => " %H:%M",
-      :javascript_include => "format_iso_date"
-    },
-    :finnish => {
-      :date => "%d.%m.%Y",
-      :time => " %H:%M",
-      :javascript_include => "format_finnish"
-    },
-    :danish => {
-      :date => "%d/%m/%Y",
-      :time => " %H:%M",
-      :javascript_include => "format_danish"
-    },
-    :american => {
-      :date => "%m/%d/%Y",
-      :time => " %I:%M %p",
-      :javascript_include => "format_american"
-    },
-    :euro_24hr => {
-      :date => "%d %B %Y",
-      :time => " %H:%M",
-      :javascript_include => "format_euro_24hr"
-    },
-    :euro_24hr_ymd => {
-      :date => "%Y.%m.%d",
-      :time => " %H:%M",
-      :javascript_include => "format_euro_24hr_ymd"
-    },
-    :italian => {
-      :date => "%d/%m/%Y",
-      :time => " %H:%M",
-      :javascript_include => "format_italian"
-    },
-    :db => {
-      :date => "%Y-%m-%d",
-      :time => " %H:%M",
-      :javascript_include => "format_db"
-    }
+      :natural => {
+          :date => "%B %d, %Y",
+          :time => " %I:%M %p"
+      },
+      :hyphen_ampm => {
+          :date => "%Y-%m-%d",
+          :time => " %I:%M %p",
+          :javascript_include => "format_hyphen_ampm"
+      },
+      :iso_date => {
+          :date => "%Y-%m-%d",
+          :time => " %H:%M",
+          :javascript_include => "format_iso_date"
+      },
+      :finnish => {
+          :date => "%d.%m.%Y",
+          :time => " %H:%M",
+          :javascript_include => "format_finnish"
+      },
+      :danish => {
+          :date => "%d/%m/%Y",
+          :time => " %H:%M",
+          :javascript_include => "format_danish"
+      },
+      :american => {
+          :date => "%m/%d/%Y",
+          :time => " %I:%M %p",
+          :javascript_include => "format_american"
+      },
+      :euro_24hr => {
+          :date => "%d %B %Y",
+          :time => " %H:%M",
+          :javascript_include => "format_euro_24hr"
+      },
+      :euro_24hr_ymd => {
+          :date => "%Y.%m.%d",
+          :time => " %H:%M",
+          :javascript_include => "format_euro_24hr_ymd"
+      },
+      :italian => {
+          :date => "%d/%m/%Y",
+          :time => " %H:%M",
+          :javascript_include => "format_italian"
+      },
+      :db => {
+          :date => "%Y-%m-%d",
+          :time => " %H:%M",
+          :javascript_include => "format_db"
+      }
   }
 
   # Returns the default_options hash.  These options are by default provided to every calendar_date_select control, unless otherwise overrided.
@@ -63,7 +63,7 @@ module CalendarDateSelect
   #     :image => "custom_calendar_picker.png"
   #   )
   def self.default_options
-    @calendar_date_select_default_options ||= { :image => "calendar_date_select/calendar.gif" }
+    @calendar_date_select_default_options ||= {:image => "calendar_date_select/calendar.gif"}
   end
 
   # Set the picker image.  Provide the image url the same way you would provide it to image_tag
@@ -113,10 +113,12 @@ module CalendarDateSelect
   # Detects the presence of time in a date, string
   def self.has_time?(value)
     case value
-    when DateTime, Time then true
-    when Date           then false
-    else
-      /[0-9]:[0-9]{2}/.match(value.to_s) ? true : false
+      when DateTime, Time then
+        true
+      when Date then
+        false
+      else
+        /[0-9]:[0-9]{2}/.match(value.to_s) ? true : false
     end
   end
 end

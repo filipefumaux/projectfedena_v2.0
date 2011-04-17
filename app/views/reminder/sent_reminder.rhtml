@@ -3,7 +3,7 @@
 
   <h1><%= t("messages") %></h1>
 
-  <h3>Sent</h3>
+  <h3><%= t('sent') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -13,11 +13,11 @@
 <div id="inner-tab-menu">
   <ul>
     <% unless @new_reminder_count.size == 0 %>
-        <li><%= link_to "<b>Inbox (#{@new_reminder_count.size})</b>", :controller=>"reminder", :action=>"index" %></li>
+        <li><%= link_to "<b>"+t('inbox')+" (#{@new_reminder_count.size})</b>", :controller=>"reminder", :action=>"index" %></li>
     <% else %>
-        <li><%= link_to "Inbox", :controller=>"reminder", :action=>"index" %></li>
+        <li><%= link_to t('inbox'), :controller=>"reminder", :action=>"index" %></li>
     <% end %>
-    <li><%= link_to "Sent", :controller=>"reminder", :action=>"sent_reminder" %></li>
+    <li><%= link_to t("sent"), :controller=>"reminder", :action=>"sent_reminder" %></li>
     <li><%= link_to t("create"), :controller=>"reminder", :action=>"create_reminder" %></li>
   </ul>
 </div>
@@ -34,13 +34,13 @@
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
         <td>
-          To
+          <%= t("to") %>
         </td>
         <td>
-          Subject
+          <%= t('subject.title') %>
         </td>
         <td>
-          Date
+          <%= t('date') %>
         </td>
       </tr>
       <tr class="tr-blank"></tr>
@@ -57,7 +57,7 @@
                   </tr>
               <% else %>
                   <tr class="tr-read-<%= cycle('odd', 'even') %>">
-                    <td class="col-3">User Unavailable</td>
+                    <td class="col-3"><%= t('userUnavaliable') %></td>
                     <td class="col-2"><%= link_to "#{r.subject}", :controller=>"reminder", :action=>"view_sent_reminder", :id2=>r.id %></td>
                     <td class="col-1"><%= link_to "#{r.created_at.strftime("%d-%m-%Y")}", :controller=>"reminder", :action=>"view_sent_reminder", :id2=>r.id %></td>
                   </tr>

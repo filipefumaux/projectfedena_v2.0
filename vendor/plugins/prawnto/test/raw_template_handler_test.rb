@@ -22,7 +22,7 @@ class RawTemplateHandlerTest < Test::Unit::TestCase
 
 
   def test_massage_template_source_header_comments
-    expected_commented_lines = [0,2,3]
+    expected_commented_lines = [0, 2, 3]
     source = <<EOS
       require 'prawn'
       require 'hello'
@@ -39,7 +39,7 @@ EOS
 
   def test_massage_template_source_generate
     @handler.pull_prawnto_options
-    changed_lines = [0,2,3]
+    changed_lines = [0, 2, 3]
     source = <<EOS
       Prawn::Document.generate('hello.pdf') do |pdf|
       end
@@ -53,7 +53,7 @@ EOS
 
   def test_massage_template_source_new
     @handler.pull_prawnto_options
-    unchanged_lines = [0,1,2]
+    unchanged_lines = [0, 1, 2]
     source = <<EOS
       x = Prawn::Document.new do |pdf|
         text.blah blah blah
@@ -87,9 +87,11 @@ EOS
     @handler.send :setup_run_environment
     output_lines = @handler.send(:massage_template_source, Template.new(source)).split("\n")
     output_lines.pop
-    output_lines.each {|l| assert_match(/^\s*$/, l)}
+    output_lines.each { |l| assert_match(/^\s*$/, l) }
     assert @handler.run_environment.methods(false).include?('bar')
-    assert class <<@handler.run_environment; self; end.constants.include?('Foo')
+    assert class <<@handler.run_environment;
+             self;
+           end.constants.include?('Foo')
   end
 
   CURRENT_PATH = Pathname('.').realpath
@@ -97,13 +99,13 @@ EOS
   REFERENCE_PATH = Pathname('reference_pdfs').realpath
   INPUT_PATH = PRAWN_PATH + 'examples'
   IGNORE_LIST = %w(table_bench ruport_formatter page_geometry)
-  INPUTS = INPUT_PATH.children.select {|p| p.extname==".rb" && !IGNORE_LIST.include?(p.basename('.rb').to_s)}
+  INPUTS = INPUT_PATH.children.select { |p| p.extname==".rb" && !IGNORE_LIST.include?(p.basename('.rb').to_s) }
 
   def self.ensure_reference_pdfs_are_recent
     head_lines = (INPUT_PATH + "../.git/HEAD").read.split("\n")
-    head_hash = Hash[*head_lines.map {|line| line.split(':').map{|v| v.strip}}.flatten]
+    head_hash = Hash[*head_lines.map { |line| line.split(':').map { |v| v.strip } }.flatten]
     head_version = (INPUT_PATH + "../.git" + head_hash['ref'])
-    
+
     REFERENCE_PATH.mkpath
     current_version = REFERENCE_PATH + 'HEAD'
     if !current_version.exist? || current_version.read!=head_version.read
@@ -117,7 +119,7 @@ EOS
           system("ruby #{path.basename}")
           post_brood = INPUT_PATH.children
           new_kids = post_brood - pre_brood
-          new_kids.each {|p| mv p, REFERENCE_PATH + p.basename}
+          new_kids.each { |p| mv p, REFERENCE_PATH + p.basename }
           cd CURRENT_PATH
         end
         cp head_version, current_version
@@ -156,8 +158,6 @@ EOS
     end
   end
 
-  
-  
 
 end
 

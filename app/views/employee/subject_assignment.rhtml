@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Employee's Subject</h1>
+  <h1><%= t('employee.subject') %></h1>
 
-  <h3>Associate</h3>
+  <h3><%= t('employee.associate') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -14,7 +14,7 @@
 
   <div id="form-content">
     <div class="label-field-pair">
-      <label for="course_name"><%= t("course")%></label>
+      <label for="course_name"><%= t("course") %></label>
 
       <div class="text-input-bg">
         <%= select :subject_assignment, :batch_id, @batches.map { |b| [b.full_name, b.id] },

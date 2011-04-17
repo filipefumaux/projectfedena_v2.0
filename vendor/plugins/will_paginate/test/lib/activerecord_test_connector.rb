@@ -19,32 +19,32 @@ class ActiveRecordTestConnector
       add_load_path FIXTURES_PATH
       self.connected = true
     end
-  rescue Exception => e  # errors from ActiveRecord setup
+  rescue Exception => e # errors from ActiveRecord setup
     $stderr.puts "\nSkipping ActiveRecord tests: #{e}\n\n"
     self.able_to_connect = false
   end
 
   private
-  
+
   def self.add_load_path(path)
     dep = defined?(ActiveSupport::Dependencies) ? ActiveSupport::Dependencies : ::Dependencies
     dep.load_paths.unshift path
   end
 
   def self.setup_connection
-    db = ENV['DB'].blank?? 'sqlite3' : ENV['DB']
-    
+    db = ENV['DB'].blank? ? 'sqlite3' : ENV['DB']
+
     configurations = YAML.load_file(File.join(File.dirname(__FILE__), '..', 'database.yml'))
     raise "no configuration for '#{db}'" unless configurations.key? db
     configuration = configurations[db]
-    
+
     ActiveRecord::Base.logger = Logger.new(STDOUT) if $0 == 'irb'
     puts "using #{configuration['adapter']} adapter" unless ENV['DB'].blank?
-    
+
     gem 'sqlite3-ruby' if 'sqlite3' == db
-    
+
     ActiveRecord::Base.establish_connection(configuration)
-    ActiveRecord::Base.configurations = { db => configuration }
+    ActiveRecord::Base.configurations = {db => configuration}
     prepare ActiveRecord::Base.connection
 
     unless Object.const_defined?(:QUOTED_TYPE)
@@ -65,7 +65,7 @@ class ActiveRecordTestConnector
 
       def execute_with_counting(sql, name = nil, &block)
         $query_count ||= 0
-        $query_count  += 1 unless IGNORED_SQL.any? { |r| sql =~ r }
+        $query_count += 1 unless IGNORED_SQL.any? { |r| sql =~ r }
         execute_without_counting(sql, name, &block)
       end
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
- 
+
 # This script will take a look at the output from your rails application and print
 # info about the number of selects, updates and inserts, as well as the slowest partials
 # to render and the slowest selects.
@@ -24,7 +24,7 @@ select_types = {}
 exists_types = {}
 search_types = {}
 select_times = []
- 
+
 def calculate_time(time_string, unit_string)
   time = time_string.to_f
   if unit_string == 'ms'
@@ -33,7 +33,7 @@ def calculate_time(time_string, unit_string)
     time * 1000.0
   end
 end
- 
+
 while line = STDIN.gets
   if line =~ /\s*Processing\s+([\w|:]*)Controller#.*/
     num_selects = 0

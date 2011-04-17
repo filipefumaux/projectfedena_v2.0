@@ -1,7 +1,7 @@
 <div class="heading">All leave records</div>
 
 <div class="container-head">
-  <div id="startdate-label"><%= t('employee.startDate') %></div>
+  <div id="startdate-label"><%= t('startDate') %></div>
   <div id="enddate-label"><%= t('endDate') %></div>
   <div id="status-label"><%= t('status') %></div>
   <div class="extender"></div>
@@ -12,7 +12,7 @@
         <div class="container<%= cycle('odd', 'even') %>">
           <div class="pending-start-date"><%= link_to "#{l.start_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_app", :id=>l.id, :id2=>@employee %></div>
           <div class="pending-end-date"><%= link_to "#{l.end_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_app", :id=>l.id, :id2=>@employee %></div>
-          <div class="pending-status"><%= link_to "pending", :controller=>"employee_attendance", :action=>"leave_app", :id=>l.id, :id2=>@employee %></div>
+          <div class="pending-status"><%= link_to t('pending'), :controller=>"employee_attendance", :action=>"leave_app", :id=>l.id, :id2=>@employee %></div>
           <div class="extender"></div>
         </div>
     <% end %>
@@ -27,14 +27,14 @@
             <div class="container<%= cycle('odd', 'even') %>">
               <div class="start-date"><%= link_to "#{l.start_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
               <div class="end-date"><%= link_to "#{l.end_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
-              <div class="status"><%= link_to "approved", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
+              <div class="status"><%= link_to t("approved"), :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
               <div class="extender"></div>
             </div>
         <% else %>
             <div class="container<%= cycle('odd', 'even') %>">
               <div class="start-date"><%= link_to "#{l.start_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
               <div class="end-date"><%= link_to "#{l.end_date.strftime("%d-%m-%Y")}", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
-              <div class="status"><%= link_to "denied", :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
+              <div class="status"><%= link_to t("denied"), :controller=>"employee_attendance", :action=>"leave_application", :id=>l.id %></div>
               <div class="extender"></div>
             </div>
         <% end %>

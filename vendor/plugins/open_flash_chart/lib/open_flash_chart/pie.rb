@@ -4,13 +4,13 @@ module OpenFlashChart
     def initialize(value, label, args={})
       super args
       @value = value
-      @label = label      
+      @label = label
     end
 
     def set_label(label, label_color, font_size)
-      self.label        = label
+      self.label = label
       self.label_colour = label_color
-      self.font_size    = font_size
+      self.font_size = font_size
     end
 
     def on_click(event)
@@ -21,7 +21,7 @@ module OpenFlashChart
   class Pie < Base
     def initialize args={}
       @type = "pie"
-      @colours = ["#d01f3c","#356aa0","#C79810"]
+      @colours = ["#d01f3c", "#356aa0", "#C79810"]
       @border = 2
       super
     end

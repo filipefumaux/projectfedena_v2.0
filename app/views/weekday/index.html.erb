@@ -22,7 +22,7 @@
 
       <div class="text-input-bg"><%= select :batch, :id,
                                             @batches.map { |b| [b.full_name, b.id] },
-                                            {:prompt => 'Common'},
+                                            {:prompt => t('common')},
                                             {:onchange => "#{remote_function(
                                                     :url => {:action => 'week'},
                                                     :with => "'batch_id='+value",

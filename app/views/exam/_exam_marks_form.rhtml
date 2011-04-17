@@ -10,7 +10,7 @@
       <%= f.label :exam_type %>
       <%= f.hidden_field :exam_type, :value=>@type %>
       <div class="text-input-bg"><%= f.text_field :exam_type, :value=>@type, :disabled=>true %>
-      </div><%= link_to "Change Type", new_batch_exam_group_path(@batch, :ename=>@name), :class=>"type_link" %>
+      </div><%= link_to t("changeType"), new_batch_exam_group_path(@batch, :ename=>@name), :class=>"type_link" %>
     </div>
     <div class="label-field-pair">
       <%= f.label :maximum_marks %>
@@ -76,7 +76,7 @@
       <% end %>
     </table>
 
-    <%= submit_tag "", :value => t('saveChanges'), :class => "submit_button2" %>
+    <%= submit_tag "", :value => "► "+t('saveChanges'), :class => "submit_button2" %>
 
 
 <% end %>

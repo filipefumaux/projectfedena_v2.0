@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/attendence/attendence.png"/>
 
-  <h1>Attendance Report</h1>
+  <h1><%= t('attendanceReport') %></h1>
 
   <h3><%= t("student.report") %></h3>
 
@@ -12,18 +12,18 @@
 
 <div id="page-yield">
   <div class="label-field-pair">
-    <label>Detailed report for <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %></label>
+    <label><%= t('detailedReportFor') %> <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %></label>
   </div>
   <table id="listing" align="center" width="80%">
     <tr class="tr-head">
       <td>
-        Date
+        <%= t('date') %>
       </td>
       <td>
-        Status
+        <%= t('status') %>
       </td>
       <td>
-        Reason
+        <%= t('reason') %>
       </td>
     </tr>
     <tr class="blank"></tr>

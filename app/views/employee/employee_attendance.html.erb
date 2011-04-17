@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/attendence/attendence.png" alt=""/>
 
-  <h1>Manage Attendance</h1>
+  <h1><%= t("manage") %> <%= t('attendance.title') %></h1>
 
-  <h3>Leave and Attendance</h3>
+  <h3><%= t('leaveAndAttendance') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -18,17 +18,17 @@
   <div id="box">
     <div class="link-box">
       <div class="link-heading"><%= link_to t("add")+" "+ t('leaveTypes'), :controller=>"employee_attendance", :action=>"add_leave_types" %></div>
-      <div class="link-descr"><%= t('addAndEdit') + " " + "employee attendance types"%>.</div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + t('employee.attendanceTypes') %>.</div>
     </div>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("attendance.register"), :controller=>"employee_attendances", :action=>"index" %></div>
-      <div class="link-descr">Register attendance.</div>
+      <div class="link-descr"><%= t('registerAttendance') %>.</div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Attendance report", :controller=>"employee_attendance", :action=>"report" %></div>
-      <div class="link-descr">Attendance reports.</div>
+      <div class="link-heading"><%= link_to t('attendanceReport'), :controller=>"employee_attendance", :action=>"report" %></div>
+      <div class="link-descr"><%= t('attendanceReport') %>s.</div>
     </div>
   </div>
 

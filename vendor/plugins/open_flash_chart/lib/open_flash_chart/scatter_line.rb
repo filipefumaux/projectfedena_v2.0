@@ -5,7 +5,7 @@ module OpenFlashChart
       super args
       @type = 'scatter_line'
       @colour = colour
-      @dot_size = dot_size      
+      @dot_size = dot_size
     end
   end
 

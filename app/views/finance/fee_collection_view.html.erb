@@ -15,7 +15,7 @@
     <div class="label-field-pair"><label><%= t("selectCourse") %> : </label>
 
       <div class="text-input-bg"> <%= select("id", :id, @batchs.map { |c| [c.full_name, c.id] },
-                                             {:prompt => "Select class"},
+                                             {:prompt => t('selectClass')},
                                              {:onChange => "#{remote_function(:url => {:action => "fee_collection_dates_batch"}, :with => "'id='+value")}"}) %> </div>
     </div>
   </div>

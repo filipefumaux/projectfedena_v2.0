@@ -33,22 +33,22 @@
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to t("add")+" "+"payroll category", :controller=>"payroll", :action=>"add_category" %></div>
-      <div class="link-descr"><%= t('addAndEdit') + " " + "employee payroll category" %>.</div>
+      <div class="link-heading"><%= link_to t("add")+" "+t('payrollCategory'), :controller=>"payroll", :action=>"add_category" %></div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + t('employee.payrollCategory') %>.</div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to t("add")+" "+"bank details", :controller=>"employee", :action=>"add_bank_details" %></div>
-      <div class="link-descr"><%= t('addAndEdit') + " " + "bank details" %>.</div>
+      <div class="link-heading"><%= link_to t("add")+" "+t("bankDetails"), :controller=>"employee", :action=>"add_bank_details" %></div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + t("bankDetails") %>.</div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to t("add")+" "+"additional details", :controller=>"employee", :action=>"add_additional_details" %></div>
-      <div class="link-descr"><%= t('addAndEdit') + " " + "additional details for employee admission forms" %>.</div>
+      <div class="link-heading"><%= link_to t("add")+" "+t("additionalDetails"), :controller=>"employee", :action=>"add_additional_details" %></div>
+      <div class="link-descr"><%= t('addAndEdit') + " " + t('descAdditionalDetailsEmployee') %>.</div>
     </div>
 
     <!-- <div class="link-box">
-      <div class="link-heading">< link_to "Payslip Settings", :controller=>"employee", :action=>"" %></div>
+      <div class="link-heading">< link_to  "Payslip Settings", :controller=>"employee", :action=>"" %></div>
       <div class="link-descr">Creates payslip approve power for finance manager.</div>
     </div>
   </div> -->

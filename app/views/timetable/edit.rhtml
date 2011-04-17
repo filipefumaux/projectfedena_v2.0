@@ -12,55 +12,56 @@
 
 <script type="text/javascript">
 
-  var selected_divs = new Array();
+    var selected_divs = new Array();
 
-  function update_selected_divs(id) {
-    var exists_in_list = 0;
-    for (x in selected_divs)
-      if(id == selected_divs[x]){
-        exists_in_list = 1;
-        selected_divs.splice(x, 1)
-        $('drop_' + id).className = "drop";
-      }
-    if(!exists_in_list){
-      $('drop_' + id).className = "selected_div";
-      selected_divs.push(id);
+    function update_selected_divs(id) {
+        var exists_in_list = 0;
+        for (x in selected_divs)
+            if (id == selected_divs[x]) {
+                exists_in_list = 1;
+                selected_divs.splice(x, 1)
+                $('drop_' + id).className = "drop";
+            }
+        if (!exists_in_list) {
+            $('drop_' + id).className = "selected_div";
+            selected_divs.push(id);
+        }
     }
-  }
 
-  function clear_selected_divs() {
-    selected_divs = [];
-  }
-
-  function make_ajax_calls(tte_id, sub_id){
-    if (selected_divs.length == 0) {
-<%= remote_function(:update => "timetable",
-  :url => {:action => "update_multiple_timetable_entries"},
-  :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
-    }
-    else if (selected_divs.length == 1) {
-<%= remote_function(:update => "timetable",
-  :url => {:action => "update_multiple_timetable_entries"},
-  :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
-      if (selected_divs[0] == tte_id) selected_divs.pop();
-    }
-    else {
-      var exists_in_list = 0;
-      for (x in selected_divs)
-        if(tte_id == selected_divs[x])exists_in_list = 1;
-      if (exists_in_list) {
-        tte_list = selected_divs.join(',');
-<%= remote_function(:update => "timetable",
-  :url => {:action => "update_multiple_timetable_entries"},
-  :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_list") %>
+    function clear_selected_divs() {
         selected_divs = [];
-      }
-      else
-<%= remote_function(:update => "timetable",
-  :url => {:action => "update_multiple_timetable_entries"},
-  :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
-      }
     }
+
+    function make_ajax_calls(tte_id, sub_id) {
+        if (selected_divs.length == 0) {
+        <%= remote_function(:update => "timetable",
+:url => {:action => "update_multiple_timetable_entries"},
+:with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
+        }
+        else if (selected_divs.length == 1) {
+        <%= remote_function(:update => "timetable",
+:url => {:action => "update_multiple_timetable_entries"},
+:with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
+            if (selected_divs[0] == tte_id) selected_divs.pop();
+        }
+        else {
+            var exists_in_list = 0;
+            for (x in selected_divs)
+                if (tte_id == selected_divs[x])exists_in_list = 1;
+            if (exists_in_list) {
+                tte_list = selected_divs.join(',');
+            <%= remote_function(:update => "timetable",
+                                   :url => {:action => "update_multiple_timetable_entries"},
+                                  :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_list") %>
+                selected_divs = [];
+            }
+            else{
+                    <%= remote_function(:update => "timetable",
+                                           :url => {:action => "update_multiple_timetable_entries"},
+                                          :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
+                    }
+            }
+        }
 </script>
 
 <div id="page-yield">
@@ -76,7 +77,7 @@
   <div id="timetable">
     <%= render :partial => "edit_tt_multiple", :with=> @timetable %>
   </div>
-  <h4>Add Subjects</h4>
+  <h4><%= t('add') %> <%= t('subjects') %></h4>
 
   <div id="subjects-list">
     <% @subjects.each do |s| %>

@@ -4,7 +4,7 @@ describe "A template with an implicit helper", :type => :view do
   before(:each) do
     render "view_spec/implicit_helper"
   end
-  
+
   accesses_configured_helper_methods
 
   it "should include the helper" do
@@ -83,13 +83,13 @@ describe "A template that includes a partial", :type => :view do
     render!
     response.should have_tag('div', "This is text from a method in the ApplicationHelper")
   end
-  
+
   it "should pass should_receive(:render) with the right partial" do
     template.should_receive(:render).with(:partial => 'partial')
     render!
     template.verify_rendered
   end
-  
+
   it "should fail should_receive(:render) with the wrong partial" do
     template.should_receive(:render).with(:partial => 'non_existent')
     render!
@@ -97,16 +97,16 @@ describe "A template that includes a partial", :type => :view do
       template.verify_rendered
     rescue Spec::Mocks::MockExpectationError => e
     ensure
-      e.backtrace.find{|line| line =~ /#{__FILE__}\:#{__LINE__ - 6}/}.should_not be_nil
+      e.backtrace.find { |line| line =~ /#{__FILE__}\:#{__LINE__ - 6}/ }.should_not be_nil
     end
   end
-  
+
   it "should pass should_receive(:render) when a partial is expected twice and happens twice" do
     template.should_receive(:render).with(:partial => 'partial_used_twice').twice
     render!
     template.verify_rendered
   end
-  
+
   it "should pass should_receive(:render) when a partial is expected once and happens twice" do
     template.should_receive(:render).with(:partial => 'partial_used_twice')
     render!
@@ -114,14 +114,14 @@ describe "A template that includes a partial", :type => :view do
       template.verify_rendered
     rescue Spec::Mocks::MockExpectationError => e
     ensure
-      e.backtrace.find{|line| line =~ /#{__FILE__}\:#{__LINE__ - 6}/}.should_not be_nil
+      e.backtrace.find { |line| line =~ /#{__FILE__}\:#{__LINE__ - 6}/ }.should_not be_nil
     end
   end
-  
+
   it "should fail should_receive(:render) with the right partial but wrong options" do
     template.should_receive(:render).with(:partial => 'partial', :locals => {:thing => Object.new})
     render!
-    lambda {template.verify_rendered}.should raise_error(Spec::Mocks::MockExpectationError)
+    lambda { template.verify_rendered }.should raise_error(Spec::Mocks::MockExpectationError)
   end
 end
 
@@ -129,23 +129,23 @@ describe "A partial that includes a partial", :type => :view do
   it "should support should_receive(:render) with nested partial" do
     obj = Object.new
     template.should_receive(:render).with(:partial => 'partial', :object => obj)
-    render :partial => "view_spec/partial_with_sub_partial", :locals => { :partial => obj }
+    render :partial => "view_spec/partial_with_sub_partial", :locals => {:partial => obj}
   end
 end
 
-describe "A view that includes a partial using :collection and :spacer_template", :type => :view  do
+describe "A view that includes a partial using :collection and :spacer_template", :type => :view do
   it "should render the partial w/ spacer_tamplate" do
     render "view_spec/template_with_partial_using_collection"
-    response.should have_tag('div',/method_in_partial/)
-    response.should have_tag('div',/ApplicationHelper/)
-    response.should have_tag('div',/ViewSpecHelper/)
+    response.should have_tag('div', /method_in_partial/)
+    response.should have_tag('div', /ApplicationHelper/)
+    response.should have_tag('div', /ViewSpecHelper/)
     response.should have_tag('hr#spacer')
   end
 
   it "should render the partial" do
     template.should_receive(:render).with(:partial => 'partial',
-               :collection => ['Alice', 'Bob'],
-               :spacer_template => 'spacer')
+                                          :collection => ['Alice', 'Bob'],
+                                          :spacer_template => 'spacer')
     render "view_spec/template_with_partial_using_collection"
   end
 
@@ -159,7 +159,7 @@ describe "A view that includes a partial using an array as partial_path", :type 
   end
 
   it "should render the array passed through to render_partial without modification" do
-    render "view_spec/template_with_partial_with_array" 
+    render "view_spec/template_with_partial_with_array"
     response.body.should match(/^Renderable Object$/)
   end
 end
@@ -203,7 +203,7 @@ describe "A view", :type => :view do
   it "has a controller param" do
     response.should have_tag("div#controller", "view_spec")
   end
-  
+
   it "has an action param" do
     response.should have_tag("div#action", "accessor")
   end
@@ -212,7 +212,7 @@ end
 describe "A view with a form_tag", :type => :view do
   it "should render the right action" do
     render "view_spec/entry_form"
-    response.should have_tag("form[action=?]","/view_spec/entry_form")
+    response.should have_tag("form[action=?]", "/view_spec/entry_form")
   end
 end
 
@@ -220,11 +220,11 @@ describe "An instantiated ViewExampleGroupController", :type => :view do
   before do
     render "view_spec/foo/show"
   end
-  
+
   it "should return the name of the real controller that it replaces" do
     @controller.controller_name.should == 'foo'
   end
-  
+
   it "should return the path of the real controller that it replaces" do
     @controller.controller_path.should == 'view_spec/foo'
   end
@@ -234,20 +234,20 @@ describe "a block helper", :type => :view do
   it "should not yield when not told to in the example" do
     template.should_receive(:if_allowed)
     render "view_spec/block_helper"
-    response.should_not have_tag("div","block helper was rendered")
+    response.should_not have_tag("div", "block helper was rendered")
   end
 
   it "should yield when told to in the example" do
     template.should_receive(:if_allowed).and_yield
     render "view_spec/block_helper"
-    response.should have_tag("div","block helper was rendered")
+    response.should have_tag("div", "block helper was rendered")
   end
 end
 
 describe "render :inline => ...", :type => :view do
   it "should render ERB right in the spec" do
     render :inline => %|<%= text_field_tag('field_name', 'Value') %>|
-    response.should have_tag("input[type=?][name=?][value=?]","text","field_name","Value")
+    response.should have_tag("input[type=?][name=?][value=?]", "text", "field_name", "Value")
   end
 end
 
@@ -310,7 +310,7 @@ module Spec
         it "should clear ActionView::Base.base_view_path on teardown" do
           group = describe("base_view_path_cleared flag", :type => :view) {}
           example = group.new(Spec::Example::ExampleProxy.new) {}
-          
+
           ActionView::Base.should_receive(:base_view_path=).with(nil)
           example.run_after_each
         end

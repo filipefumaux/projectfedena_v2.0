@@ -2,7 +2,10 @@ require 'test/unit'
 require 'rubygems'
 
 # gem install redgreen for colored test output
-begin require 'redgreen'; rescue LoadError; end
+begin
+  require 'redgreen';
+rescue LoadError;
+end
 
 require 'boot' unless defined?(ActiveRecord)
 
@@ -13,7 +16,7 @@ class Test::Unit::TestCase
       [method.to_s, method.to_sym].each { |m| assert_respond_to object, m }
     end
   end
-  
+
   def collect_deprecations
     old_behavior = WillPaginate::Deprecation.behavior
     deprecations = []

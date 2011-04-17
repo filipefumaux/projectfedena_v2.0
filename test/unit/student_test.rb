@@ -116,7 +116,7 @@ class StudentTest < ActiveSupport::TestCase
     should 'save the record successfully' do
       assert @student.save
     end
-    
+
   end
 
   context 'destroying a student record' do
@@ -128,8 +128,8 @@ class StudentTest < ActiveSupport::TestCase
 
     should 'destroy guardians records also' do
       @student.destroy
-      assert ! Guardian.exists?(@guardian.id)
+      assert !Guardian.exists?(@guardian.id)
     end
   end
-  
+
 end

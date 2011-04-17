@@ -7,15 +7,15 @@ describe <%= class_name %>Controller do
 <% else -%>
   #Delete these examples and add some real ones
 <% end -%>
-  it "should use <%= class_name %>Controller" do
+  it "should use <%= class_name %>Controller " do
     controller.should be_an_instance_of(<%= class_name %>Controller)
   end
 
 <% unless actions.empty? -%>
 <% for action in actions -%>
 
-  describe "GET '<%= action %>'" do
-    it "should be successful" do
+  describe " GET '<%= action %>' " do
+    it " should be successful " do
       get '<%= action %>'
       response.should be_success
     end

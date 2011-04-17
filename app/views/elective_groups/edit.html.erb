@@ -20,8 +20,8 @@
   <div class="bread_crumb">
     <%= link_to t('courses'), courses_path %> &raquo;
     <%= link_to @course.full_name, @course %> &raquo;
-    <%= link_to t('batch') + " #{@batch.name}" %> &raquo;
-    Edit
+    <%= link_to t('batch.title') + " #{@batch.name}" %> &raquo;
+    <%= t("edit") %>
   </div>
   <div class="box">
 
@@ -48,7 +48,7 @@
 
     <% end %>
 
-    <div class="extender"
+    <div class="extender">
   </div>
 </div>
 </div>

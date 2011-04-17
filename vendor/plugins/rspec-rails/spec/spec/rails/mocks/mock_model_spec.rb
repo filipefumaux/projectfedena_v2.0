@@ -60,11 +60,11 @@ describe "mock_model" do
     end
 
     it "should pass associated_model == mock" do
-        @mock_model.should == @real.mockable_model
+      @mock_model.should == @real.mockable_model
     end
 
     it "should pass mock == associated_model" do
-        @real.mockable_model.should == @mock_model
+      @real.mockable_model.should == @mock_model
     end
   end
 

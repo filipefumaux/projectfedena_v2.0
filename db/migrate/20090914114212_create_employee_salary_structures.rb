@@ -3,7 +3,7 @@ class CreateEmployeeSalaryStructures < ActiveRecord::Migration
     create_table :employee_salary_structures do |t|
       t.references :employee
       t.references :payroll_category
-      t.string     :amount
+      t.string :amount
     end
   end
 

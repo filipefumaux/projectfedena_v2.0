@@ -1,6 +1,6 @@
 <ul id="department-list">
   <% unless @departments.empty? %>
-      <li class="heading"> Department name</li>
+      <li class="heading"> <%= t('departmentName') %></li>
       <% @departments.each do |d| %>
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="department-name"><%= d.name %>(<%= d.code %>)</div>
@@ -9,6 +9,6 @@
           </li>
       <% end %>
   <% else %>
-      <p class="flash-msg"> No employee departments found</p>
+      <p class="flash-msg"> <%= t('employee.notFoundOnDepartment') %></p>
   <% end %>
 </ul>

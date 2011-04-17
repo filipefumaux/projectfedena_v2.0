@@ -13,7 +13,7 @@ if defined?(ActiveRecord::Base)
 
             failure_message_for_should do |actual|
               if actual.respond_to?(:errors) && ActiveRecord::Errors === actual.errors
-                "Expected #{actual.inspect} to be valid, but it was not\nErrors: " + actual.errors.full_messages.join(", ")            
+                "Expected #{actual.inspect} to be valid, but it was not\nErrors: " + actual.errors.full_messages.join(", ")
               else
                 "Expected #{actual.inspect} to be valid"
               end

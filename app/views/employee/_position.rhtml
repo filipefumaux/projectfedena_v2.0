@@ -1,6 +1,6 @@
 <ul id="position-list">
   <% unless @positions.empty? %>
-      <li class="heading"> Position name</li>
+      <li class="heading"> <%= t('employee.positionName') %></li>
       <% @positions.each do |p| %>
           <li class="list<%= cycle('odd', 'even') %>">
             <div class="position-name"><%= p.name %>
@@ -11,6 +11,6 @@
           </li>
       <% end %>
   <% else %>
-      <p class="flash-msg"> No Empoloyee positions record found</p>
+      <p class="flash-msg"> <%= t('employee.notFoundToPosition') %></p>
   <% end %>
 </ul>

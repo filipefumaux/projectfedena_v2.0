@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>HR Management</h1>
+  <h1><%= t('hr.management') %></h1>
 
-  <h3>Human Resource</h3>
+  <h3><%= t('hr.title') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -26,21 +26,21 @@
     <% if permitted_to? :employee_management, :employee %>
         <div class="link-box">
           <div class="link-heading"><%= link_to t('employee.management'), :controller=>"employee", :action=>"employee_management" %></div>
-          <div class="link-descr">Manage all employees</div>
+          <div class="link-descr"><%= t("manage") %> <%= t('employee.all') %></div>
         </div>
     <% end %>
 
     <% if permitted_to? :employee_attendance, :employee %>
         <div class="link-box">
           <div class="link-heading"><%= link_to t('employee.attendance'), :controller=>"employee", :action=>"employee_attendance" %></div>
-          <div class="link-descr">Manage all employee attendance and leaves</div>
+          <div class="link-descr"><%= t("manage") %> <%= t('employee.allAttendanceAndLeaves') %></div>
         </div>
     <% end %>
 
     <% if permitted_to? :payslip, :employee %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Create Payslip", :controller=>"employee", :action=>"payslip" %></div>
-          <div class="link-descr">Create employee monthly payslips</div>
+          <div class="link-heading"><%= link_to t("create")+" "+ t("payslip"), :controller=>"employee", :action=>"payslip" %></div>
+          <div class="link-descr"><%= t('employee.createMonthlyPayslip') %></div>
         </div>
     <% end %>
 
@@ -60,8 +60,8 @@
     <% unless finance.include?("Finance") %>
         <% if permitted_to? :payslip_approve, :employee %>
             <div class="link-box">
-              <div class="link-heading"><%= link_to "One click approve payslip", :controller=>"employee", :action=>"payslip_approve" %></div>
-              <div class="link-descr">Approve monthly payslip</div>
+              <div class="link-heading"><%= link_to t('employee.oneClickApprove'), :controller=>"employee", :action=>"payslip_approve" %></div>
+              <div class="link-descr"><%= t('employee.approveMonthlyPayslip') %></div>
             </div>
         <% end %>
     <% end %>

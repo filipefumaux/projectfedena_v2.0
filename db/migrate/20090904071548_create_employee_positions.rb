@@ -1,7 +1,7 @@
 class CreateEmployeePositions < ActiveRecord::Migration
   def self.up
     create_table :employee_positions do |t|
-      t.string  :name
+      t.string :name
       t.references :employee_category
       t.boolean :status
     end
@@ -13,6 +13,6 @@ class CreateEmployeePositions < ActiveRecord::Migration
   end
 
   def self.create_default
-    EmployeePosition.create :name => 'Fedena Admin',:employee_category_id => 1,:status => true
+    EmployeePosition.create :name => 'Fedena Admin', :employee_category_id => 1, :status => true
   end
 end

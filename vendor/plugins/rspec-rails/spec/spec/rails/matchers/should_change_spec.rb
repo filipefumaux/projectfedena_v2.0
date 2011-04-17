@@ -6,10 +6,10 @@ describe "should change" do
       person = Person.create!(:name => 'David')
       koala = person.animals.create!(:name => 'Koala')
       zebra = person.animals.create!(:name => 'Zebra')
-      
+
       lambda {
         person.animals.delete(koala)
-      }.should change{person.animals}.to([zebra])
+      }.should change { person.animals }.to([zebra])
     end
   end
 end

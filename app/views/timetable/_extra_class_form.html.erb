@@ -2,7 +2,7 @@
   <ul id="category-list">
     <% @period_entry.each do |p| %>
 
-        <li class="list<%= cycle('odd', 'even') %>"
+        <li class="list<%= cycle('odd', 'even') %>">
         <div id="tr-extra-class-<%= p.id %>">
           <% timing = ClassTiming.find(p.class_timing_id) %>
           <% subject = Subject.find(p.subject_id) unless p.subject.nil? %>

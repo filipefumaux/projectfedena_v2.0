@@ -23,11 +23,11 @@
 <div class="profile_info_label_top2"><%= t('employee.jobTitle') %></div>
 <div class="profile_info_text_top2"> <%= @employee.job_title %> </div>
 
-<div class="profile_info_label_top">Manager</div>
+<div class="profile_info_label_top"><%= t('manager') %></div>
 <div class="profile_info_text_top"> <%= @reporting_manager %>
 
   <% if permitted_to? :change_reporting_manager, :employee %>
-      <%= link_to "change", :controller=> "employee", :action=> "change_reporting_manager", :id=>@employee.id %>
+      <%= link_to t('change'), :controller=> "employee", :action=> "change_reporting_manager", :id=>@employee.id %>
   <% end %>
 
 </div>
@@ -43,7 +43,7 @@
 
 
 
-<div class="profile_info_label_top2">Qualification</div>
+<div class="profile_info_label_top2"><%= t('qualification') %></div>
 <div class="profile_info_text_top2"><%= @employee.qualification %> </div>
 
 

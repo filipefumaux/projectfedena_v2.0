@@ -33,11 +33,11 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_course"><%= t("course")%><%= image_tag("loader.gif",
-                                                        :align => "absmiddle",
-                                                        :border => 0,
-                                                        :id => "loader",
-                                                        :style =>"display: none;") %></label>
+        <label for="student_course"><%= t("course") %><%= image_tag("loader.gif",
+                                                                    :align => "absmiddle",
+                                                                    :border => 0,
+                                                                    :id => "loader",
+                                                                    :style =>"display: none;") %></label>
 
         <div class="text-input-bg">
           <%= select :advv_search, :course_id, Course.all.map { |c| [c.course_name+" "+c.section_name, c.id] },
@@ -51,10 +51,10 @@
         </div>
       </div>
       <div class="label-field-pair" id="course_batches">
-        <label for="student_batch">Batch</label>
+        <label for="student_batch"><%= t("batch.title") %></label>
 
         <div class="text-input-bg">
-          <%= select :search, :batch_id_equals, @batches.map { |c| [c.name, c.id] }, {:prompt=>'Select Batch'} %>
+          <%= select :search, :batch_id_equals, @batches.map { |c| [c.name, c.id] }, {:prompt=>t("batch.select")} %>
         </div>
       </div>
       <div class="label-field-pair">
@@ -68,7 +68,7 @@
         <label class="label_for_student" for="student_gender"><%= t("gender") %></label>
 
         <div class="student_gender_value">
-          <label class="label_for_gender" for="student_gender_true">All</label>
+          <label class="label_for_gender" for="student_gender_true"><%= t("all") %></label>
           <%= f.radio_button :gender_equals, "" %>
           <label class="label_for_gender" for="student_gender_false"><%= t('male') %></label>
           <%= f.radio_button :gender_equals, "m" %>
@@ -85,7 +85,7 @@
 
       <div class="label-field-pair">
         <label for="student_country">
-          Country
+          <%= t("country") %>
         </label>
 
         <div class="text-input-bg">
@@ -97,7 +97,7 @@
         <label for="student_grade"><%= t("admissionDate") %></label>
 
         <div class="text-input-bg">
-          <%= select :advv_search, :doa_option, ["equal to", "less than", "greater than"], {:prompt=>"Option"},
+          <%= select :advv_search, :doa_option, ["equal to", "less than", "greater than"], {:prompt=>t('option')},
                      {:onChange => "#{remote_function(:url => {:action => "list_doa_year"},
                                                       :with=>"'doa_option='+value",
                                                       :before => "Element.show('loader')",
@@ -116,10 +116,10 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_birth_date">Birth date</label>
+        <label for="student_birth_date"><%= t('birthDate') %></label>
 
         <div class="text-input-bg">
-          <%= select :advv_search, :dob_option, ["equal to", "less than", "greater than"], {:prompt=>"Option"},
+          <%= select :advv_search, :dob_option, ["equal to", "less than", "greater than"], {:prompt=>t('option')},
                      {:onChange => "#{remote_function(:url => {:action => "list_dob_year"},
                                                       :with=>"'dob_option='+value",
                                                       :before => "Element.show('loader')",
@@ -142,11 +142,11 @@
         <label class="label_for_student" for="student_gender"><%= t('status') %></label>
 
         <div class="student_gender_value">
-          <label class="label_for_gender" for="student_gender_true">Present</label>
+          <label class="label_for_gender" for="student_gender_true"><%= t("present") %></label>
           <%= f.radio_button :is_active_equals, "true", {:checked => 'checked'} %>
-          <label class="label_for_gender" for="student_gender_false">Former</label>
+          <label class="label_for_gender" for="student_gender_false"><%= t('former') %></label>
           <%= f.radio_button :is_active_equals, "false" %>
-          <label class="label_for_gender" for="student_gender_false">All</label>
+          <label class="label_for_gender" for="student_gender_false"><%= t("all") %></label>
           <%= f.radio_button :is_active_equals, "", {:checked => false} %>
         </div>
       </div>
@@ -220,9 +220,9 @@
         <% unless params[:advv_search][:course_id].empty? %>
             <% course = Course.find(params[:advv_search][:course_id]) %>
             <% batch = Batch.find(params[:search][:batch_id_equals]) %>
-            <span><%= t("course")%>:</span> <%= course.full_name %>
+            <span><%= t("course") %>:</span> <%= course.full_name %>
 
-            <span>Batch: </span> <%= batch.full_name %>
+            <span><%= t("batch.title") %>: </span> <%= batch.full_name %>
         <% end %>
         <% unless  params[:search][:student_category_id_equals].empty? %>
             <% category = StudentCategory.find(params[:search][:student_category_id_equals]) %>
@@ -230,11 +230,11 @@
         <% end %>
         <% unless  params[:search][:gender_equals].empty? %>
             <% if  params[:search][:gender_equals] == 'm' %>
-                <span> <%= t("gender") %>: </span> male
+                <span> <%= t("gender") %>: </span> <%= t("male") %>
             <% elsif  params[:search][:gender_equals] == 'f' %>
-                <span> <%= t("gender") %>: </span> female
+                <span> <%= t("gender") %>: </span> <%= t("female") %>
             <% else %>
-                <span> <%= t("gender") %>: </span> All
+                <span> <%= t("gender") %>: </span> <%= t("all") %>
             <% end %>
         <% end %>
         <% unless  params[:search][:blood_group_like].empty? %>
@@ -255,11 +255,11 @@
             <%= params[:adv_search][:birth_date_year] %>
         <% end %>
         <% if params[:search][:is_active_equals]=="true" %>
-            <span> Present student </span>
+            <span> <%= t('student.present') %> </span>
         <% elsif params[:search][:is_active_equals]=="false" %>
-            <span> Former students </span>
+            <span> <%= t('student.former') %> </span>
         <% else %>
-            <span> All </span>
+            <span> <%= t("all") %> </span>
         <% end %>
 
       </div>
@@ -273,7 +273,7 @@
           <td>
             <%= order @search, :by => :first_name %>
           </td>
-          <td> Batch</td>
+          <td> <%= t("batch.title") %></td>
           <td> <%= t("student.admNo") %></td>
 
         </tr>
@@ -294,7 +294,7 @@
             <tr class="tr-<%= cycle('odd', 'even') %>">
 
               <td class="col-1"></td>
-              <td class="col-2">No students found</td>
+              <td class="col-2"><%= t('student.notFound') %></td>
             </tr>
         <% end %>
       </table>

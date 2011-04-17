@@ -3,7 +3,7 @@
 
   <h1><%= t('finance.title') %></h1>
 
-  <h3>Manage Finance</h3>
+  <h3><%= t("manage") %> <%= t('finance.title') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -23,22 +23,22 @@
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("category"), :action => "categories" %> </div>
-      <div class="link-descr">Manages Category</div>
+      <div class="link-descr"><%= t("manage") %> <%= t("category") %></div>
     </div>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("transactions"), :action => "transactions" %> </div>
-      <div class="link-descr">Creates expense and income</div>
+      <div class="link-descr"><%= t("creates") %> <%= t("expensesAndIncome") %></div>
     </div>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("donations"), :action => "donation" %></div>
-      <div class="link-descr">Creates new <%= t("donations") %></div>
+      <div class="link-descr"><%= t('descDonations') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Auto transactions", :action => "automatic_transactions" %></div>
-      <div class="link-descr">Add automatic transactions</div>
+      <div class="link-heading"><%= link_to t('autoTransactions'), :action => "automatic_transactions" %></div>
+      <div class="link-descr"><%= t('descAutoTransactions') %></div>
     </div>
     <% unless @hr.nil? %>
         <div class="link-box">
@@ -53,8 +53,8 @@
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to " Export", :controller => 'xml', :action => "index" %></div>
-      <div class="link-descr"> Creates xml import file</div>
+      <div class="link-heading"><%= link_to t('export'), :controller => 'xml', :action => "index" %></div>
+      <div class="link-descr"> <%= t('descExportXML') %></div>
     </div>
 
   </div>

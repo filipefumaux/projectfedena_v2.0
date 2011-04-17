@@ -11,7 +11,7 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Monthly payslip</h1>
+  <h1><%= t('employee.monthlyPayslip') %></h1>
 
   <h3><%= t('edit') %></h3>
 
@@ -38,7 +38,7 @@
       <div class="label-field-pair">
         <label for="salary_date"><%= t("employee.salaryDate") %></label>
 
-        <div class="text-input-bg"><%= text_field_tag :salary_date, @date %>**select the last day of the month</div>
+        <div class="text-input-bg"><%= text_field_tag :salary_date, @date %>**<%= t('selectLastDayOfMonth') %></div>
       </div>
       <%= submit_tag t("update") %>
   <% end %>

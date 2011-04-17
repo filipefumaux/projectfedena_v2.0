@@ -19,7 +19,7 @@
 <br/>
 <br/>
 <br/>
-<h4>Report for the period from <%= @start_date.strftime("%d-%m-%Y") %> to <%= @end_date.strftime("%d-%m-%Y") %></h4>
+<h4><%= t('reportForThePeriodFrom') %> <%= @start_date.strftime("%d-%m-%Y") %> <%= t('to') %> <%= @end_date.strftime("%d-%m-%Y") %></h4>
 <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
   <% unless @salary == 0 and @donations_total == 0 and @transactions_fees and @other_transactions.empty? %>
       <tr class="tr-head">
@@ -67,9 +67,9 @@
       <tr class="tr-odd">
         <td class="col-1"><%= index+=1 %></td>
         <% unless @transactions_fees == 0 %>
-            <td class="col-2"><%= link_to "Fees Account", :action => 'fees_report', :start => @start_date, :end => @end_date %> </td>
+            <td class="col-2"><%= link_to t("feesAccount"), :action => 'fees_report', :start => @start_date, :end => @end_date %> </td>
         <% else %>
-            <td class="col-2">Fees Account</td>
+            <td class="col-2"><%= t("feesAccount") %></td>
         <% end %>
         <td></td>
         <td class="col-3" align="right"><%= @transactions_fees %></td>
@@ -111,13 +111,13 @@
       </tr>
   <% else %>
       <tr class="tr-head">
-        <td>No records for the date !</td>
+        <td><%= t("noRecordsForDate") %> !</td>
       </tr>
   <% end %>
 </table>
 <%#= will_paginate@other_transactions,:params => {:start_date => @start_date , :end_date => @end_date}%>
 <br/>
-<h4>Report for the period from <%= @start_date2.strftime("%d-%m-%Y") %> to <%= @end_date2.strftime("%d-%m-%Y") %></h4>
+<h4><%= t('reportForThePeriodFrom') %> <%= @start_date2.strftime("%d-%m-%Y") %> <%= t('to') %> <%= @end_date2.strftime("%d-%m-%Y") %></h4>
 <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
   <% unless @salary2 == 0 and @donations_total2 == 0 and @transactions_fees2 and @other_transactions2.empty? %>
       <tr class="tr-head">
@@ -165,9 +165,9 @@
       <tr class="tr-odd">
         <td class="col-1"><%= index+=1 %></td>
         <% unless @transactions_fees2 == 0 %>
-            <td class="col-2"><%= link_to "Fees Account", :action => 'fees_report', :start => @start_date2, :end => @end_date2 %> </td>
+            <td class="col-2"><%= link_to t("feesAccount"), :action => 'fees_report', :start => @start_date2, :end => @end_date2 %> </td>
         <% else %>
-            <td class="col-2">Fees Account</td>
+            <td class="col-2"><%= t("feesAccount") %></td>
         <% end %>
         <td></td>
         <td class="col-3" align="right"><%= @transactions_fees2 %></td>
@@ -209,7 +209,7 @@
       </tr>
   <% else %>
       <tr class="tr-head">
-        <td>No records for the date !</td>
+        <td><%= t("noRecordsForDate") %> !</td>
       </tr>
   <% end %>
 </table>

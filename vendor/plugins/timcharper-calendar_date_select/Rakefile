@@ -24,10 +24,12 @@ task :set_version do
     src = File.read(abs_file)
     src = src.map do |line|
       case line
-      when /^ *VERSION/                        then "  VERSION = '#{VERSION}'\n"
-      when /^\/\/ CalendarDateSelect version / then "// CalendarDateSelect version #{VERSION} - a prototype based date picker\n"
-      else
-        line
+        when /^ *VERSION/ then
+          "  VERSION = '#{VERSION}'\n"
+        when /^\/\/ CalendarDateSelect version / then
+          "// CalendarDateSelect version #{VERSION} - a prototype based date picker\n"
+        else
+          line
       end
     end.join
     File.open(abs_file, "wb") { |f| f << src }

@@ -1,9 +1,9 @@
 <ul class="item-list">
   <!-- <li class="heading"><%= @employee.full_name %></li> -->
-  <li class="heading"><%= t("payslipGeneratedOn") %> <%= @salary_date %></li>
+  <li class="heading"><%= t("student.payslipGeneratedOn") %> <%= @salary_date %></li>
 </ul>
 <ul class="item-list">
-  <li class="heading1"><%= t("salary") %></li>
+  <li class="heading1"><%= t("salary.title") %></li>
   <% @monthly_payslips.each do |mp| %>
       <% category = PayrollCategory.find(mp.payroll_category_id) %>
       <% @emp = Employee.find(mp.employee_id) %>
@@ -85,7 +85,7 @@
 
 <% if @approve == false %>
     <div id="submit-button" class="approve">
-      <%= link_to "Approve", {:controller=>"finance", :action=>"employee_payslip_approve", :id =>@employee.id, :id2 => @salary_date} %>
+      <%= link_to t("employee.approve"), {:controller=>"finance", :action=>"employee_payslip_approve", :id =>@employee.id, :id2 => @salary_date} %>
     </div>
 <% else %>
     <div id="submit-button" class="approved">

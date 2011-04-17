@@ -1,5 +1,5 @@
 <div id="fee-defaulters">
-  <h5>Due date has been exceeded. Please collect fine amount : </h5>
+  <h5><%= t('finance.dateExceedFineCollect') %> : </h5>
   <% form_for :fine, :url => {:action => 'update_defaulters_fine_ajax'} do |form| %>
       <div class="label-field-pair">
         <div class="text-input-bg">
@@ -7,7 +7,7 @@
         <%= form.hidden_field :student, :value => @student.id %>
         <%= form.hidden_field :date, :value => @date.id %>
       </div>
-      <%= submit_tag "► Add Fine", :class=>'submit_button2' %>
+      <%= submit_tag "► "+t("add") + " "+t("finance.fine"), :class=>'submit_button2' %>
   <% end %>
 
 </div>

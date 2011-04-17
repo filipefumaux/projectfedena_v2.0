@@ -27,22 +27,22 @@
 
   <% if @current_user.admin? %>
 
-      <%= link_to "► Edit News",
+      <%= link_to "► " + t('editNews'),
                   {:controller => "news", :action => "edit", :id => @news.id}, :class => "edit_button" %>
 
       <div id="">
-        <%= link_to "► Delete News",
+        <%= link_to "► "+t('deleteNews'),
                     {:controller => "news", :action => "delete", :id => @news.id},
-                    :confirm => 'Are you sure you want to delete this news item?', :class => "delete_button" %>
+                    :confirm => t('confirmDeleteNews'), :class => "delete_button" %>
 
       </div>
       <div class="extender"></div>
   <% end %>
 
-  <h3 id="comments-heading">Comments</h3>
+  <h3 id="comments-heading"><%= t('comments') %></h3>
 
 
-  <span id="comments-count"><% if @comments.empty? %>No comments yet.<% end %></span>
+  <span id="comments-count"><% if @comments.empty? %><%= t('noCommentsYet') %>.<% end %></span>
 
 
   <ul id="comments-list">
@@ -51,12 +51,12 @@
     <% end %>
   </ul>
 
-  <h4 id="leave-a-comment">Leave a comment</h4>
+  <h4 id="leave-a-comment"><%= t('leaveAComment') %></h4>
 
   <% form_remote_for :comment, :id => 'comments-form', :url => {:action => 'add_comment'} do |f| %>
       <div class="comment-content"> <%= f.text_area :content %> </div>
       <%= f.hidden_field :news_id, :value => @news.id %>
-      <div id="submit-button"><%= submit_tag '', :value =>"► Submit" %></div>
+      <div id="submit-button"><%= submit_tag '', :value =>"► "+t('submit') %></div>
   <% end %>
 
 </div>

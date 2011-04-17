@@ -2,18 +2,19 @@ require 'helper'
 require 'will_paginate/array'
 
 class ArrayPaginationTest < Test::Unit::TestCase
-  
-  def setup ; end
-  
+
+  def setup;
+  end
+
   def test_simple
     collection = ('a'..'e').to_a
-    
-    [{ :page => 1,  :per_page => 3,  :expected => %w( a b c ) },
-     { :page => 2,  :per_page => 3,  :expected => %w( d e ) },
-     { :page => 1,  :per_page => 5,  :expected => %w( a b c d e ) },
-     { :page => 3,  :per_page => 5,  :expected => [] },
+
+    [{:page => 1, :per_page => 3, :expected => %w( a b c )},
+     {:page => 2, :per_page => 3, :expected => %w( d e )},
+     {:page => 1, :per_page => 5, :expected => %w( a b c d e )},
+     {:page => 3, :per_page => 5, :expected => []},
     ].
-    each do |conditions|
+        each do |conditions|
       expected = conditions.delete :expected
       assert_equal expected, collection.paginate(conditions)
     end
@@ -60,21 +61,21 @@ class ArrayPaginationTest < Test::Unit::TestCase
     collection = create(1, 1, 3)
     assert_nil collection.previous_page
     assert_equal 2, collection.next_page
-    
+
     collection = create(2, 1, 3)
     assert_equal 1, collection.previous_page
     assert_equal 3, collection.next_page
-    
+
     collection = create(3, 1, 3)
     assert_equal 2, collection.previous_page
     assert_nil collection.next_page
   end
 
   def test_out_of_bounds
-    entries = create(2, 3, 2){}
+    entries = create(2, 3, 2) {}
     assert entries.out_of_bounds?
-    
-    entries = create(1, 3, 2){}
+
+    entries = create(1, 3, 2) {}
     assert !entries.out_of_bounds?
   end
 
@@ -84,25 +85,25 @@ class ArrayPaginationTest < Test::Unit::TestCase
       pager.replace array
     end
     assert_equal 8, entries.total_entries
-    
+
     entries = create(2, 5, 10) do |pager|
       # collection is shorter than limit, but we have an explicit count
       pager.replace array
     end
     assert_equal 10, entries.total_entries
-    
+
     entries = create do |pager|
       # collection is the same as limit; we can't guess
       pager.replace array(5)
     end
     assert_equal nil, entries.total_entries
-    
+
     entries = create do |pager|
       # collection is empty; we can't guess
       pager.replace array(0)
     end
     assert_equal nil, entries.total_entries
-    
+
     entries = create(1) do |pager|
       # collection is empty and we're on page 1,
       # so the whole thing must be empty, too
@@ -129,15 +130,15 @@ class ArrayPaginationTest < Test::Unit::TestCase
   end
 
   private
-    def create(page = 2, limit = 5, total = nil, &block)
-      if block_given?
-        WillPaginate::Collection.create(page, limit, total, &block)
-      else
-        WillPaginate::Collection.new(page, limit, total)
-      end
+  def create(page = 2, limit = 5, total = nil, &block)
+    if block_given?
+      WillPaginate::Collection.create(page, limit, total, &block)
+    else
+      WillPaginate::Collection.new(page, limit, total)
     end
+  end
 
-    def array(size = 3)
-      Array.new(size)
-    end
+  def array(size = 3)
+    Array.new(size)
+  end
 end

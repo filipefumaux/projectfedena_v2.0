@@ -13,7 +13,7 @@ module Spec # :nodoc:
           @selector_assertion = selector_assertion
           @block = block
         end
-        
+
         def matches?(response_or_text, &block)
           @block = block if block
 
@@ -28,26 +28,31 @@ module Spec # :nodoc:
             false
           end
         end
-        
-        def failure_message_for_should; @error.message; end
-        def failure_message_for_should_not; "should not #{description}, but did"; end
+
+        def failure_message_for_should;
+          @error.message;
+        end
+
+        def failure_message_for_should_not;
+          "should not #{description}, but did";
+        end
 
         def description
           {
-            :assert_select => "have tag#{format_args(*@args)}",
-            :assert_select_email => "send email#{format_args(*@args)}",
+              :assert_select => "have tag#{format_args(*@args)}",
+              :assert_select_email => "send email#{format_args(*@args)}",
           }[@selector_assertion]
         end
 
-      private
+        private
 
         module TestResponseOrString
           def test_response?
             ActionController::TestResponse === self and
-                                               !self.headers['Content-Type'].blank? and
-                                               self.headers['Content-Type'].to_sym == :xml
+                !self.headers['Content-Type'].blank? and
+                self.headers['Content-Type'].to_sym == :xml
           end
-        
+
           def string?
             String === self
           end
@@ -59,7 +64,7 @@ module Spec # :nodoc:
             HTML::Document.new(response_or_text.body, @options[:strict], @options[:xml]).root
           elsif response_or_text.string?
             HTML::Document.new(response_or_text, @options[:strict], @options[:xml]).root
-           end
+          end
         end
 
         def format_args(*args)
@@ -71,19 +76,19 @@ module Spec # :nodoc:
             arg.respond_to?(:description) ? arg.description : arg.inspect
           end.join(", ")
         end
-        
+
         def args_and_options(args)
           opts = {:xml => false, :strict => false}
           if args.last.is_a?(::Hash)
             opts[:strict] = args.last.delete(:strict) unless args.last[:strict].nil?
-            opts[:xml]    = args.last.delete(:xml)    unless args.last[:xml].nil?
+            opts[:xml] = args.last.delete(:xml) unless args.last[:xml].nil?
             args.pop if args.last.empty?
           end
           return [args, opts]
         end
-        
+
       end
-      
+
       # :call-seq:
       #   response.should have_tag(*args, &block)
       #   string.should have_tag(*args, &block)
@@ -112,7 +117,7 @@ module Spec # :nodoc:
       def have_tag(*args, &block)
         @__current_scope_for_assert_select = AssertSelect.new(:assert_select, self, *args, &block)
       end
-    
+
       # wrapper for a nested assert_select
       #
       #   response.should have_tag("div#form") do
@@ -124,7 +129,7 @@ module Spec # :nodoc:
         args = prepare_args(args, @__current_scope_for_assert_select)
         @__current_scope_for_assert_select.should have_tag(*args, &block)
       end
-    
+
       # wrapper for a nested assert_select with false
       #
       #   response.should have_tag("div#1") do
@@ -136,7 +141,7 @@ module Spec # :nodoc:
         args = prepare_args(args, @__current_scope_for_assert_select)
         @__current_scope_for_assert_select.should_not have_tag(*args, &block)
       end
-    
+
       # :call-seq:
       #   response.should have_rjs(*args, &block)
       #
@@ -146,7 +151,7 @@ module Spec # :nodoc:
       def have_rjs(*args, &block)
         AssertSelect.new(:assert_select_rjs, self, *args, &block)
       end
-      
+
       # :call-seq:
       #   response.should send_email(*args, &block)
       #
@@ -156,7 +161,7 @@ module Spec # :nodoc:
       def send_email(*args, &block)
         AssertSelect.new(:assert_select_email, self, *args, &block)
       end
-      
+
       # wrapper for assert_select_encoded
       #
       # see documentation for assert_select_encoded at http://api.rubyonrails.org/
@@ -164,8 +169,8 @@ module Spec # :nodoc:
         should AssertSelect.new(:assert_select_encoded, self, *args, &block)
       end
 
-    private
-    
+      private
+
       def prepare_args(args, current_scope = nil)
         return args if current_scope.nil?
         defaults = current_scope.options || {:strict => false, :xml => false}

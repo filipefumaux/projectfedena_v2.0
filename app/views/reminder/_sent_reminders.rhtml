@@ -1,6 +1,6 @@
 <ul id="sent-list">
   <% unless @sent_reminders.empty? %>
-      <li class="heading"> Sent to</li>
+      <li class="heading"> <%= t('sentTo') %></li>
       <% @sent_reminders.each do |r| %>
           <li>
             <div class="sent-name"><%= link_to "#{Employee.find(r.to).first_name}", :controller=>"employee", :action=>"sent_reminder", :id=>@employee.id, :id2=>r.id %></div>

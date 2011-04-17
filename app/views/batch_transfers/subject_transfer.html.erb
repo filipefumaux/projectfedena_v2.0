@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/examination/show_exam.png" alt="Exam"/>
 
-  <h1>Subjects</h1>
+  <h1><%= t('subjects') %></h1>
 
-  <h3>Assign Subjects</h3>
+  <h3><%= t("assign") %> <%= t('subjects') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -28,7 +28,7 @@
     <% unless @normal_subjects.empty? %>
 
         <ul id="category-list">
-          <h4>Normal subjects</h4>
+          <h4><%= t("subject.normal") %></h4>
           <% @normal_subjects.each do |sub| %>
               <li id="subject-<%= sub.id %>" class="list<%= cycle('odd', 'even') %>">
                 <div class="category-name"> <%= sub.name %></div>

@@ -3,10 +3,10 @@ module OpenFlashChart
   class XAxisLabel < Base
     def initialize(text, colour, size, rotate, args={})
       super args
-      @text   = text
+      @text = text
       @colour = colour
-      @size   = size
-      @rotate = rotate      
+      @size = size
+      @rotate = rotate
     end
 
     def set_vertical

@@ -3,7 +3,7 @@
 
   <h1><%= t('payslip') %></h1>
 
-  <h3>Create</h3>
+  <h3><%= t("create") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to_remote "One click payslip revert", :update=>"message-div",
+      <div class="link-heading"><%= link_to_remote t('employee.oneClickRevert'), :update=>"message-div",
                                                    :before => "Element.show('loader')",
                                                    :success => "Element.hide('loader')",
                                                    :url=>{:controller=>"employee", :action=>"payslip_revert_date_select"}, :confirm=>t('employee.questionToReomvePayslipAll') %></div>

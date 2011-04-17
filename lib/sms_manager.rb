@@ -34,7 +34,7 @@ class SmsManager
     if response.body =~ /Your message is successfully/
       sms_count = Configuration.find_by_config_key("TotalSmsCount")
       new_count = sms_count.config_value.to_i+@recipients.size
-      Configuration.update(sms_count.id,:config_value=>new_count.to_s)
+      Configuration.update(sms_count.id, :config_value=>new_count.to_s)
     end
   end
 

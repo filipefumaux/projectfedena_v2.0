@@ -21,10 +21,10 @@
     <div class="bread_crumb">
       <%= t('courses') %> &raquo;
       <%= @course.full_name %> &raquo;
-      <%= t('batch') + " #{@batch.name}" %> &raquo;
+      <%= t('batch.title') + " #{@batch.name}" %> &raquo;
       <%= link_to t('exams'), batch_additional_exam_groups_path(@batch) %> &raquo;
       <%= link_to @additional_exam_group.name, [@batch, @additional_exam_group] %> &raquo;
-      Edit
+      <%= t("edit") %>
     </div>
 
     <h4><%= t('exam.forExamGroup') %> - <%= @additional_exam_group.name %></h4>

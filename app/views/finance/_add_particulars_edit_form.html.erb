@@ -1,4 +1,4 @@
-<label class="head_label">Edit Particulars for Additional Fees<span></span></label>
+<label class="head_label"><%= t('edit') %> <%= t('particularsForAdditionalFees') %><span></span></label>
 
 <% form_remote_for :finance_fee_particulars,
                    :url => {:action => 'add_particulars_update', :id => @finance_fee_particulars.id},
@@ -6,7 +6,7 @@
 
     <div id="form-errors"></div>
     <div class="label-field-pair">
-      <div class="label-container"><label><%= t("feeName") %> :</label></div>
+      <div class="label-container"><label><%= t("feesName") %> :</label></div>
       <div class="input-container"><%= form.text_field :name %></div>
     </div>
     <div class="label-field-pair">
@@ -34,7 +34,7 @@
 
 
     <div class="label-field-pair">
-      <div class="label-container"><label>Fee amount :</label></div>
+      <div class="label-container"><label><%= t('feeAmount') %> :</label></div>
       <div class="input-container"><%= form.text_field :amount, :value => @finance_fee_particulars.amount, :disabled => true %></div>
     </div>
     <%= submit_tag "► " + t('update'), :class=>'submit_button' %>

@@ -1,3 +1,4 @@
 module OpenFlashChart
-  class BarBase < Base; end
+  class BarBase < Base;
+  end
 end

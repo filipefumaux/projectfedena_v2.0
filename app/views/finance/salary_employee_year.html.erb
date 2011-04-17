@@ -3,7 +3,7 @@
 
   <h1><%= t('finance.academicYearReport') %></h1>
 
-  <h3>Employee Salary</h3>
+  <h3><%= t("employee.salary") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -16,7 +16,7 @@
   <div id="fees-table">
     <div class="fees-th">
       <div class="fees-table-description"><%= t("employee.title") %></div>
-      <div class="fees-table-salary"><%= t("salary") %></div>
+      <div class="fees-table-salary"><%= t("salary.title") %></div>
     </div>
     <% amount=0 %>
     <% @employees.each do |e| %>

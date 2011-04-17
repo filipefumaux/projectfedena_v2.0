@@ -3,7 +3,7 @@
 
   <h1><%= t("employeeEditInfo") %></h1>
 
-  <h3>Bank details</h3>
+  <h3><%= t("bankDetails") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -20,7 +20,7 @@
   <% form_for :employee_bank_details do |a| %>
       <%= error_messages_for 'employee_bank_details' %>
 
-      <span class="span-sub-heading">Bank Info</span>
+      <span class="span-sub-heading"><%= t('employee.bankInfo') %></span>
       <hr class="sub-heading"/>
       <% @bank_fields.each do |bd| %>
           <% @employee_bank_detail = EmployeeBankDetail.find_by_employee_id_and_bank_field_id(@employee.id, bd.id) %>

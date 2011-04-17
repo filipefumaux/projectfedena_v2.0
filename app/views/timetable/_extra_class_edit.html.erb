@@ -2,7 +2,7 @@
     <div class="category-num"> <%= @period_entry.class_timing.name %></div>
     <% if @config.include?('HR') %>
         <div class="category-name">
-          <div class="text-input-bg2"> <%= t.select :subject_id, @subjects.map { |s| [s.name, s.id] }, {:prompt => 'Select a subject'},
+          <div class="text-input-bg2"> <%= t.select :subject_id, @subjects.map { |s| [s.name, s.id] }, {:prompt => t('selectASubject')},
                                                     {:onChange => "#{remote_function(:url => {:action => "list_employee_by_subject"},
                                                                                      :with => "'subject_id='+value+'&period_id='+#{@period_id}"
                                                     )}"} %></div>
@@ -15,7 +15,7 @@
     <% else %>
         <div class="category-name">
           <div class="text-input-bg2">
-            <%= t.select :subject_id, @subjects.map { |s| [s.name, s.id] }, {:prompt => 'Select a subject'} %></div>
+            <%= t.select :subject_id, @subjects.map { |s| [s.name, s.id] }, {:prompt => t('selectASubject')} %></div>
         </div>
     <% end %>
 

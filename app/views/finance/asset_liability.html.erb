@@ -3,7 +3,7 @@
 
   <h1><%= t('finance.title') %></h1>
 
-  <h3>Asset Liability Management</h3>
+  <h3><%= t("assetManagement") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -16,12 +16,12 @@
   <div class="box">
     <div class="link-box">
       <div class="link-heading"><%= link_to t('asset'), :action => "asset" %> </div>
-      <div class="link-descr"><%= "Manages Asset" %></div>
+      <div class="link-descr"><%= t("manage")+" "+ t('asset') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Liability", :action => "liability" %> </div>
-      <div class="link-descr">Manages Liability</div>
+      <div class="link-heading"><%= link_to t('liability'), :action => "liability" %> </div>
+      <div class="link-descr"><%= t("manage") %> <%= t('liability') %></div>
     </div>
 
   </div>

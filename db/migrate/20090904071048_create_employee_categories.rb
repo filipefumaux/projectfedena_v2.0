@@ -12,7 +12,7 @@ class CreateEmployeeCategories < ActiveRecord::Migration
     drop_table :employee_categories
   end
 
-   def self.create_default
-     EmployeeCategory.create :name => 'Fedena Admin',:prefix => 'Admin',:status => true
+  def self.create_default
+    EmployeeCategory.create :name => 'Fedena Admin', :prefix => 'Admin', :status => true
   end
 end

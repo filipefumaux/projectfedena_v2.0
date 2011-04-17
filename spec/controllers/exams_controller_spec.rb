@@ -4,7 +4,7 @@ describe ExamsController do
   before(:each) do
     @exam_group = Factory.create(:exam_group, :id => 1)
   end
-  
+
   def mock_exam(stubs={})
     @mock_exam ||= mock_model(Exam, stubs)
   end

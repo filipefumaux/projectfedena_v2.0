@@ -14,7 +14,7 @@
 
   <h1><%= t("employeeEditInfo") %></h1>
 
-  <h3>Personal</h3>
+  <h3><%= t('personal') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -37,7 +37,7 @@
       <span class="span-sub-heading"><%= t("personalDetails") %></span>
       <hr class="sub-heading"/>
       <div class="label-field-pair">
-        <label>DOB</label>
+        <label><%= t('dob') %></label>
 
         <div class="text-input-bg"><%= a.text_field :date_of_birth, :autocomplete => 'off' %></div>
         <div class="extender"></div>

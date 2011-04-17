@@ -12,13 +12,13 @@
 <div id="page-yield">
   <div class="box">
     <div class="link-box">
-      <div class="link-heading"><%= link_to "View Payslip", :action => "view_monthly_payslip" %></div>
-      <div class="link-descr">View employee monthly payslip</div>
+      <div class="link-heading"><%= link_to t("view")+" "+ t("payslip"), :action => "view_monthly_payslip" %></div>
+      <div class="link-descr"><%= t('employee.viewMonthlyPayslip') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "One click approve payslip", :action => "approve_monthly_payslip" %></div>
-      <div class="link-descr">Approve monthly payslip</div>
+      <div class="link-heading"><%= link_to t('employee.oneClickApprove'), :action => "approve_monthly_payslip" %></div>
+      <div class="link-descr"><%= t('employee.approveMonthlyPayslip') %></div>
     </div>
 
   </div>

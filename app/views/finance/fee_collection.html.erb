@@ -14,9 +14,9 @@
     <div id="message"></div>
     <div class="link-box">
       <div class="link-heading">
-        <%= link_to_remote 'Create Fee Collection', :url => {:action => 'fee_collection_new'} %>
+        <%= link_to_remote t('createFeeCollection'), :url => {:action => 'fee_collection_new'} %>
       </div>
-      <div class="link-descr"><%= "Creates new fee collecting dates" %></div>
+      <div class="link-descr"><%= t('descCreateFeeCollection') %></div>
     </div>
     <div class="link-box">
       <div class="link-heading"><%= link_to t("view"), :action => "fee_collection_view" %></div>

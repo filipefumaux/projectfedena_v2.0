@@ -20,7 +20,7 @@ describe "include_text" do
 end
 
 describe "include_text", :type => :controller do
-  ['isolation','integration'].each do |mode|
+  ['isolation', 'integration'].each do |mode|
     if mode == 'integration'
       integrate_views
     end

@@ -4,7 +4,7 @@
         <td><%= t("slNo") %></td>
         <td><%= t('finance.particulars') %></td>
         <td><%= t('student.category') %></td>
-        <td><%= t("admissionNumber") %></td>
+        <td><%= t('admissionNumber') %></td>
         <td><%= t('amount') %> ( <%= currency %> )</td>
         <td><%= t("createdDate") %></td>
         <td></td>
@@ -32,7 +32,7 @@
             <td class="col-3"><%= fees.created_at.strftime("%m-%d-%Y") %></td>
             <td class="col-1">
               <% unless @finance_fee_category.check_fee_collection == false %>
-                  <span class="small"> <%= link_to_remote t('delete'), :confirm=>"Delete the fee particular ?", :url => {:action => 'master_category_particulars_delete', :id => fees.id} %></span>
+                  <span class="small"> <%= link_to_remote t('delete'), :confirm=>t('deleteFeeParticular'), :url => {:action => 'master_category_particulars_delete', :id => fees.id} %></span>
               <% else %>
                   <span class="small-strike"><%= t("delete") %></span>
               <% end %>
@@ -47,9 +47,9 @@
 <% else %>
     <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
       <tr class="tr-head">
-        <td>No Particulars to display!</td>
+        <td><%= t('noParticularsToDisplay') %>!</td>
       </tr>
     </table>
 
 <% end %>
-<%= link_to 'Back', {:action => 'master_fees'}, :class=>'user_button' %>
+<%= link_to t('back'), {:action => 'master_fees'}, :class=>'user_button' %>

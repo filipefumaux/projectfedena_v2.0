@@ -34,7 +34,8 @@
                             </label></li>
                       <% else %>
                           <li><label><%= check_box_tag "exam_grouping[exam_group_ids][]", e.id, :checked=>true %>
-                            <div class="att_list_names"> <%= e.name %></div></label></li>
+                            <div class="att_list_names"> <%= e.name %></div>
+                          </label></li>
                       <% end %>
                     </div>
                 <% end %>

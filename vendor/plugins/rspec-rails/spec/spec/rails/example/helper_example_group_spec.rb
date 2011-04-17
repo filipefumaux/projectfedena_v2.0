@@ -3,7 +3,7 @@ Spec::Runner.configuration.global_fixtures = :people
 
 describe ExplicitHelper, :type => :helper do
   include ExplicitHelper
-  
+
   it "should not require naming the helper if describe is passed a type" do
     method_in_explicit_helper.should match(/text from a method/)
     helper.method_in_explicit_helper.should match(/text from a method/)
@@ -44,19 +44,19 @@ module Spec
           session_foo.should == 'bar'
           helper.session_foo.should == 'bar'
         end
-        
+
         it "should have access to params" do
           params[:foo] = 'bar'
           params_foo.should == 'bar'
           helper.params_foo.should == 'bar'
         end
-        
+
         it "should have access to request" do
           request.stub!(:thing).and_return('bar')
           request_thing.should == 'bar'
           helper.request_thing.should == 'bar'
         end
-        
+
         it "should have access to flash" do
           flash[:thing] = 'camera'
           flash_thing.should == 'camera'
@@ -86,33 +86,33 @@ module Spec
           lachie.class.should == Person
         end
       end
-      
+
       describe "methods from standard helpers", :type => :helper do
         helper_name :explicit
         it "should be exposed to the helper" do
-          helper.link_to("Foo","http://bar").should have_tag("a")
+          helper.link_to("Foo", "http://bar").should have_tag("a")
         end
       end
 
       describe HelperExampleGroup, "included modules", :type => :helper do
         helpers = [
-          ActionView::Helpers::ActiveRecordHelper,
-          ActionView::Helpers::AssetTagHelper,
-          ActionView::Helpers::BenchmarkHelper,
-          ActionView::Helpers::CacheHelper,
-          ActionView::Helpers::CaptureHelper,
-          ActionView::Helpers::DateHelper,
-          ActionView::Helpers::DebugHelper,
-          ActionView::Helpers::FormHelper,
-          ActionView::Helpers::FormOptionsHelper,
-          ActionView::Helpers::FormTagHelper,
-          ActionView::Helpers::JavaScriptHelper,
-          ActionView::Helpers::NumberHelper,
-          ActionView::Helpers::PrototypeHelper,
-          ActionView::Helpers::ScriptaculousHelper,
-          ActionView::Helpers::TagHelper,
-          ActionView::Helpers::TextHelper,
-          ActionView::Helpers::UrlHelper
+            ActionView::Helpers::ActiveRecordHelper,
+            ActionView::Helpers::AssetTagHelper,
+            ActionView::Helpers::BenchmarkHelper,
+            ActionView::Helpers::CacheHelper,
+            ActionView::Helpers::CaptureHelper,
+            ActionView::Helpers::DateHelper,
+            ActionView::Helpers::DebugHelper,
+            ActionView::Helpers::FormHelper,
+            ActionView::Helpers::FormOptionsHelper,
+            ActionView::Helpers::FormTagHelper,
+            ActionView::Helpers::JavaScriptHelper,
+            ActionView::Helpers::NumberHelper,
+            ActionView::Helpers::PrototypeHelper,
+            ActionView::Helpers::ScriptaculousHelper,
+            ActionView::Helpers::TagHelper,
+            ActionView::Helpers::TextHelper,
+            ActionView::Helpers::UrlHelper
         ]
         helpers.each do |helper_module|
           it "should include #{helper_module}" do
@@ -121,7 +121,7 @@ module Spec
           end
         end
       end
-      
+
       # TODO: BT - Helper Examples should proxy method_missing to a Rails View instance.
       # When that is done, remove this method
       describe HelperExampleGroup, "#protect_against_forgery?", :type => :helper do
@@ -130,7 +130,7 @@ module Spec
           helper.protect_against_forgery?.should be_false
         end
       end
-      
+
       describe HelperExampleGroup, "#assigns", :type => :helper do
         helper_name :addition
         it "should expose variables to helper" do
@@ -143,10 +143,10 @@ module Spec
           assigns[:addend].should == 3
         end
       end
-      
+
       describe HelperExampleGroup, "using a helper that uses output_buffer inside helper", :type => :helper do
         helper_name :explicit
-        
+
         before(:each) do
           if ::Rails::VERSION::STRING < "2.2"
             pending("need to get this new feature working against pre 2.2 versions of rails")
@@ -180,13 +180,13 @@ module Spec
         it 'should be able to set an instance variable on the helper on a new instance of the helper' do
           helper.instance_variable_get(:@test_instance_var).should be_nil
           helper.instance_variable_set(:@test_instance_var, :first_value)
-          helper.instance_variable_get(:@test_instance_var).should == :first_value 
+          helper.instance_variable_get(:@test_instance_var).should == :first_value
         end
 
         it 'should get a clean copy of the helper with no saved instance variables from the last run' do
           helper.instance_variable_get(:@test_instance_var).should be_nil
           helper.instance_variable_set(:@test_instance_var, :second_value)
-          helper.instance_variable_get(:@test_instance_var).should == :second_value 
+          helper.instance_variable_get(:@test_instance_var).should == :second_value
         end
       end
     end
@@ -234,14 +234,14 @@ module Bug719
       end
     end
   end
-  
+
   describe ImagesHelper, :type => :helper do
     it "should render a hide_images_button" do
-      helper.hide_images_button.should have_tag('div[class=?]','hide_images_button') do
+      helper.hide_images_button.should have_tag('div[class=?]', 'hide_images_button') do
         with_tag('input[id=?][type=?][value=?][onclick^=?]',
                  'hide_images_button', 'button', 'Hide Images',
                  "$(&quot;more_images_button&quot;).toggle();\n$(&quot;image_browser&quot;).toggle();;")
-        end
-     end
+      end
+    end
   end
 end

@@ -3,7 +3,7 @@
 
   <h1><%= t("attendance.title") %></h1>
 
-  <h3>Advance search</h3>
+  <h3><%= t('advanceSearch') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -27,7 +27,7 @@
         </div>
         <% unless @config.config_value == 'Daily' %>
             <div class="label-field-pair">
-              <label for="student"><%= t('subject') %></label>
+              <label for="student"><%= t('subject.title') %></label>
 
               <div class="text-input-bg">
                 <%= f.select :subject_id,
@@ -44,7 +44,7 @@
           <div class="text-input-bg">
             <%= f.select :mode,
                          ["Monthly", "Overall"],
-                         {:prompt => 'Select a mode'},
+                         {:prompt => t('selectAMode')},
                          {:onchange => "#{remote_function(
                                  :url => {:action => 'month'},
                                  :with => "'mode='+value+'&id=#{@student.id}'",

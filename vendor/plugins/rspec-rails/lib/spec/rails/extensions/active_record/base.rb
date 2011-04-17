@@ -13,6 +13,7 @@ if defined?(ActiveRecord::Base)
             def records
               find(:all)
             end
+
             alias :record :records
           end
 
@@ -29,16 +30,17 @@ if defined?(ActiveRecord::Base)
               self.valid?
               [self.errors.on(attribute)].flatten.compact
             end
+
             alias :error_on :errors_on
           end
         end
       end
     end
   end
-  
+
   module ActiveRecord #:nodoc:
     class Base
-      extend  Spec::Rails::Extensions::ActiveRecord::ClassMethods
+      extend Spec::Rails::Extensions::ActiveRecord::ClassMethods
       include Spec::Rails::Extensions::ActiveRecord::InstanceMethods
     end
   end

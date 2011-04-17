@@ -49,7 +49,7 @@
                 <div id="drop_<%= @tte.id %>" class="drop" onClick="update_selected_divs('<%= @tte.id %>');">
                   <div class="tt-subject" id="subject_name_<%= @tte.id %>">
                     <div class="subject">
-                      <% #  @tte.subject.code unless @tte.subject.nil?  %>
+                      <% #  @tte.subject.code unless @tte.subject.nil?    %>
                       <% unless @tte.subject.nil? %>
                           <% unless @tte.subject.elective_group_id.nil? %>
                               <%= @tte.subject.elective_group.name %>
@@ -115,12 +115,12 @@
             <%- end -%>
             - On <%= @weekday[TimetableEntry.find(tte_id).week_day_id] %>
             (<%= TimetableEntry.find(tte_id).class_timing.name -%>)
-            <%= link_to_remote "Continue", :url=> {:action=> "tt_entry_update2"},
+            <%= link_to_remote t('continue'), :url=> {:action=> "tt_entry_update2"},
                                :with => "'&sub_id=#{errors["info"]["sub_id"]}' + '&tte_id=#{errors["info"]["tte_id"]}' + '&emp_id=#{errors["info"]["emp_id"]}'",
                                :before => "Element.show('loader')",
                                :success => "Element.hide('loader')",
                                :update=> "timetable" -%> |
-            <%= link_to_remote "Cancel", :url=>{:action=>"tt_entry_noupdate2"},
+            <%= link_to_remote t('cancel'), :url=>{:action=>"tt_entry_noupdate2"},
                                :before => "Element.show('loader')",
                                :success => "Element.hide('loader')",
                                :with => "'emp_id=#{errors["info"]["emp_id"]}' + '&sub_id=#{errors["info"]["sub_id"]}' + '&tte_id=#{errors["info"]["tte_id"]}'",

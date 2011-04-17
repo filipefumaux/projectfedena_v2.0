@@ -18,7 +18,7 @@
     <p><%= t("student.warning") %></p>
 
     <p class="warning"><%= t("student.warningDelete") %></p>
-    <%= link_to "► "+t("delete"), {:action => 'destroy', :id =>params[:id]}, :confirm => 'Are you completely sure?', :class=> 'user_button' %>
+    <%= link_to "► "+t("delete"), {:action => 'destroy', :id =>params[:id]}, :confirm => t('sureQuestion'), :class=> 'user_button' %>
   </div>
 
 </div>

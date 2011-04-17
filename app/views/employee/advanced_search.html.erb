@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Employee no</label>
+        <label for="student_admission_no"><%= t('employee.number') %></label>
 
         <div class="text-input-bg">
           <%= f.text_field :employee_number_equals %>
@@ -31,7 +31,7 @@
         <label class="label_for_student"><%= t("gender") %></label>
 
         <div class="student_gender_value">
-          <label class="label_for_gender">All</label>
+          <label class="label_for_gender"><%= t("all") %></label>
           <%= f.radio_button :gender_equals, "" %>
           <label class="label_for_gender"><%= t('male') %></label>
           <%= f.radio_button :gender_equals, "m" %>
@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="label-field-pair">
-        <label for="student_admission_no">Birth date
+        <label for="student_admission_no"><%= t('birthDate') %>
           <%= image_tag("loader.gif",
                         :align => "absmiddle",
                         :border => 0,
@@ -140,11 +140,11 @@
         <label class="label_for_student" for="student_gender"><%= t('status') %></label>
 
         <div class="student_gender_value">
-          <label class="label_for_gender" for="student_gender_true">Present</label>
+          <label class="label_for_gender" for="student_gender_true"><%= t("present") %></label>
           <%= f.radio_button :status_equals, "true", {:checked => false} %>
-          <label class="label_for_gender" for="student_gender_false">Former</label>
+          <label class="label_for_gender" for="student_gender_false"><%= t('former') %></label>
           <%= f.radio_button :status_equals, "false" %>
-          <label class="label_for_gender" for="student_gender_false">All</label>
+          <label class="label_for_gender" for="student_gender_false"><%= t("all") %></label>
           <%= f.radio_button :status_equals, "", {:checked => 'checked'} %>
         </div>
       </div>
@@ -204,7 +204,7 @@
 
         <%= link_to "► " + t("searchAgain"), {:action=>"advanced_search"} %>
         <% unless @employees1.empty? %>
-            <%= link_to "► View " + t("pdfReport"), {:action => "advanced_search_pdf", :for =>searched_for, :result2=>@employees2, :result =>@employees1, :status=>params[:search][:status_equals], :format => 'pdf'}, :target => '_blank', :class=> 'submit_button' %>
+            <%= link_to "► "+ t("view") + t("pdfReport"), {:action => "advanced_search_pdf", :for =>searched_for, :result2=>@employees2, :result =>@employees1, :status=>params[:search][:status_equals], :format => 'pdf'}, :target => '_blank', :class=> 'submit_button' %>
         <% end %>
       </div>
       <div class="extender"></div>
@@ -215,11 +215,11 @@
             <span><%= t('name') %>:</span> <%= params[:search][:first_name_or_middle_name_or_last_name_like] %>
         <% end %>
         <% unless  params[:search][:employee_number_equals].empty? %>
-            <span>Employee no:</span> <%= params[:search][:employee_number_equals] %>
+            <span><%= t('employee.number') %>:</span> <%= params[:search][:employee_number_equals] %>
         <% end %>
         <% unless params[:search][:employee_department_id_equals].empty? %>
             <% dept = EmployeeDepartment.find(params[:search][:employee_department_id_equals]) %>
-            <span>Department:</span> <%= dept.name %>
+            <span><%= t("department") %>:</span> <%= dept.name %>
         <% end %>
         <% unless  params[:search][:employee_category_id_equals].empty? %>
             <% category = EmployeeCategory.find(params[:search][:employee_category_id_equals]) %>
@@ -235,11 +235,11 @@
         <% end %>
         <% unless  params[:search][:gender_equals].empty? %>
             <% if  params[:search][:gender_equals] == 'm' %>
-                <span> <%= t("gender") %>: </span> male
+                <span> <%= t("gender") %>: </span> <%= t("male") %>
             <% elsif  params[:search][:gender_equals] == 'f' %>
-                <span> <%= t("gender") %>: </span> female
+                <span> <%= t("gender") %>: </span> <%= t("female") %>
             <% else %>
-                <span> <%= t("gender") %>: </span> All
+                <span> <%= t("gender") %>: </span> <%= t("all") %>
             <% end %>m
         <% end %>
         <% unless  params[:search][:blood_group_like].empty? %>
@@ -253,7 +253,7 @@
             <span> <%= t("nationality") %>: </span> <%= nationality.name %>
         <% end %>
         <% unless  params[:adv_search][:doj_option].empty? %>
-            <span> Year of joining: </span> <%= params[:adv_search][:doj_option] %>
+            <span> <%= t('yearOfJoining') %>: </span> <%= params[:adv_search][:doj_option] %>
 
             <%= params[:adv_search][:joining_date_year] %>
         <% end %>
@@ -263,11 +263,11 @@
             <%= params[:adv_search][:birth_date_year] %>
         <% end %>
         <% if params[:search][:status_equals]=="true" %>
-            <span> Present employees </span>
+            <span> <%= t('employee.present') %> </span>
         <% elsif params[:search][:status_equals]=="false" %>
-            <span> Former employees </span>
+            <span> <%= t('employee.former') %> </span>
         <% else %>
-            <span> All </span>
+            <span> <%= t("all") %> </span>
         <% end %>
 
       </div>
@@ -282,10 +282,10 @@
             <%= order @search, :by => :first_name %>
           </td>
           <td>
-            Employee ID
+            <%= t('employee.id') %>
           </td>
           <td>
-            Employee dept
+            <%= t('employee.dept') %>
           </td>
         </tr>
         <tr class="tr-blank"></tr>
@@ -318,7 +318,7 @@
             <tr class="tr-<%= cycle('odd', 'even') %>">
 
               <td class="col-1"></td>
-              <td class="col-2">No employee found</td>
+              <td class="col-2"><%= t('employee.notFound') %></td>
             </tr>
         <% end %>
       </table>

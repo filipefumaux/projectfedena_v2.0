@@ -21,24 +21,24 @@
         <div class="link-box">
           <% @config = Configuration.available_modules %>
           <% if @config.include?('HR') %>
-              <div class="link-heading"><%= link_to "Create/Edit Timetable", :action => "select_class2" %></div>
+              <div class="link-heading"><%= link_to t('createEditTimetable'), :action => "select_class2" %></div>
           <% else %>
-              <div class="link-heading"><%= link_to "Create/Edit Timetable", :action => "select_class" %></div>
+              <div class="link-heading"><%= link_to t('createEditTimetable'), :action => "select_class" %></div>
           <% end %>
-          <div class="link-descr">Select a class and edit the timetable for that class.</div>
+          <div class="link-descr"><%= t('selectAClassAndEditTimetable') %>.</div>
         </div>
 
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Set class timings", :controller => "class_timings", :action => "index" %></div>
-          <div class="link-descr">Select a class and edit the timetable for that class.</div>
+          <div class="link-heading"><%= link_to t('setClassTimings'), :controller => "class_timings", :action => "index" %></div>
+          <div class="link-descr"><%= t('selectAClassAndEditTimetable') %>.</div>
         </div>
     <% end %>
 
 
     <% if permitted_to? :view, :timetable %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "View Timetables", :action => "view" %></div>
-          <div class="link-descr">View the timetable for a class.</div>
+          <div class="link-heading"><%= link_to t('viewTimetables'), :action => "view" %></div>
+          <div class="link-descr"><%= t('viewTimetableForClass') %>.</div>
         </div>
 
     <% end %>
@@ -46,20 +46,20 @@
         <% @config = Configuration.get_config_value('StudentAttendanceType') %>
         <% if @config == 'SubjectWise' %>
             <div class="link-box">
-              <div class="link-heading"><%= link_to "Swap class", :action => "extra_class" %></div>
-              <div class="link-descr">Generate period entry for a given time</div>
+              <div class="link-heading"><%= link_to t('swapClass'), :action => "extra_class" %></div>
+              <div class="link-descr"><%= t('generatePeriodEntry') %></div>
             </div>
         <% end %>
     <% end %>
 
     <div class="link-box">
       <div class="link-heading"><%= link_to t("timetable.institutional"), :action => "timetable" %></div>
-      <div class="link-descr">View the entire timetable for a day</div>
+      <div class="link-descr"><%= t('viewEntireTimetable') %></div>
     </div>
     <% if permitted_to? :edit, :timetable %>
         <div class="link-box">
-          <div class="link-heading"><%= link_to "Create weekdays", :controller => "weekday", :action => "index" %></div>
-          <div class="link-descr">Create weekdays</div>
+          <div class="link-heading"><%= link_to t('createWeekdays'), :controller => "weekday", :action => "index" %></div>
+          <div class="link-descr"><%= t('createWeekdays') %></div>
         </div>
     <% end %>
     <div class="extender"></div>

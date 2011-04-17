@@ -1,18 +1,18 @@
 module Spec
   module Rails
     module Matchers
-    
+
       class RenderTemplate #:nodoc:
-    
+
         def initialize(expected, controller)
           @controller = controller
           @expected = expected
         end
-      
+
         def matches?(response_or_controller)
-          response  = response_or_controller.respond_to?(:response) ?
-                      response_or_controller.response :
-                      response_or_controller
+          response = response_or_controller.respond_to?(:response) ?
+              response_or_controller.response :
+              response_or_controller
 
           if response.respond_to?(:redirect?) && response.redirect?
             @redirect_url = response.redirect_url
@@ -20,14 +20,14 @@ module Spec
             @actual = response.rendered_file
           elsif response.respond_to?(:rendered)
             case template = response.rendered[:template]
-            when nil
-              unless response.rendered[:partials].empty?
-                @actual = path_and_file(response.rendered[:partials].keys.first).join("/_")
-              end
-            when ActionView::Template
-              @actual = template.path
-            when String
-              @actual = template
+              when nil
+                unless response.rendered[:partials].empty?
+                  @actual = path_and_file(response.rendered[:partials].keys.first).join("/_")
+                end
+              when ActionView::Template
+                @actual = template.path
+              when String
+                @actual = template
             end
           else
             @actual = response.rendered_template.to_s
@@ -37,7 +37,7 @@ module Spec
           expected_controller_path, expected_file = path_and_file(@expected)
           given_controller_path == expected_controller_path && match_files(given_file, expected_file)
         end
-        
+
         def match_files(actual, expected)
           actual_parts = actual.split('.')
           expected_parts = expected.split('.')
@@ -46,7 +46,7 @@ module Spec
           end
           true
         end
-        
+
         def failure_message_for_should
           if @redirect_url
             "expected #{@expected.inspect}, got redirected to #{@redirect_url.inspect}"
@@ -54,35 +54,35 @@ module Spec
             "expected #{@expected.inspect}, got #{@actual.inspect}"
           end
         end
-        
+
         def failure_message_for_should_not
           "expected not to render #{@expected.inspect}, but did"
         end
-        
+
         def description
           "render template #{@expected.inspect}"
         end
-      
-        private
-          def path_and_file(path)
-            parts = path.split('/')
-            file = parts.pop
-            controller = parts.empty? ? current_controller_path : parts.join('/')
-            return controller, file
-          end
-        
-          def controller_path_from(path)
-            parts = path.split('/')
-            parts.pop
-            parts.join('/')
-          end
 
-          def current_controller_path
-            @controller.class.to_s.underscore.gsub(/_controller$/,'')
-          end
-        
+        private
+        def path_and_file(path)
+          parts = path.split('/')
+          file = parts.pop
+          controller = parts.empty? ? current_controller_path : parts.join('/')
+          return controller, file
+        end
+
+        def controller_path_from(path)
+          parts = path.split('/')
+          parts.pop
+          parts.join('/')
+        end
+
+        def current_controller_path
+          @controller.class.to_s.underscore.gsub(/_controller$/, '')
+        end
+
       end
-      
+
       # :call-seq:
       #   response.should render_template(template)
       #   response.should_not render_template(template)

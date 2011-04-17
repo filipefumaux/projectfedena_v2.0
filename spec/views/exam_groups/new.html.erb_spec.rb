@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "/exam_groups/new.html.erb" do
   before(:each) do
     assigns[:test_model] = stub_model(ExamGroup,
-      :new_record? => true
+                                      :new_record? => true
     )
   end
 

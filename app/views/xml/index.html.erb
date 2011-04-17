@@ -3,7 +3,7 @@
 
   <h1><%= t('finance.title') %></h1>
 
-  <h3>Tally</h3>
+  <h3><%= t('finance.tally') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -15,13 +15,13 @@
 
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to "Tally settings", :action => "settings" %></div>
-      <div class="link-descr">Change ledger settings for Tally</div>
+      <div class="link-heading"><%= link_to t('finance.tallySettings'), :action => "settings" %></div>
+      <div class="link-descr"><%= t('finance.descTallySettings') %></div>
     </div>
 
     <div class="link-box">
-      <div class="link-heading"><%= link_to " Export for Tally", :controller => 'xml', :action => "create_xml" %></div>
-      <div class="link-descr"> Creates xml import file for tally</div>
+      <div class="link-heading"><%= link_to t('finance.exportForTally'), :controller => 'xml', :action => "create_xml" %></div>
+      <div class="link-descr"> <%= t('finance.descExportTally') %></div>
     </div>
   </div>
 </div>

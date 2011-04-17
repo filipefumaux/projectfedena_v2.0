@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/HR/show_hr.png" alt=""/>
 
-  <h1>Span Leave Management</h1>
+  <h1><%= t('employee.spanLeaveManager') %></h1>
 
-  <h3>My span</h3>
+  <h3><%= t('employee.mySpan') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -18,14 +18,14 @@
   <% unless @reporting_employees == [] %>
 
       <div id="new-application-links">
-        <%= link_to_remote "New leave applications",
+        <%= link_to_remote t('employee.newLeaveApp'),
                            :update => "application-list",
                            :url => {:controller=>"employee_attendance", :action => "new_leave_applications", :id=>@employee.id} %>
         [<%= @total_leave_count %>]
       </div>
 
       <div id="all-application-links">
-        <%= link_to_remote "All leave applications",
+        <%= link_to_remote t('employee.allLeaveApp'),
                            :update => "application-list",
                            :url => {:controller=>"employee_attendance", :action => "all_leave_applications", :id=>@employee.id} %>
       </div>
@@ -33,7 +33,7 @@
 
       <br/><br/>
 
-  <% else %> No employees under my span.
+  <% else %> <%= t('employee.noUnderSpan') %>.
   <% end %>
 
   <div id="application-list"></div>

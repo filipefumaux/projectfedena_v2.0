@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/user_profile/user_profile_logo.jpg"/>
 
-  <h1><%= t("allUsers") %></h1>
+  <h1><%= t("allUser") %></h1>
 
   <h3><%= t("detailsAboutAllUsers") %></h3>
 
@@ -18,7 +18,7 @@
   <div class="all-user">
     <div class="label-field-pair">
       <div class="text-input-bg"><%= select :user_type, :type, ["Admin", "Employee", "Student"],
-                                            {:prompt => 'Select a role'},
+                                            {:prompt => t('selectARole')},
                                             {:onChange => "#{remote_function(:url => {:action => "list_user"},
                                                                              :with => "'user_type='+value",
                                                                              :before => "Element.show('loader')",

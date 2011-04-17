@@ -1,9 +1,9 @@
 <div id="content-header">
   <img src="/images/attendence/attendence.png" alt=""/>
 
-  <h1>Leave Management</h1>
+  <h1><%= t('dashboard.LeaveManagement') %></h1>
 
-  <h3>Apply or check status</h3>
+  <h3><%= t('applyOrCheckStatus') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -12,20 +12,20 @@
 
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to "Apply", :controller=>"employee_attendance", :action=>"leaves", :id=> @employee.id %></li>
-    <li><%= link_to_remote "My leaves",
+    <li><%= link_to t('apply'), :controller=>"employee_attendance", :action=>"leaves", :id=> @employee.id %></li>
+    <li><%= link_to_remote t('employee.myLeaves'),
                            :update => "application-list",
                            :url => {:action => "individual_leave_applications", :id=>@employee.id} %></li>
     <% unless @reporting_employees == [] %>
         <% if @total_leave_count == 0 %>
 
         <% else %>
-        <span class="new-leaves-count">  <li><b><%= link_to_remote "New leaves (#{@total_leave_count})",
+        <span class="new-leaves-count">  <li><b><%= link_to_remote t('employee.newLeave')+" (#{@total_leave_count})",
                                                                    :update => "application-list",
                                                                    :url => {:action => "new_leave_applications", :id=>@employee.id} %></b>
         </li></span>
         <% end %>
-        <li><%= link_to_remote "All leaves",
+        <li><%= link_to_remote t('allLeaves'),
                                :update => "application-list",
                                :url => {:action => "all_leave_applications", :id=>@employee.id} %></li>
     <% end %>
@@ -44,14 +44,13 @@
   <% reporting_manager = Employee.find(@employee.id).reporting_manager_id %>
   <% unless @current_user.admin? %>
       <% if reporting_manager.nil? %>
-          <p class="flash-msg">Sorry, You cannot apply for a leave without a reporting manager. Please contact
-            administrator. </p>
+          <p class="flash-msg"><%= t('cantApplyForALeave') %>. </p>
           </div>
       <% end %>
   <% end %>
   <% unless reporting_manager.nil? and not @current_user.admin? %>
       <div id="application-list">
-        <div class="heading">Apply for a leave</div>
+        <div class="heading"><%= t('employee.applyLeave') %></div>
         <% form_for :leave_apply do |l| %>
             <%= error_messages_for :leave_apply %>
             <%= l.hidden_field :employee_id, :value=>@employee.id %>
@@ -67,7 +66,7 @@
             </div>
 
             <div class="label-field-pair">
-              <label for="start_date"><%= t('employee.startDate') %></label>
+              <label for="start_date"><%= t('startDate') %></label>
 
               <div class="text-input-bg"><%= calendar_date_select_tag 'leave_apply[start_date]' %></div>
             </div>
@@ -79,7 +78,7 @@
             <div class="label-field-pair">
               <label for="reason"><%= t('employee.reason') %></label>
 
-              <div class="text-input-bg"><%= l.text_field :reason %></div><%= t('employee.startDate') %>
+              <div class="text-input-bg"><%= l.text_field :reason %></div><%= t('startDate') %>
             </div>
 
 
@@ -90,7 +89,4 @@
         <div class="extender"></div>
       </div>
   <% end %>
-
-
-
   </div>

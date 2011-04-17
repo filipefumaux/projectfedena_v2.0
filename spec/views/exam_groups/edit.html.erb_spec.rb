@@ -4,7 +4,7 @@ describe "/exam_groups/edit.html.erb" do
 
   before(:each) do
     assigns[:exam_groups] = @exam_group = stub_model(ExamGroup,
-      :new_record? => false
+                                                     :new_record? => false
     )
   end
 

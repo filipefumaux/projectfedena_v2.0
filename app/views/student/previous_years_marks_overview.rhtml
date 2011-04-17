@@ -3,7 +3,7 @@
 
   <h1><%= t("student.info") %></h1>
 
-  <h3>Previous years results overview</h3>
+  <h3><%= t("previousYearsResultsOverview") %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -17,7 +17,7 @@
   <div id="results-table">
 
     <div class="results-table-th">
-      <div class="course-name">Class/sec</div>
+      <div class="course-name"><%= t('class.sec') %></div>
       <div class="total-score"><%= t('totalMarks') %></div>
     </div>
 

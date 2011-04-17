@@ -4,7 +4,7 @@ module OpenFlashChart
     def initialize(x, y, args={})
       super args
       @x = x
-      @y = y      
+      @y = y
     end
   end
 

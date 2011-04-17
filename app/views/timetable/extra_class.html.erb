@@ -3,7 +3,7 @@
 
   <h1><%= t("timetable.title") %></h1>
 
-  <h3>Swap class</h3>
+  <h3><%= t('swapClass') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -14,7 +14,7 @@
   <div class="box">
     <% form_remote_for :extra_class do |f| %>
         <div class="label-field-pair">
-          <label for="student_date_of_birth">Select date</label>
+          <label for="student_date_of_birth"><%= t('selectDate') %></label>
 
           <div class="text-input-bg">
             <%= calendar_date_select_tag 'extra_class[date]',

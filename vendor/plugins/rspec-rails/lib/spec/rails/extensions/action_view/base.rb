@@ -17,6 +17,7 @@ module ActionView #:nodoc:
         render_partial_without_base_view_path_handling(partial_path)
       end
     end
+
     alias_method_chain :render_partial, :base_view_path_handling
 
     def render_with_mock_proxy(options = {}, old_local_assigns = {}, &block)
@@ -30,6 +31,7 @@ module ActionView #:nodoc:
         end
       end
     end
+
     alias_method_chain :render, :mock_proxy
   end
 end

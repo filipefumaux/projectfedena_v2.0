@@ -24,13 +24,15 @@
     <div id="autofill_area">
 
       <div class="label-field-pair-edit">
-        <label for="master_student_admission_no"><%= t("student.admNo") %> <span class="necessary-field">*</span></label>
+        <label for="master_student_admission_no"><%= t("student.admNo") %>
+          <span class="necessary-field">*</span></label>
 
         <div class="text-input-bg"><%= s.text_field :admission_no %></div>
       </div>
 
       <div class="label-field-pair-edit">
-        <label for="master_student_admission_date"><%= t("admissionDate") %>. <span class="necessary-field">*</span></label>
+        <label for="master_student_admission_date"><%= t("admissionDate") %>.
+          <span class="necessary-field">*</span></label>
 
         <div class="text-input-bg">
           <%= calendar_date_select_tag 'student[admission_date]', @student.admission_date,

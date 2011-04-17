@@ -3,7 +3,7 @@
 
   <h1><%= t("batch.batches") %></h1>
 
-  <h3>Show Electives</h3>
+  <h3><%= t('showElectives') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -11,7 +11,7 @@
 </div>
 <div id="inner-tab-menu">
   <ul>
-    <li><%= link_to_remote 'Add', :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>@elective_group} %></li>
+    <li><%= link_to_remote t('add'), :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>@elective_group} %></li>
   </ul>
 </div>
 <div id="page-yield">
@@ -22,8 +22,8 @@
   <div class="bread_crumb">
     <%= link_to t('courses'), courses_path %> &raquo;
     <%= link_to @course.full_name, @course %> &raquo;
-    <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
-    <%= link_to 'Electives ', batch_elective_groups_path(@batch) %> &raquo;
+    <%= link_to t('batch.title') + " #{@batch.name}", [@course, @batch] %> &raquo;
+    <%= link_to t('electives'), batch_elective_groups_path(@batch) %> &raquo;
     <%= @elective_group.name %>
   </div>
 
@@ -46,7 +46,7 @@
                                                               :method => 'delete',
                                                               :confirm => t('areYouSure'),
                                                               :update => "subject-#{subject.id}") %> </div>
-              <div class="category-assign"><%= link_to "Assign Students", :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
+              <div class="category-assign"><%= link_to t('student.assign'), :controller=>"student", :action=>"electives", :id=>@batch, :id2=>subject.id %>
               </div>
             </li>
         <% end %>

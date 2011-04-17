@@ -17,7 +17,7 @@
           page.replace_html 'modal-box', :partial => 'transaction_trigger_create_form'
           page << "Modalbox.show($('modal-box'), {title: '', width: 500});"
       } %>
-      <div class="link-descr"> Creates an auto transaction</div>
+      <div class="link-descr"> <%= t('finance.createAdditionalTransaction') %></div>
     </div>
     <div class="link-descr"></div>
     <div id="transaction-triggers-list">

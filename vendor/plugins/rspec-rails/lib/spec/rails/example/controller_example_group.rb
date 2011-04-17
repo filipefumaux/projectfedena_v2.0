@@ -71,10 +71,10 @@ module Spec
             super
             if described_class && described_class.ancestors.include?(ActionController::Base)
               controller_klass = if superclass.controller_class.ancestors.include?(ActionController::Base)
-                superclass.controller_class
-              else
-                described_class
-              end
+                                   superclass.controller_class
+                                 else
+                                   described_class
+                                 end
               tests controller_klass
             end
           end
@@ -113,7 +113,7 @@ or by declaring the controller's name
   describe "a MyController" do
     controller_name :my #invokes the MyController
 end
-MESSAGE
+            MESSAGE
           end
           @controller.extend ControllerInstanceMethods
           @controller.integrate_views! if integrate_views?
@@ -144,16 +144,18 @@ MESSAGE
           end
         end
 
-      protected
+        protected
 
         def _assigns_hash_proxy
-          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) {@response.template}
+          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) { @response.template }
         end
 
-      private
+        private
 
         module TemplateIsolationExtensions
-          def file_exists?(ignore); true; end
+          def file_exists?(ignore)
+            ; true;
+          end
 
           def render_file(*args)
             @first_render ||= args[0] unless args[0] =~ /^layouts/
@@ -171,15 +173,15 @@ MESSAGE
 
           def __template_exists?(args)
             self.view_paths.respond_to?(:find_template) ?
-              self.view_paths.find_template(args[0][:file], template_format) :
-              false
+                self.view_paths.find_template(args[0][:file], template_format) :
+                false
           end
 
           def render(*args)
             if ::Rails::VERSION::STRING >= "2.1"
               return super unless __action_exists?(params) || __template_exists?(args)
             end
-            if file = args.last[:file].instance_eval{@template_path}
+            if file = args.last[:file].instance_eval { @template_path }
               record_render :file => file
             elsif args.last[:inline]
               super
@@ -190,7 +192,7 @@ MESSAGE
             end
           end
 
-        private
+          private
 
           def record_render(opts)
             return unless @_rendered
@@ -201,9 +203,14 @@ MESSAGE
           # Returned by _pick_template when running controller examples in isolation mode.
           class PickedTemplate
             # Do nothing when running controller examples in isolation mode.
-            def render_template(*ignore_args); end
+            def render_template(*ignore_args)
+              ;
+            end
+
             # Do nothing when running controller examples in isolation mode.
-            def render_partial(*ignore_args);  end
+            def render_partial(*ignore_args)
+              ;
+            end
           end
         end
 
@@ -246,7 +253,7 @@ MESSAGE
               begin
                 super
               rescue ActionView::MissingTemplate
-                "#{self.class.name.sub(/Controller$/,'').underscore}/#{action_name}"
+                "#{self.class.name.sub(/Controller$/, '').underscore}/#{action_name}"
               end
             end
           end
@@ -261,7 +268,7 @@ MESSAGE
             @integrate_views = true
           end
 
-        private
+          private
 
           def integrate_views?
             @integrate_views

@@ -4,8 +4,8 @@ Date.months = $w('Januar Februar März April Mai Juni Juli August September Okto
 Date.first_day_of_week = 1;
 
 _translations = {
-  "OK": "OK",
-  "Now": "Jetzt",
-  "Today": "Heute",
-  "Clear": "Löschen"
+    "OK": "OK",
+    "Now": "Jetzt",
+    "Today": "Heute",
+    "Clear": "Löschen"
 }

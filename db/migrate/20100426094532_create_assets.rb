@@ -4,8 +4,8 @@ class CreateAssets < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :amount
-      t.boolean :is_inactive,:default=>false
-      t.boolean :is_deleted,:default=>false
+      t.boolean :is_inactive, :default=>false
+      t.boolean :is_deleted, :default=>false
       t.timestamps
     end
   end

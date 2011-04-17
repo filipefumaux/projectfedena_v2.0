@@ -15,11 +15,14 @@ module Spec
           rescue
             return
           end
-          (class << template; self; end).class_eval do
+          (
+          class << template;
+            self;
+          end).class_eval do
             include helper_module
           end
         end
-        
+
         def forget_variables_added_to_assigns
         end
       end
@@ -68,8 +71,8 @@ module Spec
           end
         end
 
-        before {ensure_that_flash_and_session_work_properly}
-        after  {ensure_that_base_view_path_is_not_set_across_example_groups}
+        before { ensure_that_flash_and_session_work_properly }
+        after { ensure_that_base_view_path_is_not_set_across_example_groups }
 
         def ensure_that_flash_and_session_work_properly #:nodoc:
           @controller.class.__send__ :public, :flash
@@ -132,26 +135,26 @@ module Spec
         # See Spec::Rails::Example::ViewExampleGroup for more information.
         def render(*args)
           options = Hash === args.last ? args.pop : {}
-          
-          if args.empty? 
-            unless [:partial, :inline, :file, :template, :xml, :json, :update].any? {|k| options.has_key? k} 
+
+          if args.empty?
+            unless [:partial, :inline, :file, :template, :xml, :json, :update].any? { |k| options.has_key? k }
               args << self.class.description_parts.first
             end
           end
-          
-          options[:template] = args.first.to_s.sub(/^\//,'') unless args.empty?
-          
+
+          options[:template] = args.first.to_s.sub(/^\//, '') unless args.empty?
+
           set_base_view_path(options)
           add_helpers(options)
 
           assigns[:action_name] = @action_name
-          
+
           @request.path_parameters = @request.path_parameters.merge(
-            :controller => derived_controller_name(options),
-            :action => derived_action_name(options)
+              :controller => derived_controller_name(options),
+              :action => derived_action_name(options)
           ).merge(options[:path_parameters] || {})
 
-          defaults = { :layout => false }
+          defaults = {:layout => false}
           options = defaults.merge options
 
           @controller.__send__(:params).reverse_merge! @request.parameters
@@ -188,9 +191,9 @@ module Spec
 
         Spec::Example::ExampleGroupFactory.register(:view, self)
 
-      protected
+        protected
         def _assigns_hash_proxy
-          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) {@response.template}
+          @_assigns_hash_proxy ||= AssignsHashProxy.new(self) { @response.template }
         end
       end
 

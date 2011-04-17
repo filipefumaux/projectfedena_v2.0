@@ -33,7 +33,7 @@
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @course.full_name, @course %> &raquo;
-      <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
+      <%= link_to t('batch.title') + " #{@batch.name}", [@course, @batch] %> &raquo;
       <%= link_to t('exams'), batch_exam_groups_path(@batch) %> &raquo;
       <%= @exam_group.name %>
     </div>
@@ -48,7 +48,7 @@
     <% unless @exam_group.exam_type == 'Grades' %>
         <table id="listing">
           <tr class="tr-head">
-            <td><%= t('subject') %></td>
+            <td><%= t('subject.title') %></td>
             <td><%= t('maxMarks') %></td>
             <td><%= t("minMarks") %></td>
             <td><%= t('manage') %></td>
@@ -69,7 +69,7 @@
     <% else %>
         <table id="listing" width="100%">
           <tr class="tr-head">
-            <td><%= t('subject') %></td>
+            <td><%= t('subject.title') %></td>
             <td><%= t('manage') %></td>
           </tr>
           <% @exam_group.exams.each do |exam| %>

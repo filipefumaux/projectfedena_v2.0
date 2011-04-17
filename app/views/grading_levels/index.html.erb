@@ -3,7 +3,7 @@
 
   <h1><%= t('exams') %></h1>
 
-  <h3>Grading levels</h3>
+  <h3><%= t('gradingLevels') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -22,14 +22,14 @@
 
   <div class="box">
     <div class="label-field-pair">
-      <label for="student_course"><%= t("courses")%>
+      <label for="student_course"><%= t("courses") %>
         <%= image_tag("loader.gif", :align => "absmiddle", :border => 0, :id => "loader", :style =>"display: none;") %>
       </label>
 
       <div class="text-input-bg">
         <%= select :batch, :id,
                    @batches.map { |b| [b.full_name, b.id] },
-                   {:prompt => 'Common'},
+                   {:prompt => t('common')},
                    {:onchange => "#{remote_function(
                            :url => {:action => 'show'},
                            :with => "'batch_id='+value",

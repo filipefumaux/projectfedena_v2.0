@@ -4,7 +4,7 @@ module Spec
   module Rails
     module Example
       module RoutingHelpers
-        
+
         class RouteFor
           def initialize(example, options)
             @example, @options = example, options
@@ -18,7 +18,7 @@ module Spec
             else
               path, querystring = expected.split('?')
               path_string = path
-              path = { :path => path, :method => :get }
+              path = {:path => path, :method => :get}
             end
             params = querystring.blank? ? {} : Rack::Utils.parse_query(querystring).symbolize_keys!
             begin
@@ -54,7 +54,7 @@ module Spec
           querystring.blank? ? params : params.merge(Rack::Utils.parse_query(querystring).symbolize_keys!)
         end
 
-      private
+        private
 
         def ensure_that_routes_are_loaded
           ActionController::Routing::Routes.reload if ActionController::Routing::Routes.empty?

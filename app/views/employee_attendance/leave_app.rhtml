@@ -3,7 +3,7 @@
 
   <h1><%= t('employee.leaveApp') %></h1>
 
-  <h3>Pending approval</h3>
+  <h3><%= t('pendingApproval') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -36,9 +36,9 @@
       <li class="listeven">
         <div class="item-name"><%= t('halfDay') %>:</div>
         <% if @applied_leave.is_half_day == true %>
-            <%= "Yes" %>
+            <%= t('yes') %>
         <% else %>
-            <%= "No" %>
+            <%= t('no') %>
         <% end %>
       </li>
       <li class="listodd">
@@ -52,14 +52,14 @@
         <%= @applied_leave.reason %></li>
       <li class="listeven">
         <div class="item-name"><%= t('status') %>:</div>
-        <%= "Approved" if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>
-        <%= "Denied" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == true %>
-        <%= "Pending approval" if @applied_leave.approved == false and @applied_leave.viewed_by_manager == false %>
+        <%= t('approved') if @applied_leave.approved == true and @applied_leave.viewed_by_manager == true %>
+        <%= t('denied') if @applied_leave.approved == false and @applied_leave.viewed_by_manager == true %>
+        <%= t('pendingApproval') if @applied_leave.approved == false and @applied_leave.viewed_by_manager == false %>
       </li>
     </ul>
 
 <span class="reminder-link">
-<%= link_to_remote "Send messages to the manager of this employee",
+<%= link_to_remote t('employee.sendMsgToMenager'),
                    :update => "reminder-form",
                    :url => {:controller=>"reminder", :action => "pull_reminder_form", :id=>@applied_employee.id, :id2=>@employee.id, :id3=>@applied_leave.id} if @applied_leave.approved == false and @applied_leave.viewed_by_manager == false %>
 </span>

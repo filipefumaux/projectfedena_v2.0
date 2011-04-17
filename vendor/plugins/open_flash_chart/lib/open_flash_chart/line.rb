@@ -3,7 +3,7 @@ module OpenFlashChart
   class Line < LineBase
     def initialize args={}
       super
-      @type = "line"      
+      @type = "line"
     end
   end
 

@@ -1,7 +1,7 @@
 <div id="content-header">
   <img src="/images/show_finance.png" alt=""/>
 
-  <h1>Tally</h1>
+  <h1><%= t('finance.tally') %></h1>
 
   <h3><%= t("settings") %></h3>
 
@@ -23,19 +23,19 @@
           </div>
         </div>
         <div class="label-field-pair">
-          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toFees')%></label>
+          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toFees') %></label>
 
           <div class="text-input-bg"><%= text_field :xml_settings, :fee, :value => @xml[:fee] %>
           </div>
         </div>
         <div class="label-field-pair">
-          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toDonation')%></label>
+          <label for="student_grade"><%= t('ledgerNameCorresponding') +" "+t('toDonation') %></label>
 
           <div class="text-input-bg"> <%= text_field :xml_settings, :donation, :value => @xml[:donation] %>
           </div>
         </div>
 
-        <%= submit_tag t('saveChanges'), :class=>'submit_button' %>
+        <%= submit_tag "► "+t('saveChanges'), :class=>'submit_button' %>
     <% end %>
   </div>
 </div>

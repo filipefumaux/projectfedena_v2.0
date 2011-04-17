@@ -4,12 +4,12 @@ module OpenFlashChart
       super
       @type = "area"
       @fill_alpha = 0.35
-      @values = []      
+      @values = []
     end
 
     def set_fill_colour(color)
       @fill = color
-    end 
+    end
 
     def set_loop
       @loop = true

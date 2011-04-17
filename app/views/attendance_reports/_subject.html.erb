@@ -1,10 +1,10 @@
 <div class="label-field-pair">
-  <label>Select a subject </label>
+  <label><%= t('selectASubject') %> </label>
 
   <div class="text-input-bg">
     <%= select :subject, :id,
                @subjects.map { |b| [b.name, b.id] },
-               {:prompt => 'All Subjects'},
+               {:prompt => t("subject.all")},
                {:onchange => "#{remote_function(
                        :url => {:action => 'mode'},
                        :with => "'subject_id='+value+'&batch_id='+#{@batch.id}",

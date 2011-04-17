@@ -13,7 +13,9 @@ require 'action_view'
 require 'ostruct'
 
 ActionView::Helpers::InstanceTag.class_eval do
-  class << self; alias new_with_backwards_compatibility new; end
+  class << self;
+    alias new_with_backwards_compatibility new;
+  end
 end
 
 $: << (File.dirname(__FILE__) + "/../lib")

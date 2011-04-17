@@ -21,13 +21,13 @@
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
       <%= link_to @course.full_name, @course %> &raquo;
-      <%= link_to t('batch') + " #{@batch.name}", [@course, @batch] %> &raquo;
+      <%= link_to t('batch.title') + " #{@batch.name}", [@course, @batch] %> &raquo;
       <%= link_to t('exams'), batch_exam_groups_path(@batch) %> &raquo;
       <%= link_to @exam_group.name, [@batch, @exam_group] %> &raquo;
-      Edit
+      <%= t("edit") %>
     </div>
 
-    <h4>For exam group - <%= @exam_group.name %></h4>
+    <h4><%= t("exam.forExamGroup") %> - <%= @exam_group.name %></h4>
 
     <% form_for [@exam_group, @exam] do |f| %>
 
