@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def permission_denied
-    flash[:notice] = "Sorry, you are not allowed to access that page."
+    flash[:notice] = t('notAllowed')
     redirect_to :controller => 'user', :action => 'dashboard'
   end
 
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     hr = Configuration.find_by_config_value("HR")
     if hr.nil?
       redirect_to :controller => 'user', :action => 'dashboard'
-      flash[:notice] = "Sorry, you are not allowed to access that page."
+      flash[:notice] = t('notAllowed')
     end
   end
 
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     finance = Configuration.find_by_config_value("Finance")
     if finance.nil?
       redirect_to :controller => 'user', :action => 'dashboard'
-      flash[:notice] = "Sorry, you are not allowed to access that page."
+      flash[:notice] = t('notAllowed')
     end
   end
 
@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
     if current_user.student?
       student = Student.find_by_admission_no(current_user.username)
       unless params[:id].to_i == student.id or params[:student].to_i == student.id
-        flash[:notice] = "You are not allowed to view that information."
+        flash[:notice] = t('infoNotAllowed')
         redirect_to :controller=>"user", :action=>"dashboard"
       end
     end
@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
       #    end
       #    unless privilege.include?('9') or privilege.include?('14') or privilege.include?('17') or privilege.include?('18') or privilege.include?('19')
       unless params[:id].to_i == employee.id
-        flash[:notice] = 'You are not allowed to view that information.'
+        flash[:notice] = t('infoNotAllowed')
         redirect_to :controller=>"user", :action=>"dashboard"
       end
     end
@@ -88,7 +88,7 @@ class ApplicationController < ActionController::Base
   def protect_view_reminders
     reminder = Reminder.find(params[:id2])
     unless reminder.recipient == current_user.id
-      flash[:notice] = 'You are not allowed to view that information.'
+      flash[:notice] = t('infoNotAllowed')
       redirect_to :controller=>"reminder", :action=>"index"
     end
   end
@@ -96,7 +96,7 @@ class ApplicationController < ActionController::Base
   def protect_sent_reminders
     reminder = Reminder.find(params[:id2])
     unless reminder.sender == current_user.id
-      flash[:notice] = 'You are not allowed to view that information.'
+      flash[:notice] = t('infoNotAllowed')
       redirect_to :controller=>"reminder", :action=>"index"
     end
   end
@@ -106,7 +106,7 @@ class ApplicationController < ActionController::Base
     employee = Employee.find(params[:id])
     employee_user = employee.user
     unless employee_user.id == current_user.id
-      flash[:notice] = "Access denied"
+      flash[:notice] = t('accessDenied')
       redirect_to :controller=>"user", :action=>"dashboard"
     end
   end
@@ -116,7 +116,7 @@ class ApplicationController < ActionController::Base
     applied_employee = applied_leave.employee
     applied_employee_user = applied_employee.user
     unless applied_employee_user.id == current_user.id
-      flash[:notice]="Access denied!"
+      flash[:notice]=t('accessDenied')
       redirect_to :controller=>"user", :action=>"dashboard"
     end
   end
@@ -127,13 +127,13 @@ class ApplicationController < ActionController::Base
     applied_employees_manager = Employee.find(applied_employee.reporting_manager_id)
     applied_employees_manager_user = applied_employees_manager.user
     unless applied_employees_manager_user.id == current_user.id
-      flash[:notice]="Access denied!"
+      flash[:notice]=t('accessDenied')
       redirect_to :controller=>"user", :action=>"dashboard"
     end
   end
 
-  #   private
-  #    def set_user_language
-  #      #I18n.locale = 'es'
-  #    end
+  private
+  def set_user_language
+    I18n.locale = 'pt'
+  end
 end

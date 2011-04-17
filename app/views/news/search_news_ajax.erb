@@ -1,5 +1,5 @@
 <% if @news.nil? %>
-    <div id="news_no_result">No News found</div>
+    <div id="news_no_result"><%= t('noNewsFound') %></div>
 <% else %>
     <% @news.each do |r| %>
 

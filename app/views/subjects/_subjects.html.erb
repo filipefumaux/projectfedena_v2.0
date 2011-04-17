@@ -50,7 +50,7 @@
 
 <% unless @elective_groups.nil? %>
     <% @elective_groups.each do |e| %>
-        <% @esubjects = @batch.elective_batch_subject(e.id) #Subject.find_all_by_elective_group_id(e.id)    %>
+        <% @esubjects = @batch.elective_batch_subject(e.id) #Subject.find_all_by_elective_group_id(e.id)     %>
         <div class="add_sub">
           <%= link_to_remote t('addSubjectToElectiveGroup'), :url => {:controller=>"subjects", :action => 'new', :id => @batch, :id2=>e} %>
         </div>

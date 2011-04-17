@@ -49,7 +49,7 @@
                 <div id="drop_<%= @tte.id %>" class="drop" onClick="update_selected_divs('<%= @tte.id %>');">
                   <div class="tt-subject" id="subject_name_<%= @tte.id %>">
                     <div class="subject">
-                      <% #  @tte.subject.code unless @tte.subject.nil?    %>
+                      <% #  @tte.subject.code unless @tte.subject.nil?     %>
                       <% unless @tte.subject.nil? %>
                           <% unless @tte.subject.elective_group_id.nil? %>
                               <%= @tte.subject.elective_group.name %>

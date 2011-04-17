@@ -48,7 +48,7 @@
       <% end %>
       <%= link_to t("students"), :controller => "student", :action => "index" \
             if this_user.admin? %>
-      <%= link_to t("attendance"), :controller => "student_attendance", :action => "index" \
+      <%= link_to t('attendance.title'), :controller => "student_attendance", :action => "index" \
             if this_user.admin? %>
       <%= link_to t("settings"), :controller => "configuration", :action => "index" \
             if this_user.admin? %> <!--
@@ -90,7 +90,7 @@
           <div id="news_feed">
             <% dash_news = News.find(:all, :order => 'created_at desc', :limit => 5) %>
             <% dash_news.each do |n| %>
-                <div class="sidebar_news_item<%= Loggedcycle("0", "1") %>">
+                <div class="sidebar_news_item<%= cycle("0", "1") %>">
                   <h5><%= link_to n.title, :controller => 'news', :action => 'view', :id => n.id %></h5>
                   <small><%= time_ago_in_words(n.created_at) %> <%= t('ago') %></small>
                 </div>

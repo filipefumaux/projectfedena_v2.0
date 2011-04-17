@@ -51,7 +51,7 @@
       <% end %>
       <%= link_to t("students"), :controller => "student", :action => "index" \
             if this_user.admin? %>
-      <%= link_to t("attendance"), :controller => "student_attendance", :action => "index" \
+      <%= link_to t('attendance.title'), :controller => "student_attendance", :action => "index" \
             if this_user.admin? %>
       <%= link_to t("settings"), :controller => "configuration", :action => "index" \
             if this_user.admin? %> <!--

@@ -56,10 +56,10 @@
                           :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_list") %>
                 selected_divs = [];
             }
-            else{
-                    <%= remote_function(:update => "timetable",
-                                           :url => {:action => "update_multiple_timetable_entries2"},
-                                          :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_id") %>
+            else {
+            <%= remote_function(:update => "timetable",
+    :url => {:action => "update_multiple_timetable_entries2"},
+   :with => "'emp_sub_id=' + emp_sub_id + '&tte_ids=' + tte_id") %>
             }
         }
     }

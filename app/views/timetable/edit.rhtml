@@ -55,13 +55,13 @@
                                   :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_list") %>
                 selected_divs = [];
             }
-            else{
-                    <%= remote_function(:update => "timetable",
-                                           :url => {:action => "update_multiple_timetable_entries"},
-                                          :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
-                    }
+            else {
+            <%= remote_function(:update => "timetable",
+    :url => {:action => "update_multiple_timetable_entries"},
+   :with => "'subject_id=' + sub_id + '&tte_ids=' + tte_id") %>
             }
         }
+    }
 </script>
 
 <div id="page-yield">

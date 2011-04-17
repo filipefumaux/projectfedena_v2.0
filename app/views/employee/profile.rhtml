@@ -53,7 +53,7 @@
         <li>
           <a href="#" class="drops" id="link_three">Leaves &#9660;</a>
           <ul id="box_three" class="scriptaculously" style="display:none;">
-            <li><%= link_to_remote t("attendance"), :url => {:action => "view_attendance", :id => @employee.id}, :update => "profile-infos" %></li>
+            <li><%= link_to_remote t('attendance.title'), :url => {:action => "view_attendance", :id => @employee.id}, :update => "profile-infos" %></li>
             <li><%= link_to t('leaves'), :controller=>"employee_attendance", :action=>"leaves", :id=>@employee.id %></li>
           </ul>
         </li>
@@ -62,7 +62,7 @@
             <li>
               <a href="#" class="drops" id="link_three">Leaves &#9660;</a>
               <ul id="box_three" class="scriptaculously" style="display:none;">
-                <li><%= link_to_remote t("attendance"), :url => {:action => "view_attendance", :id => @employee.id}, :update => "profile-infos" %></li>
+                <li><%= link_to_remote t('attendance.title'), :url => {:action => "view_attendance", :id => @employee.id}, :update => "profile-infos" %></li>
               </ul>
             </li>
 
