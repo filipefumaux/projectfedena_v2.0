@@ -10,7 +10,7 @@
 <div id="user_options">
 
   <% if @user.admin? %>
-      <%= link_to "", {:controller => "student", :action => "admission1"},
+      <%= link_to "<br/><br/><br/><br/>Admissão", {:controller => "student", :action => "admission1"},
                   :class => "option_buttons", :id => "admission_button", :title => t('dashboard.enterStudentAdmission') %>
       <%= link_to "", {:controller => "student", :action => "index"},
                   :class => "option_buttons", :id => "student_details_button", :title => t('dashboard.searchForAnExisting') %>
