@@ -782,3 +782,244 @@ Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:29:51) [PO
 Rendered layouts/_reminder_count (3.3ms)
 Rendered user/_header_link (25.2ms)
 Completed in 69ms (View: 27, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:31:51) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.5ms)
+Rendered user/_header_link (25.6ms)
+Completed in 72ms (View: 27, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2011-04-27 23:32:55) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.7ms)
+  [4;35;1mNews Load (0.1ms)[0m   [0mSELECT * FROM `news` ORDER BY created_at desc, created_at DESC LIMIT 5[0m
+  [4;36;1mNews Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `news`[0m
+Completed in 107ms (View: 58, DB: 6) | 200 OK [http://localhost/user/dashboard]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:34:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.5ms)
+Rendered user/_header_link (26.2ms)
+Completed in 70ms (View: 28, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:36:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.2ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.6ms)
+Rendered user/_header_link (27.2ms)
+Completed in 125ms (View: 29, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:38:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.4ms)
+Rendered user/_header_link (25.2ms)
+Completed in 67ms (View: 27, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:40:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.5ms)
+Rendered user/_header_link (25.9ms)
+Completed in 70ms (View: 28, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:42:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.2ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mReminder Load (0.1ms)[0m   [0;1mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.5ms)
+Rendered user/_header_link (26.6ms)
+Completed in 126ms (View: 28, DB: 5) | 200 OK [http://localhost/user/header_link]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:44:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConfiguration Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mConfiguration Load (0.1ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;36;1mEmployee Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `employees`[0m
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mStudent Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `students`[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+ActionView::TemplateError (syntax error on line 948, col -1: `  feeStructure: "Estrutura de Taxas"
+  feesDefaulters: "Taxa de inadimplentes"
+  confirm: "Confirma"
+  thisEventIsCommon: "Este evento é comum a todos os cursos e departamentos"
+  noOtherEventScheduled: "Não ha outros eventos programados"
+  otheEvents: "Outros eventos"
+  donors: "Doadores"
+  listOfDonors: "Lista de Doadores"
+  createdAt: "Criado em"
+  liabilityForm: "Formulário de Passivos"
+  donorName: "Nome do doador"
+  alreadyApproved: "Já aprovado"
+  done: "Feito"
+  ago: "atrás"
+  examinations: "Provas"
+  holidays: "Feriados"
+  dues: "Obrigações"
+  accessDenied: "Acesso negado!"
+  notAllowed: "Desculpe, você não está autorizado a acessar esta página."
+  infoNotAllowed: "Você não esta autorizado a ver esta informação."
+  noNewsFound: "Nenhuma notícia encontrada"
+  manageNews: "Gerenciar Notícias"
+  campusNews: "Campus News"
+  reminders: "Lembretes"
+  myProfile: "Meu Perfil"') on line #2 of app/views/user/_header_link.html.erb:
+1: <% this_user = User.find(session[:user_id]) if session[:user_id] %>
+2: <%= t("loggedInAs") %>:
+3: <%= link_to this_user.first_name, :controller => 'user', :action => 'profile',
+4:             :id => this_user.username %> &nbsp;|&nbsp;
+5: <%= link_to t("messages"), :controller => "reminder", :action => "index" %>(<%= render :partial => 'layouts/reminder_count' %>)&nbsp;|&nbsp;
+
+    /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /usr/lib/ruby/1.8/yaml.rb:144:in `load_file'
+    /usr/lib/ruby/1.8/yaml.rb:143:in `open'
+    /usr/lib/ruby/1.8/yaml.rb:143:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:170:in `load_yml'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:156:in `send'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:156:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:15:in `load_translations'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:15:in `each'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:15:in `load_translations'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/simple.rb:55:in `init_translations'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/simple.rb:69:in `lookup'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n/backend/base.rb:26:in `translate'
+    /usr/lib/ruby/gems/1.8/gems/i18n-0.5.0/lib/i18n.rb:155:in `translate'
+    app/views/user/_header_link.html.erb:2
+    app/controllers/user_controller.rb:286:in `header_link'
+
+Rendered rescues/_trace (57.6ms)
+Rendered rescues/_request_and_response (7.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserController#header_link (for 127.0.0.1 at 2011-04-27 23:46:55) [POST]
+  Parameters: {"action"=>"header_link", "authenticity_token"=>"wcXXc5G8Ts2upj8Z2VF28ZyJLuDZ7M6xpzLNvZ27oyU=", "controller"=>"user", "_"=>""}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mConfiguration Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mConfiguration Load (0.1ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`config_key` = 'AvailableModules') [0m
+  [4;35;1mEmployee Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `employees`[0m
+  [4;36;1mEmployee Load (0.1ms)[0m   [0;1mSELECT * FROM `employees` WHERE (`employees`.`employee_number` = 'admin') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mStudent Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT * FROM `students` WHERE (`students`.`admission_no` = 'admin') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mReminder Load (0.1ms)[0m   [0mSELECT * FROM `reminders` WHERE (recipient = '1') [0m
+Rendered layouts/_reminder_count (3.6ms)
+Rendered user/_header_link (27.7ms)
+Completed in 140ms (View: 30, DB: 5) | 200 OK [http://localhost/user/header_link]
