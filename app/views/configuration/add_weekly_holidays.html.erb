@@ -1,5 +1,5 @@
 <% form_for :holiday do |f| %>
-    <%= select :holiday, :weekdays, ["Monday", "Tuesday", "Thursday", "Wednesday", "Friday", "Saturday", "Sunday"] %>
+    <%= select :holiday, :weekdays, [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')] %>
 
     <%= submit_tag t('submit') %>
 <% end %>

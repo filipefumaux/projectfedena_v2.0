@@ -5,14 +5,14 @@ class WeekdayController < ApplicationController
   def index
     @batches = Batch.active
     @weekdays = Weekday.default
-    @day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    @day = [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')]
     @days = ["0", "1", "2", "3", "4", "5", "6"]
   end
 
   def week
     @batch = nil
     @days = ["0", "1", "2", "3", "4", "5", "6"]
-    @day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    @day = [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')]
     if params[:batch_id] == ''
       @weekdays = Weekday.default
     else
