@@ -1,0 +1,441 @@
+# Logfile created on Sun Apr 17 11:54:12 -0300 2011  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mBatch Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `batches`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExamGroup Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exam_groups`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCourse Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `courses`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mElectiveGroup Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `elective_groups`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExam Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exams`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExamGroup Create (0.2ms)[0m   [0mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 2', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (93.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mExamGroup Create (0.2ms)[0m   [0;1mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 4', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (68.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExamGroup Create (0.2ms)[0m   [0mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 5', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (48.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mExamGroup Create (0.2ms)[0m   [0;1mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 6', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (36.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExamGroup Create (0.2ms)[0m   [0mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 7', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBatch Create (0.2ms)[0m   [0;1mINSERT INTO `batches` (`name`, `start_date`, `is_deleted`, `is_active`, `course_id`, `end_date`) VALUES('2010/11', '2011-04-17 03:00:00', 0, 1, NULL, '2012-04-17 03:00:00')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCourse Create (0.2ms)[0m   [0mINSERT INTO `courses` (`created_at`, `code`, `updated_at`, `course_name`, `is_deleted`, `section_name`) VALUES('2011-04-17 15:18:17', '1A', '2011-04-17 15:18:17', '1', 0, 'A')[0m
+  [4;36;1mBatch Update (0.2ms)[0m   [0;1mUPDATE `batches` SET `course_id` = 1 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSubject Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `subjects`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSubject Create (0.3ms)[0m   [0;1mINSERT INTO `subjects` (`name`, `created_at`, `code`, `max_weekly_classes`, `updated_at`, `batch_id`, `no_exams`, `is_deleted`, `elective_group_id`) VALUES('Subject', '2011-04-17 15:18:17', 'SUB', 8, '2011-04-17 15:18:17', 1, 0, 0, NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExam Create (0.2ms)[0m   [0mINSERT INTO `exams` (`end_time`, `created_at`, `event_id`, `minimum_marks`, `updated_at`, `subject_id`, `exam_group_id`, `grading_level_id`, `weightage`, `maximum_marks`, `start_time`) VALUES('2011-04-17 16:18:16', '2011-04-17 15:18:17', NULL, 30, '2011-04-17 15:18:17', 1, 5, NULL, 50, 100, '2011-04-17 15:18:16')[0m
+  [4;36;1mEvent Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `events`[0m
+  [4;35;1mExamGroup Load (0.3ms)[0m   [0mSELECT * FROM `exam_groups` WHERE (`exam_groups`.`id` = 5) [0m
+  [4;36;1mSubject Load (0.2ms)[0m   [0;1mSELECT * FROM `subjects` WHERE (`subjects`.`id` = 1 AND (`subjects`.`is_deleted` = 0)) [0m
+  [4;35;1mBatch Load (0.2ms)[0m   [0mSELECT * FROM `batches` WHERE (`batches`.`id` = 1) [0m
+  [4;36;1mCourse Load (0.2ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 1) [0m
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO `events` (`start_date`, `is_exam`, `created_at`, `title`, `is_common`, `updated_at`, `is_holiday`, `description`, `end_date`, `is_due`) VALUES('2011-04-17 15:18:16', 1, '2011-04-17 15:18:17', 'Exam', 0, '2011-04-17 15:18:17', 0, 'Exam Group 7 for 1A - A 2010/11 - Subject', '2011-04-17 16:18:16', 0)[0m
+  [4;36;1mBatchEvent Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `batch_events`[0m
+  [4;35;1mBatchEvent Create (0.2ms)[0m   [0mINSERT INTO `batch_events` (`created_at`, `event_id`, `updated_at`, `batch_id`) VALUES('2011-04-17 15:18:17', 1, '2011-04-17 15:18:17', NULL)[0m
+  [4;36;1mExam Update (0.2ms)[0m   [0;1mUPDATE `exams` SET `updated_at` = '2011-04-17 15:18:17', `event_id` = 1, `start_time` = '2011-04-17 15:18:16', `minimum_marks` = 30, `created_at` = '2011-04-17 15:18:17', `maximum_marks` = 100, `weightage` = 50, `exam_group_id` = 5, `end_time` = '2011-04-17 16:18:16', `subject_id` = 1 WHERE `id` = 1[0m
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM `events` WHERE (`events`.`id` = 1) [0m
+  [4;36;1mEvent Update (0.2ms)[0m   [0;1mUPDATE `events` SET `updated_at` = '2011-04-17 15:18:17', `start_date` = '2011-04-17 15:18:16', `end_date` = '2011-04-17 16:18:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExam Update (0.2ms)[0m   [0mUPDATE `exams` SET `updated_at` = '2011-04-17 15:18:17', `start_time` = '2011-04-19 15:18:17' WHERE `id` = 1[0m
+  [4;36;1mEvent Update (0.2ms)[0m   [0;1mUPDATE `events` SET `updated_at` = '2011-04-17 15:18:17', `start_date` = '2011-04-19 15:18:17' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (107.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mExamGroup Create (0.2ms)[0m   [0mINSERT INTO `exam_groups` (`name`, `batch_id`, `is_published`, `result_published`, `exam_date`, `exam_type`) VALUES('Exam Group 8', NULL, 0, 0, '2011-04-17', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mBatch Create (0.2ms)[0m   [0;1mINSERT INTO `batches` (`name`, `start_date`, `is_deleted`, `is_active`, `course_id`, `end_date`) VALUES('2010/11', '2011-04-17 03:00:00', 0, 1, NULL, '2012-04-17 03:00:00')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCourse Create (0.2ms)[0m   [0mINSERT INTO `courses` (`created_at`, `code`, `updated_at`, `course_name`, `is_deleted`, `section_name`) VALUES('2011-04-17 15:18:17', '1A', '2011-04-17 15:18:17', '1', 0, 'A')[0m
+  [4;36;1mBatch Update (0.2ms)[0m   [0;1mUPDATE `batches` SET `course_id` = 2 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSubject Create (0.2ms)[0m   [0mINSERT INTO `subjects` (`name`, `created_at`, `code`, `max_weekly_classes`, `updated_at`, `batch_id`, `no_exams`, `is_deleted`, `elective_group_id`) VALUES('Subject', '2011-04-17 15:18:17', 'SUB', 8, '2011-04-17 15:18:17', 2, 0, 0, NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mExam Create (0.2ms)[0m   [0;1mINSERT INTO `exams` (`end_time`, `created_at`, `event_id`, `minimum_marks`, `updated_at`, `subject_id`, `exam_group_id`, `grading_level_id`, `weightage`, `maximum_marks`, `start_time`) VALUES('2011-04-17 16:18:16', '2011-04-17 15:18:17', NULL, 30, '2011-04-17 15:18:17', 2, 6, NULL, 50, 100, '2011-04-17 15:18:16')[0m
+  [4;35;1mExamGroup Load (0.2ms)[0m   [0mSELECT * FROM `exam_groups` WHERE (`exam_groups`.`id` = 6) [0m
+  [4;36;1mSubject Load (0.2ms)[0m   [0;1mSELECT * FROM `subjects` WHERE (`subjects`.`id` = 2 AND (`subjects`.`is_deleted` = 0)) [0m
+  [4;35;1mBatch Load (0.1ms)[0m   [0mSELECT * FROM `batches` WHERE (`batches`.`id` = 2) [0m
+  [4;36;1mCourse Load (0.2ms)[0m   [0;1mSELECT * FROM `courses` WHERE (`courses`.`id` = 2) [0m
+  [4;35;1mEvent Create (0.2ms)[0m   [0mINSERT INTO `events` (`start_date`, `is_exam`, `created_at`, `title`, `is_common`, `updated_at`, `is_holiday`, `description`, `end_date`, `is_due`) VALUES('2011-04-17 15:18:16', 1, '2011-04-17 15:18:17', 'Exam', 0, '2011-04-17 15:18:17', 0, 'Exam Group 8 for 1A - A 2010/11 - Subject', '2011-04-17 16:18:16', 0)[0m
+  [4;36;1mBatchEvent Create (0.1ms)[0m   [0;1mINSERT INTO `batch_events` (`created_at`, `event_id`, `updated_at`, `batch_id`) VALUES('2011-04-17 15:18:17', 2, '2011-04-17 15:18:17', NULL)[0m
+  [4;35;1mExam Update (0.2ms)[0m   [0mUPDATE `exams` SET `updated_at` = '2011-04-17 15:18:17', `event_id` = 2, `start_time` = '2011-04-17 15:18:16', `minimum_marks` = 30, `created_at` = '2011-04-17 15:18:17', `maximum_marks` = 100, `weightage` = 50, `exam_group_id` = 6, `end_time` = '2011-04-17 16:18:16', `subject_id` = 2 WHERE `id` = 2[0m
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 2) [0m
+  [4;35;1mEvent Update (0.2ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-04-17 15:18:17', `start_date` = '2011-04-17 15:18:16', `end_date` = '2011-04-17 16:18:16' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mExam Update (0.2ms)[0m   [0;1mUPDATE `exams` SET `updated_at` = '2011-04-17 15:18:17', `start_time` = '2011-04-15 15:18:17' WHERE `id` = 2[0m
+  [4;35;1mEvent Update (0.2ms)[0m   [0mUPDATE `events` SET `updated_at` = '2011-04-17 15:18:17', `start_date` = '2011-04-15 15:18:17' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (39.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGradingLevel Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `grading_levels`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mGradingLevel Load (0.2ms)[0m   [0mSELECT `grading_levels`.id FROM `grading_levels` WHERE (`grading_levels`.`name` IS NULL AND `grading_levels`.batch_id IS NULL AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGradingLevel Load (0.4ms)[0m   [0;1mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id IS NULL AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;35;1mGradingLevel Create (0.2ms)[0m   [0mINSERT INTO `grading_levels` (`name`, `created_at`, `updated_at`, `batch_id`, `order`, `is_deleted`, `min_score`) VALUES('A', '2011-04-17 15:18:18', '2011-04-17 15:18:18', NULL, 1, 0, 85)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (50.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGradingLevel Load (0.3ms)[0m   [0;1mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;35;1mGradingLevel Create (0.2ms)[0m   [0mINSERT INTO `grading_levels` (`name`, `created_at`, `updated_at`, `batch_id`, `order`, `is_deleted`, `min_score`) VALUES('A', '2011-04-17 15:18:18', '2011-04-17 15:18:18', 1, 1, 0, 80)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGradingLevel Load (0.2ms)[0m   [0;1mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mGradingLevel Load (0.3ms)[0m   [0mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (32.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGradingLevel Load (0.3ms)[0m   [0;1mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;35;1mGradingLevel Create (0.2ms)[0m   [0mINSERT INTO `grading_levels` (`name`, `created_at`, `updated_at`, `batch_id`, `order`, `is_deleted`, `min_score`) VALUES('A', '2011-04-17 15:18:18', '2011-04-17 15:18:18', 1, 1, 0, 80)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGradingLevel Load (0.2ms)[0m   [0;1mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mGradingLevel Load (0.2ms)[0m   [0mSELECT `grading_levels`.id FROM `grading_levels` WHERE (LOWER(`grading_levels`.`name`) = BINARY 'a+' AND `grading_levels`.batch_id = 1 AND `grading_levels`.is_deleted = 0) LIMIT 1[0m
+  [4;36;1mGradingLevel Create (0.2ms)[0m   [0;1mINSERT INTO `grading_levels` (`name`, `created_at`, `updated_at`, `batch_id`, `order`, `is_deleted`, `min_score`) VALUES('A+', '2011-04-17 15:18:18', '2011-04-17 15:18:18', 1, 1, 0, 80)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (43.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mNewsComment Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `news_comments`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFinanceTransaction Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `finance_transactions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mGuardian Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `guardians`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.3ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStudent Load (0.1ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mStudent Load (0.1ms)[0m   [0mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;36;1mStudent Create (0.3ms)[0m   [0;1mINSERT INTO `students` (`city`, `photo_filename`, `pin_code`, `created_at`, `student_category_id`, `admission_no`, `nationality_id`, `immediate_contact_id`, `photo_data`, `updated_at`, `batch_id`, `language`, `country_id`, `photo_content_type`, `gender`, `phone1`, `admission_date`, `blood_group`, `phone2`, `status_description`, `is_deleted`, `last_name`, `is_active`, `date_of_birth`, `religion`, `is_sms_enabled`, `birth_place`, `address_line1`, `class_roll_no`, `first_name`, `middle_name`, `address_line2`, `state`, `email`) VALUES(NULL, NULL, NULL, '2011-04-17 15:18:18', NULL, 1, 76, NULL, NULL, '2011-04-17 15:18:18', 1, NULL, 76, NULL, 'm', NULL, '2011-04-17', NULL, NULL, NULL, 0, 'Doe', 1, '2006-04-17', NULL, 1, NULL, '', NULL, 'John', 'K', '', NULL, NULL)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGuardian Create (0.2ms)[0m   [0;1mINSERT INTO `guardians` (`city`, `occupation`, `dob`, `created_at`, `updated_at`, `relation`, `country_id`, `last_name`, `income`, `office_phone1`, `office_address_line1`, `office_phone2`, `office_address_line2`, `ward_id`, `first_name`, `email`, `mobile_phone`, `state`, `education`) VALUES(NULL, NULL, NULL, '2011-04-17 15:18:18', '2011-04-17 15:18:18', 'Parent', NULL, 'Lname', NULL, NULL, NULL, NULL, NULL, NULL, 'Fname', NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mGuardian Update (0.3ms)[0m   [0mUPDATE `guardians` SET `updated_at` = '2011-04-17 15:18:18', `ward_id` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mGuardian Load (0.2ms)[0m   [0;1mSELECT * FROM `guardians` WHERE (`guardians`.ward_id = 1) [0m
+  [4;35;1mGuardian Destroy (0.1ms)[0m   [0mDELETE FROM `guardians` WHERE `id` = 1[0m
+  [4;36;1mbatch_students Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `batch_students`[0m
+  [4;35;1mBatch Load (0.2ms)[0m   [0mSELECT * FROM `batches` INNER JOIN `batch_students` ON `batches`.id = `batch_students`.batch_id WHERE (`batch_students`.student_id = 1 ) [0m
+  [4;36;1mStudent Destroy (0.2ms)[0m   [0;1mDELETE FROM `students` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mGuardian Load (0.1ms)[0m   [0;1mSELECT `guardians`.id FROM `guardians` WHERE (`guardians`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (33.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT `students`.id FROM `students` WHERE (`students`.`admission_no` = BINARY '1') LIMIT 1[0m
+  [4;35;1mStudent Create (0.3ms)[0m   [0mINSERT INTO `students` (`city`, `photo_filename`, `pin_code`, `created_at`, `student_category_id`, `admission_no`, `nationality_id`, `immediate_contact_id`, `photo_data`, `updated_at`, `batch_id`, `language`, `country_id`, `photo_content_type`, `gender`, `phone1`, `admission_date`, `blood_group`, `phone2`, `status_description`, `is_deleted`, `last_name`, `is_active`, `date_of_birth`, `religion`, `is_sms_enabled`, `birth_place`, `address_line1`, `class_roll_no`, `first_name`, `middle_name`, `address_line2`, `state`, `email`) VALUES(NULL, NULL, NULL, '2011-04-17 15:18:18', NULL, 1, 76, NULL, NULL, '2011-04-17 15:18:18', 1, NULL, 76, NULL, 'm', NULL, '2011-04-17', NULL, NULL, NULL, 0, 'Doe', 1, '2006-04-17', NULL, 1, NULL, '', NULL, 'John', 'K', '', NULL, NULL)[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (44.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'aaaaaaaaaaaaaaaaaaaa') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin1@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin2@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin2@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin2@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin2@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'john') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin3@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'a') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin4@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin5@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin6') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'nithin@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin6') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'info@projectfedena.org') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin8') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin8@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'aaaaaaaaaaaaaaaaaaaaa') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin9@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin10') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin10@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin11@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin12') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'blah') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin12') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'b lah') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin13') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin13@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin13') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin13@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin13') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin13@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin14') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin14@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'john doe') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin15@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'O\'Hara') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin16@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'jack=') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin16@fedena.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'a&&*') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin16@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin17@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin19') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin19@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin20@fedena.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@fedena.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m

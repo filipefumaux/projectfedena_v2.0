@@ -4,7 +4,7 @@
 en:
   welcome:
     title: "Welcome"
-    paragraph: "Projeto Fedena"
+    paragraph: "Fedena"
     dashboard: "to Fedena dashboard"
   flash:
     login: "Logged in successfully."
@@ -87,8 +87,6 @@ en:
     newAdditional: "New Additional Exam"
     maxMarks: "Maximum Marks"
     minMarks: "Minimum Marks"
-    title: "Exam"
-    type: "Exam Type"
     groupedReport: "Grouped exam Reports"
     scheduleResult: "Exam Schedule / Result"
     previousMarksOverview: "Previous marks overview"
@@ -969,3 +967,7 @@ en:
   notAllowed: "Sorry, you are not allowed to access that page."
   infoNotAllowed: "You are not allowed to view that information."
   noNewsFound: "No News found"
+  manageNews: "Manage News"
+  campusNews: "Campus News"
+  reminders: "Reminders"
+  myProfile: "My Profile"
