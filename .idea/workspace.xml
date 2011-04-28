@@ -5,293 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list id="6751274a-a140-4467-89d3-4cd11677498d" name="Translations" comment="More translations made" />
-    <list default="true" id="c367fda6-40c7-4fa0-aa11-9b58679b4079" name="New translations" comment="Removing windows files">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/HR/default_employee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/HR/show_hr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_global/error.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_global/header_underline_.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_global/list-bg-repeat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_global/student_details_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_input_bg/mail-message.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_input_bg/text-input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_input_bg/text-search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_input_bg/text-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/_input_bg/text-tiny.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/admission_page_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/admission_page_logo_.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/edit_form_underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/edit_student_link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/profile_picture_frame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/text_input.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/admission/vertical_separator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/announcement/add_news/add_news_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/announcement/add_news/news_content_text_box.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/announcement/add_news/news_title_text_box.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/application/app_back_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/application/app_fedena_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/application/app_layout_footer_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/application/app_layout_header_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/attendence/attendence.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/attendence/attendence1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/backgrounds/list-bg-repeat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/add_new_parent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/choose-file.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/create.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/delete-new.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/delete_round.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/edit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/edit_role.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/finish.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/finish2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/go.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/news_go.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/pdf_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/publish_news.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/save_and_proceed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/send.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/skip_this_step.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/submit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/tt_delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/tt_delete_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/update.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/view_pdf_report.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/buttons/view_report.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/calendar_date_select/calendar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/create_users/create_users_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/create_users/underline_image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/attendance.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_Human.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_academics.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_admission.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_campus_news.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_examinations.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_examinations.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_finance.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_leaves.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_manage_news.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_manage_users.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_my_profile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_reminders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_reminders_unread.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_student_details.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/button_timetable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/dashboard_buttons/settings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/edit_users/edit_users_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/edit_users/note_pen.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/edit_users/underline_image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/create/select_input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/create/text_input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/header_underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/header_underline_.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/index/page_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination/show_exam.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination_result/add/list-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination_result/add/page_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination_result/header_underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination_result/view_class_examtype/list_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/examination_result/view_exam_subject/list_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/create_user/create_user_vertical_separator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/create_user/text_input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/dashboard/content_header_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/dashboard/dash_news_top.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/dashboard/news_feed_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/dashboard/news_feed_more_link.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/user_edit/text_input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/user_profile/new_info_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/fedena_user/user_profile/new_info_top_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/foot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/footer-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/form_bg/approval_form_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/form_bg/remarks_text_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/form_bg/scroll-back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/form_bg/smalltextbox.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/form_bg/text-input-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/222222_11x11_icon_resize_se.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/333333_40x100_textures_02_glass_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/444444_40x100_textures_02_glass_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/999999_40x100_textures_02_glass_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/a21111_40x100_textures_02_glass_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/d_box_border_top.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/admission_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/admissions_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/admissions_button_glossy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/content_header_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/dash_news_top.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/manage_news_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/manage_news_button_glossy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/manage_users_buttton.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/manage_users_buttton_glossy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/manage_users_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/news_feed_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/news_feed_more_link.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/student_details_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/student_details_button_glossy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dashboard/student_details_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/dia_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_arrows_leftright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_arrows_updown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_doc.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_folder_closed.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_folder_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_minus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_11x11_icon_plus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_7x7_arrow_down.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_7x7_arrow_left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_7x7_arrow_right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/eeeeee_7x7_arrow_up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_arrows_leftright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_arrows_updown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_doc.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_folder_closed.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_folder_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_minus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_11x11_icon_plus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_7x7_arrow_down.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_7x7_arrow_left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_7x7_arrow_right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffd40f_7x7_arrow_up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_arrows_leftright.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_arrows_updown.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_close.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_doc.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_folder_closed.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_folder_open.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_minus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_11x11_icon_plus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_7x7_arrow_down.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_7x7_arrow_left.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_7x7_arrow_right.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/ffffff_7x7_arrow_up.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/jquery.calendar/icon_cal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/loader2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/fedena_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/footer_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/form_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/login_box.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/login_button.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/login/text_box.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/manage_news/manage_news_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/address_area_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/admission_step_bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/edit_form_underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/profile_picture_frame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/text_input.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/text_input_190px.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/admission1/vertical_separator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/profile/default_student.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/profile/new_info_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/profile/new_info_top_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/master_student/profile/topbanner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/menu-top/menu-tabs-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/modalbox/header-underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/ntbg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/rails.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/redbox_spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/roller.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_finance.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_news/delete_news_button.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_news/edit_news_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_news/show_news_back_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_news/show_news_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_settings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/show_timetable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_attendance/attendance_list/list_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_attendance/report_index/content_header_img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/ajax_result_underline.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/edit_details.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/search_box_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/send.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/student_details_header_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/student_details_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/student_details/view_all_button.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/user_profile/user_profile_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images-br/user_profile/user_profile_vertical_separator.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/admission/edit_student_link.png" afterPath="$PROJECT_DIR$/public/images/admission/edit_student_link.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/application/app_back_button.png" afterPath="$PROJECT_DIR$/public/images/application/app_back_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/add_new_parent.png" afterPath="$PROJECT_DIR$/public/images/buttons/add_new_parent.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/back.png" afterPath="$PROJECT_DIR$/public/images/buttons/back.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/choose-file.gif" afterPath="$PROJECT_DIR$/public/images/buttons/choose-file.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/create.png" afterPath="$PROJECT_DIR$/public/images/buttons/create.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/delete.png" afterPath="$PROJECT_DIR$/public/images/buttons/delete.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/edit.png" afterPath="$PROJECT_DIR$/public/images/buttons/edit.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/edit_role.png" afterPath="$PROJECT_DIR$/public/images/buttons/edit_role.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/go.png" afterPath="$PROJECT_DIR$/public/images/buttons/go.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/news_go.jpg" afterPath="$PROJECT_DIR$/public/images/buttons/news_go.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/pdf_button.png" afterPath="$PROJECT_DIR$/public/images/buttons/pdf_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/publish_news.png" afterPath="$PROJECT_DIR$/public/images/buttons/publish_news.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/remove.png" afterPath="$PROJECT_DIR$/public/images/buttons/remove.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/save_and_proceed.png" afterPath="$PROJECT_DIR$/public/images/buttons/save_and_proceed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/send.png" afterPath="$PROJECT_DIR$/public/images/buttons/send.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/skip_this_step.png" afterPath="$PROJECT_DIR$/public/images/buttons/skip_this_step.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/submit.png" afterPath="$PROJECT_DIR$/public/images/buttons/submit.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/update.png" afterPath="$PROJECT_DIR$/public/images/buttons/update.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/view_pdf_report.png" afterPath="$PROJECT_DIR$/public/images/buttons/view_pdf_report.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/buttons/view_report.png" afterPath="$PROJECT_DIR$/public/images/buttons/view_report.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/attendance.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/attendance.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_Human.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_Human.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_academics.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_academics.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_admission.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_admission.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_campus_news.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_campus_news.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_examinations.gif" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_examinations.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_examinations.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_examinations.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_finance.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_finance.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_leaves.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_leaves.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_manage_news.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_manage_news.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_manage_users.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_manage_users.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_my_profile.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_my_profile.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_reminders.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_reminders.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_reminders_unread.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_reminders_unread.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_student_details.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_student_details.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/button_timetable.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/button_timetable.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/dashboard_buttons/settings.png" afterPath="$PROJECT_DIR$/public/images/dashboard_buttons/settings.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/fedena_user/dashboard/dash_news_top.jpg" afterPath="$PROJECT_DIR$/public/images/fedena_user/dashboard/dash_news_top.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/fedena_user/dashboard/news_feed_more_link.jpg" afterPath="$PROJECT_DIR$/public/images/fedena_user/dashboard/news_feed_more_link.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/fedena_user/user_profile/new_info_top_bg.jpg" afterPath="$PROJECT_DIR$/public/images/fedena_user/user_profile/new_info_top_bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admission_img.jpg" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admission_img.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admissions_button.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admissions_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admissions_button_glossy.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/admissions_button_glossy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/dash_news_top.jpg" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/dash_news_top.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_news_button.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_news_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_news_button_glossy.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_news_button_glossy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_buttton.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_buttton.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_buttton_glossy.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_buttton_glossy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_img.jpg" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/manage_users_img.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/news_feed_more_link.jpg" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/news_feed_more_link.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_button.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_button_glossy.png" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_button_glossy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_img.jpg" afterPath="$PROJECT_DIR$/public/images/jquery.calendar/dashboard/student_details_img.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/master_student/profile/new_info_top_bg.jpg" afterPath="$PROJECT_DIR$/public/images/master_student/profile/new_info_top_bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/master_student/profile/topbanner.png" afterPath="$PROJECT_DIR$/public/images/master_student/profile/topbanner.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/show_news/delete_news_button.jpg" afterPath="$PROJECT_DIR$/public/images/show_news/delete_news_button.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/show_news/edit_news_button.png" afterPath="$PROJECT_DIR$/public/images/show_news/edit_news_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/show_news/show_news_back_button.png" afterPath="$PROJECT_DIR$/public/images/show_news/show_news_back_button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/student_details/edit_details.png" afterPath="$PROJECT_DIR$/public/images/student_details/edit_details.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/student_details/send.png" afterPath="$PROJECT_DIR$/public/images/student_details/send.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/student_details/view_all_button.jpg" afterPath="$PROJECT_DIR$/public/images/student_details/view_all_button.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/admission1.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/admission1.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/admission2.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/admission2.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit2.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit2.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employee/edit_personal.rhtml" afterPath="$PROJECT_DIR$/app/views/employee/edit_personal.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" afterPath="$PROJECT_DIR$/app/views/student/add_guardian.rhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission1.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission1.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student/admission2.html.erb" afterPath="$PROJECT_DIR$/app/views/student/admission2.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/dashboard.erb" afterPath="$PROJECT_DIR$/app/views/user/dashboard.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/login.html.erb" afterPath="$PROJECT_DIR$/app/views/user/login.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/locale.rb" afterPath="$PROJECT_DIR$/config/initializers/locale.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt.yml" afterPath="$PROJECT_DIR$/config/locales/pt.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/_layouts/dashboard.css" afterPath="$PROJECT_DIR$/public/stylesheets/_layouts/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/user/dashboard.css" afterPath="$PROJECT_DIR$/public/stylesheets/user/dashboard.css" />
-    </list>
+    <list default="true" id="c367fda6-40c7-4fa0-aa11-9b58679b4079" name="New translations" comment="Added new translations to date" />
     <ignored path="Fedena.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -341,10 +55,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/weekday/_new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="41" selection-start="322" selection-end="322" vertical-scroll-proportion="0.3560831">
+            <state line="10" column="41" selection-start="322" selection-end="322" vertical-scroll-proportion="-5.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekday_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/weekday_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="44" selection-start="221" selection-end="221" vertical-scroll-proportion="0.28074867">
               <folding />
             </state>
           </provider>
@@ -842,8 +565,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="776" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1280" y="0" width="1280" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981315" sideWeight="0.66565347" order="3" side_tool="false" content_ui="tabs" />
@@ -852,7 +575,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36018237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="13" y="367" width="1256" height="43" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.06097561" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33631194" sideWeight="0.63981766" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33631194" sideWeight="0.63981766" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32826748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -880,7 +603,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing windows files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new translations to date" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -904,18 +627,12 @@
     <MESSAGE value="Translation to portuguese" />
     <MESSAGE value="Translation to portuguese&#10;1/2 of work" />
     <MESSAGE value="Removing windows files" />
+    <MESSAGE value="Added new translations to date" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/employee/admission1.rhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="116" selection-start="8425" selection-end="8425" vertical-scroll-proportion="-5.2083335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/employee/admission2.rhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="119" selection-start="3466" selection-end="3466" vertical-scroll-proportion="-4.875">
@@ -1016,7 +733,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/weekday/_new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="41" selection-start="322" selection-end="322" vertical-scroll-proportion="0.3560831">
+        <state line="10" column="41" selection-start="322" selection-end="322" vertical-scroll-proportion="-5.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/weekday_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="44" selection-start="221" selection-end="221" vertical-scroll-proportion="0.28074867">
           <folding />
         </state>
       </provider>
