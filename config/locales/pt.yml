@@ -428,7 +428,7 @@ pt:
     descStudentLeavingSchool: "Para os alunos abandonando a escola, utilize esta opção para removê-los da lista de alunos ativos e colocá-los na lista de ex-alunos"
     registerAttendance: "Registo de presença para estudante"
     of: "de estudantes"
-    present: "Estudante Atual"
+    present: "Aluno Ativo"
     former: "Ex-Aluno"
     notFound: "Nenhum aluno encontrado"
     parentInformation: "Informação dos pais"
@@ -523,7 +523,7 @@ pt:
   editInfo: "Dashboard"
   calendar: "Calendário"
   students: "Alunos"
-  settings: "Configurações"
+  settings: "Configuração"
   news: "Novidades"
   reportsCenter: "Centro de relatórios"
   recentExams: "Exames recentes"
@@ -933,7 +933,7 @@ pt:
   from: "De"
   reply: "Responder"
   userUnavaliable: "Usuário indisponível"
-  inbox: "Caixa de Entrada"
+  inbox: "Inbox"
   setClassTimings: "Definir tempos da classe"
   viewTimetableForClass: "Ver horários para uma classe"
   generatePeriodEntry: "Gerar entrada do período por um determinado tempo"
@@ -971,3 +971,58 @@ pt:
   campusNews: "Campus News"
   reminders: "Lembretes"
   myProfile: "Meu Perfil"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "meio minuto"
+      less_than_x_seconds:
+        one:   "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      x_seconds:
+        one:   "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one:   "menos de 1 minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one:   "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one:   "perto de 1 hora"
+        other: "perto de %{count} horas"
+      x_days:
+        one:   "1 dia"
+        other: "%{count} dias"
+      about_x_months:
+        one:   "perto de 1 mês"
+        other: "perto de %{count} meses"
+      x_months:
+        one:   "1 mês"
+        other: "%{count} meses"
+      about_x_years:
+        one:   "perto de 1 ano"
+        other: "perto de %{count} anos"
+      over_x_years:
+        one:   "mais de 1 ano"
+        other: "mais de %{count} anos"
+      almost_x_years:
+        one:   "quase 1 ano"
+        other: "quase %{count} anos"
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+
+  helpers:
+    select:
+      # Default value for :prompt => true in FormOptionsHelper
+      prompt: "Please select"
+
+    # Default translation keys for submit FormHelper
+    submit:
+      create: 'Create %{model}'
+      update: 'Update %{model}'
+      submit: 'Save %{model}'

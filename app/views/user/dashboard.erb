@@ -33,7 +33,7 @@
       <% end %>
 
       <% if @config.include?('Finance') %>
-          <%= link_to "<br/><br/><br/><br/>"+t('finance.title'), {:controller => "finance", :action => "index"},
+          <%= link_to "<br/><br/><br/><br/><br/>"+t('finance.title'), {:controller => "finance", :action => "index"},
                       :class => "option_buttons", :id => "finance_button", :title => t('dashboard.ManageModule') %>
       <% end %>
 
@@ -139,7 +139,7 @@
       <% end %>
 
       <% if permitted_to? :index, :finance %>
-          <%= link_to "<br/><br/><br/><br/>"+t('finance.title'), {:controller => "finance", :action => "index"},
+          <%= link_to "<br/><br/><br/><br/><br/>"+t('finance.title'), {:controller => "finance", :action => "index"},
                       :class => "option_buttons", :id => "finance_button", :title => t('dashboard.manageFinanceModule') %>
       <% end %>
 
