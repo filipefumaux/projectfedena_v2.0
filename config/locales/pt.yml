@@ -131,7 +131,7 @@ pt:
   lastName: "Último nome"
   middleName: "Nome do meio"
   password: "Senha"
-  dateOfBirth: "Data de nascimento"
+  dateOfBirth: "Data Nasc."
   email: "Email"
   role: "Role"
   schoolName: "Nome da Escola"
@@ -253,11 +253,11 @@ pt:
     departmentWisePayslip: "Comprovante analítico de pagamento do Departamento"
     deny: "Negar"
     approveDeny: "Aprovar/Negar"
-    joiningDate: "Data de admissão"
+    joiningDate: "Data admissão"
     leaveApp: "Aplicação de ausência"
     payslip: "Contracheque"
     reason: "Motivo"
-    dateJoining: "Data de admissão"
+    dateJoining: "Data admissão"
     search: "Busca de funcionário"
     noAssiged: "Sem funcionário atribuído ainda."
     salary: "Salário do funcionário"
@@ -570,7 +570,7 @@ pt:
   newPassword: "Nova senha"
   confirmPassword: "Confirmar senha"
   viewProfile: "Ver perfil"
-  admissionDate: "Data de admissão"
+  admissionDate: "Data admissão"
   courseAndBatch: "Curso & Turma"
   bloodGroup: "Grupo sanguíneo"
   nationality: "Nacionalidade"
@@ -606,7 +606,7 @@ pt:
   totalMarks: "Total de notas"
   previousYearsResultsOverview: "Visão geral dos resultados de anos anteriores"
   year: "Ano"
-  institutionName: "Nome da Instituição"
+  institutionName: "Instituição"
   courseBatch: "Curso & Turma"
   weekdays: "Dias da semana"
   advanced: "Avançado"
@@ -636,7 +636,7 @@ pt:
   sent: "Enviado"
   more: "Mais"
   doNotCreate: "Não criar"
-  saveAndProceed: "? Salvar & Avançar"
+  saveAndProceed: "► Salvar e Avançar"
   class:
     addNewTiming: "Adicionar novo tempo de classe para"
     title: "Classe"
@@ -838,7 +838,7 @@ pt:
   submit: "Enviar"
   assignNew: "Associar novo"
   showElectives: "Mostrar eletivas"
-  birthDate: "Data de nasc."
+  birthDate: "Data Nasc."
   option: "Opção"
   present: "Atual"
   createUsing: "Criar usando"
@@ -971,6 +971,34 @@ pt:
   campusNews: "Campus News"
   reminders: "Lembretes"
   myProfile: "Meu Perfil"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      database: "%Y-%m-%d"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+      only_day: "%d"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M hs"
+      time: "%H:%M hs"
+      short: "%d/%m, %H:%M hs"
+      short_date: "%d/%m/%Y"
+      short_date_time: "%d/%m/%Y %H:%M hs"
+      long: "%A, %d de %B de %Y, %H:%M hs"
+      only_second: "%S"
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+    am: ''
+    pm: ''
 
   datetime:
     distance_in_words:
@@ -1027,45 +1055,9 @@ pt:
       update: 'Update %{model}'
       submit: 'Save %{model}'
   sunday: "Domingo"
-  monday: "Segunda-feira"
-  tuesday: "Terça-feira"
-  wednesday: "Quarta-feira"
-  thursday: "Quinta-feira"
-  friday: "Sexta-feira"
+  monday: "Segunda"
+  tuesday: "Terça"
+  wednesday: "Quarta"
+  thursday: "Quinta"
+  friday: "Sexta"
   saturday: "Sábado"
-
-  date:
-    formats:
-      # Use the strftime parameters for formats.
-      # When no format has been given, it uses default.
-      # You can provide other formats here if you like!
-      default: "%Y-%m-%d"
-      short: "%b %d"
-      long: "%B %d, %Y"
-
-    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
-    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
-
-    # Don't forget the nil at the beginning; there's no such thing as a 0th month
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-    # Used in date_select and datetime_select.
-    order:
-      - :year
-      - :month
-      - :day
-
-  time:
-    formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-    am: "am"
-    pm: "pm"
-
-# Used in array.to_sentence.
-  support:
-    array:
-      words_connector: ", "
-      two_words_connector: " and "
-      last_word_connector: ", and "
