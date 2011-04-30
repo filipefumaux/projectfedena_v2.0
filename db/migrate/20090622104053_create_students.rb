@@ -44,7 +44,7 @@ class CreateStudents < ActiveRecord::Migration
       t.timestamps
     end
 
-    # Student categories
+   # Student categories
 
     create_table :student_categories do |t|
       t.string :name
