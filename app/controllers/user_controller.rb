@@ -159,7 +159,7 @@ class UserController < ApplicationController
     @user = User.find_by_username(params[:id])
     @current_user = current_user
     if request.post? and @user.update_attributes(params[:user])
-      flash[:notice] = 'User account updated!'
+      flash[:notice] = t('userAccountUpdated')
       redirect_to :controller => 'user', :action => 'profile', :id => @user.username
     end
   end
