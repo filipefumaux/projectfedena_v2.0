@@ -44,11 +44,7 @@ class CreateStudents < ActiveRecord::Migration
       t.timestamps
     end
 
-<<<<<<< HEAD
    # Student categories
-=======
-button    # Student categories
->>>>>>> 51ea0fe30cb020d2ed0867a980a56ce695af3820
 
     create_table :student_categories do |t|
       t.string :name
