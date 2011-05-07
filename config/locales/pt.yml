@@ -1237,3 +1237,4 @@ pt:
     :between: 'entre'
     :internal_error: 'Falha na Requisição (codigo 500, Internal Error)'
     :version_inconsistency: 'Version inconsistency - this record has been modified since you started editing it.'
+  allRecords: "All Records"

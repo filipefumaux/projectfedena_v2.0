@@ -26,7 +26,7 @@
     <%= link_to @course.full_name, @course %> &raquo;
     <%= link_to t('batch.title') + " #{@batch.name}", [@course, @batch] %> &raquo;
     <%= link_to t('electives'), batch_elective_groups_path(@batch) %> &raquo;
-    New
+    <%= t('new') %>
   </div>
   <div class="box">
 

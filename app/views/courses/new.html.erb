@@ -3,7 +3,7 @@
 
   <h1><%= t('courses') %></h1>
 
-  <h3>New</h3>
+  <h3><%= t('new') %></h3>
 
   <div id="app-back-button">
     <%= link_to_function image_tag("/images/buttons/back.png", :border => 0), "history.back()" %>
@@ -19,7 +19,7 @@
   <div class="box">
     <div class="bread_crumb">
       <%= link_to t('courses'), courses_path %> &raquo;
-      New
+      <%= t('new') %>
     </div>
 
     <% form_for setup_course(@course) do |f| %>

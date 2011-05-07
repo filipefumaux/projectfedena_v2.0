@@ -23,7 +23,7 @@
       <%= t('batch.title') + " #{@batch.name}" %> &raquo;
       <%= link_to t('exam.additional'), batch_additional_exam_groups_path(@batch) %> &raquo;
       <%= link_to @additional_exam_group.name, [@batch, @additional_exam_group] %> &raquo;
-      New
+      <%= t('new') %>
     </div>
 
     <h5><%= t('exam.forAdditionalGroup') %> - <%= @additional_exam_group.name %></h5>
