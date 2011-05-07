@@ -1044,6 +1044,8 @@ pt:
     models:
       user: Usuário
       usuario: usuário
+      batch: Turma
+      Batch: Turma
       endereco: endereço
       observacao: observação
       grupomedicamento: grupo de medicamento
