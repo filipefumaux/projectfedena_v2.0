@@ -13,7 +13,7 @@ class BatchesController < ApplicationController
   def create
     @batch = @course.batches.build(params[:batch])
     if @batch.save
-      flash[:notice] = 'Batch created successfully.'
+      flash[:notice] = t('batch.createOK')
       redirect_to [@course, @batch]
     else
       render 'new'
@@ -25,10 +25,10 @@ class BatchesController < ApplicationController
 
   def update
     if @batch.update_attributes(params[:batch])
-      flash[:notice] = 'Updated batch details successfully.'
+      flash[:notice] = t('batch.updateOK')
       redirect_to [@course, @batch]
     else
-      flash[:notice] = "Please fill all feilds"
+      flash[:notice] = t('batch.fillFields')
       redirect_to edit_course_batch_path(@course, @batch)
     end
   end
@@ -40,11 +40,10 @@ class BatchesController < ApplicationController
   def destroy
     if @batch.students.empty? and @batch.subjects.empty?
       @batch.inactivate
-      flash[:notice] = 'Batch deleted successfully.'
+      flash[:notice] = t('batch.deleteOK')
       redirect_to @course
     else
-      flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Students first.</p>' if @batch.students.empty?
-      flash[:warn_notice] = '<p>Unable to delete Batch.Please delete all Subjects first.</p>' if @batch.subjects.empty?
+      flash[:warn_notice] = t('batch.unableToDelete') if @batch.subjects.empty?
       redirect_to [@course, @batch]
     end
   end

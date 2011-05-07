@@ -242,6 +242,11 @@ pt:
     graduating: "Gerando turma"
     studentTrasferred: "Estes alunos vão agora ser transferidos para banco de dados de ex-alunos. Adicionar a descrição do status para os alunos. Ex. Formado em 10 de abril, 2010"
     previous: "Turma Anterior"
+    updateOK: "Updated batch details successfully."
+    fillFields: "Please fill all feilds"
+    deleteOK: "Batch deleted successfully."
+    unableToDelete: "<p>Unable to delete Batch.Please delete all Subjects first.</p>"
+    createOK: "Batch created successfully."
   employee:
     title: "Funcionário"
     number: "Nº do Funcionário"
